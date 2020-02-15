@@ -9,7 +9,7 @@ page-signup {
     .custom-tab  li.active span.text { display: block; color: #3070b7;}
     .note { margin-top: 100px;}
     .note p{ color: #989898; font-size: 12px; font-weight:500;}
-    .term-note{ margin-top: 30px; display: inline-flex;}
+    .term-note{ margin-top: 20px; display: inline-flex;}
     .term-note .checkbox-md{ padding-top: 4px;}
     .term-note div{ color: #989898; font-size: 12px; font-weight:500; padding-left: 4px;}
     .list-header-md { border: none;}
@@ -27,4 +27,5 @@ page-signup {
     .cardcontent a {
         padding: inherit;
     }
+    .msg-content{ color: #989898; font-size: 12px; font-weight:500; padding-left: 4px; white-space:normal;}
 }

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, NgZone } from "@angular/core";
 import {
   IonicPage,
   NavController,
@@ -7,7 +7,8 @@ import {
   AlertController,
   Events,
   Content,
-  MenuController
+  MenuController,
+  Navbar
 } from "ionic-angular";
 
 import { HttpClient } from "@angular/common/http";
@@ -31,6 +32,7 @@ import { NotificationMsgPage } from "../notificationmsg/notimsg";
   templateUrl: "notification.html"
 })
 export class NotificationPage {
+  @ViewChild('navbar') navBar: Navbar;
   customText: boolean = true;
   Notifications: any = [];
   account: {
@@ -45,12 +47,13 @@ export class NotificationPage {
     SecretToken: "",
     PushNotificationYesNo: "",
     DeviceToken: localStorage.getItem("FCMToken"),
-    PageSize: 50,
+    PageSize: 10,
     PageIndex: 1
   };
   currentIndex: any = 1;
   loader: any;
   ischecked: boolean = true;
+  zone : NgZone;
   constructor(
     public navCtrl: NavController,
     public formBuilder: FormBuilder,
@@ -65,6 +68,7 @@ export class NotificationPage {
   ) {
     
     //this.menu.enable(true);
+    this.zone = new NgZone({enableLongStackTrace:false});
     this.account.deviceid = localStorage.getItem("deviceid");
     this.account.SecretToken = localStorage.getItem("SecretToken");
     if (
@@ -76,18 +80,18 @@ export class NotificationPage {
       this.ischecked = false;
     }
   }
-
   ionViewDidLoad() {
-    if(localStorage.getItem("currentIndex") !== undefined && localStorage.getItem("currentIndex")!== null)
+    if(localStorage.getItem("NotificationsList") !== undefined && localStorage.getItem("NotificationsList")!== null)
     {
-      this.currentIndex = parseInt(localStorage.getItem("currentIndex"));
+      this.Notifications = JSON.parse(localStorage.getItem("NotificationsList"));
     }
     else
     {
       this.currentIndex = 1;
+      this.LoadMessage();
     }
     //localStorage.removeItem("currentIndex");
-    this.LoadMessage();
+    
     //this.AddFromEvents();
     console.log("ionViewDidLoad DashboardPage");
   }
@@ -131,6 +135,7 @@ export class NotificationPage {
   }
   LoadMessage() {
     //let _CurrentNotifications = this.Notifications.length > 0 ? this.Notifications : [];
+    this.zone.run(()=> {
     this.loader = this.loadingCtrl.create({
       content: "Please wait..."
     });
@@ -155,7 +160,7 @@ export class NotificationPage {
                 this.Notifications.push(_curNotifications[i]);
                }
             }
-            if (this.currentIndex == 1 && _curNotifications.length > 0) {
+            if (this.currentIndex == 1 && _curNotifications.length >= 0) {
               this.Notifications = [];
               this.Notifications = _curNotifications;
             }
@@ -176,8 +181,8 @@ export class NotificationPage {
               JSON.stringify(err)
             //err.error.SystemMessage
           );
-        }
-      );
+        });
+     });    
     });
   }
   @ViewChild(Content) content: Content;
@@ -188,10 +193,13 @@ export class NotificationPage {
   }*/
   ngAfterViewInit() {
     this.content.ionScrollEnd.subscribe(data => {
-      if (data.directionY == "down" && this.Notifications.length % 10 == 0) {
+      let scrollTop = this.content.scrollTop;
+      let dimensions = this.content.getContentDimensions();
+      let totalScrolled = (scrollTop + dimensions.contentHeight + 20);
+      if (totalScrolled > dimensions.scrollHeight && data.directionY == "down" && this.Notifications.length % 10 == 0) {
         this.currentIndex = this.currentIndex + 1;
         this.LoadMessage();
-      }
+     }
     });
   }
   /*
@@ -261,7 +269,7 @@ export class NotificationPage {
     // }
     localStorage.setItem("noti-item", JSON.stringify(article));
     article.IsRead = true;
-    localStorage.setItem("currentIndex", this.currentIndex);
+    localStorage.setItem("NotificationsList", JSON.stringify(this.Notifications));
     this.navCtrl.push(NotificationMsgPage);
   }
   removeItem(item) {
@@ -323,6 +331,7 @@ export class NotificationPage {
   }
 
   goBack() {
+    localStorage.removeItem("NotificationsList");
     this.navCtrl.setRoot(MyWellnessWalletPage);
   }
 }

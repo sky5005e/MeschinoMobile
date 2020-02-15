@@ -42,6 +42,7 @@ export class SignupPage {
     confirmpassword: string;
     deviceid: string;
     IsAgreeTermsCondiotion: boolean;
+    ReferralCode: string;
   } = {
     FirstName: "",
     LastName: "",
@@ -53,7 +54,8 @@ export class SignupPage {
     confirmpassword: "",
     apiKey: "",
     deviceid: "",
-    IsAgreeTermsCondiotion: false
+    IsAgreeTermsCondiotion: false,
+    ReferralCode:""
   };
 
   loader: any;
@@ -67,7 +69,8 @@ export class SignupPage {
     Height: new FormControl(),
     Password: new FormControl(),
     confirmpassword: new FormControl(),
-    IsAgreeTermsCondiotion: new FormControl()
+    IsAgreeTermsCondiotion: new FormControl(),
+    ReferralCode:new FormControl()
   });
   validateScreen: any;
 
@@ -81,7 +84,8 @@ export class SignupPage {
       Height: "",
       Password: "",
       confirmpassword: "",
-      IsAgreeTermsCondiotion: false
+      IsAgreeTermsCondiotion: false,
+      ReferralCode:""
     });
   }
 
@@ -160,40 +164,44 @@ export class SignupPage {
     });
   }
 
-  validateFuncation() {
+  IsFormValidated() {
     var msg: string;
     if (this.currentSlide == 0) {
       if (this.account.FirstName == "") {
-        msg = "Please enter Firstname.";
+        msg = "Please enter First Name.";
       } else if (this.account.LastName == "") {
-        msg = "Please enter Last name";
+        msg = "Please enter Last Name.";
       } else if (this.account.UserName == "") {
-        msg = "Please enter User name";
+        msg = "Please enter Username.";
       }
     } else if (this.currentSlide == 1) {
       if (this.account.Gender == "") {
-        msg = "Please enter Gender";
+        msg = "Please select your Gender.";
       }
     } else if (this.currentSlide == 2) {
       if (this.account.BirthDate == "") {
-        msg = "Please select birthdate";
+        msg = "Please select your date of birth.";
       }
     } else if (this.currentSlide == 3) {
       if (this.account.Height == "") {
-        msg = "Please enter height";
+        msg = "Please select your Height.";
       }
     } else if (this.currentSlide == 4) {
       if (this.account.Password == "") {
-        msg = "Please enter password";
+        msg = "Please enter a Password.";
       } else if (this.account.confirmpassword == "") {
-        msg = "Password and Confirm password should be same";
+        msg = "Confirm Password & Password must be same.";
       } else if (this.account.Password != this.account.confirmpassword) {
-        msg = "Password and Confirm password should be same";
-      } else if (
+        msg = "Confirm Password & Password must be same.";
+      } 
+      else if (this.account.ReferralCode.length > 0 && this.account.ReferralCode.length!== 6) {
+        msg = "Referral code must have 9 characters.";
+      }
+      else if (
         this.account.IsAgreeTermsCondiotion === undefined ||
         this.account.IsAgreeTermsCondiotion == false
       ) {
-        msg = "Please accept privacy policy and terms";
+        msg = "Please accept privacy policy and terms.";
       }
     }
     if (msg != "" && msg != undefined) {
@@ -291,7 +299,7 @@ export class SignupPage {
   }
 
   changeTabButton(index) {
-    if (!this.validateFuncation()) {
+    if (!this.IsFormValidated()) {
       this.currentSlide = index;
       this.slides.forEach(function(val, index) {
         val.active = false;
@@ -303,7 +311,7 @@ export class SignupPage {
     }
   }
   changeTab(index) {
-    if (!this.validateFuncation()) {
+    if (!this.IsFormValidated()) {
       if (index == this.slides.length - 1) {
         this.doSignup();
         return false;

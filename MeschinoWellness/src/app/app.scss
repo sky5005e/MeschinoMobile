@@ -163,6 +163,26 @@ ion-app.md {
     border-radius: 0.7em
   }
 }  
+.action-sheets-basic-page
+{
+  .alert-wrapper{
+    border-radius: 0.7em
+  }
+}
+.loading-md .loading-wrapper {
+  border-radius: 0.7em
+}
+
+.alert-md .alert-message {
+  max-height: 240px;
+  /* font-size: 15px; */
+}
+.alert-md .alert-head{
+  padding: 5px 24px 10px 24px;
+}
+.alert-md .alert-message{
+  padding: 5px 24px 10px 24px;
+}
 .img-menu
 {
   margin-bottom: -3px !important;
@@ -170,7 +190,7 @@ ion-app.md {
 
 
 .toolbar-title-md {
-  padding: 0 12px;
+  padding: 5px 12px;
   font-size: 1.5rem;
   font-weight: 500;
   color: #424242;
@@ -179,5 +199,5 @@ ion-app.md {
 {
   position: absolute;
   right: 21px;
-  top: 42px;
+  /*top: 42px;*/
 }

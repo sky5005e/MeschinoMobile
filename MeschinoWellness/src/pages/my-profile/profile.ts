@@ -39,10 +39,9 @@ import { WellnessConstants } from "../../providers/settings/wellnessconstant";
   templateUrl: "profile.html"
 })
 export class ProfilePage {
- 
   imageDATA: any;
   imageFileName: any;
-  UIHeight : string;
+  UIHeight: string;
   account: {
     FirstName: string;
     LastName: string;
@@ -95,20 +94,23 @@ export class ProfilePage {
     public http: HttpClient,
     public pickerCtl: PickerController,
     private events: Events,
-    private userService : UserService
+    private userService: UserService
   ) {
     this.imageFileName =
       localStorage.getItem("ProfileImage") !== null
         ? localStorage.getItem("ProfileImage")
         : "assets/img/loader.gif";
 
-    this.UIHeight = "cm-" +  Math.round(parseInt(localStorage.getItem("Height")) * 2.54) + "-null";
+    this.UIHeight =
+      "cm-" +
+      Math.round(parseInt(localStorage.getItem("Height")) * 2.54) +
+      "-null";
     this.account.BirthDate = localStorage.getItem("BirthDate");
     this.loader = this.loadingCtrl.create({
       content: "Please wait..."
     });
     this.loader.present().then(() => {
-     this.LoadUserInfo();
+      this.LoadUserInfo();
     });
 
     // Using parentCol
@@ -122,32 +124,30 @@ export class ProfilePage {
   LoadUserInfo() {
     this.rewardpoints = parseInt(localStorage.getItem("RewardPoint"));
     this.imageFileName = localStorage.getItem("ProfileImage");
-   
+
     const userAcc = {
       DeviceId: localStorage.getItem("deviceid"),
-      SecretToken: localStorage.getItem("SecretToken"),
-    }  
-    this.userService.getUserData(userAcc).subscribe((res: any) =>
-    {
+      SecretToken: localStorage.getItem("SecretToken")
+    };
+    this.userService.getUserData(userAcc).subscribe((res: any) => {
       localStorage.setItem("RewardPoint", res.RewardPoint);
       localStorage.setItem("bio_age", res.bio_age);
       localStorage.setItem("mhrs_score", res.mhrs_score);
       this.rewardpoints = parseInt(localStorage.getItem("RewardPoint"));
       this.bio_age = localStorage.getItem("bio_age");
-      this.mhrs_score = localStorage.getItem("mhrs_score");    
-      
+      this.mhrs_score = localStorage.getItem("mhrs_score");
+
       const data = {};
-       // Read all the data;
-       data["FirstName"] = localStorage.getItem("FirstName");
-       data["LastName"] = localStorage.getItem("LastName");
-       data["ProfileImage"] = localStorage.getItem("ProfileImage");
-       data["Gender"] = localStorage.getItem("Gender");
-       data["Height"] = localStorage.getItem("Height");
-       data["BirthDate"] = localStorage.getItem("BirthDate");
-       data["RewardPoint"] = localStorage.getItem("RewardPoint");
-       data["bio_age"] = localStorage.getItem("bio_age");
-       data["mhrs_score"] = localStorage.getItem("mhrs_score");
- 
+      // Read all the data;
+      data["FirstName"] = localStorage.getItem("FirstName");
+      data["LastName"] = localStorage.getItem("LastName");
+      data["ProfileImage"] = localStorage.getItem("ProfileImage");
+      data["Gender"] = localStorage.getItem("Gender");
+      data["Height"] = localStorage.getItem("Height");
+      data["BirthDate"] = localStorage.getItem("BirthDate");
+      data["RewardPoint"] = localStorage.getItem("RewardPoint");
+      data["bio_age"] = localStorage.getItem("bio_age");
+      data["mhrs_score"] = localStorage.getItem("mhrs_score");
 
       console.log("Event published : " + data);
       this.events.publish("user:created", data);
@@ -213,7 +213,6 @@ export class ProfilePage {
       ]
     });
     alert.present();
-   
   }
 
   SetHeight_inInches() {
@@ -232,7 +231,7 @@ export class ProfilePage {
 
   captureImage(useAlbum: boolean) {
     const options: CameraOptions = {
-      quality: 25,//100,
+      quality: 25, //100,
       targetWidth: 300,
       targetHeight: 300,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -260,11 +259,14 @@ export class ProfilePage {
     );
   }
 
-  commandUrl: string = WellnessConstants.App_Url+'api/WellnessAPI/UpdateUserProfile';
-   
+  commandUrl: string =
+    WellnessConstants.App_Url + "api/WellnessAPI/UpdateUserProfile";
+
   uploadFile() {
     //alert('API is not yet completed!');
     //debugger;
+    if (this.IsFormValid()) {
+    
     let loader = this.loadingCtrl.create({
       content: "Updating..."
     });
@@ -283,18 +285,17 @@ export class ProfilePage {
     //alert("old path "+ localStorage.getItem("ProfileImage"));
     const jsonString = JSON.stringify(dataJson);
     formData.append("model", jsonString);
-    
+
     if (this.imageDATA !== undefined) {
       // call method that creates a blob from dataUri
       const imageBlob = this.dataURItoBlob(this.imageDATA);
       //alert('found imagedata');
       //const imageFile = new Blob([imageBlob],{ type: 'image/jpeg' })
       formData.append("ProfileImage", imageBlob, "userimg.jpeg");
-      //alert(imageBlob);     
+      //alert(imageBlob);
     } else {
       //alert(' no image modify ');
     }
-
 
     this.DisplayHeight = false;
     this.DisplayBirthDate = false;
@@ -310,17 +311,39 @@ export class ProfilePage {
         if (res.SystemStatus == "Success") {
           this.SetUserInfo(res);
         }
-        this.presentAlert(res.SystemMessage);
+        //this.presentAlert(res.SystemMessage);
+        console.log(res.SystemMessage);
+        this.presentAlert("Profile updated successfully.");
         loader.dismiss();
       },
       err => {
         loader.dismiss();
         //this.presentAlert("Server Message - Update User Profile: " + err.error.SystemMessage);
-        this.presentAlert("Server Message - Update User Profile: "+ JSON.stringify(err));
+        this.presentAlert(
+          "Server Message - Update User Profile: " + JSON.stringify(err)
+        );
       }
     );
+    }
   }
 
+  IsFormValid() {
+    var msg: string;
+    if (this.account.FirstName == "" && this.account.LastName == "") {
+      msg = "Please enter First Name & Please enter Last Name.";
+    } else if (this.account.FirstName == "") {
+      msg = "Please enter First Name.";
+    } else if (this.account.LastName == "") {
+      msg = "Please enter Last Name.";
+    }
+
+    if (msg != "" && msg != undefined) {
+      this.presentAlert(msg);
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   async presentAlert(msg) {
     const alert = await this.alertCtl.create({
@@ -395,7 +418,7 @@ export class ProfilePage {
   PostFile(postUrl, formData, fnSuccessCallBack, fnErrorCallBack) {
     $.ajax({
       type: "POST",
-      url: postUrl, 
+      url: postUrl,
       data: formData, //JSON.stringify(model),
       processData: false,
       contentType: false,

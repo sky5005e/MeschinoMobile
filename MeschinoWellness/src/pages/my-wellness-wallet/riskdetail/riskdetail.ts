@@ -119,7 +119,7 @@ export class RiskDetailPage {
   SetGoals(num) {
     if (localStorage.getItem("UserAccessLevel") !== null && localStorage.getItem("UserAccessLevel") !== "Full") {
         let alertP = this.alertCtl.create({
-        message: "We are sorry, you do not have the permission to set goals. For information please contact the Administrator.",
+        message: "We are sorry, you do not have the permission to set goals. This features is available only on premium version. Please contact the administrator to upgrade.",
         cssClass: "action-sheets-basic-page",
         buttons: [
           {

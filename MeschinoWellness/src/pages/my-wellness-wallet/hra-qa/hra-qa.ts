@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild, NgZone } from "@angular/core";
 import {
   IonicPage,
   NavController,
   NavParams,
   AlertController,
-  LoadingController
+  LoadingController,
+  Content
 } from "ionic-angular";
 import { HraService } from "../../../providers";
 import { NgForm } from "@angular/forms";
@@ -41,6 +42,10 @@ export class HraQaPage {
   resetFlg: boolean = false;
   hideQuestion: [{ check: boolean }] = [{ check: true }];
 
+  @ViewChild(Content) ContentTemplate : Content
+  
+  IsScrolled : boolean = true;
+  zone : NgZone;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -75,8 +80,12 @@ export class HraQaPage {
         this.hideQuestion[this.RiskReportDetails[Data].question_num] = temBool;
       }
     }
-
+    this.zone = new NgZone({enableLongStackTrace : false});
     console.log(this.nextCardIndex, "nextCardIndex");
+    if(this.nextCardIndex == 1)
+    {
+      this.IsScrolled = false;
+    }
     this.loader = this.loadingCtrl.create({
       content: "Please wait..."
     });
@@ -88,6 +97,35 @@ export class HraQaPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad HraBodyPage");
     this.GetSectionDataBySection();
+  }
+  IsFirstScrolled : boolean = false;
+  WindowHeight : number; 
+  ngAfterViewInit() {
+   
+    this.ContentTemplate.ionScrollEnd.subscribe(data => {
+      var div_scrollElement = document.getElementById('div_scrollElement');
+      //console.log(data, 'scrolling');
+      let scrollTop = this.ContentTemplate.scrollTop;
+      let dimensions = this.ContentTemplate.getContentDimensions();
+      let contentHeight = dimensions.contentHeight;
+      this.WindowHeight = contentHeight;
+    
+      let scrollHeight = dimensions.scrollHeight;
+     // console.log(dimensions, 'scrolling');
+     if(div_scrollElement !== null && div_scrollElement !== undefined)
+     {     
+       div_scrollElement.hidden = true;
+     }
+     //console.log( (scrollTop + contentHeight + 20)); 
+    
+      if ( (scrollTop + contentHeight + 30) > scrollHeight) {
+        this.zone.run(()=>{
+          this.IsScrolled = false;
+         
+        });
+      }
+
+    });
   }
   async presentAlert(msg) {
     const alert = await this.alertCtl.create({
@@ -372,5 +410,12 @@ export class HraQaPage {
     } else {
       return answer_num;
     }
+  }
+
+  scrollEnd()
+  {
+      this.ContentTemplate.scrollTo(this.WindowHeight, 300);//scrollToBottom();
+      var div_scrollElement = document.getElementById('div_scrollElement');
+      div_scrollElement.hidden = true;
   }
 }

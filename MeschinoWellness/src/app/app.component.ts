@@ -33,24 +33,23 @@ export class MyApp {
   IshiddenLink: boolean = false;
   @ViewChild(Nav) nav: Nav;
   pages: any[] = [
-    // { title: "Dashboard", component: "DashboardPage", manuIcon: "dashboard" },
+    {
+      title: "My Profile",
+      component: "ProfilePage",
+      manuIcon: "user"
+    },
     {
       title: "My Wellness Wallet",
       component: "MyWellnessWalletPage",
       manuIcon: "wallet"
     },
+    // { title: "Dashboard", component: "DashboardPage", manuIcon: "dashboard" },
     //{ title: 'My Wellness Plan', component: 'MyWellnessPlanPage' , manuIcon: 'speedometer' },
     // {
     //   title: "My Trackers",
     //   component: "MyTrackerPage",
     //   manuIcon: "tracker"
     // },
-    {
-      title: "My Profile",
-      component: "ProfilePage",
-      manuIcon: "user"
-    }
-    // ,
     // { title: "Settings", component: "DashboardPage", manuIcon: "setting" }
     //{ title: 'My Tracker', component: 'WelcomePage', manuIcon: 'speedometer' },
   ];
@@ -84,9 +83,7 @@ export class MyApp {
         //this.platform.exitApp();
         this.ShowExitAppAlert();
       });
-      platform.pause.subscribe(e => {
-        this.userSrv._LogoutUser();
-      });
+      
       //this.statusBar.styleDefault();
       //this.splashScreen.hide();
       this.statusBar.styleLightContent();

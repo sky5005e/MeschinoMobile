@@ -46,7 +46,7 @@
           </ion-item>
         </ion-list>
         <div class="note">
-          <p>*User your email as username.</p>
+          <p>*Use your email as Username.</p>
         </div>
       </ion-card-content>
     </ion-card>
@@ -100,6 +100,13 @@
                     <ion-label stacked>Confirm password</ion-label>
                     <ion-input type="password" [(ngModel)]="account.confirmpassword" formControlName="confirmpassword"></ion-input>
                 </ion-item>
+                <ion-item class="custom-border">
+                  <ion-label stacked>Referral Code</ion-label>
+                  <ion-input type="text" [(ngModel)]="account.ReferralCode" formControlName="ReferralCode" ></ion-input>
+               </ion-item>
+                <ion-item>
+                  <div class="msg-content">Password must have minimum 6 characters and includes one uppercase letter (‘A - Z’), one lowercase letter (‘a - z’) and a number (‘0 - 9’).</div>
+                </ion-item>                
                 <div class="term-note">
                   <ion-checkbox [(ngModel)]="account.IsAgreeTermsCondiotion" formControlName="IsAgreeTermsCondiotion"></ion-checkbox>
                   <div class="signup-text">By singing up for meschino wellness you are agreeing to our 

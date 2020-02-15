@@ -40,4 +40,19 @@ page-hra-qa {
       bottom: 0;
       background-color: #fff;
     }
+    .bot-scroll
+    {
+    position: absolute;
+    text-align: center;
+    bottom:100%;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 100%;
+    }
+    .bot-scroll .scrollicon{
+      padding: 8px; 
+      height: 60px;
+      width:60px; 
+      border-radius: 40%;
+    }
 }
