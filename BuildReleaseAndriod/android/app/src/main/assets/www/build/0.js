@@ -1,1 +1,94 @@
-webpackJsonp([0],{522:function(o,e,a){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),a.d(e,"WelcomePageModuleNgFactory",function(){return O});var d=a(0),m=a(248),p=a(336),n=a(337),c=a(338),l=a(339),r=a(340),u=a(341),i=a(342),t=a(343),b=a(344),M=a(364),s=a(12),F=a(9),v=a(126),g=a(127),C=a(129),L=a(128),f=a(55),R=a(170),y=a(345),I=a(61),N=a(88),_=a(179),O=d["ɵcmf"](m.a,[],function(o){return d["ɵmod"]([d["ɵmpd"](512,d.ComponentFactoryResolver,d["ɵCodegenComponentFactoryResolver"],[[8,[p.a,n.a,c.a,l.a,r.a,u.a,i.a,t.a,b.a,M.a]],[3,d.ComponentFactoryResolver],d.NgModuleRef]),d["ɵmpd"](4608,s.NgLocalization,s.NgLocaleLocalization,[d.LOCALE_ID,[2,s["ɵa"]]]),d["ɵmpd"](4608,F["ɵi"],F["ɵi"],[]),d["ɵmpd"](4608,F.FormBuilder,F.FormBuilder,[]),d["ɵmpd"](4608,v.b,v.a,[]),d["ɵmpd"](4608,g.a,g.b,[]),d["ɵmpd"](4608,C.b,C.a,[]),d["ɵmpd"](4608,L.b,L.a,[]),d["ɵmpd"](4608,f.a,f.a,[R.a,v.b,g.a,C.b,L.b,f.b,f.c]),d["ɵmpd"](512,s.CommonModule,s.CommonModule,[]),d["ɵmpd"](512,F["ɵba"],F["ɵba"],[]),d["ɵmpd"](512,F.FormsModule,F.FormsModule,[]),d["ɵmpd"](512,F.ReactiveFormsModule,F.ReactiveFormsModule,[]),d["ɵmpd"](512,y.IonicModule,y.IonicModule,[]),d["ɵmpd"](512,y.IonicPageModule,y.IonicPageModule,[]),d["ɵmpd"](512,I.a,I.a,[]),d["ɵmpd"](512,m.a,m.a,[]),d["ɵmpd"](256,N.LAZY_LOADED_TOKEN,_.a,[]),d["ɵmpd"](256,f.c,void 0,[]),d["ɵmpd"](256,f.b,void 0,[])])})}});
+webpackJsonp([0],{
+
+/***/ 578:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPageModule", function() { return MenuPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu__ = __webpack_require__(579);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var MenuPageModule = /** @class */ (function () {
+    function MenuPageModule() {
+    }
+    MenuPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__menu__["a" /* MenuPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_3__menu__["a" /* MenuPage */]),
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_3__menu__["a" /* MenuPage */]
+            ]
+        })
+    ], MenuPageModule);
+    return MenuPageModule;
+}());
+
+//# sourceMappingURL=menu.module.js.map
+
+/***/ }),
+
+/***/ 579:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MenuPage = /** @class */ (function () {
+    //rootPage: any = 'ContentPage';
+    //pages: PageList;
+    function MenuPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        // used for an example of ngFor and navigation
+        // this.pages = [
+        //   { title: 'Sign in', component: 'LoginPage' },
+        //   { title: 'Signup', component: 'SignupPage' }
+        // ];
+    }
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Nav"]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Nav"])
+    ], MenuPage.prototype, "nav", void 0);
+    MenuPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-menu',template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\menu\menu.html"*/'<!-- <ion-menu>\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n  This is test\n      </button>\n    </ion-list>\n    \n  </ion-content>\n</ion-menu>\n\n<ion-nav #content [root]="rootPage"></ion-nav> -->'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\menu\menu.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"]])
+    ], MenuPage);
+    return MenuPage;
+}());
+
+//# sourceMappingURL=menu.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=0.js.map

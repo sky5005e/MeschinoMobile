@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.trisoft.ecommerce_new">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_paneka"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/logo_paneka"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
+        tools:replace="android:icon"
+        >
+
+        <activity android:name=".barcodescanner.activity.Barcode_order_history"></activity>
+        <activity android:name=".barcodescanner.activity.Make_barcode_payment"/>
+        <activity android:name=".Activities.Product_detail"/>
+
+        <activity
+            android:name=".Offers.Offer"
+            android:parentActivityName=".Activities.MainActivity"
+            />
+
+        <activity
+            android:name=".Activities.Change_password"
+            android:parentActivityName=".Activities.Change_password"
+            />
+
+        <activity
+            android:name=".Fragments.Help_support"
+            android:parentActivityName=".Activities.MainActivity"
+            />
+
+        <activity android:name=".Search.Search_product"/>
+
+        <activity
+            android:name=".Orders.MyOrders"
+            android:parentActivityName=".Activities.MainActivity"
+            />
+        <activity
+            android:name=".Orders.Order_Details"
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity
+            android:name=".Activities.Checkout"
+            android:parentActivityName=".Activities.Add_address" />
+        <activity
+            android:name=".Activities.Add_address"
+            android:parentActivityName=".Cart.MyCart" />
+        <activity android:name=".Cart.MyCart" />
+        <activity
+            android:name=".Products.Product_by_cat"
+            android:parentActivityName=".Category.Child_subcategories" />
+        <activity
+            android:name=".Category.Child_subcategories"
+            android:parentActivityName=".Category.Subcategories" />
+        <activity
+            android:name=".Category.Subcategories"
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity android:name=".Fragments.Account" />
+        <activity android:name=".Navigation_drawer" />
+        <activity android:name=".Intro.Forgot_password" />
+        <activity android:name=".Intro.Register" />
+        <activity android:name=".Intro.Login" />
+        <activity android:name=".Intro.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".barcodescanner.activity.MainActivity" />
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_lOy4XRyyMWfPnG" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

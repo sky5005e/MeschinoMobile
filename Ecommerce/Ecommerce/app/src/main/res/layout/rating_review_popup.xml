@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_border"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_10">
+
+
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cancel_black_24dp"
+        android:layout_gravity="end"
+        android:tint="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Rating &amp; Reviews"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:fontFamily="@font/opensans_semibold"/>
+
+
+    <RatingBar
+        android:id="@+id/rb_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_gravity="center"
+        android:stepSize="1"
+        android:scaleY=".7"
+        android:scaleX=".7"
+        style="?android:attr/ratingBarStyle"
+        />
+
+
+    <EditText
+        android:id="@+id/et_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add your comment "
+        android:background="@drawable/black_border"
+        android:padding="@dimen/margin_10"
+        android:layout_margin="@dimen/margin_10"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_10"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/white"
+        android:background="@drawable/button_bg"/>
+
+
+
+
+
+
+
+</LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "998073188815",
+    "firebase_url": "https://fvcart-9915b.firebaseio.com",
+    "project_id": "fvcart-9915b",
+    "storage_bucket": "fvcart-9915b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998073188815:android:260a1967051346820052ba",
+        "android_client_info": {
+          "package_name": "com.paneka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998073188815-kschg138me0n84jee7i89a8m68eercec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAl9-diZN1CLjkgvDRGesyvu3YOhhPV9yU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998073188815-kschg138me0n84jee7i89a8m68eercec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -43,6 +43,11 @@ export class MyApp {
       component: "MyWellnessWalletPage",
       manuIcon: "wallet"
     },
+    {
+      title: "Step Challenge",
+      component: "StepDashboardPage",
+      manuIcon: "log-steps"
+    },
     // { title: "Dashboard", component: "DashboardPage", manuIcon: "dashboard" },
     //{ title: 'My Wellness Plan', component: 'MyWellnessPlanPage' , manuIcon: 'speedometer' },
     // {
@@ -272,5 +277,9 @@ export class MyApp {
     this.nav.push(TemplatePage, {
       Content: Name
     });
+  }
+  gotostep(name)
+  {
+    this.nav.setRoot(name);
   }
 }

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/black_border"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    android:id="@+id/ll_order"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+        <LinearLayout
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order id :"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/opensans_bold"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_orderid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="120"
+                    android:fontFamily="@font/opensans_bold"
+
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Address :"
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pending"
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date &amp; Time : "
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_orderdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10-12-2109"
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time Slot :"
+                    android:textColor="@color/Black"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_ordertime_slot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8.00-9.00"
+                    android:textColor="@color/Black"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total amount :"
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_order_amt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payment:"
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_paymentmethod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash on delivery"
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+                    />
+
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order Status :"
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_ordstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash on delivery"
+                    android:textColor="@color/Black"
+                    android:fontFamily="@font/opensans_semibold"
+                    />
+
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="40dp"
+            android:layout_marginRight="@dimen/margin_10"
+            android:layout_height="40dp"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+            />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dotted_bg"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/img_Pimg"
+            android:layout_width="40dp"
+            android:src="@drawable/logo_paneka"
+            android:layout_height="40dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+
+            >
+            <TextView
+                android:id="@+id/tv_Pname"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Black"
+                android:textSize="11dp"
+                android:fontFamily="@font/opensans_regular"
+                android:paddingLeft="@dimen/margin_10"
+                android:text="Name"
+
+                />
+            <TextView
+                android:id="@+id/tv_Pqty"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Qty"
+                android:textSize="11dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textAlignment="center"
+                android:textColor="@color/Black"/>
+            <TextView
+                android:id="@+id/tv_Pprice"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textSize="11dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Black"
+                android:text="Price"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_order_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:listitem="@layout/productdetail_layout"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dotted_bg"
+        android:layout_margin="5dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_10"
+        >
+
+        <TextView
+            android:id="@+id/tv_add_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Review"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/opensans_semibold"
+            android:layout_gravity="end"
+            android:layout_marginRight="@dimen/margin_10"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:background="@drawable/button_bg"/>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:id="@+id/tv_cancel_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel order"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/opensans_regular"
+            android:layout_gravity="end"
+            android:layout_marginRight="@dimen/margin_10"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:background="@drawable/button_bg"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

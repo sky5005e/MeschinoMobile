@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Activities.Checkout">
+    ​
+
+    <ScrollView
+        android:layout_above="@+id/btn_place_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        ​
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+
+            android:layout_height="50dp"
+
+            >
+
+            ​
+
+            <TextView
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:text="Checkout"
+                android:textAppearance="?android:textAppearanceMedium"
+
+                android:layout_centerInParent="true"
+
+                android:textStyle="bold"
+
+                android:textAllCaps="true"
+
+                android:textColor="@color/colorPrimary"
+
+                android:fontFamily="@font/opensans_semibold"
+
+                />
+
+            ​
+
+            <ImageView
+
+                android:id="@+id/iv_back_arrow"
+
+                android:layout_width="30dp"
+
+                android:layout_height="30dp"
+
+                android:layout_centerVertical="true"
+
+                android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+
+                android:tint="@color/colorPrimary"
+                />
+
+            ​
+
+        </RelativeLayout>
+
+        ​
+
+        <TextView
+
+            android:layout_width="match_parent"
+
+            android:layout_height="0.75dp"
+
+            android:background="@color/colorPrimary"
+
+            />
+
+        ​
+
+        ​
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="130dp"
+            android:layout_margin="@dimen/margin_10"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_paneka"
+
+            />
+
+        ​
+
+
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="Shipping To"
+
+            android:textColor="@color/Black"
+
+            android:layout_margin="5dp"
+
+            android:textSize="12dp"
+
+            android:fontFamily="@font/opensans_semibold"
+            />
+
+        ​
+
+        <TextView
+
+            android:layout_width="match_parent"
+
+            android:layout_height="0.75dp"
+
+            android:layout_margin="5dp"
+
+            android:background="@color/Black"
+
+            />
+
+        ​
+
+        <TextView
+
+            android:id="@+id/tv_shipping_toName"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+
+            android:textSize="12dp"
+
+            android:textColor="@color/Black"
+
+            android:text="ABC"
+
+            android:fontFamily="@font/opensans_semibold"/>
+
+        <TextView
+
+            android:id="@+id/tv_shipping_toMobile"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="10dp"
+
+            android:textSize="12dp"
+
+            android:textColor="@color/Black"
+
+            android:text="9876543210"
+
+            android:fontFamily="@font/opensans_semibold"/>
+        <TextView
+            android:id="@+id/tv_shipping_toAddress"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="10dp"
+
+            android:textSize="12dp"
+
+            android:textColor="@color/Black"
+
+            android:text="nabc,xyesffdfsg,efsdffff,302017"
+
+            android:fontFamily="@font/opensans_semibold"/>
+
+        ​
+
+
+
+        ​
+
+        <TextView
+
+            android:layout_width="match_parent"
+
+            android:layout_height="0.75dp"
+
+            android:layout_margin="5dp"
+
+            android:background="@color/Black"
+
+            />
+
+        ​
+
+        ​
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+
+            >
+
+            <TextView
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:text="Select Payment Method"
+
+                android:textColor="@color/Black"
+
+                android:fontFamily="@font/opensans_semibold"
+
+                android:gravity="center_vertical"
+
+                android:layout_centerVertical="true"
+
+                />
+
+            ​
+
+            <TextView
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+                android:textColor="@color/Black"
+
+                android:layout_alignParentRight="true"
+
+                />
+
+            ​
+
+        </RelativeLayout>
+
+        ​
+
+        ​
+
+        <RadioGroup
+
+            android:id="@+id/rg_payment_method"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="@dimen/margin_10"
+
+            >
+
+            ​
+
+            <RadioButton
+
+                android:id="@+id/rb_cod"
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:text="Cash on delivery"/>
+
+            ​
+
+            <RadioButton
+                android:id="@+id/rb_payonline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Pay Online"
+                android:visibility="visible"
+                />
+
+            ​
+
+            ​
+
+            ​
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Black"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="Select Delivery Time Slot"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"
+            />
+
+        ​<androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycerView_timeSlot"
+            android:layout_marginRight="@dimen/margin_10"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+        />
+
+        ​
+
+        <TextView
+
+            android:layout_width="match_parent"
+
+            android:layout_height="0.75dp"
+
+            android:layout_margin="5dp"
+
+            android:background="@color/Black"
+
+            />
+
+        ​
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            android:layout_margin="10dp"
+
+            >
+
+            ​
+
+            <TextView
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:text="Order Summery"
+
+                android:textColor="@color/Black"
+
+                android:textSize="12dp"
+
+                android:layout_margin="5dp"
+
+                android:fontFamily="@font/opensans_semibold"/>
+
+            ​
+
+            <TextView
+
+                android:layout_width="match_parent"
+
+                android:layout_height="0.75dp"
+
+                android:layout_margin="5dp"
+
+                android:background="@color/Black"
+
+                />
+
+            ​
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:layout_margin="5dp"
+
+                >
+
+                ​
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="Total Items"
+
+                    android:textColor="@color/Black"
+
+                    android:textSize="12dp"
+
+                    android:fontFamily="@font/opensans_semibold"
+                    />
+
+                ​
+
+                ​
+
+                <TextView
+
+                    android:id="@+id/tv_qty"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentRight="true"
+
+                    android:text="5"
+
+                    android:fontFamily="@font/opensans_semibold"
+
+                    android:textColor="@color/Black"
+
+                    android:textSize="12dp" />
+
+            </RelativeLayout>
+
+            ​
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:layout_margin="5dp"
+
+                >
+
+                ​
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="Order Amount"
+
+                    android:textColor="@color/Black"
+
+                    android:textSize="12dp"
+
+                    />
+
+                ​
+
+                ​
+
+                <TextView
+
+                    android:id="@+id/tv_order_amt"
+
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="110"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textColor="@color/Black"
+
+                    android:textSize="12dp"
+
+                    />
+
+            </RelativeLayout>
+
+            ​
+
+            ​
+
+            ​
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:layout_margin="5dp"
+
+                >
+
+                ​
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="Shipping Charge"
+
+                    android:textColor="@color/Black"
+
+                    android:textSize="12dp"
+
+                    android:visibility="gone"
+
+                    />
+
+                ​
+
+                ​
+
+                <TextView
+
+                    android:layout_alignParentRight="true"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="50"
+
+                    android:textColor="@color/Black"
+
+                    android:textSize="12dp"
+
+                    android:visibility="gone"
+
+                    />
+
+            </RelativeLayout>
+
+            ​
+
+            ​
+
+            <TextView
+
+                android:layout_width="match_parent"
+
+                android:layout_height="0.75dp"
+
+                android:layout_margin="5dp"
+
+                android:background="@color/Black"
+
+                />
+
+            ​
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:layout_margin="5dp"
+
+                >
+
+                ​
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="Total Payable"
+
+                    android:textColor="@color/Black"
+
+                    android:textSize="12dp"
+
+                    android:fontFamily="@font/opensans_semibold"
+                    />
+
+                ​
+
+                ​
+
+                <TextView
+
+                    android:id="@+id/tv_total_payble"
+
+                    android:layout_alignParentRight="true"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="160"
+
+                    android:fontFamily="@font/opensans_semibold"
+
+                    android:textColor="@color/Black"
+
+                    android:textSize="12dp"
+
+                    />
+
+            </RelativeLayout>
+
+            ​
+
+            <TextView
+
+                android:layout_width="match_parent"
+
+                android:layout_height="0.75dp"
+
+                android:layout_margin="5dp"
+
+                android:background="@color/Black"
+
+                />
+
+        </LinearLayout>
+
+        ​
+
+    </LinearLayout>
+
+    ​
+
+        ​</ScrollView>
+
+    ​
+
+    <Button
+
+        android:id="@+id/btn_place_order"
+
+        android:layout_alignParentBottom="true"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:text="Place Order"
+
+        android:textColor="@color/White"
+
+        android:textAllCaps="false"
+
+        android:textStyle="bold"
+
+        android:fontFamily="@font/opensans_semibold"
+
+        android:background="@color/colorPrimary"
+        />
+
+</RelativeLayout>
+

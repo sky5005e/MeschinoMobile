@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/DarkGray"
+    tools:context=".Navigation_drawer"
+    >
+
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background"
+        android:padding="30dp"
+
+        >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi, Guest"
+        android:fontFamily="@font/opensans_extrabold"
+        android:textColor="@color/colorPrimary"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+        
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cancel_black_24dp"
+            android:layout_alignParentRight="true"
+            android:tint="@color/SeaGreen"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/colorPrimary"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/SeaGreen"
+        />
+
+
+       <TextView
+
+           android:id="@+id/tv_home"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Home"
+           android:layout_marginTop="20dp"
+           android:paddingTop="5dp"
+           android:paddingBottom="5dp"
+           android:fontFamily="@font/opensans_semibold"
+           android:textColor="@color/SeaGreen"
+           android:drawableLeft="@drawable/ic_home_black_24dp"
+           android:drawableTint="@color/SeaGreen"
+           android:drawablePadding="15dp"
+           />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shop by category"
+        android:layout_marginTop="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/SeaGreen"
+        android:drawableLeft="@drawable/ic_shopping_basket_black_24dp"
+        android:drawableTint="@color/SeaGreen"
+        android:drawablePadding="15dp"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_my_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Cart"
+        android:layout_marginTop="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/SeaGreen"
+        android:drawableLeft="@drawable/ic_shopping_cart_black_24dp"
+        android:drawableTint="@color/SeaGreen"
+        android:drawablePadding="15dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_my_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Orders"
+        android:layout_marginTop="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/SeaGreen"
+        android:drawableLeft="@drawable/ic_view_list_black_24dp"
+        android:drawableTint="@color/SeaGreen"
+        android:drawablePadding="15dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_share_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share App"
+        android:layout_marginTop="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/SeaGreen"
+        android:drawableLeft="@drawable/ic_share_black_24dp"
+        android:drawableTint="@color/SeaGreen"
+        android:drawablePadding="15dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_rate_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rate App"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/SeaGreen"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:drawableLeft="@drawable/ic_rate_review_black_24dp"
+        android:drawableTint="@color/SeaGreen"
+        android:drawablePadding="15dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_support"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Support"
+        android:layout_marginTop="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/SeaGreen"
+        android:drawableLeft="@drawable/ic_contact_mail_black_24dp"
+        android:drawableTint="@color/SeaGreen"
+        android:drawablePadding="15dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:layout_marginTop="15dp"
+        android:paddingTop="5dp" android:paddingBottom="5dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/SeaGreen"
+        android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
+        android:drawableTint="@color/SeaGreen"
+        android:drawablePadding="15dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_app_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Version 1.0"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:paddingTop="5dp" android:paddingBottom="5dp"
+        android:fontFamily="@font/opensans_extrabold"
+        android:textColor="@color/SeaGreen"
+        android:drawableTint="@color/SeaGreen"
+        android:drawablePadding="15dp"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>

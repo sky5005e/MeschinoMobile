@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <ImageView
+            android:id="@+id/toggle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:padding="16dp"
+            android:tint="#fff"
+            android:visibility="gone"
+            />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/toggle"
+            android:text="Select Country"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:layout_marginLeft="10dp"
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rtSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:background="@color/colorPrimary"
+        android:padding="8dp">
+        <!--EditText
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/btCancel"
+            android:id="@+id/etSearchBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editbtn"
+            android:hint="Search"
+            android:maxLines="1"
+            android:padding="8dp" />-->
+        <!--<android.support.v7.widget.SearchView
+            android:id="@+id/etSearchBox"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_toStartOf="@+id/btCancel"
+            android:background="@drawable/edit_search" />-->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/etSearchBox"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_toStartOf="@+id/btCancel"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:imeOptions="actionDone"
+            android:textStyle="normal"
+            app:iconifiedByDefault="false" />
+        <Button
+            android:id="@+id/btCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/liBottom"
+        android:layout_below="@+id/rtSearchView"
+        android:choiceMode="singleChoice"
+        android:scrollbars="none"
+        />
+
+    <LinearLayout
+        android:id="@+id/liBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btDone"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg"
+            android:text="Done"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</RelativeLayout>

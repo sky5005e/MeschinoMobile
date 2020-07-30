@@ -19,8 +19,11 @@
     </ion-item> -->
 
     <ion-buttons end>
-      <button id="done-button" ion-button (click)="uploadFile();">
+      <button *ngIf="IsShowDone" id="done-button" ion-button (click)="uploadFile();">
         Done
+      </button>
+      <button *ngIf="!IsShowDone" id="done-button" ion-button menuToggle>
+        Back
       </button>
     </ion-buttons>
 
@@ -52,16 +55,27 @@
       </a>
       <input type="text" [(ngModel)]="account.LastName" *ngIf="DisplayLastName" />
     </div>
-
-
+    
     <div class="div-lbl-edit div-border-n"> <span>User Name</span> <a (click)="EditSection('UserNameNA');"
         *ngIf="!DisplayUserName"> {{account.UserName}} <img src="assets/img/arrow.png">
       </a>
       <input type="email" [(ngModel)]="account.UserName" *ngIf="DisplayUserName" />
     </div>
-
+    <div class="div-lbl-edit div-border-n"> <span>Phone Number</span> <a (click)="EditSection('PhoneNumber');"
+      *ngIf="!DisplayPhoneNumber"> {{account.PhoneNumber}} <img src="assets/img/arrow.png">
+    </a>
+    <input type="text" [(ngModel)]="account.PhoneNumber" *ngIf="DisplayPhoneNumber" placeholder="+1 604 555 8955" />
+  </div>
 
   </ion-item>
+
+  <ion-item *ngIf="IsCompanySMSEnable">
+    <ion-label class="lbl-sms">SMS Notification</ion-label>
+    <ion-toggle slot="start" color="secondary" [checked]="ischecked" (ionChange)="EventEnableSMS($event)">
+      <div class="toggle-text">{{ischecked ? "YES" : "NO"}}</div>
+    </ion-toggle>
+  
+</ion-item>
   <div class="div-title">GENDER</div>
   <ion-item>
 
@@ -86,7 +100,7 @@
   <ion-card class="ioncard" style="padding-top: 15px">
     <div class="div-lbl-edit2"> <span>I'm born on</span>
       <a>
-        <ion-datetime [(ngModel)]="account.BirthDate" name="BirthDate">
+        <ion-datetime [(ngModel)]="account.BirthDate" name="BirthDate" (ionChange)="ChangeDate()">
 
         </ion-datetime>
         &nbsp; <img src="assets/img/arrow.png">
@@ -101,7 +115,7 @@
     <div class="div-lbl-edit2"> <span>My height is</span>
       <a>
         <ion-multi-picker [(ngModel)]="UIHeight" item-content [multiPickerColumns]="parentColumns" [separator]="'-'"
-          name="Height">
+          name="Height" (ngModelChange)="onModelChange($event)">
         </ion-multi-picker>
         &nbsp; <img src="assets/img/arrow.png">
       </a>

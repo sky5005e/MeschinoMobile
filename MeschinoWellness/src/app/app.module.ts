@@ -45,6 +45,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FcmService } from '../providers/settings/fcm.service';
 import { Firebase } from '@ionic-native/firebase';
 import { AlertMessagesService } from '../providers/settings/alertmessage.service';
+import { StepDashboardPageModule } from '../pages/step-challenges/step-dashboard.module';
+import { LogOtherActivitiesPageModule } from '../pages/step-challenges/log-overview/logoverview.module';
+import { LogStepsPageModule } from '../pages/step-challenges/log-steps/logsteps.module';
+import { StepChallengeService } from '../providers/steps/stepschallenge';
+import { AddlogsModule } from '../pages/step-challenges/addlogs/addlogs.module';
+import { StepChallengeHistoryPageModule } from '../pages/step-challenges/stepchallengehistory/stepchallengehistory.module';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -114,6 +120,11 @@ export function provideSettings(storage: Storage) {
     DashboardPageModule,
     MyWellnessPlanPageModule,
     MyWellnessWalletPageModule,
+    AddlogsModule,
+    LogOtherActivitiesPageModule,
+    LogStepsPageModule,
+    StepChallengeHistoryPageModule,
+    StepDashboardPageModule,
     ProfilePageModule,
     MyTrackerPageModule,
     ForgetPageModule,
@@ -145,6 +156,7 @@ export function provideSettings(storage: Storage) {
     HraService,
     NotificationService,
     UserService,
+    StepChallengeService,
     Camera,
     SplashScreen,
     StatusBar,

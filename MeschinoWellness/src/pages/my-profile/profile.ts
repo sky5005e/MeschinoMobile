@@ -42,20 +42,28 @@ export class ProfilePage {
   imageDATA: any;
   imageFileName: any;
   UIHeight: string;
+  IsShowDone : boolean= false;
+  IsCompanySMSEnable : boolean = false;
+  ischecked = false;
   account: {
     FirstName: string;
     LastName: string;
+    PhoneNumber:string;
     UserName: string;
     Height: string;
     BirthDate: string;
+    
     Gender: string;
+    IsUserSMSEnable : boolean;
   } = {
     FirstName: localStorage.getItem("FirstName"),
     LastName: localStorage.getItem("LastName"),
     UserName: localStorage.getItem("UserName"),
+    PhoneNumber:localStorage.getItem("PhoneNumber"),
     Height: "cm-50-null",
-    BirthDate: "2006-10-10",
-    Gender: localStorage.getItem("Gender")
+    BirthDate: "2006-10-10",    
+    Gender: localStorage.getItem("Gender"),
+    IsUserSMSEnable : localStorage.getItem("IsUserSMSEnable") == "true" ? true : false    
   };
 
   dateData: any;
@@ -112,7 +120,12 @@ export class ProfilePage {
     this.loader.present().then(() => {
       this.LoadUserInfo();
     });
+    
+    this.IsCompanySMSEnable =
+      localStorage.getItem("IsCompanySMSEnable") == "true" ? true : false;
+    console.log(this.IsCompanySMSEnable, "IsCompanySMSEnable");
 
+    this.ischecked = this.account.IsUserSMSEnable;
     // Using parentCol
     this.parentColumns = WellnessConstants.parentColumns;
   }
@@ -133,14 +146,17 @@ export class ProfilePage {
       localStorage.setItem("RewardPoint", res.RewardPoint);
       localStorage.setItem("bio_age", res.bio_age);
       localStorage.setItem("mhrs_score", res.mhrs_score);
+      localStorage.setItem("IsUserSMSEnable", res.IsUserSMSEnable)
       this.rewardpoints = parseInt(localStorage.getItem("RewardPoint"));
       this.bio_age = localStorage.getItem("bio_age");
       this.mhrs_score = localStorage.getItem("mhrs_score");
+      this.ischecked = res.IsUserSMSEnable;
 
       const data = {};
       // Read all the data;
       data["FirstName"] = localStorage.getItem("FirstName");
       data["LastName"] = localStorage.getItem("LastName");
+      data["PhoneNumber"] = localStorage.getItem("PhoneNumber");
       data["ProfileImage"] = localStorage.getItem("ProfileImage");
       data["Gender"] = localStorage.getItem("Gender");
       data["Height"] = localStorage.getItem("Height");
@@ -148,14 +164,23 @@ export class ProfilePage {
       data["RewardPoint"] = localStorage.getItem("RewardPoint");
       data["bio_age"] = localStorage.getItem("bio_age");
       data["mhrs_score"] = localStorage.getItem("mhrs_score");
-
+      data["IsUserSMSEnable"] = localStorage.getItem("IsUserSMSEnable");
       console.log("Event published : " + data);
       this.events.publish("user:created", data);
     });
     this.loader.dismiss();
   }
-
+  ChangeDate()
+  {
+    this.IsShowDone= true;
+  }
+  onModelChange(event)
+  {
+    this.IsShowDone= true;
+    console.log(event);
+  }
   async showGenderPicker() {
+    this.IsShowDone = true;
     let opts: PickerOptions = {
       buttons: [
         {
@@ -186,7 +211,7 @@ export class ProfilePage {
 
   editprofilepic() {
     console.log("show image upload");
-
+    this.IsShowDone = true;
     let alert = this.alertCtl.create({
       title: "Please select option",
       cssClass: "action-sheets-basic-page",
@@ -230,6 +255,7 @@ export class ProfilePage {
   }
 
   captureImage(useAlbum: boolean) {
+
     const options: CameraOptions = {
       quality: 25, //100,
       targetWidth: 300,
@@ -278,9 +304,11 @@ export class ProfilePage {
       SecretToken: localStorage.getItem("SecretToken"),
       FirstName: this.account.FirstName,
       LastName: this.account.LastName,
+      PhoneNumber:this.account.PhoneNumber,
       BirthDate: this.account.BirthDate,
       Height: this.account.Height,
-      Gender: this.account.Gender
+      Gender: this.account.Gender,
+      IsUserSMSEnable : this.account.IsUserSMSEnable
     };
     //alert("old path "+ localStorage.getItem("ProfileImage"));
     const jsonString = JSON.stringify(dataJson);
@@ -303,7 +331,8 @@ export class ProfilePage {
     this.DisplayFirstName = false;
     this.DisplayLastName = false;
     this.DisplayUserName = false;
-
+    this.DisplayPhoneNumber = false;
+    this.IsShowDone = false;
     this.PostFile(
       this.commandUrl,
       formData,
@@ -326,8 +355,60 @@ export class ProfilePage {
     );
     }
   }
+  
+  EventEnableSMS(event)
+  {
+    this.IsShowDone = true;
+    console.log(event.checked);
+    this.ischecked = event.checked;
+    this.account.IsUserSMSEnable = this.ischecked;
+  }
+
+  numberOnlyValidation(value) {
+    if (isNaN(value) || value.includes(".")) {
+      console.log(false);
+      // invalid character, prevent input
+      return false;
+    } else {
+      console.log(true);
+      return true;
+    }
+  }
+
+  isValidMobile(value) {
+    let msgInfo =  { msg : "", isValid : true }
+    
+    let firstLetter = value.charAt(0);
+    let remainingLetter =  "";
+    if(firstLetter == "+")
+    {
+       remainingLetter =  value.replace(firstLetter, "");
+    }
+    else{
+       remainingLetter =  value;
+    }
+    remainingLetter = remainingLetter.replace(/\s/g, "");
+    console.log(firstLetter);
+    console.log(remainingLetter);
+    
+    let regExp = /^[0-9]{10,20}$/;
+
+    if (msgInfo.isValid && !regExp.test(remainingLetter)) {
+      msgInfo.isValid = false;
+      msgInfo.msg = "Phone number start with + country code and should be 10-20 length";
+      //console.log(msgInfo.isValid, 'if test isvalid');
+    }
+    else
+    {
+      msgInfo.isValid = true;
+      //console.log(msgInfo.isValid, 'else isvalid');
+    }
+    return msgInfo;
+}
 
   IsFormValid() {
+    debugger;
+    console.log(this.account.PhoneNumber , "-phone number-")
     var msg: string;
     if (this.account.FirstName == "" && this.account.LastName == "") {
       msg = "Please enter First Name & Please enter Last Name.";
@@ -336,7 +417,20 @@ export class ProfilePage {
     } else if (this.account.LastName == "") {
       msg = "Please enter Last Name.";
     }
-
+    else if (this.account.PhoneNumber == "" || this.account.PhoneNumber === null) {
+      msg = "Please enter PhoneNumber.";
+    }
+    else if(this.account.PhoneNumber !== "") {
+      var info = this.isValidMobile(this.account.PhoneNumber)
+      if(!info.isValid)
+      { 
+        msg = info.msg
+      }
+      else 
+      { 
+        msg = "";
+      }
+   }
     if (msg != "" && msg != undefined) {
       this.presentAlert(msg);
       return false;
@@ -367,7 +461,9 @@ export class ProfilePage {
     localStorage.setItem("Gender", data.Gender);
     localStorage.setItem("Height", data.Height);
     localStorage.setItem("BirthDate", data.BirthDate);
-
+    localStorage.setItem('PhoneNumber',data.PhoneNumber);
+    localStorage.setItem('IsCompanySMSEnable',data.IsCompanySMSEnable);
+    localStorage.setItem('IsUserSMSEnable',data.IsUserSMSEnable);
     data["RewardPoint"] = localStorage.getItem("RewardPoint");
     data["bio_age"] = localStorage.getItem("bio_age");
     data["mhrs_score"] = localStorage.getItem("mhrs_score");
@@ -380,8 +476,10 @@ export class ProfilePage {
   DisplayFirstName: boolean = false;
   DisplayLastName: boolean = false;
   DisplayUserName: boolean = false;
+  DisplayPhoneNumber:boolean = false;
 
   EditSection(item: string) {
+    this.IsShowDone = true;
     switch (item) {
       case "FirstName":
         this.DisplayFirstName = true;
@@ -389,6 +487,9 @@ export class ProfilePage {
       case "LastName":
         this.DisplayLastName = true;
         break;
+      case "PhoneNumber":
+          this.DisplayPhoneNumber = true;
+          break;  
       case "UserName":
         this.DisplayUserName = true;
         break;

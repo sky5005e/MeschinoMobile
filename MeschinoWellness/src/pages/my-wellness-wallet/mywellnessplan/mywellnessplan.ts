@@ -67,12 +67,12 @@ export class MyWellnessPlanPage {
   ionViewDidLeave()
   {
     console.log('ionViewDidLeave');
-    debugger;
+    //debugger;
   }
   ionViewWillLeave()
   {
     console.log('ionViewWillLeave');
-    debugger;
+    //debugger;
   }
   loadInitialNotificationCount()
   {

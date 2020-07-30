@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#4CAF50</color>
+    <color name="colorAccent">#4CAF50</color>
+
+    <color name="float_transparent">#00000000</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Orange">#FFA500</color>
+    <color name="OrangeRed">#FF4500</color>
+    <color name="Red">#FF0000</color>
+    <color name="lightRed">#ff726f</color>
+    <color name="LightGrey">#D3D3D3</color>
+    <color name="IndianRed">#CD5C5C</color>
+    <color name="PowderBlue">#EBF8FA</color>
+    <color name="DarkGray">#A9A9A9</color>
+    <color name="LightSkyBlue">#87CEFA</color>
+    <color name="DimGray">#333333</color>
+    <color name="SeaGreen">#2E8B57</color>
+    <color name="Green">#008000</color>
+    <color name="Black">#000000</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="white">#ffffff</color>
+
+    <color name="card_right_blue">#1ABC9C</color>
+    <color name="card_right_purple">#9B59B6</color>
+
+</resources>

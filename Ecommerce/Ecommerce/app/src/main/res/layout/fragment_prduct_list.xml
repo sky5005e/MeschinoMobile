@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Cart.MyCart">
+
+
+
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/empty_cart"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_menu_black_24dp"
+            android:tint="@color/white" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_toLeftOf="@+id/rl_cart"
+            android:layout_toRightOf="@+id/iv_back"
+            android:layout_centerVertical="true"
+            >
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Location\nNRI City Omega II,Greater Noida"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/iv_edit_loc"
+                android:src="@drawable/ic_create_black_24dp"
+                android:tint="@color/white"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_toRightOf="@+id/tv_title"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_cart"
+            android:layout_alignParentRight="true"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            >
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/shopping_cart"
+                android:tint="@color/White"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_item_counter"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="5dp"
+                android:padding="6dp"
+                android:text="0"
+                android:background="@drawable/circle_bg"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:backgroundTint="@color/Orange"
+                android:textAlignment="center"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/rl_top"
+        android:layout_above="@+id/ll_bottom1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv_my_cart"
+        tools:listitem="@layout/cart_layout"
+        android:background="@color/white"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom1"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="10dp"
+        android:paddingRight="@dimen/margin_10"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_total_amt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Payble Amt : \u20B90"
+            android:textColor="@color/white"
+            android:fontFamily="@font/opensans_bold"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delivery Charges : \u20B90"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/btn_proceed_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Proceed now"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/opensans_semibold"
+            android:textAllCaps="false"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

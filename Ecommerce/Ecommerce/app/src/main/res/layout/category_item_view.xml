@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/ll_cat"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="100dp"
+    android:gravity="center"
+    android:layout_margin="0dp"
+    android:layout_height="wrap_content">
+
+
+
+        <ImageView
+            android:id="@+id/iv_cat"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="7dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/circular_bg"
+            android:src="@drawable/logo_paneka"
+            />
+
+        <TextView
+            android:id="@+id/tv_cat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beauty &amp; Hygine"
+            android:textAlignment="center"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/opensans_regular"
+            android:textColor="@color/Black"
+            android:textSize="9dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            />
+
+
+</LinearLayout>

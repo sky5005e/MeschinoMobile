@@ -1,1 +1,8714 @@
-webpackJsonp([19],Array(39).concat([function(l,n,e){"use strict";e(122),e(221),e(87),e(124),e(46)},,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=45},function(l,n,e){"use strict";e.d(n,"a",function(){return u});e(1);var t=e(325),u=(e.n(t),e(122),function(){function l(l){this.api=l}return l.prototype.login=function(l){var n=this;localStorage.setItem("Password",l.Password),localStorage.setItem("UserName",l.UserName);var e=this.api.post("api/WellnessAPI/UserLogin",l).share();return e.subscribe(function(l){console.log(l),n._loggedIn(l)},function(l){console.log("ERROR",l)}),e},l.prototype.getUserData=function(l){var n=this.api.post("api/WellnessAPI/GetUserData",l).share();return n.subscribe(function(l){},function(l){console.error("ERROR",l)}),n},l.prototype.signup=function(l){var n=this,e=this.api.post("api/WellnessAPI/AppUserRegister",l).share();return e.subscribe(function(l){n._loggedIn(l)},function(l){console.error("ERROR",l)}),e},l.prototype.forgetpassword=function(l){var n=this.api.post("api/WellnessAPI/UserForgotPassword",l).share();return n.subscribe(function(l){},function(l){console.error("ERROR",l)}),n},l.prototype.SaveUserAgreeTermsCondition=function(l){var n=this.api.post("api/WellnessAPI/SaveUserAgreeTermsCondition",l).share();return n.subscribe(function(l){},function(l){console.error("ERROR",l)}),n},l.prototype.SaveUserTokenIdData=function(l){var n=this.api.post("api/WellnessAPI/SaveUserTokenIdData",l).share();return n.subscribe(function(l){},function(l){console.error("ERROR",l)}),n},l.prototype.SaveUserPushNotificationOnOff=function(l){var n=this.api.post("api/WellnessAPI/SaveUserPushNotificationOnOff",l).share();return n.subscribe(function(l){},function(l){console.error("ERROR",l)}),n},l.prototype.GetUserPushNotificationDetail=function(l){var n=this.api.post("api/WellnessAPI/GetUserPushNotificationDetail",l).share();return n.subscribe(function(l){},function(l){console.error("ERROR",l)}),n},l.prototype.checkEmailExist=function(l){var n=this,e=this.api.post("api/WellnessAPI/IsOnboardUserEmailExists",l).share();return e.subscribe(function(l){n._loggedIn(l)},function(l){console.error("ERROR",l)}),e},l.prototype.logout=function(){this._user=null,localStorage.clear()},l.prototype._loggedIn=function(l){localStorage.setItem("UserInfo",JSON.stringify(l)),localStorage.setItem("FirstName",l.FirstName),localStorage.setItem("LastName",l.LastName),localStorage.setItem("SecretToken",l.SecretToken),localStorage.setItem("ProfileImage",l.ProfileImage),localStorage.setItem("RewardPoint",l.RewardPoint),localStorage.setItem("bio_age",l.bio_age),localStorage.setItem("mhrs_score",l.mhrs_score),localStorage.setItem("Gender",l.Gender),localStorage.setItem("Height",l.Height),localStorage.setItem("BirthDate",l.BirthDate),localStorage.setItem("IsAgreeTermsCondition",l.IsAgreeTermsCondition),localStorage.setItem("IsHRACompleted",l.IsHRACompleted),localStorage.setItem("UserAccessLevel",l.UserAccessLevel),localStorage.setItem("PushNotificationYesNo",l.PushNotificationYesNo),this._user=l},l}())},,,,,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=58},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=59},,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=68},,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=75},,,,,function(l,n,e){"use strict";e.d(n,"a",function(){return i});e(1),e(61),e(10),e(39);var t=e(131),u=e(103),o=e(173),a=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},r=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},i=function(){function l(l,n,e,t,u,o,a,r){this.navCtrl=l,this.user=n,this.toastCtrl=e,this.translateService=t,this.alertCtl=u,this.loading=o,this.fcm=a,this.events=r,this.account={UserName:"",Password:"",apiKey:"",deviceid:""},this.Rememberme=!0,this.account.UserName=null==window.localStorage.getItem("remuser")?"":window.localStorage.getItem("remuser"),this.account.Password=null==window.localStorage.getItem("rempwd")?"":window.localStorage.getItem("rempwd")}return l.prototype.presentAlert=function(l){return a(this,void 0,void 0,function(){var n;return r(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.CheckAlert=function(){this.presentAlert("This is test alert")},l.prototype.signup=function(){this.navCtrl.push(t.a)},l.prototype.validateForm=function(){return""!=this.account.UserName&&""!=this.account.UserName||(this.presentAlert("Please enter Username and Password"),!1)},l.prototype.doForget=function(){this.navCtrl.setRoot(o.a)},l.prototype.doLogin=function(){var l=this;this.account.UserName!==localStorage.getItem("remuser")&&this.fcm.deleteToken(),this.validateForm()&&(this.loader=this.loading.create({content:"Please wait..."}),this.Rememberme?(window.localStorage.setItem("remuser",this.account.UserName),window.localStorage.setItem("rempwd",this.account.Password)):(window.localStorage.setItem("remuser",""),window.localStorage.setItem("rempwd","")),this.account.apiKey="71e73c14-2723-4d6e-a489-c9675738fdf4",this.account.deviceid=localStorage.getItem("remUUID"),localStorage.setItem("deviceid",this.account.deviceid),null==localStorage.getItem("remUUID")&&(this.account.deviceid="c9675738fdf4"),this.loader.present().then(function(){l.user.login(l.account).subscribe(function(n){console.log("user",{resp:n}),l.events.publish("user:created",n),setTimeout(function(){l.loader.dismiss(),l.navCtrl.setRoot(u.a)},3e3)},function(n){l.loader.dismiss(),l.presentAlert("Server Message - User Login : "+n.error.SystemMessage)})}))},l}()},,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=82},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=83},,,,function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(122);var t=function(){function l(l,n){this.http=l,this.api=n,console.log("HraProvider Provider")}return l.prototype.GetHraSections=function(l){var n=this,e=this.api.post("api/WellnessAPI/GetHRASections",l).share();return e.subscribe(function(l){n.hraSections=l},function(l){console.error("ERROR",l)}),e},l.prototype.GetHRAQuestionDetails=function(l){var n=this,e=this.api.post("api/WellnessAPI/GetHRAQuestionDetailsBySection",l).share();return e.subscribe(function(l){n.hraQuestionDetail=l},function(l){console.error("ERROR",l)}),e},l.prototype.SaveHRAResponse=function(l){var n=this,e=this.api.post("api/WellnessAPI/SaveHRAResponse",l).share();return e.subscribe(function(l){n.hraQuestionDetail=l},function(l){console.error("ERROR",l)}),e},l.prototype.GetRiskReportNum=function(l){var n=this,e=this.api.post("api/WellnessAPI/EvaluateRiskReportAPI",l).share();return e.subscribe(function(l){n.hraRiskReport=l},function(l){console.error("ERROR",l)}),e},l.prototype.GetHraReport=function(l){var n=this,e=this.api.post("api/WellnessAPI/GetIdentifiedConditionsAPI",l).share();return e.subscribe(function(l){n.hraResults=l},function(l){console.error("ERROR",l)}),e},l.prototype.GetMajorHealthRisks=function(l){var n=this,e=this.api.post("api/WellnessAPI/GetMajorHealthRisks",l).share();return e.subscribe(function(l){n.MajorHealthRisks=l},function(l){console.error("ERROR",l)}),e},l.prototype.GetHealthRiskDetail=function(l){var n=this,e=this.api.post("api/WellnessAPI/GetHealthRiskDetail",l).share();return e.subscribe(function(l){n.HealthRiskDetail=l},function(l){console.error("ERROR",l)}),e},l}()},,function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){function l(l,n){this.navCtrl=l,this.navParams=n,this.TempaletName=this.navParams.get("Content"),"MHRScore"==this.TempaletName?this.Title="MHR Score":"BioAge"==this.TempaletName?this.Title="Bio Age":"TermsAndConditions"==this.TempaletName?this.Title="Terms And Conditions":"PrecautionsandDisclaimer"==this.TempaletName&&(this.Title="Precautions and Disclaimer")}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad TemplatePage")},l}()},,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=94},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=95},,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=97},,function(l,n,e){"use strict";e.d(n,"a",function(){return a});e(1),e(222),e(10);var t=e(497),u=(e.n(t),e(46),this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})}),o=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},a=function(){function l(l,n,e,t){this.firebase=l,this.afs=n,this.platform=e,this.user=t}return l.prototype.deleteToken=function(){this.firebase.unregister()},l.prototype.getToken=function(l,n){return u(this,void 0,void 0,function(){var n,e;return o(this,function(t){switch(t.label){case 0:return this.platform.is("android")?(e="android",[4,this.firebase.getToken()]):[3,2];case 1:n=t.sent(),t.label=2;case 2:return this.platform.is("ios")?(e="ios",[4,this.firebase.getToken()]):[3,5];case 3:return n=t.sent(),[4,this.firebase.grantPermission()];case 4:t.sent(),t.label=5;case 5:return localStorage.setItem("FCMToken",n),this.saveToken(n,l,e),[2]}})})},l.prototype.saveToken=function(l,n,e){if(l){var t=this.afs.collection("devices"),u={token:l,userId:n};return this.SaveUserTokenInDB(e,l),t.doc(l).set(u)}},l.prototype.SaveUserTokenInDB=function(l,n){var e={deviceid:localStorage.getItem("deviceid"),SecretToken:localStorage.getItem("SecretToken"),DeviceType:l,UserTokenId:n};e.deviceid=localStorage.getItem("deviceid"),e.SecretToken=localStorage.getItem("SecretToken"),e.DeviceType=l,e.UserTokenId=n,this.user.SaveUserTokenIdData(e).subscribe(function(l){console.log("save token success")},function(l){alert(l.SystemMessage)})},l.prototype.onNotifications=function(){return this.firebase.onNotificationOpen()},l}()},,,function(l,n,e){"use strict";e.d(n,"a",function(){return a});e(1),e(10),e(39);var t=e(103),u=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},o=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},a=function(){function l(l,n,e,t,u,o,a,r,i){this.navCtrl=l,this.formBuilder=n,this.navParams=e,this.loadingCtrl=t,this.alertCtl=u,this.http=o,this.userService=a,this.notificationService=r,this.events=i,this.customText=!0,this.Notifications=[],this.account={deviceid:"",SecretToken:"",PushNotificationYesNo:"",DeviceToken:localStorage.getItem("FCMToken")},this.ischecked=!0,this.account.deviceid=localStorage.getItem("deviceid"),this.account.SecretToken=localStorage.getItem("SecretToken"),this.ischecked=null!==localStorage.getItem("PushNotificationYesNo")&&"Yes"==localStorage.getItem("PushNotificationYesNo")}return l.prototype.ionViewDidLoad=function(){this.LoadMessage(),this.AddFromEvents(),console.log("ionViewDidLoad DashboardPage")},l.prototype.presentAlert=function(l){return u(this,void 0,void 0,function(){var n;return o(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.notify=function(l){var n=this;console.log(l.checked),this.ischecked=l.checked,this.account.PushNotificationYesNo=l.checked?"Yes":"No",this.loader=this.loadingCtrl.create({content:"Please wait..."}),this.loader.present().then(function(){n.userService.SaveUserPushNotificationOnOff(n.account).subscribe(function(l){n.loader.dismiss(),n.presentAlert("Successfully saved your request!"),localStorage.setItem("PushNotificationYesNo",n.account.PushNotificationYesNo)},function(l){n.loader.dismiss(),n.presentAlert("Server Message - Save User Push Notification On Off : "+l.error.SystemMessage)})})},l.prototype.LoadMessage=function(){var l=this;this.loader=this.loadingCtrl.create({content:"Please wait..."}),this.loader.present().then(function(){l.userService.GetUserPushNotificationDetail(l.account).subscribe(function(n){if(null!=n.lstPushNotificationDetail){n.lstPushNotificationDetail.sort(function(l,n){return new Date(n.CreateDate).getTime()-new Date(l.CreateDate).getTime()}),l.Notifications=n.lstPushNotificationDetail;for(var e=0;e<l.Notifications.length;e++)l.Notifications[e].showfull=!1,l.Notifications[e].Message.length<=55&&(l.Notifications[e].HideButton=!0)}l.loader.dismiss(),console.log(l.Notifications)},function(n){l.loader.dismiss(),l.presentAlert("Server Message - Get User Push Notification Detail : "+n.error.SystemMessage)})})},l.prototype.scrollTo=function(l){var n=document.getElementById(l).offsetTop;this.content.scrollTo(0,n)},l.prototype.AddFromEvents=function(){var l=this;this.events.subscribe("NotificationDetail",function(n){for(var e=n.filter(function(l){return 0==l.IsRead}),t=0;t<e.length;t++)e[t].showfull=!1,e[t].Message.length<=55&&(e[t].HideButton=!0),0==l.Notifications.filter(function(l){return l.Id!==e[t].Id}).length?(console.log(e[t].Id,"current Id not found - add in list"),l.Notifications.push(e[t])):console.log(e[t].Id,"current Id found - not add in list")})},l.prototype.MarkMessageRead=function(l){var n=this;if(!l.IsRead){var e={DeviceId:localStorage.getItem("deviceid"),SecretToken:localStorage.getItem("SecretToken"),Id:l.Id};this.notificationService.UpdateIsReadPushNotificationDetail(e).subscribe(function(n){console.log("Marked user read data"),l.IsRead=!0},function(l){n.loader.dismiss(),n.presentAlert("Server Message - Update Is Read Push Notification Detail : "+l.error.SystemMessage)})}},l.prototype.OpenArticle=function(l,n){l.showfull=!n},l.prototype.removeItem=function(l){var n=[];n.push(l.Id),this.deleteMessage(n)},l.prototype.clearall=function(){for(var l=[],n=0;n<this.Notifications.length;n++)l.push(this.Notifications[n].Id);l.length>0&&this.deleteMessage(l)},l.prototype.deleteMessage=function(l){var n=this,e={DeviceId:localStorage.getItem("deviceid"),SecretToken:localStorage.getItem("SecretToken"),Ids:l};console.log(e),this.loader=this.loadingCtrl.create({content:"Removing message..."}),this.loader.present().then(function(){n.notificationService.DeleteUserPushNotificationDetail(e).subscribe(function(l){n.loader.dismiss(),n.LoadMessage(),console.log(n.Notifications)},function(l){n.loader.dismiss(),n.presentAlert("Server Message - Delete User Push Notification Detail : "+l.error.SystemMessage)})})},l.prototype.goBack=function(){this.navCtrl.setRoot(t.a)},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return o});e(1),e(10),e(39);var t=e(102),u=e(89),o=function(){function l(l,n,e,t,u,o){var a=this;this.navCtrl=l,this.navParams=n,this.loading=e,this.userService=t,this.notificationService=u,this.events=o,this.account={deviceid:"",SecretToken:"",FirstName:"",LastName:""},this.rewardpoints=0,this.bio_age="0",this.mhrs_score="0",this.profilepic="assets/img/loader.gif",this.IsHRACompleted=!1,this.notificationCount=localStorage.getItem("NotificationCount"),this.IsHRACompleted="true"==localStorage.getItem("IsHRACompleted"),console.log(this.IsHRACompleted,"IsHRACompleted"),this.loader=this.loading.create({content:"Please wait..."}),this.loader.present().then(function(){a.loadNotificationCount(),a.loadUserInfo()})}return l.prototype.loadUserInfo=function(){var l=this;this.account.FirstName=localStorage.getItem("FirstName"),this.account.LastName=localStorage.getItem("LastName"),this.rewardpoints=parseInt(localStorage.getItem("RewardPoint")),this.profilepic=localStorage.getItem("ProfileImage"),this.bio_age=localStorage.getItem("bio_age"),this.mhrs_score=localStorage.getItem("mhrs_score");var n={DeviceId:localStorage.getItem("deviceid"),SecretToken:localStorage.getItem("SecretToken")};this.userService.getUserData(n).subscribe(function(n){localStorage.setItem("RewardPoint",n.RewardPoint),localStorage.setItem("bio_age",n.bio_age),localStorage.setItem("mhrs_score",n.mhrs_score),l.rewardpoints=parseInt(localStorage.getItem("RewardPoint")),l.bio_age=localStorage.getItem("bio_age"),l.mhrs_score=localStorage.getItem("mhrs_score")}),this.loader.dismiss()},l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad MyWellnessWalletPage")},l.prototype.gotoUrl=function(l){this.navCtrl.setRoot(l)},l.prototype.loadNotificationCount=function(){var l=this;this.events.subscribe("NotificationDetail",function(n){var e=n.filter(function(l){return 0==l.IsRead}).length;l.notificationCount=e>0?e:""})},l.prototype.goNotification=function(){this.navCtrl.push(t.a)},l.prototype.ViewTemplate=function(l){this.navCtrl.push(u.a,{Content:l})},l}()},,,,,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=115},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=116},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=117},,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=120},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=121},function(l,n,e){"use strict";e.d(n,"a",function(){return a});e(1);var t=e(495),u=e(74),o=e(123),a=function(){function l(l){this.http=l,this.url=o.a.App_Url}return l.prototype.get=function(l,n,e){if(e||(e={params:new u.g}),n){e.params=new u.g;for(var t in n)e.params=e.params.set(t,n[t])}return this.http.get(this.url+l,e)},l.prototype.post=function(l,n,e){var u=new t.a({"Content-Type":"application/x-www-form-urlencoded"});return e=new t.b({headers:u}),this.http.post(this.url+l,n,e)},l.prototype.put=function(l,n,e){return this.http.put(this.url+l,n,e)},l.prototype.delete=function(l,n){return this.http.delete(this.url+l,n)},l.prototype.patch=function(l,n,e){return this.http.patch(this.url+l,n,e)},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});var t=function(){function l(){}return Object.defineProperty(l,"Prod_url",{get:function(){return"https://www.meschinowellness.com/"},enumerable:!0,configurable:!0}),Object.defineProperty(l,"Demo_url",{get:function(){return"http://demo-meschinowellness.azurewebsites.net/"},enumerable:!0,configurable:!0}),Object.defineProperty(l,"Staging_url",{get:function(){return"http://stage-meschinowellness.azurewebsites.net/"},enumerable:!0,configurable:!0}),Object.defineProperty(l,"App_Url",{get:function(){return"https://www.meschinowellness.com/"},enumerable:!0,configurable:!0}),l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return u});e(1);var t=e(325),u=(e.n(t),e(122),function(){function l(l){this.api=l}return l.prototype.UpdateIsReadPushNotificationDetail=function(l){var n=this.api.post("api/WellnessAPI/UpdateIsReadPushNotificationDetail",l).share();return n.subscribe(function(l){},function(l){console.error("ERROR",l)}),n},l.prototype.DeleteUserPushNotificationDetail=function(l){var n=this.api.post("api/WellnessAPI/DeleteUserPushNotificationDetail",l).share();return n.subscribe(function(l){},function(l){console.error("ERROR",l)}),n},l}())},,,,,,,function(l,n,e){"use strict";e.d(n,"a",function(){return i});e(1),e(61),e(10);var t=e(9),u=(e(39),e(89)),o=e(132),a=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},r=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},i=function(){function l(l,n,e,u,o,a,r,i,s){this.navCtrl=l,this.user=n,this.toastCtrl=e,this.formBuilder=u,this.translateService=o,this.alertCtl=a,this.loading=r,this.pickerCtl=i,this.events=s,this.account={FirstName:"",LastName:"",UserName:"",Gender:"",BirthDate:"",Height:"",Password:"",confirmpassword:"",apiKey:"",deviceid:"",IsAgreeTermsCondiotion:!1},this.signupForm=new t.FormGroup({Firstname:new t.FormControl,LastName:new t.FormControl,UserName:new t.FormControl,Gender:new t.FormControl,BirthDate:new t.FormControl,Height:new t.FormControl,Password:new t.FormControl,confirmpassword:new t.FormControl,IsAgreeTermsCondiotion:new t.FormControl}),this.slides=[{active:!0},{active:!1},{active:!1},{active:!1},{active:!1}],this.currentSlide=0,this.buttonText="Next",this.parentColumns=[{name:"unit",options:[{text:"Feet/ Inches",value:"feet"},{text:"CMS",value:"cm"}]},{name:"Value",parentCol:"unit",options:[{text:"  1",value:"1",parentVal:"feet"},{text:"  2",value:"2",parentVal:"feet"},{text:"  3",value:"3",parentVal:"feet"},{text:"  4",value:"4",parentVal:"feet"},{text:"  5",value:"5",parentVal:"feet"},{text:"  6",value:"6",parentVal:"feet"},{text:"  7",value:"7",parentVal:"feet"},{text:" 30",value:"30",parentVal:"cm"},{text:" 31",value:"31",parentVal:"cm"},{text:" 32",value:"32",parentVal:"cm"},{text:" 33",value:"33",parentVal:"cm"},{text:" 34",value:"34",parentVal:"cm"},{text:" 35",value:"35",parentVal:"cm"},{text:" 36",value:"36",parentVal:"cm"},{text:" 37",value:"37",parentVal:"cm"},{text:" 38",value:"38",parentVal:"cm"},{text:" 39",value:"39",parentVal:"cm"},{text:" 40",value:"40",parentVal:"cm"},{text:" 41",value:"41",parentVal:"cm"},{text:" 42",value:"42",parentVal:"cm"},{text:" 43",value:"43",parentVal:"cm"},{text:" 44",value:"44",parentVal:"cm"},{text:" 45",value:"45",parentVal:"cm"},{text:" 46",value:"46",parentVal:"cm"},{text:" 47",value:"47",parentVal:"cm"},{text:" 48",value:"48",parentVal:"cm"},{text:" 49",value:"49",parentVal:"cm"},{text:" 50",value:"50",parentVal:"cm"},{text:" 51",value:"51",parentVal:"cm"},{text:" 52",value:"52",parentVal:"cm"},{text:" 53",value:"53",parentVal:"cm"},{text:" 54",value:"54",parentVal:"cm"},{text:" 55",value:"55",parentVal:"cm"},{text:" 56",value:"56",parentVal:"cm"},{text:" 57",value:"57",parentVal:"cm"},{text:" 58",value:"58",parentVal:"cm"},{text:" 59",value:"59",parentVal:"cm"},{text:" 60",value:"60",parentVal:"cm"},{text:" 61",value:"61",parentVal:"cm"},{text:" 62",value:"62",parentVal:"cm"},{text:" 63",value:"63",parentVal:"cm"},{text:" 64",value:"64",parentVal:"cm"},{text:" 65",value:"65",parentVal:"cm"},{text:" 66",value:"66",parentVal:"cm"},{text:" 67",value:"67",parentVal:"cm"},{text:" 68",value:"68",parentVal:"cm"},{text:" 69",value:"69",parentVal:"cm"},{text:" 70",value:"70",parentVal:"cm"},{text:" 71",value:"71",parentVal:"cm"},{text:" 72",value:"72",parentVal:"cm"},{text:" 73",value:"73",parentVal:"cm"},{text:" 74",value:"74",parentVal:"cm"},{text:" 75",value:"75",parentVal:"cm"},{text:" 76",value:"76",parentVal:"cm"},{text:" 77",value:"77",parentVal:"cm"},{text:" 78",value:"78",parentVal:"cm"},{text:" 79",value:"79",parentVal:"cm"},{text:" 80",value:"80",parentVal:"cm"},{text:" 81",value:"81",parentVal:"cm"},{text:" 82",value:"82",parentVal:"cm"},{text:" 83",value:"83",parentVal:"cm"},{text:" 84",value:"84",parentVal:"cm"},{text:" 85",value:"85",parentVal:"cm"},{text:" 86",value:"86",parentVal:"cm"},{text:" 87",value:"87",parentVal:"cm"},{text:" 88",value:"88",parentVal:"cm"},{text:" 89",value:"89",parentVal:"cm"},{text:" 90",value:"90",parentVal:"cm"},{text:" 91",value:"91",parentVal:"cm"},{text:" 92",value:"92",parentVal:"cm"},{text:" 93",value:"93",parentVal:"cm"},{text:" 94",value:"94",parentVal:"cm"},{text:" 95",value:"95",parentVal:"cm"},{text:" 96",value:"96",parentVal:"cm"},{text:" 97",value:"97",parentVal:"cm"},{text:" 98",value:"98",parentVal:"cm"},{text:" 99",value:"99",parentVal:"cm"},{text:" 100",value:"100",parentVal:"cm"},{text:" 101",value:"101",parentVal:"cm"},{text:" 102",value:"102",parentVal:"cm"},{text:" 103",value:"103",parentVal:"cm"},{text:" 104",value:"104",parentVal:"cm"},{text:" 105",value:"105",parentVal:"cm"},{text:" 106",value:"106",parentVal:"cm"},{text:" 107",value:"107",parentVal:"cm"},{text:" 108",value:"108",parentVal:"cm"},{text:" 109",value:"109",parentVal:"cm"},{text:" 110",value:"110",parentVal:"cm"},{text:" 111",value:"111",parentVal:"cm"},{text:" 112",value:"112",parentVal:"cm"},{text:" 113",value:"113",parentVal:"cm"},{text:" 114",value:"114",parentVal:"cm"},{text:" 115",value:"115",parentVal:"cm"},{text:" 116",value:"116",parentVal:"cm"},{text:" 117",value:"117",parentVal:"cm"},{text:" 118",value:"118",parentVal:"cm"},{text:" 119",value:"119",parentVal:"cm"},{text:" 120",value:"120",parentVal:"cm"},{text:" 121",value:"121",parentVal:"cm"},{text:" 122",value:"122",parentVal:"cm"},{text:" 123",value:"123",parentVal:"cm"},{text:" 124",value:"124",parentVal:"cm"},{text:" 125",value:"125",parentVal:"cm"},{text:" 126",value:"126",parentVal:"cm"},{text:" 127",value:"127",parentVal:"cm"},{text:" 128",value:"128",parentVal:"cm"},{text:" 129",value:"129",parentVal:"cm"},{text:" 130",value:"130",parentVal:"cm"},{text:" 131",value:"131",parentVal:"cm"},{text:" 132",value:"132",parentVal:"cm"},{text:" 133",value:"133",parentVal:"cm"},{text:" 134",value:"134",parentVal:"cm"},{text:" 135",value:"135",parentVal:"cm"},{text:" 136",value:"136",parentVal:"cm"},{text:" 137",value:"137",parentVal:"cm"},{text:" 138",value:"138",parentVal:"cm"},{text:" 139",value:"139",parentVal:"cm"},{text:" 140",value:"140",parentVal:"cm"},{text:" 141",value:"141",parentVal:"cm"},{text:" 142",value:"142",parentVal:"cm"},{text:" 143",value:"143",parentVal:"cm"},{text:" 144",value:"144",parentVal:"cm"},{text:" 145",value:"145",parentVal:"cm"},{text:" 146",value:"146",parentVal:"cm"},{text:" 147",value:"147",parentVal:"cm"},{text:" 148",value:"148",parentVal:"cm"},{text:" 149",value:"149",parentVal:"cm"},{text:" 150",value:"150",parentVal:"cm"},{text:" 151",value:"151",parentVal:"cm"},{text:" 152",value:"152",parentVal:"cm"},{text:" 153",value:"153",parentVal:"cm"},{text:" 154",value:"154",parentVal:"cm"},{text:" 155",value:"155",parentVal:"cm"},{text:" 156",value:"156",parentVal:"cm"},{text:" 157",value:"157",parentVal:"cm"},{text:" 158",value:"158",parentVal:"cm"},{text:" 159",value:"159",parentVal:"cm"},{text:" 160",value:"160",parentVal:"cm"},{text:" 161",value:"161",parentVal:"cm"},{text:" 162",value:"162",parentVal:"cm"},{text:" 163",value:"163",parentVal:"cm"},{text:" 164",value:"164",parentVal:"cm"},{text:" 165",value:"165",parentVal:"cm"},{text:" 166",value:"166",parentVal:"cm"},{text:" 167",value:"167",parentVal:"cm"},{text:" 168",value:"168",parentVal:"cm"},{text:" 169",value:"169",parentVal:"cm"},{text:" 170",value:"170",parentVal:"cm"},{text:" 171",value:"171",parentVal:"cm"},{text:" 172",value:"172",parentVal:"cm"},{text:" 173",value:"173",parentVal:"cm"},{text:" 174",value:"174",parentVal:"cm"},{text:" 175",value:"175",parentVal:"cm"},{text:" 176",value:"176",parentVal:"cm"},{text:" 177",value:"177",parentVal:"cm"},{text:" 178",value:"178",parentVal:"cm"},{text:" 179",value:"179",parentVal:"cm"},{text:" 180",value:"180",parentVal:"cm"},{text:" 181",value:"181",parentVal:"cm"},{text:" 182",value:"182",parentVal:"cm"},{text:" 183",value:"183",parentVal:"cm"},{text:" 184",value:"184",parentVal:"cm"},{text:" 185",value:"185",parentVal:"cm"},{text:" 186",value:"186",parentVal:"cm"},{text:" 187",value:"187",parentVal:"cm"},{text:" 188",value:"188",parentVal:"cm"},{text:" 189",value:"189",parentVal:"cm"},{text:" 190",value:"190",parentVal:"cm"},{text:" 191",value:"191",parentVal:"cm"},{text:" 192",value:"192",parentVal:"cm"},{text:" 193",value:"193",parentVal:"cm"},{text:" 194",value:"194",parentVal:"cm"},{text:" 195",value:"195",parentVal:"cm"},{text:" 196",value:"196",parentVal:"cm"},{text:" 197",value:"197",parentVal:"cm"},{text:" 198",value:"198",parentVal:"cm"},{text:" 199",value:"199",parentVal:"cm"},{text:" 200",value:"200",parentVal:"cm"},{text:" 201",value:"201",parentVal:"cm"},{text:" 202",value:"202",parentVal:"cm"},{text:" 203",value:"203",parentVal:"cm"},{text:" 204",value:"204",parentVal:"cm"},{text:" 205",value:"205",parentVal:"cm"},{text:" 206",value:"206",parentVal:"cm"},{text:" 207",value:"207",parentVal:"cm"},{text:" 208",value:"208",parentVal:"cm"},{text:" 209",value:"209",parentVal:"cm"},{text:" 210",value:"210",parentVal:"cm"},{text:" 211",value:"211",parentVal:"cm"},{text:" 212",value:"212",parentVal:"cm"},{text:" 213",value:"213",parentVal:"cm"},{text:" 214",value:"214",parentVal:"cm"},{text:" 215",value:"215",parentVal:"cm"},{text:" 216",value:"216",parentVal:"cm"},{text:" 217",value:"217",parentVal:"cm"},{text:" 218",value:"218",parentVal:"cm"},{text:" 219",value:"219",parentVal:"cm"},{text:" 220",value:"220",parentVal:"cm"},{text:" 221",value:"221",parentVal:"cm"},{text:" 222",value:"222",parentVal:"cm"},{text:" 223",value:"223",parentVal:"cm"},{text:" 224",value:"224",parentVal:"cm"},{text:" 225",value:"225",parentVal:"cm"},{text:" 226",value:"226",parentVal:"cm"},{text:" 227",value:"227",parentVal:"cm"},{text:" 228",value:"228",parentVal:"cm"},{text:" 229",value:"229",parentVal:"cm"},{text:" 230",value:"230",parentVal:"cm"},{text:" 231",value:"231",parentVal:"cm"},{text:" 232",value:"232",parentVal:"cm"},{text:" 233",value:"233",parentVal:"cm"},{text:" 234",value:"234",parentVal:"cm"},{text:" 235",value:"235",parentVal:"cm"},{text:" 236",value:"236",parentVal:"cm"},{text:" 237",value:"237",parentVal:"cm"},{text:" 238",value:"238",parentVal:"cm"},{text:" 239",value:"239",parentVal:"cm"},{text:" 240",value:"240",parentVal:"cm"},{text:" 241",value:"241",parentVal:"cm"},{text:" 242",value:"242",parentVal:"cm"},{text:" 243",value:"243",parentVal:"cm"}]},{name:"inches",parentCol:"Value",options:[{text:"0",value:"0",parentVal:"1"},{text:"1",value:"1",parentVal:"1"},{text:"2",value:"2",parentVal:"1"},{text:"3",value:"3",parentVal:"1"},{text:"4",value:"4",parentVal:"1"},{text:"5",value:"5",parentVal:"1"},{text:"6",value:"6",parentVal:"1"},{text:"7",value:"7",parentVal:"1"},{text:"8",value:"8",parentVal:"1"},{text:"9",value:"9",parentVal:"1"},{text:"10",value:"10",parentVal:"1"},{text:"11",value:"11",parentVal:"1"},{text:"12",value:"12",parentVal:"1"},{text:"0",value:"0",parentVal:"2"},{text:"1",value:"1",parentVal:"2"},{text:"2",value:"2",parentVal:"2"},{text:"3",value:"3",parentVal:"2"},{text:"4",value:"4",parentVal:"2"},{text:"5",value:"5",parentVal:"2"},{text:"6",value:"6",parentVal:"2"},{text:"7",value:"7",parentVal:"2"},{text:"8",value:"8",parentVal:"2"},{text:"9",value:"9",parentVal:"2"},{text:"10",value:"10",parentVal:"2"},{text:"11",value:"11",parentVal:"2"},{text:"12",value:"12",parentVal:"2"},{text:"0",value:"0",parentVal:"3"},{text:"1",value:"1",parentVal:"3"},{text:"2",value:"2",parentVal:"3"},{text:"3",value:"3",parentVal:"3"},{text:"4",value:"4",parentVal:"3"},{text:"5",value:"5",parentVal:"3"},{text:"6",value:"6",parentVal:"3"},{text:"7",value:"7",parentVal:"3"},{text:"8",value:"8",parentVal:"3"},{text:"9",value:"9",parentVal:"3"},{text:"10",value:"10",parentVal:"3"},{text:"11",value:"11",parentVal:"3"},{text:"12",value:"12",parentVal:"3"},{text:"0",value:"0",parentVal:"4"},{text:"1",value:"1",parentVal:"4"},{text:"2",value:"2",parentVal:"4"},{text:"3",value:"3",parentVal:"4"},{text:"4",value:"4",parentVal:"4"},{text:"5",value:"5",parentVal:"4"},{text:"6",value:"6",parentVal:"4"},{text:"7",value:"7",parentVal:"4"},{text:"8",value:"8",parentVal:"4"},{text:"9",value:"9",parentVal:"4"},{text:"10",value:"10",parentVal:"4"},{text:"11",value:"11",parentVal:"4"},{text:"12",value:"12",parentVal:"4"},{text:"0",value:"0",parentVal:"5"},{text:"1",value:"1",parentVal:"5"},{text:"2",value:"2",parentVal:"5"},{text:"3",value:"3",parentVal:"5"},{text:"4",value:"4",parentVal:"5"},{text:"5",value:"5",parentVal:"5"},{text:"6",value:"6",parentVal:"5"},{text:"7",value:"7",parentVal:"5"},{text:"8",value:"8",parentVal:"5"},{text:"9",value:"9",parentVal:"5"},{text:"10",value:"10",parentVal:"5"},{text:"11",value:"11",parentVal:"5"},{text:"12",value:"12",parentVal:"5"},{text:"0",value:"0",parentVal:"6"},{text:"1",value:"1",parentVal:"6"},{text:"2",value:"2",parentVal:"6"},{text:"3",value:"3",parentVal:"6"},{text:"4",value:"4",parentVal:"6"},{text:"5",value:"5",parentVal:"6"},{text:"6",value:"6",parentVal:"6"},{text:"7",value:"7",parentVal:"6"},{text:"8",value:"8",parentVal:"6"},{text:"9",value:"9",parentVal:"6"},{text:"10",value:"10",parentVal:"6"},{text:"11",value:"11",parentVal:"6"},{text:"12",value:"12",parentVal:"6"},{text:"0",value:"0",parentVal:"7"},{text:"1",value:"1",parentVal:"7"},{text:"2",value:"2",parentVal:"7"},{text:"3",value:"3",parentVal:"7"},{text:"4",value:"4",parentVal:"7"},{text:"5",value:"5",parentVal:"7"},{text:"6",value:"6",parentVal:"7"},{text:"7",value:"7",parentVal:"7"},{text:"8",value:"8",parentVal:"7"},{text:"9",value:"9",parentVal:"7"},{text:"10",value:"10",parentVal:"7"},{text:"11",value:"11",parentVal:"7"},{text:"12",value:"12",parentVal:"7"}]}],this.createForm()}return l.prototype.createForm=function(){this.signupForm=this.formBuilder.group({FirstName:"",LastName:"",UserName:"",Gender:"",BirthDate:"",Height:"",Password:"",confirmpassword:"",IsAgreeTermsCondiotion:!1})},l.prototype.presentAlert=function(l){return a(this,void 0,void 0,function(){var n;return r(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:[{text:"OK",handler:function(){}}]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.showGenderPicker=function(){return a(this,void 0,void 0,function(){var l,n,e=this;return r(this,function(t){switch(t.label){case 0:return l={buttons:[{text:"Cancel",role:"cancel"},{text:"Done"}],columns:[{name:"Gender",options:[{text:"Male",value:"Male"},{text:"Female",value:"Female"}]}]},[4,this.pickerCtl.create(l)];case 1:return(n=t.sent()).present(),n.onDidDismiss(function(l){return a(e,void 0,void 0,function(){var l;return r(this,function(e){switch(e.label){case 0:return[4,n.getColumn("Gender")];case 1:return l=e.sent(),this.account.Gender=l.options[l.selectedIndex].value,[2]}})})}),[2]}})})},l.prototype.validateFuncation=function(){var l;return 0==this.currentSlide?""==this.account.FirstName?l="Please enter Firstname.":""==this.account.LastName?l="Please enter Last name":""==this.account.UserName&&(l="Please enter User name"):1==this.currentSlide?""==this.account.Gender&&(l="Please enter Gender"):2==this.currentSlide?""==this.account.BirthDate&&(l="Please select birthdate"):3==this.currentSlide?""==this.account.Height&&(l="Please enter height"):4==this.currentSlide&&(""==this.account.Password?l="Please enter password":""==this.account.confirmpassword?l="Password and Confirm password should be same":this.account.Password!=this.account.confirmpassword?l="Password and Confirm password should be same":void 0!==this.account.IsAgreeTermsCondiotion&&0!=this.account.IsAgreeTermsCondiotion||(l="Please accept privacy policy and terms")),""!=l&&void 0!=l&&(this.presentAlert(l),!0)},l.prototype.doSignup=function(){var l=this;this.loader=this.loading.create({content:"Please wait..."}),this.account.apiKey="71e73c14-2723-4d6e-a489-c9675738fdf4",this.account.deviceid=localStorage.getItem("remUUID"),localStorage.setItem("deviceid",this.account.deviceid),null==localStorage.getItem("remUUID")&&(this.account.deviceid="c9675738fdf4"),this.loader.present().then(function(){l.SetHeight_inInches(),l.user.signup(l.account).subscribe(function(n){l.loader.dismiss(),localStorage.setItem("UserName",l.account.UserName),localStorage.setItem("Password",l.account.Password),localStorage.setItem("FirstName",l.account.FirstName),localStorage.setItem("LastName",l.account.LastName),l.SetUserInfo(n),l.navCtrl.push(o.a)},function(n){console.log(n),l.loader.dismiss(),l.presentAlert("Server Message - User Register : "+n.error.SystemMessage)})})},l.prototype.SetUserInfo=function(l){this.events.publish("user:created",l)},l.prototype.SetHeight_inInches=function(){var l=this.account.Height.split("-");if(-1!==l[0].indexOf("cm")){var n=Math.round(1*parseInt(l[1])/2.54);console.log(n,"CM - INCH"),this.account.Height=n+""}else if(-1!==l[0].indexOf("feet")){n=12*parseInt(l[1])+parseInt(l[2]);console.log(n,"FEET - INCH"),this.account.Height=n+""}},l.prototype.changeTabButton=function(l){this.validateFuncation()||(this.currentSlide=l,this.slides.forEach(function(l,n){l.active=!1}),this.slides[this.currentSlide].active=!0,this.slides.length-1<=this.currentSlide&&(this.buttonText="Submit"))},l.prototype.changeTab=function(l){if(!this.validateFuncation()){if(l==this.slides.length-1)return this.doSignup(),!1;this.slides.forEach(function(l,n){l.active=!1}),this.currentSlide=l+1,this.slides[this.currentSlide].active=!0,this.slides.length-1<=this.currentSlide&&(this.buttonText="Submit")}},l.prototype.ViewTemplate=function(l){this.navCtrl.push(u.a,{Content:l})},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return u});e(1),e(10);var t=e(174),u=function(){function l(l,n){this.navCtrl=l,this.navParams=n}return l.prototype.ionViewDidLoad=function(){this.video=this.mVideoPlayer.nativeElement,this.video.play(),console.log("ionViewDidLoad IntroVideoPage")},l.prototype.goToMyHra=function(){this.video.pause(),this.navCtrl.push(t.a)},l}()},,,,,,,,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=147},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=148},,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=151},,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=155},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=156},,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=158},,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=167},,,,,,function(l,n,e){"use strict";e.d(n,"a",function(){return i});e(1),e(61),e(10),e(39);var t=e(326),u=(e.n(t),e(80)),o=e(123),a=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},r=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},i=function(){function l(l,n,e,t,u,a,r){this.navCtrl=l,this.user=n,this.toastCtrl=e,this.formBuilder=t,this.translateService=u,this.alertCtl=a,this.loading=r,this.account={Email:"",apiKey:"",deviceid:""},this.commandUrl=o.a.App_Url+"api/WellnessAPI/UserForgotPassword"}return l.prototype.presentAlert=function(l){return a(this,void 0,void 0,function(){var n;return r(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:[{text:"OK",handler:function(){}}]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.validateFuncation=function(){var l;return""==this.account.Email&&(l="Please enter email."),""!=l&&void 0!=l&&(this.presentAlert(l),!0)},l.prototype.doSubmit=function(){var l=this;this.validateFuncation()||(this.loader=this.loading.create({content:"Please wait..."}),this.account.apiKey="71e73c14-2723-4d6e-a489-c9675738fdf4",this.account.deviceid="c9675738fdf4",this.loader.present().then(function(){l.user.forgetpassword(l.account).subscribe(function(n){l.loader.dismiss(),console.log(n),l.presentAlert(n.SystemMessage)},function(n){l.loader.dismiss(),l.presentAlert("Server Message - User Forgot Password : "+n.error.SystemMessage)})}))},l.prototype.loginup=function(){this.navCtrl.push(u.a)},l.prototype.PostJson=function(l,n,e,u){t.ajax({type:"POST",url:l,data:n,contentType:"application/x-www-form-urlencoded",success:function(l){void 0!=e&&e(l)},error:function(l,n,e){void 0==u?alert(e+" "+n):u(e,n)}})},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return r});e(1),e(10);var t=e(175),u=e(80),o=(e(39),this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})}),a=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},r=function(){function l(l,n,e,t,u){var o=this;this.navCtrl=l,this.navParams=n,this.hraApi=e,this.alertCtl=t,this.loading=u,this.account={deviceid:"",SecretToken:"",FirstName:"",LastName:""},this.rewardpoints=0,this.profilepic="assets/img/avtar.jpg",this.bio_age="0",this.mhrs_score="0",this.HraDetailSections={lst_hra_section:[]},this.resetFlg=!0,this.loader=this.loading.create({content:"Please wait..."}),this.loader.present().then(function(){o.GetMyHraDetail()}),this.RiskReportDetails=JSON.parse(localStorage.getItem("RiskReportDetails")),this.RiskReportDetails&&this.RiskReportDetails.length>0?this.presentConfirm():console.log("Reset Form")}return l.prototype.presentConfirm=function(){var l=this;this.alertCtl.create({message:"You did not complete the HRA during your last session, Would you like to continue from where left off?",cssClass:"action-sheets-basic-page",buttons:[{text:"Resume",role:"cancel",handler:function(){l.resetFlg=!1}},{text:"Beginning",handler:function(){l.resetFlg=!0}}]}).present()},l.prototype.ionViewCanEnter=function(){console.log("page view enter")},l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad MyHraPage")},l.prototype.presentAlert=function(l){return o(this,void 0,void 0,function(){var n;return a(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.GetMyHraDetail=function(){var l=this;this.account.deviceid=localStorage.getItem("deviceid"),this.account.SecretToken=localStorage.getItem("SecretToken"),this.loader.present().then(function(){l.hraApi.GetHraSections(l.account).subscribe(function(n){l.loader.dismiss(),l.HraDetailSections=n,console.log("HRA-response : ",l.HraDetailSections),localStorage.setItem("HraDetailSections",JSON.stringify(l.HraDetailSections.lst_hra_section)),localStorage.setItem("RiskReportDetails",JSON.stringify(l.HraDetailSections.RiskReportDetails))},function(n){l.loader.dismiss(),l.presentAlert("Server Message- Get HRA Sections : "+n.error.SystemMessage),l.navCtrl.push(u.a)})})},l.prototype.goToHraDetail=function(l,n){this.IsCheckAllow(l,!0)?this.navCtrl.push(t.a,{cardData:l,nextCardIndex:n,resetFlg:this.resetFlg}):this.presentAlert("Invalid steps!")},l.prototype.IsCheckAllow=function(l,n){return!!(-1!==this.HraDetailSections.lstCompletedSection.indexOf(l.report_section_num)||-1!==this.HraDetailSections.lstCompletedSection.indexOf(l.report_section_num-1)&&n||16==l.report_section_num)},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return a});e(1),e(10),e(39);var t=e(176),u=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},o=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},a=function(){function l(l,n,e,t,u,o){if(this.navCtrl=l,this.navParams=n,this.hraApi=e,this.alertCtl=t,this.loadingCtrl=u,this.form=o,this.account={deviceid:"",SecretToken:"",report_section_num:0,lst_hra_response:[]},this.HraQuestion=[{hraAnswer:[]}],this.HraDetailQuestionList={lst_hra_question:[]},this.FormSectionData=[{answer:0}],this.resetFlg=!1,this.hideQuestion=[{check:!0}],this.cardData=this.navParams.get("cardData"),this.nextCardIndex=this.navParams.get("nextCardIndex"),this.resetFlg=this.navParams.get("resetFlg"),this.RiskReportDetails=JSON.parse(localStorage.getItem("RiskReportDetails")),this.HraDetailSections=JSON.parse(localStorage.getItem("HraDetailSections")),this.resetFlg)this.FormSectionData=[{answer:0}];else for(var a in this.RiskReportDetails){var r={check:!1};this.FormSectionData[this.RiskReportDetails[a].question_num]={answer:this.RiskReportDetails[a].answer_num||0},this.hideQuestion[this.RiskReportDetails[a].question_num]=r}console.log(this.nextCardIndex,"nextCardIndex"),this.loader=this.loadingCtrl.create({content:"Please wait..."}),this.RiskReportDetails=JSON.parse(localStorage.getItem("RiskReportDetails"))}n=l,l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad HraBodyPage"),this.GetSectionDataBySection()},l.prototype.presentAlert=function(l){return u(this,void 0,void 0,function(){var n;return o(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.presentAlertRedirect=function(l){return u(this,void 0,void 0,function(){var n,e=this;return o(this,function(t){switch(t.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page"})];case 1:return n=t.sent(),[4,n.present().then(function(){setTimeout(function(){n.dismiss(),e.goToHraDetail(e.HraDetailSections[e.nextCardIndex],e.nextCardIndex+1)},1e3)})];case 2:return t.sent(),[2]}})})},l.prototype.presentAlertLastRedirect=function(l){return u(this,void 0,void 0,function(){var n,e=this;return o(this,function(u){switch(u.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page"})];case 1:return n=u.sent(),[4,n.present().then(function(){setTimeout(function(){n.dismiss(),e.navCtrl.setRoot(t.a)},1e3)})];case 2:return u.sent(),[2]}})})},l.prototype.submitLastSection=function(){var l=this,n=[];for(var e in this.HraDetailQuestionList.lst_hra_question){var t=this.HraDetailQuestionList.lst_hra_question[e].question_num;this.FormSectionData[t]&&n.push({QuestionNum:t,AnswerNum:this.FormSectionData[t].answer})}this.account.deviceid=localStorage.getItem("deviceid"),this.account.SecretToken=localStorage.getItem("SecretToken"),this.account.lst_hra_response=n,this.loader=this.loadingCtrl.create({content:"Please wait..."}),this.loader.present().then(function(){l.hraApi.SaveHRAResponse(l.account).subscribe(function(n){console.log(n),l.loader.dismiss(),l.presentAlertLastRedirect(l.cardData.description+" section data saved successfully.")},function(n){l.loader.dismiss(),l.presentAlert("Save HRA Response - "+n.error.SystemMessage)})})},l.prototype.submitSection=function(){var l=this,n=[];for(var e in this.HraDetailQuestionList.lst_hra_question){var t=this.HraDetailQuestionList.lst_hra_question[e].question_num;277!=t&&278!=t||!this.FormSectionData[t]?this.FormSectionData[t]&&n.push({QuestionNum:t,AnswerNum:this.FormSectionData[t].answer}):(console.log("current question ",t),n.push({QuestionNum:t,AnswerNum:this.GetBodyMetricsAnswerValue(t,this.FormSectionData[t].answer)}))}n.length>0?(this.account.deviceid=localStorage.getItem("deviceid"),this.account.SecretToken=localStorage.getItem("SecretToken"),this.account.lst_hra_response=n,console.log(n,"ansData"),this.loader=this.loadingCtrl.create({content:"Please wait..."}),this.loader.present().then(function(){l.hraApi.SaveHRAResponse(l.account).subscribe(function(n){l.loader.dismiss(),l.presentAlertRedirect(l.cardData.description+" section data saved successfully.")},function(n){l.loader.dismiss(),console.error("ERROR",n),l.presentAlert("Save HRA Response - "+n.error.SystemMessage)})})):this.presentAlert(this.cardData.description+" Answer not selected ")},l.prototype.goToHraDetail=function(l,e){this.navCtrl.push(n,{cardData:l,nextCardIndex:e})},l.prototype.GetSectionDataBySection=function(){var l=this;this.account.deviceid=localStorage.getItem("deviceid"),this.account.SecretToken=localStorage.getItem("SecretToken"),this.account.report_section_num=this.cardData.report_section_num,this.loader.present().then(function(){l.hraApi.GetHRAQuestionDetails(l.account).subscribe(function(n){l.loader.dismiss(),l.HraDetailQuestionList=n;for(var e in l.HraDetailQuestionList.lst_hra_question){var t=l.HraDetailQuestionList.lst_hra_question[e].question_num;if(!l.FormSectionData[t]){l.FormSectionData[t]={answer:l.HraDetailQuestionList.lst_hra_question[e].hra_answer[0].answer_num};l.hideQuestion[t]={check:!1}}l.GetCorrectAnswer(e,t)}l.InitialSupressQuestion()},function(n){l.loader.dismiss(),l.presentAlert("Get HRA Question Details "+n.error.SystemMessage)})})},l.prototype.GetCorrectAnswer=function(l,n){var e=this.HraDetailQuestionList.lst_hra_question.filter(function(l){return l.question_num==n});if(null!==e&&e.length>0){var t=e[0].hra_answer.filter(function(l){return 1==l.default_answer});this.FormSectionData[n].answer=null!==t?t[0].answer_num:1}},l.prototype.InitialSupressQuestion=function(){console.log(this.HraDetailQuestionList,"this.HraDetailQuestionList ");var l=this.HraDetailQuestionList.lst_hra_question_suppress,n=l.map(function(l){return l.question_num}).filter(function(l,n,e){return e.indexOf(l)===n});console.log(n,"uniqueSupressQues");var e,t=function(t){e=u.GetAnswerValue(n[t]);var o=l.filter(function(l){return l.question_num==n[t]&&l.answer_num==e});if(null!==o)for(var a in o)u.hideQuestion[o[a].question_num_suppress]={check:!0}},u=this;for(var o in n)t(o)},l.prototype.supressQuestion=function(l){console.log(l," qdata "),console.log(this.HraDetailQuestionList,"this.HraDetailQuestionList ");var n=this.HraDetailQuestionList.lst_hra_question_suppress.filter(function(n){return n.question_num==l.question_num}),e=this.FormSectionData[l.question_num].answer;for(var t in n)this.hideQuestion[n[t].question_num_suppress]={check:!1};for(var t in n)n[t].answer_num==e&&(this.hideQuestion[n[t].question_num_suppress]={check:!0})},l.prototype.GetAnswerValue=function(l){console.log(l,"queNo");var n=this.HraDetailQuestionList.lst_hra_question.filter(function(n){return n.question_num==l});if(null!==n&&n.length>0){var e=n[0].hra_answer.filter(function(l){return 1==l.default_answer});return null!==e?e[0].answer_num:1}},l.prototype.GetBodyMetricsAnswerValue=function(l,n){console.log(l,"GetBodyMetricsAnswerValue");var e=this.HraDetailQuestionList.lst_hra_question.filter(function(n){return n.question_num==l});if(null!==e&&e.length>0){return e[0].hra_answer.filter(function(l){return l.answer_num==n})[0].answer}return n};var n;return l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return a});e(1),e(10);var t=e(177),u=(e(39),this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})}),o=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},a=function(){function l(l,n,e,t,u,o,a){this.navCtrl=l,this.navParams=n,this.alertCtl=e,this.loading=t,this.hraApi=u,this.events=o,this.userService=a,this.account={deviceid:"",SecretToken:"",RiskReportNum:0,Accept:!1},this.resetFlg=!0,this.userName=localStorage.getItem("FirstName")+" "+localStorage.getItem("LastName"),this.loader=this.loading.create({content:"Please wait..."}),localStorage.setItem("IsHRACompleted","true"),this.GetMyHraResults()}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad My HRA confirm Page")},l.prototype.presentAlert=function(l){return u(this,void 0,void 0,function(){var n;return o(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.GetMyHraResults=function(){var l=this;this.account.deviceid=localStorage.getItem("deviceid"),this.account.SecretToken=localStorage.getItem("SecretToken"),this.loader.present().then(function(){l.hraApi.GetRiskReportNum(l.account).subscribe(function(n){console.log(l.hraApi.hraRiskReport.RiskReportNum),l.account.RiskReportNum=parseInt(l.hraApi.hraRiskReport.RiskReportNum),l.hraApi.GetHraReport(l.account).subscribe(function(n){l.loader.dismiss(),console.log(l.hraApi.hraResults),l.RiskReportDetails=l.hraApi.hraResults.UserConditions,console.log({LstReport:l.RiskReportDetails})},function(n){l.loader.dismiss(),l.presentAlert("Server Message - Get Identified Conditions API: "+n.error.SystemMessage)})},function(n){l.loader.dismiss()})})},l.prototype.submitConfirm=function(){console.log(this.account.Accept),this.account.Accept?this.presentAlertRedirect("HRA confirm section data saved successfully."):this.presentAlert("Please tick check box to accept")},l.prototype.presentAlertRedirect=function(l){return u(this,void 0,void 0,function(){var n,e=this;return o(this,function(u){switch(u.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page"})];case 1:return n=u.sent(),[4,n.present().then(function(){e.LoadHRAUserData(),setTimeout(function(){n.dismiss(),e.navCtrl.setRoot(t.a)},1e3)})];case 2:return u.sent(),[2]}})})},l.prototype.LoadHRAUserData=function(){var l=this,n={DeviceId:localStorage.getItem("deviceid"),SecretToken:localStorage.getItem("SecretToken")};this.userService.getUserData(n).subscribe(function(n){console.log(n,"getUserData");var e={};localStorage.setItem("RewardPoint",n.RewardPoint),localStorage.setItem("bio_age",n.bio_age),localStorage.setItem("mhrs_score",n.mhrs_score),e.FirstName=localStorage.getItem("FirstName"),e.LastName=localStorage.getItem("LastName"),e.ProfileImage=localStorage.getItem("ProfileImage"),e.Gender=localStorage.getItem("Gender"),e.Height=localStorage.getItem("Height"),e.BirthDate=localStorage.getItem("BirthDate"),e.RewardPoint=localStorage.getItem("RewardPoint"),e.bio_age=localStorage.getItem("bio_age"),e.mhrs_score=localStorage.getItem("mhrs_score"),console.log("Event published : "+e),l.events.publish("user:created",e)})},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return i});e(1),e(10);var t=e(80),u=(e(39),e(178)),o=e(102),a=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},r=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},i=function(){function l(l,n,e,t,u,o,a,r){var i=this;this.navCtrl=l,this.navParams=n,this.alertCtl=e,this.loading=t,this.hraApi=u,this.userService=o,this.notificationService=a,this.events=r,this.account={deviceid:"",SecretToken:"",UserId:""},this.notificationCount=localStorage.getItem("NotificationCount"),this.loader=this.loading.create({content:"Please wait..."}),localStorage.removeItem("RiskNumber"),this.loader.present().then(function(){i.loadNotificationCount(),i.GetHealthRisks()})}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad MyWellnessPlanPage")},l.prototype.presentAlert=function(l){return a(this,void 0,void 0,function(){var n;return r(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.loadNotificationCount=function(){var l=this;this.events.subscribe("NotificationDetail",function(n){var e=n.filter(function(l){return 0==l.IsRead}).length;l.notificationCount=e>0?e:""})},l.prototype.GetHealthRisks=function(){var l=this;this.account.deviceid=localStorage.getItem("deviceid"),this.account.SecretToken=localStorage.getItem("SecretToken"),this.account.UserId=localStorage.getItem("UserId"),this.hraApi.GetMajorHealthRisks(this.account).subscribe(function(n){l.loader.dismiss(),l.HealthRisks=l.hraApi.MajorHealthRisks.RiskList},function(n){l.loader.dismiss(),l.presentAlert("Server Message - Get Major Health Risks: "+n.error.SystemMessage),l.navCtrl.push(t.a)})},l.prototype.goToReportDetail=function(l){localStorage.setItem("RiskNumber",l),this.navCtrl.push(u.a)},l.prototype.goNotification=function(){this.navCtrl.push(o.a)},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return a});e(1),e(10),e(39);var t=e(123),u=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},o=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},a=function(){function l(l,n,e,u,o){var a=this;this.navCtrl=l,this.navParams=n,this.alertCtl=e,this.loading=u,this.hraApi=o,this.account={deviceid:"",SecretToken:"",RiskNumber:0,password:""},this.GoalList=[],this.MeterList=[],this.siteUrl=t.a.App_Url,this.redirectURL="",this.ShowRecommendedGoals=!0,this.loader=this.loading.create({content:"Please wait..."}),this.title="Major Health Risk Detail",this.redirectURL=this.siteUrl+"account/SetGoalLogin?SecretToken="+localStorage.getItem("SecretToken")+"&DeviceId="+localStorage.getItem("deviceid")+"&tokenP="+localStorage.getItem("Password")+"&GoalNum=",this.ShowRecommendedGoals=!1,this.loader.present().then(function(){a.GetHealthRiskDetails()})}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad RiskDetailPage")},l.prototype.presentAlert=function(l){return u(this,void 0,void 0,function(){var n;return o(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.GetHealthRiskDetails=function(){var l=this;this.account.deviceid=localStorage.getItem("deviceid"),this.account.SecretToken=localStorage.getItem("SecretToken"),this.account.RiskNumber=parseInt(localStorage.getItem("RiskNumber")),this.loader.present().then(function(){l.hraApi.GetHealthRiskDetail(l.account).subscribe(function(n){l.loader.dismiss(),l.ShowRecommendedGoals=!0,l.HealthRiskDetail=l.hraApi.HealthRiskDetail,l.MeterList=l.hraApi.HealthRiskDetail.MeterList,l.GoalList=l.hraApi.HealthRiskDetail.GoalList},function(n){l.loader.dismiss(),l.presentAlert("Server Message - Get Health Risk Detail : "+n.error.SystemMessage)})})},l.prototype.goToReportDetail=function(l,n){},l.prototype.SetGoals=function(l){if(null!==localStorage.getItem("UserAccessLevel")&&"Full"!==localStorage.getItem("UserAccessLevel")){this.alertCtl.create({message:"We are sorry, you do not have the permission to set goals. For information please contact the Administrator.",cssClass:"action-sheets-basic-page",buttons:[{text:"Ok"}]}).present()}else{var n=this.redirectURL+l;this.alertCtl.create({message:"You will be redirected to a browser. Do you want to continue?",cssClass:"action-sheets-basic-page",buttons:[{text:"Yes",handler:function(){console.log(n,"url"),setTimeout(function(){window.open(n,"_system","location=yes")},1e3)}},{text:"No",handler:function(){}}]}).present()}},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return a});e(1),e(10);var t=e(80),u=e(131),o=e(103),a=function(){function l(l,n,e){this.navCtrl=l,this.toastCtrl=n,this.events=e}return l.prototype.ionViewDidLoad=function(){if(void 0!==localStorage.getItem("UserName")&&null!==localStorage.getItem("UserName")){var l=JSON.parse(localStorage.getItem("UserInfo"));this.events.publish("user:created",l),this.navCtrl.setRoot(o.a)}},l.prototype.login=function(){this.navCtrl.push(t.a)},l.prototype.signup=function(){this.navCtrl.push(u.a)},l}()},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=210},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=211},,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=214},,,,,,function(l,n,e){"use strict";e(1),e(0);var t=function(){return function(l){for(var n in l)this[n]=l[n]}}();e.d(n,"a",function(){return u});var u=function(){function l(){this.items=[],this.defaultItem={name:"Burt Bear",profilePic:"assets/img/speakers/bear.jpg",about:"Burt is a Bear."};for(var l=0,n=[{name:"Burt Bear",profilePic:"assets/img/speakers/bear.jpg",about:"Burt is a Bear."},{name:"Charlie Cheetah",profilePic:"assets/img/speakers/cheetah.jpg",about:"Charlie is a Cheetah."},{name:"Donald Duck",profilePic:"assets/img/speakers/duck.jpg",about:"Donald is a Duck."},{name:"Eva Eagle",profilePic:"assets/img/speakers/eagle.jpg",about:"Eva is an Eagle."},{name:"Ellie Elephant",profilePic:"assets/img/speakers/elephant.jpg",about:"Ellie is an Elephant."},{name:"Molly Mouse",profilePic:"assets/img/speakers/mouse.jpg",about:"Molly is a Mouse."},{name:"Paul Puppy",profilePic:"assets/img/speakers/puppy.jpg",about:"Paul is a Puppy."}];l<n.length;l++){this.items.push(new t(n[l]))}}return l.prototype.query=function(l){return l?this.items.filter(function(n){for(var e in l){var t=n[e];if("string"==typeof t&&t.toLowerCase().indexOf(l[e].toLowerCase())>=0)return n;if(t==l[e])return n}return null}):this.items},l.prototype.add=function(l){this.items.push(l)},l.prototype.delete=function(l){this.items.splice(this.items.indexOf(l),1)},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1);var t=function(){function l(l,n){this.storage=l,this.SETTINGS_KEY="_settings",this._defaults=n}return l.prototype.load=function(){var l=this;return this.storage.get(this.SETTINGS_KEY).then(function(n){return n?(l.settings=n,l._mergeDefaults(l._defaults)):l.setAll(l._defaults).then(function(n){l.settings=n})})},l.prototype._mergeDefaults=function(l){for(var n in l)n in this.settings||(this.settings[n]=l[n]);return this.setAll(this.settings)},l.prototype.merge=function(l){for(var n in l)this.settings[n]=l[n];return this.save()},l.prototype.setValue=function(l,n){return this.settings[l]=n,this.storage.set(this.SETTINGS_KEY,this.settings)},l.prototype.setAll=function(l){return this.storage.set(this.SETTINGS_KEY,l)},l.prototype.getValue=function(l){return this.storage.get(this.SETTINGS_KEY).then(function(n){return n[l]})},l.prototype.save=function(){return this.setAll(this.settings)},Object.defineProperty(l.prototype,"allSettings",{get:function(){return this.settings},enumerable:!0,configurable:!0}),l}()},,,,,,function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){function l(l,n){this.navCtrl=l,this.navParams=n,this.account={FirstName:"",LastName:""},this.account.FirstName=localStorage.getItem("FirstName"),this.account.LastName=localStorage.getItem("LastName")}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad DashboardPage")},l.prototype.gotoUrl=function(l){this.navCtrl.setRoot(l)},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(61),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return o});e(1),e(10),e(39);var t=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},u=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},o=function(){function l(l,n,e,t){this.navCtrl=l,this.navParams=n,this.alertCtl=e,this.user=t,this.account={pounds:150,inches:38,deviceid:"",SecretToken:""},this.weightData=[{description:"140"},{description:"141"},{description:"142"},{description:"143"},{description:"144"},{description:"145"},{description:"146"},{description:"147"},{description:"148"},{description:"149"},{description:"150"},{description:"151"},{description:"152"},{description:"153"},{description:"154"},{description:"155"},{description:"156"},{description:"157"},{description:"158"},{description:"159"}],this.waistData=[{description:"28"},{description:"30"},{description:"32"},{description:"34"},{description:"36"},{description:"38"},{description:"40"},{description:"42"},{description:"44"},{description:"46"},{description:"48"},{description:"50"},{description:"52"},{description:"54"},{description:"56"},{description:"58"},{description:"60"},{description:"62"},{description:"64"},{description:"66"},{description:"68"},{description:"70"}]}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad HraBodyPage")},l.prototype.presentAlert=function(l){return t(this,void 0,void 0,function(){var n;return u(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.submit=function(){},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return a});e(1),e(10);var t=e(132),u=(e(39),this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})}),o=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},a=function(){function l(l,n,e,t,u){this.user=l,this.navCtrl=n,this.alertCtl=e,this.navParams=t,this.loading=u,this.account={deviceid:"",SecretToken:"",FirstName:"",LastName:""},this.account.deviceid=localStorage.getItem("deviceid"),this.account.SecretToken=localStorage.getItem("SecretToken"),this.account.FirstName=localStorage.getItem("FirstName"),this.account.LastName=localStorage.getItem("LastName")}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad IntroPage")},l.prototype.presentAlert=function(l){return u(this,void 0,void 0,function(){var n;return o(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.goToVideo=function(){var l=this;this.loader=this.loading.create({content:"Please wait..."}),this.loader.present().then(function(){l.user.SaveUserAgreeTermsCondition(l.account).subscribe(function(n){l.loader.dismiss(),l.navCtrl.push(t.a)},function(n){l.loader.dismiss(),l.presentAlert("Server Message - Save User Agree Terms Condition: "+n.error.SystemMessage)})})},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(61),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return u});e(1),e(10);var t=e(332),u=(e.n(t),function(){return function(){}}())},function(l,n,e){"use strict";e.d(n,"a",function(){return s});e(1),e(10),e(168);var t=e(326),u=(e.n(t),e(9)),o=(e(39),e(123)),a=this&&this.__assign||Object.assign||function(l){for(var n,e=1,t=arguments.length;e<t;e++){n=arguments[e];for(var u in n)Object.prototype.hasOwnProperty.call(n,u)&&(l[u]=n[u])}return l},r=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},i=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},s=function(){function l(l,n,e,t,a,r,i,s,d,c){var p=this;this.navCtrl=l,this.formBuilder=n,this.navParams=e,this.camera=t,this.loadingCtrl=a,this.alertCtl=r,this.http=i,this.pickerCtl=s,this.events=d,this.userService=c,this.account={FirstName:localStorage.getItem("FirstName"),LastName:localStorage.getItem("LastName"),UserName:localStorage.getItem("UserName"),Height:"cm-50-null",BirthDate:"2006-10-10",Gender:localStorage.getItem("Gender")},this.rewardpoints=0,this.bio_age="0",this.mhrs_score="0",this.appForm=new u.FormGroup({Gender:new u.FormControl,BirthDate:new u.FormControl,Height:new u.FormControl}),this.commandUrl=o.a.App_Url+"api/WellnessAPI/UpdateUserProfile",this.DisplayHeight=!1,this.DisplayBirthDate=!1,this.DisplayGender=!1,this.DisplayFirstName=!1,this.DisplayLastName=!1,this.DisplayUserName=!1,this.imageFileName=null!==localStorage.getItem("ProfileImage")?localStorage.getItem("ProfileImage"):"assets/img/loader.gif",this.UIHeight="cm-"+Math.round(2.54*parseInt(localStorage.getItem("Height")))+"-null",this.account.BirthDate=localStorage.getItem("BirthDate"),this.loader=this.loadingCtrl.create({content:"Please wait..."}),this.loader.present().then(function(){p.LoadUserInfo()}),this.parentColumns=[{name:"unit",options:[{text:"Feet/ Inches",value:"feet"},{text:"CMS",value:"cm"}]},{name:"Value",parentCol:"unit",options:[{text:"  1",value:"1",parentVal:"feet"},{text:"  2",value:"2",parentVal:"feet"},{text:"  3",value:"3",parentVal:"feet"},{text:"  4",value:"4",parentVal:"feet"},{text:"  5",value:"5",parentVal:"feet"},{text:"  6",value:"6",parentVal:"feet"},{text:"  7",value:"7",parentVal:"feet"},{text:" 30",value:"30",parentVal:"cm"},{text:" 31",value:"31",parentVal:"cm"},{text:" 32",value:"32",parentVal:"cm"},{text:" 33",value:"33",parentVal:"cm"},{text:" 34",value:"34",parentVal:"cm"},{text:" 35",value:"35",parentVal:"cm"},{text:" 36",value:"36",parentVal:"cm"},{text:" 37",value:"37",parentVal:"cm"},{text:" 38",value:"38",parentVal:"cm"},{text:" 39",value:"39",parentVal:"cm"},{text:" 40",value:"40",parentVal:"cm"},{text:" 41",value:"41",parentVal:"cm"},{text:" 42",value:"42",parentVal:"cm"},{text:" 43",value:"43",parentVal:"cm"},{text:" 44",value:"44",parentVal:"cm"},{text:" 45",value:"45",parentVal:"cm"},{text:" 46",value:"46",parentVal:"cm"},{text:" 47",value:"47",parentVal:"cm"},{text:" 48",value:"48",parentVal:"cm"},{text:" 49",value:"49",parentVal:"cm"},{text:" 50",value:"50",parentVal:"cm"},{text:" 51",value:"51",parentVal:"cm"},{text:" 52",value:"52",parentVal:"cm"},{text:" 53",value:"53",parentVal:"cm"},{text:" 54",value:"54",parentVal:"cm"},{text:" 55",value:"55",parentVal:"cm"},{text:" 56",value:"56",parentVal:"cm"},{text:" 57",value:"57",parentVal:"cm"},{text:" 58",value:"58",parentVal:"cm"},{text:" 59",value:"59",parentVal:"cm"},{text:" 60",value:"60",parentVal:"cm"},{text:" 61",value:"61",parentVal:"cm"},{text:" 62",value:"62",parentVal:"cm"},{text:" 63",value:"63",parentVal:"cm"},{text:" 64",value:"64",parentVal:"cm"},{text:" 65",value:"65",parentVal:"cm"},{text:" 66",value:"66",parentVal:"cm"},{text:" 67",value:"67",parentVal:"cm"},{text:" 68",value:"68",parentVal:"cm"},{text:" 69",value:"69",parentVal:"cm"},{text:" 70",value:"70",parentVal:"cm"},{text:" 71",value:"71",parentVal:"cm"},{text:" 72",value:"72",parentVal:"cm"},{text:" 73",value:"73",parentVal:"cm"},{text:" 74",value:"74",parentVal:"cm"},{text:" 75",value:"75",parentVal:"cm"},{text:" 76",value:"76",parentVal:"cm"},{text:" 77",value:"77",parentVal:"cm"},{text:" 78",value:"78",parentVal:"cm"},{text:" 79",value:"79",parentVal:"cm"},{text:" 80",value:"80",parentVal:"cm"},{text:" 81",value:"81",parentVal:"cm"},{text:" 82",value:"82",parentVal:"cm"},{text:" 83",value:"83",parentVal:"cm"},{text:" 84",value:"84",parentVal:"cm"},{text:" 85",value:"85",parentVal:"cm"},{text:" 86",value:"86",parentVal:"cm"},{text:" 87",value:"87",parentVal:"cm"},{text:" 88",value:"88",parentVal:"cm"},{text:" 89",value:"89",parentVal:"cm"},{text:" 90",value:"90",parentVal:"cm"},{text:" 91",value:"91",parentVal:"cm"},{text:" 92",value:"92",parentVal:"cm"},{text:" 93",value:"93",parentVal:"cm"},{text:" 94",value:"94",parentVal:"cm"},{text:" 95",value:"95",parentVal:"cm"},{text:" 96",value:"96",parentVal:"cm"},{text:" 97",value:"97",parentVal:"cm"},{text:" 98",value:"98",parentVal:"cm"},{text:" 99",value:"99",parentVal:"cm"},{text:" 100",value:"100",parentVal:"cm"},{text:" 101",value:"101",parentVal:"cm"},{text:" 102",value:"102",parentVal:"cm"},{text:" 103",value:"103",parentVal:"cm"},{text:" 104",value:"104",parentVal:"cm"},{text:" 105",value:"105",parentVal:"cm"},{text:" 106",value:"106",parentVal:"cm"},{text:" 107",value:"107",parentVal:"cm"},{text:" 108",value:"108",parentVal:"cm"},{text:" 109",value:"109",parentVal:"cm"},{text:" 110",value:"110",parentVal:"cm"},{text:" 111",value:"111",parentVal:"cm"},{text:" 112",value:"112",parentVal:"cm"},{text:" 113",value:"113",parentVal:"cm"},{text:" 114",value:"114",parentVal:"cm"},{text:" 115",value:"115",parentVal:"cm"},{text:" 116",value:"116",parentVal:"cm"},{text:" 117",value:"117",parentVal:"cm"},{text:" 118",value:"118",parentVal:"cm"},{text:" 119",value:"119",parentVal:"cm"},{text:" 120",value:"120",parentVal:"cm"},{text:" 121",value:"121",parentVal:"cm"},{text:" 122",value:"122",parentVal:"cm"},{text:" 123",value:"123",parentVal:"cm"},{text:" 124",value:"124",parentVal:"cm"},{text:" 125",value:"125",parentVal:"cm"},{text:" 126",value:"126",parentVal:"cm"},{text:" 127",value:"127",parentVal:"cm"},{text:" 128",value:"128",parentVal:"cm"},{text:" 129",value:"129",parentVal:"cm"},{text:" 130",value:"130",parentVal:"cm"},{text:" 131",value:"131",parentVal:"cm"},{text:" 132",value:"132",parentVal:"cm"},{text:" 133",value:"133",parentVal:"cm"},{text:" 134",value:"134",parentVal:"cm"},{text:" 135",value:"135",parentVal:"cm"},{text:" 136",value:"136",parentVal:"cm"},{text:" 137",value:"137",parentVal:"cm"},{text:" 138",value:"138",parentVal:"cm"},{text:" 139",value:"139",parentVal:"cm"},{text:" 140",value:"140",parentVal:"cm"},{text:" 141",value:"141",parentVal:"cm"},{text:" 142",value:"142",parentVal:"cm"},{text:" 143",value:"143",parentVal:"cm"},{text:" 144",value:"144",parentVal:"cm"},{text:" 145",value:"145",parentVal:"cm"},{text:" 146",value:"146",parentVal:"cm"},{text:" 147",value:"147",parentVal:"cm"},{text:" 148",value:"148",parentVal:"cm"},{text:" 149",value:"149",parentVal:"cm"},{text:" 150",value:"150",parentVal:"cm"},{text:" 151",value:"151",parentVal:"cm"},{text:" 152",value:"152",parentVal:"cm"},{text:" 153",value:"153",parentVal:"cm"},{text:" 154",value:"154",parentVal:"cm"},{text:" 155",value:"155",parentVal:"cm"},{text:" 156",value:"156",parentVal:"cm"},{text:" 157",value:"157",parentVal:"cm"},{text:" 158",value:"158",parentVal:"cm"},{text:" 159",value:"159",parentVal:"cm"},{text:" 160",value:"160",parentVal:"cm"},{text:" 161",value:"161",parentVal:"cm"},{text:" 162",value:"162",parentVal:"cm"},{text:" 163",value:"163",parentVal:"cm"},{text:" 164",value:"164",parentVal:"cm"},{text:" 165",value:"165",parentVal:"cm"},{text:" 166",value:"166",parentVal:"cm"},{text:" 167",value:"167",parentVal:"cm"},{text:" 168",value:"168",parentVal:"cm"},{text:" 169",value:"169",parentVal:"cm"},{text:" 170",value:"170",parentVal:"cm"},{text:" 171",value:"171",parentVal:"cm"},{text:" 172",value:"172",parentVal:"cm"},{text:" 173",value:"173",parentVal:"cm"},{text:" 174",value:"174",parentVal:"cm"},{text:" 175",value:"175",parentVal:"cm"},{text:" 176",value:"176",parentVal:"cm"},{text:" 177",value:"177",parentVal:"cm"},{text:" 178",value:"178",parentVal:"cm"},{text:" 179",value:"179",parentVal:"cm"},{text:" 180",value:"180",parentVal:"cm"},{text:" 181",value:"181",parentVal:"cm"},{text:" 182",value:"182",parentVal:"cm"},{text:" 183",value:"183",parentVal:"cm"},{text:" 184",value:"184",parentVal:"cm"},{text:" 185",value:"185",parentVal:"cm"},{text:" 186",value:"186",parentVal:"cm"},{text:" 187",value:"187",parentVal:"cm"},{text:" 188",value:"188",parentVal:"cm"},{text:" 189",value:"189",parentVal:"cm"},{text:" 190",value:"190",parentVal:"cm"},{text:" 191",value:"191",parentVal:"cm"},{text:" 192",value:"192",parentVal:"cm"},{text:" 193",value:"193",parentVal:"cm"},{text:" 194",value:"194",parentVal:"cm"},{text:" 195",value:"195",parentVal:"cm"},{text:" 196",value:"196",parentVal:"cm"},{text:" 197",value:"197",parentVal:"cm"},{text:" 198",value:"198",parentVal:"cm"},{text:" 199",value:"199",parentVal:"cm"},{text:" 200",value:"200",parentVal:"cm"},{text:" 201",value:"201",parentVal:"cm"},{text:" 202",value:"202",parentVal:"cm"},{text:" 203",value:"203",parentVal:"cm"},{text:" 204",value:"204",parentVal:"cm"},{text:" 205",value:"205",parentVal:"cm"},{text:" 206",value:"206",parentVal:"cm"},{text:" 207",value:"207",parentVal:"cm"},{text:" 208",value:"208",parentVal:"cm"},{text:" 209",value:"209",parentVal:"cm"},{text:" 210",value:"210",parentVal:"cm"},{text:" 211",value:"211",parentVal:"cm"},{text:" 212",value:"212",parentVal:"cm"},{text:" 213",value:"213",parentVal:"cm"},{text:" 214",value:"214",parentVal:"cm"},{text:" 215",value:"215",parentVal:"cm"},{text:" 216",value:"216",parentVal:"cm"},{text:" 217",value:"217",parentVal:"cm"},{text:" 218",value:"218",parentVal:"cm"},{text:" 219",value:"219",parentVal:"cm"},{text:" 220",value:"220",parentVal:"cm"},{text:" 221",value:"221",parentVal:"cm"},{text:" 222",value:"222",parentVal:"cm"},{text:" 223",value:"223",parentVal:"cm"},{text:" 224",value:"224",parentVal:"cm"},{text:" 225",value:"225",parentVal:"cm"},{text:" 226",value:"226",parentVal:"cm"},{text:" 227",value:"227",parentVal:"cm"},{text:" 228",value:"228",parentVal:"cm"},{text:" 229",value:"229",parentVal:"cm"},{text:" 230",value:"230",parentVal:"cm"},{text:" 231",value:"231",parentVal:"cm"},{text:" 232",value:"232",parentVal:"cm"},{text:" 233",value:"233",parentVal:"cm"},{text:" 234",value:"234",parentVal:"cm"},{text:" 235",value:"235",parentVal:"cm"},{text:" 236",value:"236",parentVal:"cm"},{text:" 237",value:"237",parentVal:"cm"},{text:" 238",value:"238",parentVal:"cm"},{text:" 239",value:"239",parentVal:"cm"},{text:" 240",value:"240",parentVal:"cm"},{text:" 241",value:"241",parentVal:"cm"},{text:" 242",value:"242",parentVal:"cm"},{text:" 243",value:"243",parentVal:"cm"}]},{name:"inches",parentCol:"Value",options:[{text:"0",value:"0",parentVal:"1"},{text:"1",value:"1",parentVal:"1"},{text:"2",value:"2",parentVal:"1"},{text:"3",value:"3",parentVal:"1"},{text:"4",value:"4",parentVal:"1"},{text:"5",value:"5",parentVal:"1"},{text:"6",value:"6",parentVal:"1"},{text:"7",value:"7",parentVal:"1"},{text:"8",value:"8",parentVal:"1"},{text:"9",value:"9",parentVal:"1"},{text:"10",value:"10",parentVal:"1"},{text:"11",value:"11",parentVal:"1"},{text:"12",value:"12",parentVal:"1"},{text:"0",value:"0",parentVal:"2"},{text:"1",value:"1",parentVal:"2"},{text:"2",value:"2",parentVal:"2"},{text:"3",value:"3",parentVal:"2"},{text:"4",value:"4",parentVal:"2"},{text:"5",value:"5",parentVal:"2"},{text:"6",value:"6",parentVal:"2"},{text:"7",value:"7",parentVal:"2"},{text:"8",value:"8",parentVal:"2"},{text:"9",value:"9",parentVal:"2"},{text:"10",value:"10",parentVal:"2"},{text:"11",value:"11",parentVal:"2"},{text:"12",value:"12",parentVal:"2"},{text:"0",value:"0",parentVal:"3"},{text:"1",value:"1",parentVal:"3"},{text:"2",value:"2",parentVal:"3"},{text:"3",value:"3",parentVal:"3"},{text:"4",value:"4",parentVal:"3"},{text:"5",value:"5",parentVal:"3"},{text:"6",value:"6",parentVal:"3"},{text:"7",value:"7",parentVal:"3"},{text:"8",value:"8",parentVal:"3"},{text:"9",value:"9",parentVal:"3"},{text:"10",value:"10",parentVal:"3"},{text:"11",value:"11",parentVal:"3"},{text:"12",value:"12",parentVal:"3"},{text:"0",value:"0",parentVal:"4"},{text:"1",value:"1",parentVal:"4"},{text:"2",value:"2",parentVal:"4"},{text:"3",value:"3",parentVal:"4"},{text:"4",value:"4",parentVal:"4"},{text:"5",value:"5",parentVal:"4"},{text:"6",value:"6",parentVal:"4"},{text:"7",value:"7",parentVal:"4"},{text:"8",value:"8",parentVal:"4"},{text:"9",value:"9",parentVal:"4"},{text:"10",value:"10",parentVal:"4"},{text:"11",value:"11",parentVal:"4"},{text:"12",value:"12",parentVal:"4"},{text:"0",value:"0",parentVal:"5"},{text:"1",value:"1",parentVal:"5"},{text:"2",value:"2",parentVal:"5"},{text:"3",value:"3",parentVal:"5"},{text:"4",value:"4",parentVal:"5"},{text:"5",value:"5",parentVal:"5"},{text:"6",value:"6",parentVal:"5"},{text:"7",value:"7",parentVal:"5"},{text:"8",value:"8",parentVal:"5"},{text:"9",value:"9",parentVal:"5"},{text:"10",value:"10",parentVal:"5"},{text:"11",value:"11",parentVal:"5"},{text:"12",value:"12",parentVal:"5"},{text:"0",value:"0",parentVal:"6"},{text:"1",value:"1",parentVal:"6"},{text:"2",value:"2",parentVal:"6"},{text:"3",value:"3",parentVal:"6"},{text:"4",value:"4",parentVal:"6"},{text:"5",value:"5",parentVal:"6"},{text:"6",value:"6",parentVal:"6"},{text:"7",value:"7",parentVal:"6"},{text:"8",value:"8",parentVal:"6"},{text:"9",value:"9",parentVal:"6"},{text:"10",value:"10",parentVal:"6"},{text:"11",value:"11",parentVal:"6"},{text:"12",value:"12",parentVal:"6"},{text:"0",value:"0",parentVal:"7"},{text:"1",value:"1",parentVal:"7"},{text:"2",value:"2",parentVal:"7"},{text:"3",value:"3",parentVal:"7"},{text:"4",value:"4",parentVal:"7"},{text:"5",value:"5",parentVal:"7"},{text:"6",value:"6",parentVal:"7"},{text:"7",value:"7",parentVal:"7"},{text:"8",value:"8",parentVal:"7"},{text:"9",value:"9",parentVal:"7"},{text:"10",value:"10",parentVal:"7"},{text:"11",value:"11",parentVal:"7"},{text:"12",value:"12",parentVal:"7"}]}]}return l.prototype.createForm=function(){this.appForm=this.formBuilder.group({Gender:"",BirthDate:"",Height:""})},l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad DashboardPage")},l.prototype.LoadUserInfo=function(){var l=this;this.rewardpoints=parseInt(localStorage.getItem("RewardPoint")),this.imageFileName=localStorage.getItem("ProfileImage");var n={DeviceId:localStorage.getItem("deviceid"),SecretToken:localStorage.getItem("SecretToken")};this.userService.getUserData(n).subscribe(function(n){localStorage.setItem("RewardPoint",n.RewardPoint),localStorage.setItem("bio_age",n.bio_age),localStorage.setItem("mhrs_score",n.mhrs_score),l.rewardpoints=parseInt(localStorage.getItem("RewardPoint")),l.bio_age=localStorage.getItem("bio_age"),l.mhrs_score=localStorage.getItem("mhrs_score");var e={};e.FirstName=localStorage.getItem("FirstName"),e.LastName=localStorage.getItem("LastName"),e.ProfileImage=localStorage.getItem("ProfileImage"),e.Gender=localStorage.getItem("Gender"),e.Height=localStorage.getItem("Height"),e.BirthDate=localStorage.getItem("BirthDate"),e.RewardPoint=localStorage.getItem("RewardPoint"),e.bio_age=localStorage.getItem("bio_age"),e.mhrs_score=localStorage.getItem("mhrs_score"),console.log("Event published : "+e),l.events.publish("user:created",e)}),this.loader.dismiss()},l.prototype.showGenderPicker=function(){return r(this,void 0,void 0,function(){var l,n,e=this;return i(this,function(t){switch(t.label){case 0:return l={buttons:[{text:"Cancel",role:"cancel"},{text:"Done"}],columns:[{name:"Gender",options:[{text:"Male",value:"Male"},{text:"Female",value:"Female"}]}]},[4,this.pickerCtl.create(l)];case 1:return(n=t.sent()).present(),n.onDidDismiss(function(l){return r(e,void 0,void 0,function(){var l;return i(this,function(e){switch(e.label){case 0:return[4,n.getColumn("Gender")];case 1:return l=e.sent(),this.account.Gender=l.options[l.selectedIndex].value,[2]}})})}),[2]}})})},l.prototype.editprofilepic=function(){var l=this;console.log("show image upload");this.alertCtl.create({title:"Please select option",cssClass:"action-sheets-basic-page",buttons:[{text:"Take photo",handler:function(){l.captureImage(!1)}},{text:"Choose photo from Gallery",handler:function(){l.captureImage(!0)}}]}).present()},l.prototype.SetHeight_inInches=function(){var l=this.UIHeight.split("-");if(-1!==l[0].indexOf("cm")){var n=Math.round(1*parseInt(l[1])/2.54);console.log(n,"CM - INCH"),this.account.Height=n+""}else if(-1!==l[0].indexOf("feet")){n=12*parseInt(l[1])+parseInt(l[2]);console.log(n,"FEET - INCH"),this.account.Height=n+""}},l.prototype.captureImage=function(l){var n=this,e=a({quality:25,targetWidth:300,targetHeight:300,destinationType:this.camera.DestinationType.DATA_URL,encodingType:this.camera.EncodingType.JPEG},l?{sourceType:this.camera.PictureSourceType.SAVEDPHOTOALBUM}:{saveToPhotoAlbum:!0});this.camera.getPicture(e).then(function(l){n.imageDATA=l,n.imageFileName=n.imageDATA,n.imageFileName="data:image/jpeg;base64,"+l},function(l){console.log(l)})},l.prototype.uploadFile=function(){var l=this,n=this.loadingCtrl.create({content:"Uploading..."});n.present(),this.SetHeight_inInches();var e=new FormData,t={DeviceId:localStorage.getItem("deviceid"),SecretToken:localStorage.getItem("SecretToken"),FirstName:this.account.FirstName,LastName:this.account.LastName,BirthDate:this.account.BirthDate,Height:this.account.Height,Gender:this.account.Gender},u=JSON.stringify(t);if(e.append("model",u),void 0!==this.imageDATA){var o=this.dataURItoBlob(this.imageDATA);e.append("ProfileImage",o,"userimg.jpeg")}this.DisplayHeight=!1,this.DisplayBirthDate=!1,this.DisplayGender=!1,this.DisplayFirstName=!1,this.DisplayLastName=!1,this.DisplayUserName=!1,this.PostFile(this.commandUrl,e,function(e){"Success"==e.SystemStatus&&l.SetUserInfo(e),l.presentAlert(e.SystemMessage),n.dismiss()},function(e){n.dismiss(),l.presentAlert("Server Message - Update User Profile: "+e.error.SystemMessage)})},l.prototype.presentAlert=function(l){return r(this,void 0,void 0,function(){var n;return i(this,function(e){switch(e.label){case 0:return[4,this.alertCtl.create({message:l,cssClass:"action-sheets-basic-page",buttons:["OK"]})];case 1:return n=e.sent(),[4,n.present()];case 2:return e.sent(),[2]}})})},l.prototype.SetUserInfo=function(l){localStorage.setItem("FirstName",l.FirstName),localStorage.setItem("LastName",l.LastName),localStorage.setItem("ProfileImage",l.ProfileImage),localStorage.setItem("Gender",l.Gender),localStorage.setItem("Height",l.Height),localStorage.setItem("BirthDate",l.BirthDate),l.RewardPoint=localStorage.getItem("RewardPoint"),l.bio_age=localStorage.getItem("bio_age"),l.mhrs_score=localStorage.getItem("mhrs_score"),this.events.publish("user:created",l)},l.prototype.EditSection=function(l){switch(l){case"FirstName":this.DisplayFirstName=!0;break;case"LastName":this.DisplayLastName=!0;break;case"UserName":this.DisplayUserName=!0;break;case"Height":this.DisplayHeight=!0;break;case"BirthDate":this.DisplayBirthDate=!0;break;case"Gender":this.DisplayGender=!0}},l.prototype.dataURItoBlob=function(l){for(var n=window.atob(l),e=new ArrayBuffer(n.length),t=new Uint8Array(e),u=0;u<n.length;u++)t[u]=n.charCodeAt(u);return new Blob([t],{type:"image/jpeg"})},l.prototype.PostFile=function(l,n,e,u){t.ajax({type:"POST",url:l,data:n,processData:!1,contentType:!1,success:function(l){void 0!=e&&e(l)},error:function(l,n,e){void 0==u?console.log(e+" "+n):u(e,n)}})},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){function l(l,n){this.navCtrl=l,this.navParams=n,this.account={FirstName:"",LastName:""},this.account.FirstName=localStorage.getItem("FirstName"),this.account.LastName=localStorage.getItem("LastName")}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad MyTrackerPage")},l}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return t});e(1),e(61),e(10);var t=function(){return function(){}}()},function(l,n,e){"use strict";e.d(n,"a",function(){return u});e(1),e(61),e(10);var t=e(332),u=(e.n(t),function(){return function(){}}())},,,,,,,,,,,,,,,,,,,,,,function(l,n){function e(l){return Promise.resolve().then(function(){throw new Error("Cannot find module '"+l+"'.")})}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=271},,,,,function(l,n,e){function t(l){var n=u[l];return n?e.e(n[1]).then(function(){return e(n[0])}):Promise.reject(new Error("Cannot find module '"+l+"'."))}var u={"../pages/dashboard/dashboard.module.ngfactory":[505,18],"../pages/forgetpassword/forgetpassword.module.ngfactory":[506,17],"../pages/hra-body/hra-body.module.ngfactory":[507,16],"../pages/intro-video/intro-video.module.ngfactory":[508,15],"../pages/intro/intro.module.ngfactory":[509,14],"../pages/login/login.module.ngfactory":[510,13],"../pages/menu/menu.module.ngfactory":[511,12],"../pages/my-hra/my-hra.module.ngfactory":[512,11],"../pages/my-profile/profile.module.ngfactory":[513,10],"../pages/my-trackers/mytracker.module.ngfactory":[514,9],"../pages/my-wellness-wallet/hra-qa/hra-qa.module.ngfactory":[515,8],"../pages/my-wellness-wallet/hra-result/hra-result.module.ngfactory":[516,7],"../pages/my-wellness-wallet/my-wellness-wallet.module.ngfactory":[517,6],"../pages/my-wellness-wallet/mywellnessplan/mywellnessplan.module.ngfactory":[518,5],"../pages/my-wellness-wallet/riskdetail/riskdetail.module.ngfactory":[519,4],"../pages/notification/notification.module.ngfactory":[520,3],"../pages/signup/signup.module.ngfactory":[523,2],"../pages/templates/template.module.ngfactory":[521,1],"../pages/welcome/welcome.module.ngfactory":[522,0]};t.keys=function(){return Object.keys(u)},t.id=276,l.exports=t},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=277},,,,function(l,n){function e(l){return Promise.resolve().then(function(){throw new Error("Cannot find module '"+l+"'.")})}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=281},,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=285},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=286},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=287},,,,,,,,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=302},,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=309},,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=311},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=312},,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=315},,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=321},,,,,,,,,,,,,,,,,,,,,,,,,function(l,n,e){"use strict";function t(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,37,"ion-header",[],null,null,null,null,null)),u["ɵdid"](1,16384,null,0,o.Header,[a.Config,u.ElementRef,u.Renderer,[2,r.ViewController]],null,null),(l()(),u["ɵted"](-1,null,["\n\n  "])),(l()(),u["ɵeld"](3,0,null,null,33,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,i.b,i.a)),u["ɵdid"](4,49152,null,0,s.Navbar,[d.App,[2,r.ViewController],[2,c.NavController],a.Config,u.ElementRef,u.Renderer],{color:[0,"color"]},null),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](6,0,null,0,8,"button",[["icon-only",""],["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==u["ɵnov"](l,8).toggle()&&t}return t},p.b,p.a)),u["ɵdid"](7,1097728,[[1,4]],0,m.Button,[[8,""],a.Config,u.ElementRef,u.Renderer],null,null),u["ɵdid"](8,1064960,null,0,f.MenuToggle,[g.MenuController,[2,r.ViewController],[2,m.Button],[2,s.Navbar]],{menuToggle:[0,"menuToggle"]},null),u["ɵdid"](9,16384,null,1,h.ToolbarItem,[a.Config,u.ElementRef,u.Renderer,[2,v.Toolbar],[2,s.Navbar]],null,null),u["ɵqud"](603979776,1,{_buttons:1}),(l()(),u["ɵted"](-1,0,["\n      "])),(l()(),u["ɵeld"](12,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),u["ɵdid"](13,147456,null,0,b.Icon,[a.Config,u.ElementRef,u.Renderer],{name:[0,"name"]},null),(l()(),u["ɵted"](-1,0,["\n    "])),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](16,0,null,3,2,"ion-title",[],null,null,null,C.b,C.a)),u["ɵdid"](17,49152,null,0,y.ToolbarTitle,[a.Config,u.ElementRef,u.Renderer,[2,v.Toolbar],[2,s.Navbar]],null,null),(l()(),u["ɵted"](-1,0,["Dashboard"])),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](20,0,null,2,15,"ion-buttons",[["end",""]],null,null,null,null,null)),u["ɵdid"](21,16384,null,1,h.ToolbarItem,[a.Config,u.ElementRef,u.Renderer,[2,v.Toolbar],[2,s.Navbar]],null,null),u["ɵqud"](603979776,2,{_buttons:1}),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](24,0,null,null,10,"button",[["icon-only",""],["id","notification-button"],["ion-button",""]],null,null,null,p.b,p.a)),u["ɵdid"](25,1097728,[[2,4]],0,m.Button,[[8,""],a.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,0,["\n         "])),(l()(),u["ɵeld"](27,0,null,0,6,"ion-icon",[["name","notifications"],["role","img"]],[[2,"hide",null]],null,null,null,null)),u["ɵdid"](28,147456,null,0,b.Icon,[a.Config,u.ElementRef,u.Renderer],{name:[0,"name"]},null),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](30,0,null,null,2,"ion-badge",[["color","danger"],["id","notifications-badge"]],null,null,null,null,null)),u["ɵdid"](31,16384,null,0,R.Badge,[a.Config,u.ElementRef,u.Renderer],{color:[0,"color"]},null),(l()(),u["ɵted"](-1,null,["7"])),(l()(),u["ɵted"](-1,null,[" \n        "])),(l()(),u["ɵted"](-1,0,["\n      "])),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵted"](-1,3,["\n  "])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](39,0,null,null,21,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,w.b,w.a)),u["ɵdid"](40,4374528,null,0,x.Content,[a.Config,V.Platform,I.DomController,u.ElementRef,u.Renderer,d.App,k.Keyboard,u.NgZone,[2,r.ViewController],[2,c.NavController]],null,null),(l()(),u["ɵted"](-1,1,["\n\n  "])),(l()(),u["ɵeld"](42,0,null,1,17,"ion-card",[],null,null,null,null,null)),u["ɵdid"](43,16384,null,0,N.Card,[a.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵeld"](45,0,null,null,13,"ion-card-content",[],null,null,null,null,null)),u["ɵdid"](46,16384,null,0,S.CardContent,[a.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](48,0,null,null,9,"ion-item",[["class","item item-block"]],null,null,null,E.b,E.a)),u["ɵdid"](49,1097728,null,3,_.Item,[P.Form,a.Config,u.ElementRef,u.Renderer,[2,T.ItemReorder]],null,null),u["ɵqud"](335544320,3,{contentLabel:0}),u["ɵqud"](603979776,4,{_buttons:1}),u["ɵqud"](603979776,5,{_icons:1}),u["ɵdid"](53,16384,null,0,M.ItemContent,[],null,null),(l()(),u["ɵted"](-1,2,["\n       "])),(l()(),u["ɵeld"](55,0,null,2,1,"a",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.gotoUrl("MyWellnessPlanPage")&&t}return t},null,null)),(l()(),u["ɵted"](-1,null,[" My Health Risk"])),(l()(),u["ɵted"](-1,2,["\n      "])),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵted"](-1,1,["\n"])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](62,0,null,null,2,"ion-footer",[],null,null,null,null,null)),u["ɵdid"](63,16384,null,0,D.Footer,[a.Config,u.ElementRef,u.Renderer,[2,r.ViewController]],null,null),(l()(),u["ɵted"](-1,null,["\n\n"]))],function(l,n){l(n,4,0,"primary");l(n,8,0,"");l(n,13,0,"menu");l(n,28,0,"notifications");l(n,31,0,"danger")},function(l,n){l(n,3,0,u["ɵnov"](n,4)._hidden,u["ɵnov"](n,4)._sbPadding);l(n,6,0,u["ɵnov"](n,8).isHidden);l(n,12,0,u["ɵnov"](n,13)._hidden);l(n,27,0,u["ɵnov"](n,28)._hidden);l(n,39,0,u["ɵnov"](n,40).statusbarPadding,u["ɵnov"](n,40)._hasRefresher)})}e.d(n,"a",function(){return H});var u=e(0),o=e(31),a=e(2),r=e(5),i=e(36),s=e(26),d=e(6),c=e(20),p=e(19),m=e(13),f=e(84),g=e(40),h=e(77),v=e(27),b=e(49),C=e(37),y=e(32),R=e(157),w=e(28),x=e(21),V=e(3),I=e(7),k=e(24),N=e(50),S=e(66),E=e(47),_=e(17),P=e(14),T=e(33),M=e(41),D=e(51),A=e(228),F=e(16),L=u["ɵcrt"]({encapsulation:2,styles:[],data:{}}),H=u["ɵccf"]("page-dashboard",A.a,function(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,1,"page-dashboard",[],null,null,null,t,L)),u["ɵdid"](1,49152,null,0,A.a,[c.NavController,F.NavParams],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,49,"ion-content",[["scroll","false"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,o.b,o.a)),u["ɵdid"](1,4374528,null,0,a.Content,[r.Config,i.Platform,s.DomController,u.ElementRef,u.Renderer,d.App,c.Keyboard,u.NgZone,[2,p.ViewController],[2,m.NavController]],null,null),(l()(),u["ɵted"](-1,1,["\n  "])),(l()(),u["ɵeld"](3,0,null,1,4,"div",[["class","splash-bg"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵeld"](5,0,null,null,1,"h1",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Forget password"])),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵted"](-1,1,["\n "])),(l()(),u["ɵeld"](9,0,null,1,28,"ion-card",[["class","login-card"]],null,null,null,null,null)),u["ɵdid"](10,16384,null,0,f.Card,[r.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵeld"](12,0,null,null,24,"ion-card-content",[],null,null,null,null,null)),u["ɵdid"](13,16384,null,0,g.CardContent,[r.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](15,0,null,null,20,"ion-list",[],null,null,null,null,null)),u["ɵdid"](16,16384,null,0,h.List,[r.Config,u.ElementRef,u.Renderer,i.Platform,v.GestureController,s.DomController],null,null),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](18,0,null,null,16,"ion-item",[["class","custom-border item item-block"]],null,null,null,b.b,b.a)),u["ɵdid"](19,1097728,null,3,C.Item,[y.Form,r.Config,u.ElementRef,u.Renderer,[2,R.ItemReorder]],null,null),u["ɵqud"](335544320,1,{contentLabel:0}),u["ɵqud"](603979776,2,{_buttons:1}),u["ɵqud"](603979776,3,{_icons:1}),u["ɵdid"](23,16384,null,0,w.ItemContent,[],null,null),(l()(),u["ɵted"](-1,2,["\n              "])),(l()(),u["ɵeld"](25,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),u["ɵdid"](26,16384,[[1,4]],0,x.Label,[r.Config,u.ElementRef,u.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),u["ɵted"](-1,null,["Email"])),(l()(),u["ɵted"](-1,2,["\n            "])),(l()(),u["ɵeld"](29,0,null,3,4,"ion-input",[["name","Email"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,e){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.account.Email=e)&&t}return t},V.b,V.a)),u["ɵdid"](30,671744,null,0,I.NgModel,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),u["ɵprd"](2048,null,I.NgControl,null,[I.NgModel]),u["ɵdid"](32,16384,null,0,I.NgControlStatus,[I.NgControl],null,null),u["ɵdid"](33,5423104,null,0,k.TextInput,[r.Config,i.Platform,y.Form,d.App,u.ElementRef,u.Renderer,[2,a.Content],[2,C.Item],[2,I.NgControl],s.DomController],{type:[0,"type"]},null),(l()(),u["ɵted"](-1,2,["\n          "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵted"](-1,1,["\n  "])),(l()(),u["ɵeld"](39,0,null,1,9,"div",[["class","button-position"],["padding",""]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](41,0,null,null,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.doSubmit()&&t}return t},N.b,N.a)),u["ɵdid"](42,1097728,null,0,S.Button,[[8,""],r.Config,u.ElementRef,u.Renderer],{color:[0,"color"]},null),(l()(),u["ɵted"](-1,0,["Submit "])),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](45,0,null,null,2,"button",[["class","forgot-btn"],["clear",""],["full",""],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.loginup()&&t}return t},N.b,N.a)),u["ɵdid"](46,1097728,null,0,S.Button,[[8,""],r.Config,u.ElementRef,u.Renderer],{clear:[0,"clear"],full:[1,"full"]},null),(l()(),u["ɵted"](-1,0,["Back to login "])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵted"](-1,1,["\n"])),(l()(),u["ɵted"](-1,null,["\n "]))],function(l,n){l(n,30,0,"Email",n.component.account.Email);l(n,33,0,"text");l(n,42,0,"primary");l(n,46,0,"","")},function(l,n){l(n,0,0,u["ɵnov"](n,1).statusbarPadding,u["ɵnov"](n,1)._hasRefresher);l(n,29,0,u["ɵnov"](n,32).ngClassUntouched,u["ɵnov"](n,32).ngClassTouched,u["ɵnov"](n,32).ngClassPristine,u["ɵnov"](n,32).ngClassDirty,u["ɵnov"](n,32).ngClassValid,u["ɵnov"](n,32).ngClassInvalid,u["ɵnov"](n,32).ngClassPending)})}e.d(n,"a",function(){return F});var u=e(0),o=e(28),a=e(21),r=e(2),i=e(3),s=e(7),d=e(6),c=e(24),p=e(5),m=e(20),f=e(50),g=e(66),h=e(56),v=e(11),b=e(47),C=e(17),y=e(14),R=e(33),w=e(41),x=e(65),V=e(224),I=e(9),k=e(119),N=e(19),S=e(13),E=e(173),_=e(46),P=e(86),T=e(55),M=e(38),D=e(44),A=u["ɵcrt"]({encapsulation:2,styles:[],data:{}}),F=u["ɵccf"]("page-forgetpassword",E.a,function(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,1,"page-forgetpassword",[],null,null,null,t,A)),u["ɵdid"](1,49152,null,0,E.a,[m.NavController,_.a,P.ToastController,I.FormBuilder,T.a,M.AlertController,D.LoadingController],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return a["ɵvid"](0,[(l()(),a["ɵeld"](0,0,null,null,2,"ion-option",[],null,null,null,null,null)),a["ɵdid"](1,16384,[[1,4]],0,r.Option,[a.ElementRef],{value:[0,"value"]},null),(l()(),a["ɵted"](2,null,["",""]))],function(l,n){l(n,1,0,a["ɵinlineInterpolate"](1,"",n.context.$implicit.description,""))},function(l,n){l(n,2,0,n.context.$implicit.description)})}function u(l){return a["ɵvid"](0,[(l()(),a["ɵeld"](0,0,null,null,2,"ion-option",[],null,null,null,null,null)),a["ɵdid"](1,16384,[[2,4]],0,r.Option,[a.ElementRef],{value:[0,"value"]},null),(l()(),a["ɵted"](2,null,["",""]))],function(l,n){l(n,1,0,a["ɵinlineInterpolate"](1,"",n.context.$implicit.description,""))},function(l,n){l(n,2,0,n.context.$implicit.description)})}function o(l){return a["ɵvid"](0,[(l()(),a["ɵted"](-1,null,["\n\n\n"])),(l()(),a["ɵeld"](1,0,null,null,67,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,i.b,i.a)),a["ɵdid"](2,4374528,null,0,s.Content,[d.Config,c.Platform,p.DomController,a.ElementRef,a.Renderer,m.App,f.Keyboard,a.NgZone,[2,g.ViewController],[2,h.NavController]],null,null),(l()(),a["ɵted"](-1,1,["\n    "])),(l()(),a["ɵeld"](4,0,null,1,21,"div",[["class","splashbg"]],null,null,null,null,null)),(l()(),a["ɵted"](-1,null,["\n        "])),(l()(),a["ɵeld"](6,0,null,null,12,"ion-header",[],null,null,null,null,null)),a["ɵdid"](7,16384,null,0,v.Header,[d.Config,a.ElementRef,a.Renderer,[2,g.ViewController]],null,null),(l()(),a["ɵted"](-1,null,["\n            "])),(l()(),a["ɵeld"](9,0,null,null,8,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,b.b,b.a)),a["ɵdid"](10,49152,null,0,C.Navbar,[m.App,[2,g.ViewController],[2,h.NavController],d.Config,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,3,["\n              "])),(l()(),a["ɵeld"](12,0,null,3,4,"ion-title",[],null,null,null,y.b,y.a)),a["ɵdid"](13,49152,null,0,R.ToolbarTitle,[d.Config,a.ElementRef,a.Renderer,[2,w.Toolbar],[2,C.Navbar]],null,null),(l()(),a["ɵted"](-1,0,["Health Risk Assessment "])),(l()(),a["ɵeld"](15,0,null,0,0,"br",[],null,null,null,null,null)),(l()(),a["ɵted"](-1,0,["\n                  (HRA) "])),(l()(),a["ɵted"](-1,3,["\n            "])),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵeld"](20,0,null,null,4,"div",[["class","subtitle"]],null,null,null,null,null)),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵeld"](22,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),a["ɵted"](-1,null,["You can pause and return to complete the HRA, however, you must complete the entire HRA before it can be processed "])),(l()(),a["ɵted"](-1,null,["\n        "])),(l()(),a["ɵted"](-1,null,["\n      "])),(l()(),a["ɵted"](-1,1,["\n      "])),(l()(),a["ɵeld"](27,0,null,1,40,"ion-card",[],null,null,null,null,null)),a["ɵdid"](28,16384,null,0,x.Card,[d.Config,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,null,["\n\n          "])),(l()(),a["ɵeld"](30,0,null,null,2,"ion-card-header",[],null,null,null,null,null)),a["ɵdid"](31,16384,null,0,V.CardHeader,[d.Config,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,null,["\n            Body Metrics \n          "])),(l()(),a["ɵted"](-1,null,["\n        \n          "])),(l()(),a["ɵeld"](34,0,null,null,32,"ion-card-content",[],null,null,null,null,null)),a["ɵdid"](35,16384,null,0,I.CardContent,[d.Config,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,null,["\n            "])),(l()(),a["ɵeld"](37,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),a["ɵted"](-1,null,["1. Please select your weight in pounds from the drop-down menu."])),(l()(),a["ɵted"](-1,null,["\n\n            "])),(l()(),a["ɵeld"](40,0,null,null,10,"ion-select",[],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==a["ɵnov"](l,41)._click(e)&&t}if("keyup.space"===n){t=!1!==a["ɵnov"](l,41)._keyup()&&t}if("ngModelChange"===n){t=!1!==(u.account.pounds=e)&&t}return t},k.b,k.a)),a["ɵdid"](41,1228800,null,1,N.Select,[m.App,S.Form,d.Config,a.ElementRef,a.Renderer,[2,E.Item],_.DeepLinker],null,null),a["ɵqud"](603979776,1,{options:1}),a["ɵprd"](1024,null,P.NG_VALUE_ACCESSOR,function(l){return[l]},[N.Select]),a["ɵdid"](44,671744,null,0,P.NgModel,[[8,null],[8,null],[8,null],[2,P.NG_VALUE_ACCESSOR]],{model:[0,"model"]},{update:"ngModelChange"}),a["ɵprd"](2048,null,P.NgControl,null,[P.NgModel]),a["ɵdid"](46,16384,null,0,P.NgControlStatus,[P.NgControl],null,null),(l()(),a["ɵted"](-1,null,["\n              "])),(l()(),a["ɵand"](16777216,null,null,1,null,t)),a["ɵdid"](49,802816,null,0,T.NgForOf,[a.ViewContainerRef,a.TemplateRef,a.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),a["ɵted"](-1,null,["\n            "])),(l()(),a["ɵted"](-1,null,["\n           \n            "])),(l()(),a["ɵeld"](52,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),a["ɵted"](-1,null,["2. Please select your waist circumference in inches from the drop-down menu. "])),(l()(),a["ɵted"](-1,null,["\n            "])),(l()(),a["ɵeld"](55,0,null,null,10,"ion-select",[],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==a["ɵnov"](l,56)._click(e)&&t}if("keyup.space"===n){t=!1!==a["ɵnov"](l,56)._keyup()&&t}if("ngModelChange"===n){t=!1!==(u.account.inches=e)&&t}return t},k.b,k.a)),a["ɵdid"](56,1228800,null,1,N.Select,[m.App,S.Form,d.Config,a.ElementRef,a.Renderer,[2,E.Item],_.DeepLinker],null,null),a["ɵqud"](603979776,2,{options:1}),a["ɵprd"](1024,null,P.NG_VALUE_ACCESSOR,function(l){return[l]},[N.Select]),a["ɵdid"](59,671744,null,0,P.NgModel,[[8,null],[8,null],[8,null],[2,P.NG_VALUE_ACCESSOR]],{model:[0,"model"]},{update:"ngModelChange"}),a["ɵprd"](2048,null,P.NgControl,null,[P.NgModel]),a["ɵdid"](61,16384,null,0,P.NgControlStatus,[P.NgControl],null,null),(l()(),a["ɵted"](-1,null,["\n              "])),(l()(),a["ɵand"](16777216,null,null,1,null,u)),a["ɵdid"](64,802816,null,0,T.NgForOf,[a.ViewContainerRef,a.TemplateRef,a.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),a["ɵted"](-1,null,["\n            "])),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵted"](-1,null,["\n        \n        "])),(l()(),a["ɵted"](-1,1,["\n\n"])),(l()(),a["ɵted"](-1,null,["\n\n"])),(l()(),a["ɵeld"](70,0,null,null,10,"ion-footer",[],null,null,null,null,null)),a["ɵdid"](71,16384,null,0,M.Footer,[d.Config,a.ElementRef,a.Renderer,[2,g.ViewController]],null,null),(l()(),a["ɵted"](-1,null,["\n  "])),(l()(),a["ɵeld"](73,0,null,null,6,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,D.b,D.a)),a["ɵdid"](74,49152,null,0,w.Toolbar,[d.Config,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,3,["\n    "])),(l()(),a["ɵeld"](76,0,null,3,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.submit()&&t}return t},A.b,A.a)),a["ɵdid"](77,1097728,null,0,F.Button,[[8,""],d.Config,a.ElementRef,a.Renderer],{color:[0,"color"]},null),(l()(),a["ɵted"](-1,0,["Next"])),(l()(),a["ɵted"](-1,3,["\n  "])),(l()(),a["ɵted"](-1,null,["\n"])),(l()(),a["ɵted"](-1,null,["\n"]))],function(l,n){var e=n.component;l(n,44,0,e.account.pounds);l(n,49,0,e.weightData);l(n,59,0,e.account.inches);l(n,64,0,e.waistData);l(n,77,0,"primary")},function(l,n){l(n,1,0,a["ɵnov"](n,2).statusbarPadding,a["ɵnov"](n,2)._hasRefresher);l(n,9,0,a["ɵnov"](n,10)._hidden,a["ɵnov"](n,10)._sbPadding);l(n,40,0,a["ɵnov"](n,41)._disabled,a["ɵnov"](n,46).ngClassUntouched,a["ɵnov"](n,46).ngClassTouched,a["ɵnov"](n,46).ngClassPristine,a["ɵnov"](n,46).ngClassDirty,a["ɵnov"](n,46).ngClassValid,a["ɵnov"](n,46).ngClassInvalid,a["ɵnov"](n,46).ngClassPending);l(n,55,0,a["ɵnov"](n,56)._disabled,a["ɵnov"](n,61).ngClassUntouched,a["ɵnov"](n,61).ngClassTouched,a["ɵnov"](n,61).ngClassPristine,a["ɵnov"](n,61).ngClassDirty,a["ɵnov"](n,61).ngClassValid,a["ɵnov"](n,61).ngClassInvalid,a["ɵnov"](n,61).ngClassPending);l(n,73,0,a["ɵnov"](n,74)._sbPadding)})}e.d(n,"a",function(){return G});var a=e(0),r=e(162),i=e(28),s=e(21),d=e(2),c=e(3),p=e(7),m=e(6),f=e(24),g=e(5),h=e(20),v=e(31),b=e(36),C=e(26),y=e(37),R=e(32),w=e(27),x=e(50),V=e(160),I=e(66),k=e(331),N=e(163),S=e(14),E=e(17),_=e(30),P=e(9),T=e(12),M=e(51),D=e(101),A=e(19),F=e(13),L=e(231),H=e(16),U=e(38),W=e(46),O=a["ɵcrt"]({encapsulation:2,styles:[],data:{}}),G=a["ɵccf"]("page-hra-body",L.a,function(l){return a["ɵvid"](0,[(l()(),a["ɵeld"](0,0,null,null,1,"page-hra-body",[],null,null,null,o,O)),a["ɵdid"](1,49152,null,0,L.a,[h.NavController,H.NavParams,U.AlertController,W.a],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return u["ɵvid"](0,[u["ɵqud"](402653184,1,{mVideoPlayer:0}),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](2,0,null,null,10,"ion-header",[["class","custom-intro-header content-bg"]],null,null,null,null,null)),u["ɵdid"](3,16384,null,0,o.Header,[a.Config,u.ElementRef,u.Renderer,[2,r.ViewController]],null,null),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵeld"](5,0,null,null,6,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,i.b,i.a)),u["ɵdid"](6,49152,null,0,s.Navbar,[d.App,[2,r.ViewController],[2,c.NavController],a.Config,u.ElementRef,u.Renderer],{color:[0,"color"]},null),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](8,0,null,3,2,"ion-title",[],null,null,null,p.b,p.a)),u["ɵdid"](9,49152,null,0,m.ToolbarTitle,[a.Config,u.ElementRef,u.Renderer,[2,f.Toolbar],[2,s.Navbar]],null,null),(l()(),u["ɵted"](-1,0,["HRA Introduction"])),(l()(),u["ɵted"](-1,3,["\n  "])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](14,0,null,null,21,"ion-content",[["class","content-bg"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,g.b,g.a)),u["ɵdid"](15,4374528,null,0,h.Content,[a.Config,v.Platform,b.DomController,u.ElementRef,u.Renderer,d.App,C.Keyboard,u.NgZone,[2,r.ViewController],[2,c.NavController]],null,null),(l()(),u["ɵted"](-1,1,["\n  "])),(l()(),u["ɵeld"](17,0,null,1,17,"ion-list",[["class","list-video"]],null,null,null,null,null)),u["ɵdid"](18,16384,null,0,y.List,[a.Config,u.ElementRef,u.Renderer,v.Platform,R.GestureController,b.DomController],null,null),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵeld"](20,0,null,null,13,"ion-item",[["class","content-bg item item-block"]],null,null,null,w.b,w.a)),u["ɵdid"](21,1097728,null,3,x.Item,[V.Form,a.Config,u.ElementRef,u.Renderer,[2,I.ItemReorder]],null,null),u["ɵqud"](335544320,2,{contentLabel:0}),u["ɵqud"](603979776,3,{_buttons:1}),u["ɵqud"](603979776,4,{_icons:1}),u["ɵdid"](25,16384,null,0,k.ItemContent,[],null,null),(l()(),u["ɵted"](-1,2,["\n      "])),(l()(),u["ɵeld"](27,0,[[1,0],["videoPlayer",1]],2,5,"video",[["autoplay","autoplay"],["controls",""],["width","100%"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](29,0,null,null,0,"source",[["src","https://mediasvc611wkrxkhq32k.blob.core.windows.net/asset-cc27435d-1500-80c6-2ea5-f1e515046a95/Health%20Risk%20Assessment%20-%20No%20Title.mp4?sv=2012-02-12&sr=c&si=f57a5f8d-3c43-454b-9c2a-d1f1805e9111&sig=BozyWHb1N1TOlIdDsC9GQOc2tV4vKewhxqFmrbMtw18%3D&st=2015-06-18T11%3A15%3A28Z&se=2115-05-25T11%3A15%3A28Z"],["type","video/mp4"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](31,0,null,null,0,"source",[["src","mov_bbb.ogg"],["type","video/ogg"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        Your browser does not support HTML5 video.\n      "])),(l()(),u["ɵted"](-1,2,["\n    "])),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵted"](-1,1,["\n"])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](37,0,null,null,10,"ion-footer",[],null,null,null,null,null)),u["ɵdid"](38,16384,null,0,N.Footer,[a.Config,u.ElementRef,u.Renderer,[2,r.ViewController]],null,null),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵeld"](40,0,null,null,6,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,S.b,S.a)),u["ɵdid"](41,49152,null,0,f.Toolbar,[a.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](43,0,null,3,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.goToMyHra()&&t}return t},E.b,E.a)),u["ɵdid"](44,1097728,null,0,_.Button,[[8,""],a.Config,u.ElementRef,u.Renderer],{color:[0,"color"]},null),(l()(),u["ɵted"](-1,0,["Start"])),(l()(),u["ɵted"](-1,3,["\n  "])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵted"](-1,null,["\n  \n"]))],function(l,n){l(n,6,0,"primary");l(n,44,0,"primary")},function(l,n){l(n,5,0,u["ɵnov"](n,6)._hidden,u["ɵnov"](n,6)._sbPadding);l(n,14,0,u["ɵnov"](n,15).statusbarPadding,u["ɵnov"](n,15)._hasRefresher);l(n,40,0,u["ɵnov"](n,41)._sbPadding)})}e.d(n,"a",function(){return D});var u=e(0),o=e(31),a=e(2),r=e(5),i=e(36),s=e(26),d=e(6),c=e(20),p=e(37),m=e(32),f=e(27),g=e(28),h=e(21),v=e(3),b=e(7),C=e(24),y=e(56),R=e(11),w=e(47),x=e(17),V=e(14),I=e(33),k=e(41),N=e(51),S=e(101),E=e(19),_=e(13),P=e(132),T=e(16),M=u["ɵcrt"]({encapsulation:2,styles:[],data:{}}),D=u["ɵccf"]("page-intro-video",P.a,function(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,1,"page-intro-video",[],null,null,null,t,M)),u["ɵdid"](1,49152,null,0,P.a,[c.NavController,T.NavParams],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return u["ɵvid"](0,[(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](1,0,null,null,13,"ion-header",[["class","custom-intro-header content-bg"]],null,null,null,null,null)),u["ɵdid"](2,16384,null,0,o.Header,[a.Config,u.ElementRef,u.Renderer,[2,r.ViewController]],null,null),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵeld"](4,0,null,null,9,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,i.b,i.a)),u["ɵdid"](5,49152,null,0,s.Navbar,[d.App,[2,r.ViewController],[2,c.NavController],a.Config,u.ElementRef,u.Renderer],{color:[0,"color"]},null),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](7,0,null,3,2,"ion-title",[],null,null,null,p.b,p.a)),u["ɵdid"](8,49152,null,0,m.ToolbarTitle,[a.Config,u.ElementRef,u.Renderer,[2,f.Toolbar],[2,s.Navbar]],null,null),(l()(),u["ɵted"](9,0,["Welcome "," ",""])),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](11,0,null,3,1,"div",[["class","tag-line"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,[" A few things before you stared"])),(l()(),u["ɵted"](-1,3,["\n  "])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](16,0,null,null,236,"ion-content",[["class","content-bg"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,g.b,g.a)),u["ɵdid"](17,4374528,null,0,h.Content,[a.Config,v.Platform,b.DomController,u.ElementRef,u.Renderer,d.App,C.Keyboard,u.NgZone,[2,r.ViewController],[2,c.NavController]],null,null),(l()(),u["ɵted"](-1,1,["\n\n  "])),(l()(),u["ɵeld"](19,0,null,1,232,"ion-card",[["class","signup-card custom-border intro-desc"]],null,null,null,null,null)),u["ɵdid"](20,16384,null,0,y.Card,[a.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵeld"](22,0,null,null,228,"ion-card-content",[],null,null,null,null,null)),u["ɵdid"](23,16384,null,0,R.CardContent,[a.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](25,0,null,null,206,"div",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](27,0,null,null,4,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](29,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Terms and Conditions"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](33,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](35,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Meschino Wellness Account Privacy Statement"])),(l()(),u["ɵted"](-1,null,["\n        \n        "])),(l()(),u["ɵeld"](38,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Meschino Health & Wellness (thereafter referred to as “Meschino Wellness”) is committed to protecting your\n          privacy. This privacy statement applies to the personal information (which includes personal health\n          information) collected by the Meschino Wellness Platform.\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](41,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](43,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](45,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Introduction"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](48,0,null,null,4,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](50,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["The Meschino Wellness Platform is intended for educational purposes only. It is a tool that can help users\n            develop their own personal wellness plan, but does not replace the requirement to seek medical evaluation,\n            lifestyle advice and treatment from a medical professional."])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](54,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](56,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          The Meschino Wellness Platform provides targeted nutrition and lifestyle content by collecting and analyzing\n          personal health data, which you may wish to share with your medical doctor and other healthcare professionals\n          who help manage your health. It can collect, analyze and store many different types of information such as\n          medication use, immunization records, data originating from health and fitness devices (including pedometers,\n          blood glucose monitors, blood pressure monitors) and from other applications (such as chronic management\n          applications, fitness training applications, weight loss applications, blood pressure applications and more).\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](59,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](61,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Importantly, The Meschino Wellness Platform cannot detect or help manage food or drug allergies, food\n          sensitivities or intolerances. In these cases, and other cases involving health conditions of the intestinal\n          tract (i.e. active ulcer, inflammatory bowel disease, gastric by-pass surgery etc.) you must seek nutritional\n          guidance from your medical practitioner or designated registered dietician.\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](64,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](66,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](68,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Integration"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](71,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          You can utilize components of the Meschino Wellness Platform directly to view and manage your health\n          information, or you can use selected websites and devices that have been created by application providers and\n          device manufacturers to work with Meschino Wellness. Several mechanisms allow you to manage how your health\n          information can be accessed, used and shared.\n          Meschino Wellness provides you with the technology and services to assist you in collecting, storing and\n          analyzing your health related information online. It is a technology platform that allows access by multiple\n          applications and devices, in order to work with your health data to improve personal health literacy and\n          overall wellness.\n\n        "])),(l()(),u["ɵted"](-1,null,["\n\n        "])),(l()(),u["ɵeld"](74,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](76,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](78,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Collection of Personal Information"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](81,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness asks you to enter an identifier and password to sign in. The first time you sign in to\n          Meschino Wellness, Meschino Wellness asks you to create an account. To create an account, you must provide\n          personal information such as name, date of birth, e-mail address, postal code and country/region. Meschino\n          Wellness may request other optional information, but Meschino Wellness will clearly indicate that such\n          information is optional.\n        "])),(l()(),u["ɵted"](-1,null,["\n\n        "])),(l()(),u["ɵeld"](84,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](86,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](88,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["How Meschino Wellness uses your personal information"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](91,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness commits to use or disclose personal information collected through Meschino Wellness,\n          including personal health information, exclusively to provide Meschino Wellness services (which includes the\n          billing, support, maintenance and incident resolution services) and as described in this privacy statement,\n          unless expressly otherwise agreed to by you. Usage of the personal information (including personal health\n          information) for the provision of Meschino Wellness solutions includes that Meschino Wellness may use your\n          personal information:\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](94,0,null,null,7,"ul",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](96,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["to provide you with information about Meschino Wellness, including updates, and notifications\n          "])),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](99,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n            to send you Meschino Wellness e-mail communication, if any.\n          "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](103,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](105,0,null,null,7,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness occasionally hires other companies to provide services on its behalf, such as answering\n          customer questions about products and services. Meschino Wellness gives those companies only the personal\n          information they need to deliver the service. Meschino Wellness requires the companies to maintain the\n          confidentiality of the personal information and prohibits them from using such information for any other\n          purpose.\n          "])),(l()(),u["ɵeld"](107,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          In addition, Meschino Wellness may use and/or disclose your personal information if Meschino Wellness believes\n          such action is necessary to comply with applicable legislation or legal process served on Meschino Wellness.\n          "])),(l()(),u["ɵeld"](109,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Personal information collected on Meschino Wellness is stored and processed in on servers in Canada or the\n          United State.\n          "])),(l()(),u["ɵeld"](111,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Meschino Wellness has processes and employees (i.e. Head of Privacy and other resources) whose\n          responsibility is to ensure the protection of your privacy and to notify you in the event that Meschino\n          Wellness becomes aware of a breach affecting your personal information.\n\n        "])),(l()(),u["ɵted"](-1,null,["\n\n        "])),(l()(),u["ɵeld"](114,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](116,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](118,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["How Meschino Wellness uses aggregate information and statistics"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](121,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness may use aggregated information from Meschino Wellness to identify and compare the status of\n          specific common health issues as compared to other bench marks established in the specified industry or\n          organization. This data is represented as a percent of the entire organization only. This aggregated\n          information is not associated with any individual account and would not identify you. Meschino Wellness will\n          not use or disclose your individual account and record information from Meschino Wellness.\n        "])),(l()(),u["ɵted"](-1,null,["\n\n        "])),(l()(),u["ɵeld"](124,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](126,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](128,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Account access and controls"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](131,0,null,null,5,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          The decision to create an account with Meschino Wellness is yours. The required account information consists\n          of a small amount of information such as your name, e-mail address, region and Meschino Wellness credentials.\n          Meschino Wellness may request other optional information, but clearly indicates that such information is\n          optional. You can review and update your account information. You can modify, add or delete any optional\n          account information by signing into your Meschino Wellness account and editing your account profile.\n          "])),(l()(),u["ɵeld"](133,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["When you close your account (by signing into your Meschino Wellness account and editing your account\n          profile), Meschino Wellness deletes all Records for which you are the sole Custodian. Meschino Wellness waits\n          90 days before permanently deleting your account information in order to help avoid accidental or malicious\n          removal of your health information.\n          "])),(l()(),u["ɵeld"](135,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,['When a user with "View and modify" or Custodian access deletes a piece of health information, Meschino\n          Wellness archives the information so that it is visible only to Record of Custodians. Solutions and other\n          users with whom you have shared your information, but who are not Custodians of the Record, are not able to\n          see archived health information.\n\n        '])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](138,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](140,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](142,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["E-mail controls"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](145,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness may send you e-mail communications. You will only receive these communications because you\n          have authorized Meschino Wellness do so. If you do not want to receive this information, you can unsubscribe\n          through a link at the bottom of the newsletter.\n        "])),(l()(),u["ɵted"](-1,null,["\n\n        "])),(l()(),u["ɵeld"](148,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](150,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](152,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Security of your personal information"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](155,0,null,null,3,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness is committed to protecting the security of your personal information. Meschino Wellness is\n          hosted on a robust industry leading hosting partner. The hosting platform meets a broad set of international\n          and industry-specific compliance standards, such as ISO 27001, HIPAA, FedRAMP, SOC 1 and SOC 2, as well as\n          country-specific standards including Australia IRAP, UK G-Cloud, and Singapore MTCS. The hosting partner was\n          also the first to adopt the uniform international code of practice for cloud privacy, ISO/IEC 27018, which\n          governs the processing of personal information by cloud service providers.\n          "])),(l()(),u["ɵeld"](157,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Rigorous third-party audits, such as by the British Standards Institute, verify the hosting platforms\n          adherence to the strict security controls these standards mandate. As part of our commitment to transparency,\n          you can verify our implementation of many security controls by requesting audit results from the certifying\n          third parties or through our Host Platform account representative.\n        "])),(l()(),u["ɵted"](-1,null,["\n\n        "])),(l()(),u["ɵeld"](160,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](162,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](164,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Use of cookies"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](167,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness use cookies with Meschino Wellness to enable you to sign in and to help personalize Meschino\n          Wellness. A cookie is a small text file that a web page server places on your hard disk. It is not possible to\n          use cookies to run programs or deliver viruses to your computer. A Web server assigns cookies uniquely to you\n          and only a Web server in the domain that issued the cookie to you can read the cookies.\n          One of the primary purposes of cookies is to provide a convenience feature to save you time. For example, if\n          you personalize a Web page, or navigate within a site, a cookie helps the site to recall your specific\n          information on subsequent visits. Using cookies simplifies the process of delivering relevant content, eases\n          site navigation, and so on. When you return to the Web site, you can retrieve the information you previously\n          provided, so you can easily use the site's features that you customized.\n          You have the ability to accept or decline cookies. Most Web browsers automatically accept cookies, but you can\n          usually modify your browser setting to decline some or all cookies if you prefer. If you choose to decline all\n          cookies, you may not be able to use interactive features of this or other Web sites that depend on cookies.\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](170,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](172,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](174,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Use of Web beacons"])),(l()(),u["ɵted"](-1,null,["\n\n        "])),(l()(),u["ɵeld"](177,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschinowellness.com Web pages may contain electronic images known as Web beacons sometimes called\n          single-pixel gifs that may be used:\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](180,0,null,null,10,"ul",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](182,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,[" to assist in delivering cookies on Meschino Wellness sites"])),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](185,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,[" to enable Meschino Wellness to count users who have visited those pages"])),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](188,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,[" to deliver co-branded services"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](192,0,null,null,3,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness may include Web beacons in e-mail messages or in its newsletters in order to determine\n          whether you opened or acted upon those messages.\n          "])),(l()(),u["ɵeld"](194,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness may also employ Web beacons from third parties to help it compile aggregated statistics and\n          determine the effectiveness of its promotional campaigns. Meschino Wellness prohibits third parties from using\n          Web beacons on Meschino Wellness sites to collect or access your personal information. Meschino Wellness may\n          collect information about your visit to meschiowellness.com, including the pages you view, the links you\n          click, and other actions taken in connection with the Service. Meschino Wellness also collects certain\n          standard, non-personally identifiable information that your browser sends to every Web site you visit, such as\n          your IP address, browser type and language, access times, and referring Web site addresses.\n\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](197,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](199,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](201,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Changes to this privacy statement"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](204,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness may occasionally update this privacy statement. In such event, Meschino Wellness will notify\n          you either by placing a prominent notice on the home page of the Meschino Wellness Web site or by sending you\n          a notification directly. Meschino Wellness encourages you to review this privacy statement periodically to\n          stay informed about how Meschino Wellness helps you to protect the personal information collected. Your\n          continued use of Meschino Wellness constitutes your agreement to this privacy statement and any updates.\n          Please be aware that this privacy statement does not apply to personal information you may have provided to\n          Meschino Wellness in the context of other, separately operated, Meschino Wellness products or services.\n        "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](207,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](209,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,[" "])),(l()(),u["ɵeld"](211,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Contact information for privacy related questions and/or complaint"])),(l()(),u["ɵted"](-1,null,["\n\n        "])),(l()(),u["ɵeld"](214,0,null,null,4,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Meschino Wellness welcomes your comments regarding this privacy statement. If you have a complaint concerning\n          Meschino Wellness’ privacy standards, please submit it to the applicable Privacy Office, however, as\n          recommended by the Office of the Privacy Commissioner of Canada, you are strongly encouraged to try first to\n          settle the matter directly with us, please contact us at "])),(l()(),u["ɵeld"](216,0,null,null,1,"span",[["style","color: blue;"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n            privacy@meschinowellness.com."])),(l()(),u["ɵted"](-1,null,[" All questions and/or\n          complaints will be treated as confidential.\n        "])),(l()(),u["ɵted"](-1,null,["\n\n        "])),(l()(),u["ɵeld"](220,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](222,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](224,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["DISCLOSURE"])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](227,0,null,null,3,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          The assessment you’re about to complete will evaluate important aspects of your diet, lifestyle and other\n          health practices, as well as health conditions and risk factors that play a significant role in your health\n          and longevity profile. Based upon scientific evidence available from experimental and clinical studies, we\n          will assemble a number of nutrition, exercise and other lifestyle considerations specific to your individual\n          circumstances.\n          "])),(l()(),u["ɵeld"](229,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n          Your personalized wellness report is to be used for educational purposes only and does not take into account\n          any food, drug or supplement allergies or sensitivities. You must consult your health practitioner before\n          making any changes to your dietary, exercise or supplementation practices.\n\n        "])),(l()(),u["ɵted"](-1,null,["\n\n\n      "])),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](233,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](235,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),u["ɵeld"](236,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["By clicking 'I Agree' you have:"])),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](239,0,null,null,10,"ul",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](241,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Read and undersatnd the disclosure. "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](244,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["At least 15 years old."])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](247,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Trust Meschino Health and Wellness with the personal and private health information you provide."])),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵted"](-1,1,["\n"])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](254,0,null,null,10,"ion-footer",[],null,null,null,null,null)),u["ɵdid"](255,16384,null,0,w.Footer,[a.Config,u.ElementRef,u.Renderer,[2,r.ViewController]],null,null),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵeld"](257,0,null,null,6,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,x.b,x.a)),u["ɵdid"](258,49152,null,0,f.Toolbar,[a.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](260,0,null,3,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.goToVideo()&&t}return t},V.b,V.a)),u["ɵdid"](261,1097728,null,0,I.Button,[[8,""],a.Config,u.ElementRef,u.Renderer],{color:[0,"color"]},null),(l()(),u["ɵted"](-1,0,["I AGREE"])),(l()(),u["ɵted"](-1,3,["\n  "])),(l()(),u["ɵted"](-1,null,["\n"]))],function(l,n){l(n,5,0,"primary");l(n,261,0,"primary")},function(l,n){var e=n.component;l(n,4,0,u["ɵnov"](n,5)._hidden,u["ɵnov"](n,5)._sbPadding);l(n,9,0,e.account.FirstName,e.account.LastName);l(n,16,0,u["ɵnov"](n,17).statusbarPadding,u["ɵnov"](n,17)._hasRefresher);l(n,257,0,u["ɵnov"](n,258)._sbPadding)})}e.d(n,"a",function(){return T});var u=e(0),o=e(31),a=e(2),r=e(5),i=e(36),s=e(26),d=e(6),c=e(20),p=e(37),m=e(32),f=e(27),g=e(28),h=e(21),v=e(3),b=e(7),C=e(24),y=e(50),R=e(66),w=e(51),x=e(101),V=e(19),I=e(13),k=e(234),N=e(46),S=e(38),E=e(16),_=e(44),P=u["ɵcrt"]({encapsulation:2,styles:[],data:{}}),T=u["ɵccf"]("page-intro",k.a,function(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,1,"page-intro",[],null,null,null,t,P)),u["ɵdid"](1,49152,null,0,k.a,[N.a,c.NavController,S.AlertController,E.NavParams,_.LoadingController],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,95,"ion-content",[["scroll","false"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,o.b,o.a)),u["ɵdid"](1,4374528,null,0,a.Content,[r.Config,i.Platform,s.DomController,u.ElementRef,u.Renderer,d.App,c.Keyboard,u.NgZone,[2,p.ViewController],[2,m.NavController]],null,null),(l()(),u["ɵted"](-1,1,["\n  "])),(l()(),u["ɵeld"](3,0,null,1,4,"div",[["class","splash-bg"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵeld"](5,0,null,null,1,"h1",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Login to your account"])),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵted"](-1,1,["\n \n "])),(l()(),u["ɵeld"](9,0,null,1,67,"ion-card",[["class","login-card"]],null,null,null,null,null)),u["ɵdid"](10,16384,null,0,f.Card,[r.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵeld"](12,0,null,null,63,"ion-card-content",[],null,null,null,null,null)),u["ɵdid"](13,16384,null,0,g.CardContent,[r.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](15,0,null,null,59,"ion-list",[],null,null,null,null,null)),u["ɵdid"](16,16384,null,0,h.List,[r.Config,u.ElementRef,u.Renderer,i.Platform,v.GestureController,s.DomController],null,null),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](18,0,null,null,17,"ion-item",[["class","custom-border item item-block"]],null,null,null,b.b,b.a)),u["ɵdid"](19,1097728,null,3,C.Item,[y.Form,r.Config,u.ElementRef,u.Renderer,[2,R.ItemReorder]],null,null),u["ɵqud"](335544320,1,{contentLabel:0}),u["ɵqud"](603979776,2,{_buttons:1}),u["ɵqud"](603979776,3,{_icons:1}),u["ɵdid"](23,16384,null,0,w.ItemContent,[],null,null),(l()(),u["ɵted"](-1,2,["\n              "])),(l()(),u["ɵeld"](25,0,null,1,3,"ion-label",[["stacked",""]],null,null,null,null,null)),u["ɵdid"](26,16384,[[1,4]],0,x.Label,[r.Config,u.ElementRef,u.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),u["ɵted"](27,null,["",""])),u["ɵpid"](131072,V.a,[I.a,u.ChangeDetectorRef]),(l()(),u["ɵted"](-1,2,["\n            "])),(l()(),u["ɵeld"](30,0,null,3,4,"ion-input",[["name","UserName"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,e){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.account.UserName=e)&&t}return t},k.b,k.a)),u["ɵdid"](31,671744,null,0,N.NgModel,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),u["ɵprd"](2048,null,N.NgControl,null,[N.NgModel]),u["ɵdid"](33,16384,null,0,N.NgControlStatus,[N.NgControl],null,null),u["ɵdid"](34,5423104,null,0,S.TextInput,[r.Config,i.Platform,y.Form,d.App,u.ElementRef,u.Renderer,[2,a.Content],[2,C.Item],[2,N.NgControl],s.DomController],{type:[0,"type"]},null),(l()(),u["ɵted"](-1,2,["\n          "])),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](37,0,null,null,17,"ion-item",[["class","custom-border item item-block"]],null,null,null,b.b,b.a)),u["ɵdid"](38,1097728,null,3,C.Item,[y.Form,r.Config,u.ElementRef,u.Renderer,[2,R.ItemReorder]],null,null),u["ɵqud"](335544320,4,{contentLabel:0}),u["ɵqud"](603979776,5,{_buttons:1}),u["ɵqud"](603979776,6,{_icons:1}),u["ɵdid"](42,16384,null,0,w.ItemContent,[],null,null),(l()(),u["ɵted"](-1,2,["\n              "])),(l()(),u["ɵeld"](44,0,null,1,3,"ion-label",[["stacked",""]],null,null,null,null,null)),u["ɵdid"](45,16384,[[4,4]],0,x.Label,[r.Config,u.ElementRef,u.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),u["ɵted"](46,null,["",""])),u["ɵpid"](131072,V.a,[I.a,u.ChangeDetectorRef]),(l()(),u["ɵted"](-1,2,["\n              "])),(l()(),u["ɵeld"](49,0,null,3,4,"ion-input",[["name","Password"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"keyup.enter"]],function(l,n,e){var t=!0,u=l.component;if("ngModelChange"===n){t=!1!==(u.account.Password=e)&&t}if("keyup.enter"===n){t=!1!==u.doLogin()&&t}return t},k.b,k.a)),u["ɵdid"](50,671744,null,0,N.NgModel,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),u["ɵprd"](2048,null,N.NgControl,null,[N.NgModel]),u["ɵdid"](52,16384,null,0,N.NgControlStatus,[N.NgControl],null,null),u["ɵdid"](53,5423104,null,0,S.TextInput,[r.Config,i.Platform,y.Form,d.App,u.ElementRef,u.Renderer,[2,a.Content],[2,C.Item],[2,N.NgControl],s.DomController],{type:[0,"type"]},null),(l()(),u["ɵted"](-1,2,["\n          "])),(l()(),u["ɵted"](-1,null,["\n          "])),(l()(),u["ɵeld"](56,0,null,null,17,"ion-item",[["class","item item-block"]],null,null,null,b.b,b.a)),u["ɵdid"](57,1097728,null,3,C.Item,[y.Form,r.Config,u.ElementRef,u.Renderer,[2,R.ItemReorder]],null,null),u["ɵqud"](335544320,7,{contentLabel:0}),u["ɵqud"](603979776,8,{_buttons:1}),u["ɵqud"](603979776,9,{_icons:1}),u["ɵdid"](61,16384,null,0,w.ItemContent,[],null,null),(l()(),u["ɵted"](-1,2,["\n              "])),(l()(),u["ɵeld"](63,0,null,1,2,"ion-label",[],null,null,null,null,null)),u["ɵdid"](64,16384,[[7,4]],0,x.Label,[r.Config,u.ElementRef,u.Renderer,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),u["ɵted"](-1,null,["Remember Me"])),(l()(),u["ɵted"](-1,2,["\n              "])),(l()(),u["ɵeld"](67,0,null,0,5,"ion-checkbox",[["name","Rememberme"]],[[2,"checkbox-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"]],function(l,n,e){var t=!0,o=l.component;if("click"===n){t=!1!==u["ɵnov"](l,68)._click(e)&&t}if("ngModelChange"===n){t=!1!==(o.Rememberme=e)&&t}return t},E.b,E.a)),u["ɵdid"](68,1228800,null,0,_.Checkbox,[r.Config,y.Form,[2,C.Item],u.ElementRef,u.Renderer],null,null),u["ɵprd"](1024,null,N.NG_VALUE_ACCESSOR,function(l){return[l]},[_.Checkbox]),u["ɵdid"](70,671744,null,0,N.NgModel,[[8,null],[8,null],[8,null],[2,N.NG_VALUE_ACCESSOR]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),u["ɵprd"](2048,null,N.NgControl,null,[N.NgModel]),u["ɵdid"](72,16384,null,0,N.NgControlStatus,[N.NgControl],null,null),(l()(),u["ɵted"](-1,2,["\n            "])),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵted"](-1,1,["\n  "])),(l()(),u["ɵeld"](78,0,null,1,16,"div",[["class","button-position"],["padding",""]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](80,0,null,null,2,"button",[["class","forgot-btn"],["clear",""],["full",""],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.doForget()&&t}return t},P.b,P.a)),u["ɵdid"](81,1097728,null,0,T.Button,[[8,""],r.Config,u.ElementRef,u.Renderer],{clear:[0,"clear"],full:[1,"full"]},null),(l()(),u["ɵted"](-1,0,["Forgot Password "])),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵeld"](84,0,null,null,3,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.doLogin()&&t}return t},P.b,P.a)),u["ɵdid"](85,1097728,null,0,T.Button,[[8,""],r.Config,u.ElementRef,u.Renderer],{color:[0,"color"]},null),(l()(),u["ɵted"](86,0,["",""])),u["ɵpid"](131072,V.a,[I.a,u.ChangeDetectorRef]),(l()(),u["ɵted"](-1,null,["\n\t"])),(l()(),u["ɵeld"](89,0,null,null,4,"div",[["class","signup-text"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["Don’t have an account? "])),(l()(),u["ɵeld"](91,0,null,null,1,"a",[["href","#"]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.signup()&&t}return t},null,null)),(l()(),u["ɵted"](-1,null,["SIGN UP"])),(l()(),u["ɵted"](-1,null,[" "])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵted"](-1,1,["\n"])),(l()(),u["ɵted"](-1,null,["\n "]))],function(l,n){var e=n.component;l(n,31,0,"UserName",e.account.UserName);l(n,34,0,"text");l(n,50,0,"Password",e.account.Password);l(n,53,0,"password");l(n,70,0,"Rememberme",e.Rememberme);l(n,81,0,"","");l(n,85,0,"primary")},function(l,n){l(n,0,0,u["ɵnov"](n,1).statusbarPadding,u["ɵnov"](n,1)._hasRefresher);l(n,27,0,u["ɵunv"](n,27,0,u["ɵnov"](n,28).transform("USERNAME")));l(n,30,0,u["ɵnov"](n,33).ngClassUntouched,u["ɵnov"](n,33).ngClassTouched,u["ɵnov"](n,33).ngClassPristine,u["ɵnov"](n,33).ngClassDirty,u["ɵnov"](n,33).ngClassValid,u["ɵnov"](n,33).ngClassInvalid,u["ɵnov"](n,33).ngClassPending);l(n,46,0,u["ɵunv"](n,46,0,u["ɵnov"](n,47).transform("PASSWORD")));l(n,49,0,u["ɵnov"](n,52).ngClassUntouched,u["ɵnov"](n,52).ngClassTouched,u["ɵnov"](n,52).ngClassPristine,u["ɵnov"](n,52).ngClassDirty,u["ɵnov"](n,52).ngClassValid,u["ɵnov"](n,52).ngClassInvalid,u["ɵnov"](n,52).ngClassPending);l(n,67,0,u["ɵnov"](n,68)._disabled,u["ɵnov"](n,72).ngClassUntouched,u["ɵnov"](n,72).ngClassTouched,u["ɵnov"](n,72).ngClassPristine,u["ɵnov"](n,72).ngClassDirty,u["ɵnov"](n,72).ngClassValid,u["ɵnov"](n,72).ngClassInvalid,u["ɵnov"](n,72).ngClassPending);l(n,86,0,u["ɵunv"](n,86,0,u["ɵnov"](n,87).transform("Login")))})}e.d(n,"a",function(){return O});var u=e(0),o=e(28),a=e(21),r=e(2),i=e(3),s=e(7),d=e(6),c=e(24),p=e(5),m=e(20),f=e(50),g=e(66),h=e(56),v=e(11),b=e(47),C=e(17),y=e(14),R=e(33),w=e(41),x=e(65),V=e(145),I=e(55),k=e(224),N=e(9),S=e(119),E=e(225),_=e(118),P=e(19),T=e(13),M=e(80),D=e(46),A=e(86),F=e(38),L=e(44),H=e(99),U=e(60),W=u["ɵcrt"]({encapsulation:2,styles:[],data:{}}),O=u["ɵccf"]("page-login",M.a,function(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,1,"page-login",[],null,null,null,t,W)),u["ɵdid"](1,49152,null,0,M.a,[m.NavController,D.a,A.ToastController,I.a,F.AlertController,L.LoadingController,H.a,U.Events],null,null)],null,null)},{},{},[])},,,function(l,n,e){"use strict";function t(l){return r["ɵvid"](0,[(l()(),r["ɵeld"](0,0,null,null,1,"ion-icon",[["class","list-icon"],["color","primary"],["name","checkmark-circle"],["role","img"]],[[2,"hide",null]],null,null,null,null)),r["ɵdid"](1,147456,null,0,i.Icon,[s.Config,r.ElementRef,r.Renderer],{color:[0,"color"],name:[1,"name"]},null)],function(l,n){l(n,1,0,"primary","checkmark-circle")},function(l,n){l(n,0,0,r["ɵnov"](n,1)._hidden)})}function u(l){return r["ɵvid"](0,[(l()(),r["ɵeld"](0,0,null,null,1,"ion-icon",[["class","list-icon"],["name","radio-button-off"],["role","img"]],[[2,"hide",null]],null,null,null,null)),r["ɵdid"](1,147456,null,0,i.Icon,[s.Config,r.ElementRef,r.Renderer],{name:[0,"name"]},null)],function(l,n){l(n,1,0,"radio-button-off")},function(l,n){l(n,0,0,r["ɵnov"](n,1)._hidden)})}function o(l){return r["ɵvid"](0,[(l()(),r["ɵeld"](0,0,null,null,18,"ion-card",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.goToHraDetail(l.context.$implicit,l.context.index+1)&&t}return t},null,null)),r["ɵdid"](1,278528,null,0,d.NgClass,[r.IterableDiffers,r.KeyValueDiffers,r.ElementRef,r.Renderer2],{ngClass:[0,"ngClass"]},null),r["ɵdid"](2,16384,null,0,c.Card,[s.Config,r.ElementRef,r.Renderer],null,null),(l()(),r["ɵted"](-1,null,["\n    "])),(l()(),r["ɵand"](16777216,null,null,1,null,t)),r["ɵdid"](5,16384,null,0,d.NgIf,[r.ViewContainerRef,r.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),r["ɵted"](-1,null,["\n    "])),(l()(),r["ɵand"](16777216,null,null,1,null,u)),r["ɵdid"](8,16384,null,0,d.NgIf,[r.ViewContainerRef,r.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),r["ɵted"](-1,null,["\n    "])),(l()(),r["ɵeld"](10,0,null,null,7,"button",[["class","item item-block"],["ion-item",""],["menuClose",""]],[[8,"disabled",0]],[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==r["ɵnov"](l,16).close()&&t}return t},p.b,p.a)),r["ɵdid"](11,1097728,null,3,m.Item,[f.Form,s.Config,r.ElementRef,r.Renderer,[2,g.ItemReorder]],null,null),r["ɵqud"](335544320,2,{contentLabel:0}),r["ɵqud"](603979776,3,{_buttons:1}),r["ɵqud"](603979776,4,{_icons:1}),r["ɵdid"](15,16384,null,0,h.ItemContent,[],null,null),r["ɵdid"](16,16384,null,0,v.MenuClose,[b.MenuController],{menuClose:[0,"menuClose"]},null),(l()(),r["ɵted"](17,2,["\n     ","\n    "])),(l()(),r["ɵted"](-1,null,["\n    \n  "]))],function(l,n){var e=n.component;l(n,1,0,-1!==e.HraDetailSections.lstCompletedSection.indexOf(n.context.$implicit.report_section_num)?"active":"");l(n,5,0,-1!==e.HraDetailSections.lstCompletedSection.indexOf(n.context.$implicit.report_section_num));l(n,8,0,-1===e.HraDetailSections.lstCompletedSection.indexOf(n.context.$implicit.report_section_num));l(n,16,0,"")},function(l,n){l(n,10,0,!n.component.IsCheckAllow(n.context.$implicit,!1));l(n,17,0,n.context.$implicit.description)})}function a(l){return r["ɵvid"](0,[(l()(),r["ɵeld"](0,0,null,null,20,"ion-header",[],null,null,null,null,null)),r["ɵdid"](1,16384,null,0,C.Header,[s.Config,r.ElementRef,r.Renderer,[2,y.ViewController]],null,null),(l()(),r["ɵted"](-1,null,["\n  "])),(l()(),r["ɵeld"](3,0,null,null,16,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,R.b,R.a)),r["ɵdid"](4,49152,null,0,w.Navbar,[x.App,[2,y.ViewController],[2,V.NavController],s.Config,r.ElementRef,r.Renderer],{color:[0,"color"]},null),(l()(),r["ɵted"](-1,3,["\n    "])),(l()(),r["ɵeld"](6,0,null,3,2,"ion-title",[],null,null,null,I.b,I.a)),r["ɵdid"](7,49152,null,0,k.ToolbarTitle,[s.Config,r.ElementRef,r.Renderer,[2,N.Toolbar],[2,w.Navbar]],null,null),(l()(),r["ɵted"](-1,0,["My HRA"])),(l()(),r["ɵted"](-1,3,["\n       "])),(l()(),r["ɵeld"](10,0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==r["ɵnov"](l,12).toggle()&&t}return t},S.b,S.a)),r["ɵdid"](11,1097728,[[1,4]],0,E.Button,[[8,""],s.Config,r.ElementRef,r.Renderer],null,null),r["ɵdid"](12,1064960,null,0,_.MenuToggle,[b.MenuController,[2,y.ViewController],[2,E.Button],[2,w.Navbar]],{menuToggle:[0,"menuToggle"]},null),r["ɵdid"](13,16384,null,1,P.ToolbarItem,[s.Config,r.ElementRef,r.Renderer,[2,N.Toolbar],[2,w.Navbar]],null,null),r["ɵqud"](603979776,1,{_buttons:1}),(l()(),r["ɵted"](-1,0,["\n        "])),(l()(),r["ɵeld"](16,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),r["ɵdid"](17,147456,null,0,i.Icon,[s.Config,r.ElementRef,r.Renderer],{name:[0,"name"]},null),(l()(),r["ɵted"](-1,0,["\n      "])),(l()(),r["ɵted"](-1,3,[" \n  "])),(l()(),r["ɵted"](-1,null,["\n"])),(l()(),r["ɵted"](-1,null,["\n"])),(l()(),r["ɵeld"](22,0,null,null,14,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,T.b,T.a)),r["ɵdid"](23,4374528,null,0,M.Content,[s.Config,D.Platform,A.DomController,r.ElementRef,r.Renderer,x.App,F.Keyboard,r.NgZone,[2,y.ViewController],[2,V.NavController]],null,null),(l()(),r["ɵted"](-1,1,["\n  "])),(l()(),r["ɵeld"](25,0,null,1,7,"div",[["class","title"]],null,null,null,null,null)),(l()(),r["ɵted"](-1,null,["\n  "])),(l()(),r["ɵeld"](27,0,null,null,1,"h3",[],null,null,null,null,null)),(l()(),r["ɵted"](-1,null,["My Wellness Wallet"])),(l()(),r["ɵted"](-1,null,["    \n  "])),(l()(),r["ɵeld"](30,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),r["ɵted"](-1,null,["Please complete the HRA process"])),(l()(),r["ɵted"](-1,null,["\n"])),(l()(),r["ɵted"](-1,1,[" \n  "])),(l()(),r["ɵand"](16777216,null,1,1,null,o)),r["ɵdid"](35,802816,null,0,d.NgForOf,[r.ViewContainerRef,r.TemplateRef,r.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),r["ɵted"](-1,1,["\n"]))],function(l,n){var e=n.component;l(n,4,0,"primary");l(n,12,0,"");l(n,17,0,"menu");l(n,35,0,e.HraDetailSections.lst_hra_section)},function(l,n){l(n,3,0,r["ɵnov"](n,4)._hidden,r["ɵnov"](n,4)._sbPadding);l(n,10,0,r["ɵnov"](n,12).isHidden);l(n,16,0,r["ɵnov"](n,17)._hidden);l(n,22,0,r["ɵnov"](n,23).statusbarPadding,r["ɵnov"](n,23)._hasRefresher)})}e.d(n,"a",function(){return q});var r=e(0),i=e(49),s=e(2),d=e(12),c=e(50),p=e(47),m=e(17),f=e(14),g=e(33),h=e(41),v=e(172),b=e(40),C=e(31),y=e(5),R=e(36),w=e(26),x=e(6),V=e(20),I=e(37),k=e(32),N=e(27),S=e(19),E=e(13),_=e(84),P=e(77),T=e(28),M=e(21),D=e(3),A=e(7),F=e(24),L=e(174),H=e(16),U=e(87),W=e(38),O=e(44),G=r["ɵcrt"]({encapsulation:2,styles:[],data:{}}),q=r["ɵccf"]("page-my-hra",L.a,function(l){return r["ɵvid"](0,[(l()(),r["ɵeld"](0,0,null,null,1,"page-my-hra",[],null,null,null,a,G)),r["ɵdid"](1,49152,null,0,L.a,[V.NavController,H.NavParams,U.a,W.AlertController,O.LoadingController],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,3,"a",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.EditSection("FirstName")&&t}return t},null,null)),(l()(),d["ɵted"](1,null,[" "," "])),(l()(),d["ɵeld"](2,0,null,null,0,"img",[["src","assets/img/arrow.png"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n      "]))],null,function(l,n){l(n,1,0,n.component.account.FirstName)})}function u(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,5,"input",[["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"input"],[null,"blur"],[null,"compositionstart"],[null,"compositionend"]],function(l,n,e){var t=!0,u=l.component;if("input"===n){t=!1!==d["ɵnov"](l,1)._handleInput(e.target.value)&&t}if("blur"===n){t=!1!==d["ɵnov"](l,1).onTouched()&&t}if("compositionstart"===n){t=!1!==d["ɵnov"](l,1)._compositionStart()&&t}if("compositionend"===n){t=!1!==d["ɵnov"](l,1)._compositionEnd(e.target.value)&&t}if("ngModelChange"===n){t=!1!==(u.account.FirstName=e)&&t}return t},null,null)),d["ɵdid"](1,16384,null,0,c.DefaultValueAccessor,[d.Renderer2,d.ElementRef,[2,c.COMPOSITION_BUFFER_MODE]],null,null),d["ɵprd"](1024,null,c.NG_VALUE_ACCESSOR,function(l){return[l]},[c.DefaultValueAccessor]),d["ɵdid"](3,671744,null,0,c.NgModel,[[8,null],[8,null],[8,null],[2,c.NG_VALUE_ACCESSOR]],{model:[0,"model"]},{update:"ngModelChange"}),d["ɵprd"](2048,null,c.NgControl,null,[c.NgModel]),d["ɵdid"](5,16384,null,0,c.NgControlStatus,[c.NgControl],null,null)],function(l,n){l(n,3,0,n.component.account.FirstName)},function(l,n){l(n,0,0,d["ɵnov"](n,5).ngClassUntouched,d["ɵnov"](n,5).ngClassTouched,d["ɵnov"](n,5).ngClassPristine,d["ɵnov"](n,5).ngClassDirty,d["ɵnov"](n,5).ngClassValid,d["ɵnov"](n,5).ngClassInvalid,d["ɵnov"](n,5).ngClassPending)})}function o(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,3,"a",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.EditSection("LastName")&&t}return t},null,null)),(l()(),d["ɵted"](1,null,[" "," "])),(l()(),d["ɵeld"](2,0,null,null,0,"img",[["src","assets/img/arrow.png"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n      "]))],null,function(l,n){l(n,1,0,n.component.account.LastName)})}function a(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,5,"input",[["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"input"],[null,"blur"],[null,"compositionstart"],[null,"compositionend"]],function(l,n,e){var t=!0,u=l.component;if("input"===n){t=!1!==d["ɵnov"](l,1)._handleInput(e.target.value)&&t}if("blur"===n){t=!1!==d["ɵnov"](l,1).onTouched()&&t}if("compositionstart"===n){t=!1!==d["ɵnov"](l,1)._compositionStart()&&t}if("compositionend"===n){t=!1!==d["ɵnov"](l,1)._compositionEnd(e.target.value)&&t}if("ngModelChange"===n){t=!1!==(u.account.LastName=e)&&t}return t},null,null)),d["ɵdid"](1,16384,null,0,c.DefaultValueAccessor,[d.Renderer2,d.ElementRef,[2,c.COMPOSITION_BUFFER_MODE]],null,null),d["ɵprd"](1024,null,c.NG_VALUE_ACCESSOR,function(l){return[l]},[c.DefaultValueAccessor]),d["ɵdid"](3,671744,null,0,c.NgModel,[[8,null],[8,null],[8,null],[2,c.NG_VALUE_ACCESSOR]],{model:[0,"model"]},{update:"ngModelChange"}),d["ɵprd"](2048,null,c.NgControl,null,[c.NgModel]),d["ɵdid"](5,16384,null,0,c.NgControlStatus,[c.NgControl],null,null)],function(l,n){l(n,3,0,n.component.account.LastName)},function(l,n){l(n,0,0,d["ɵnov"](n,5).ngClassUntouched,d["ɵnov"](n,5).ngClassTouched,d["ɵnov"](n,5).ngClassPristine,d["ɵnov"](n,5).ngClassDirty,d["ɵnov"](n,5).ngClassValid,d["ɵnov"](n,5).ngClassInvalid,d["ɵnov"](n,5).ngClassPending)})}function r(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,3,"a",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.EditSection("UserNameNA")&&t}return t},null,null)),(l()(),d["ɵted"](1,null,[" "," "])),(l()(),d["ɵeld"](2,0,null,null,0,"img",[["src","assets/img/arrow.png"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n      "]))],null,function(l,n){l(n,1,0,n.component.account.UserName)})}function i(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,5,"input",[["type","email"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"input"],[null,"blur"],[null,"compositionstart"],[null,"compositionend"]],function(l,n,e){var t=!0,u=l.component;if("input"===n){t=!1!==d["ɵnov"](l,1)._handleInput(e.target.value)&&t}if("blur"===n){t=!1!==d["ɵnov"](l,1).onTouched()&&t}if("compositionstart"===n){t=!1!==d["ɵnov"](l,1)._compositionStart()&&t}if("compositionend"===n){t=!1!==d["ɵnov"](l,1)._compositionEnd(e.target.value)&&t}if("ngModelChange"===n){t=!1!==(u.account.UserName=e)&&t}return t},null,null)),d["ɵdid"](1,16384,null,0,c.DefaultValueAccessor,[d.Renderer2,d.ElementRef,[2,c.COMPOSITION_BUFFER_MODE]],null,null),d["ɵprd"](1024,null,c.NG_VALUE_ACCESSOR,function(l){return[l]},[c.DefaultValueAccessor]),d["ɵdid"](3,671744,null,0,c.NgModel,[[8,null],[8,null],[8,null],[2,c.NG_VALUE_ACCESSOR]],{model:[0,"model"]},{update:"ngModelChange"}),d["ɵprd"](2048,null,c.NgControl,null,[c.NgModel]),d["ɵdid"](5,16384,null,0,c.NgControlStatus,[c.NgControl],null,null)],function(l,n){l(n,3,0,n.component.account.UserName)},function(l,n){l(n,0,0,d["ɵnov"](n,5).ngClassUntouched,d["ɵnov"](n,5).ngClassTouched,d["ɵnov"](n,5).ngClassPristine,d["ɵnov"](n,5).ngClassDirty,d["ɵnov"](n,5).ngClassValid,d["ɵnov"](n,5).ngClassInvalid,d["ɵnov"](n,5).ngClassPending)})}function s(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,30,"ion-header",[],null,null,null,null,null)),d["ɵdid"](1,16384,null,0,p.Header,[m.Config,d.ElementRef,d.Renderer,[2,f.ViewController]],null,null),(l()(),d["ɵted"](-1,null,["\n\n  "])),(l()(),d["ɵeld"](3,0,null,null,26,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,g.b,g.a)),d["ɵdid"](4,49152,null,0,h.Navbar,[v.App,[2,f.ViewController],[2,b.NavController],m.Config,d.ElementRef,d.Renderer],{color:[0,"color"]},null),(l()(),d["ɵted"](-1,3,["\n    "])),(l()(),d["ɵeld"](6,0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==d["ɵnov"](l,8).toggle()&&t}return t},C.b,C.a)),d["ɵdid"](7,1097728,[[1,4]],0,y.Button,[[8,""],m.Config,d.ElementRef,d.Renderer],null,null),d["ɵdid"](8,1064960,null,0,R.MenuToggle,[w.MenuController,[2,f.ViewController],[2,y.Button],[2,h.Navbar]],{menuToggle:[0,"menuToggle"]},null),d["ɵdid"](9,16384,null,1,x.ToolbarItem,[m.Config,d.ElementRef,d.Renderer,[2,V.Toolbar],[2,h.Navbar]],null,null),d["ɵqud"](603979776,1,{_buttons:1}),(l()(),d["ɵted"](-1,0,["\n      "])),(l()(),d["ɵeld"](12,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d["ɵdid"](13,147456,null,0,I.Icon,[m.Config,d.ElementRef,d.Renderer],{name:[0,"name"]},null),(l()(),d["ɵted"](-1,0,["\n    "])),(l()(),d["ɵted"](-1,3,["\n    "])),(l()(),d["ɵeld"](16,0,null,3,2,"ion-title",[],null,null,null,k.b,k.a)),d["ɵdid"](17,49152,null,0,N.ToolbarTitle,[m.Config,d.ElementRef,d.Renderer,[2,V.Toolbar],[2,h.Navbar]],null,null),(l()(),d["ɵted"](-1,0,["Profile"])),(l()(),d["ɵted"](-1,3,["\n    "])),(l()(),d["ɵted"](-1,3,["\n\n    "])),(l()(),d["ɵeld"](21,0,null,2,7,"ion-buttons",[["end",""]],null,null,null,null,null)),d["ɵdid"](22,16384,null,1,x.ToolbarItem,[m.Config,d.ElementRef,d.Renderer,[2,V.Toolbar],[2,h.Navbar]],null,null),d["ɵqud"](603979776,2,{_buttons:1}),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵeld"](25,0,null,null,2,"button",[["id","done-button"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.uploadFile()&&t}return t},C.b,C.a)),d["ɵdid"](26,1097728,[[2,4]],0,y.Button,[[8,""],m.Config,d.ElementRef,d.Renderer],null,null),(l()(),d["ɵted"](-1,0,["\n        Done\n      "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵted"](-1,3,["\n\n  "])),(l()(),d["ɵted"](-1,null,["\n"])),(l()(),d["ɵted"](-1,null,["\n"])),(l()(),d["ɵeld"](32,0,null,null,147,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,S.b,S.a)),d["ɵdid"](33,4374528,null,0,E.Content,[m.Config,_.Platform,P.DomController,d.ElementRef,d.Renderer,v.App,T.Keyboard,d.NgZone,[2,f.ViewController],[2,b.NavController]],null,null),(l()(),d["ɵted"](-1,1,["\n  "])),(l()(),d["ɵeld"](35,0,null,1,21,"ion-item",[["class","item item-block"]],null,null,null,M.b,M.a)),d["ɵdid"](36,1097728,null,3,D.Item,[A.Form,m.Config,d.ElementRef,d.Renderer,[2,F.ItemReorder]],null,null),d["ɵqud"](335544320,3,{contentLabel:0}),d["ɵqud"](603979776,4,{_buttons:1}),d["ɵqud"](603979776,5,{_icons:1}),d["ɵdid"](40,16384,null,0,L.ItemContent,[],null,null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵeld"](42,0,null,2,13,"div",[["style","width: 100%;"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵeld"](44,0,null,null,10,"ion-avatar",[["item-start",""],["style","float: right;"]],null,null,null,null,null)),d["ɵdid"](45,16384,null,0,H.Avatar,[],null,null),(l()(),d["ɵted"](-1,null,["\n        "])),(l()(),d["ɵeld"](47,0,null,null,0,"img",[["id","imgprofile"]],[[8,"src",4]],null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n        "])),(l()(),d["ɵeld"](49,0,null,null,4,"ion-icon",[["id","edit"],["role","img"]],[[2,"hide",null]],[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.editprofilepic()&&t}return t},null,null)),d["ɵdid"](50,147456,null,0,I.Icon,[m.Config,d.ElementRef,d.Renderer],null,null),(l()(),d["ɵted"](-1,null,["\n          "])),(l()(),d["ɵeld"](52,0,null,null,0,"img",[["src","assets/img/edit_icn.png"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n        "])),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵted"](-1,2,["\n  "])),(l()(),d["ɵted"](-1,1,["\n  "])),(l()(),d["ɵeld"](58,0,null,1,1,"div",[["class","div-title"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["BASIC INFO"])),(l()(),d["ɵted"](-1,1,["\n  "])),(l()(),d["ɵeld"](61,0,null,1,42,"ion-item",[["class","item item-block"]],null,null,null,M.b,M.a)),d["ɵdid"](62,1097728,null,3,D.Item,[A.Form,m.Config,d.ElementRef,d.Renderer,[2,F.ItemReorder]],null,null),d["ɵqud"](335544320,6,{contentLabel:0}),d["ɵqud"](603979776,7,{_buttons:1}),d["ɵqud"](603979776,8,{_icons:1}),d["ɵdid"](66,16384,null,0,L.ItemContent,[],null,null),(l()(),d["ɵted"](-1,2,["\n\n    "])),(l()(),d["ɵeld"](68,0,null,2,10,"div",[["class","div-lbl-edit div-border-n"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,[" "])),(l()(),d["ɵeld"](70,0,null,null,1,"span",[],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["Fast Name"])),(l()(),d["ɵted"](-1,null,[" "])),(l()(),d["ɵand"](16777216,null,null,1,null,t)),d["ɵdid"](74,16384,null,0,U.NgIf,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵand"](16777216,null,null,1,null,u)),d["ɵdid"](77,16384,null,0,U.NgIf,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵted"](-1,2,["\n\n\n    "])),(l()(),d["ɵeld"](80,0,null,2,10,"div",[["class","div-lbl-edit div-border-n"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,[" "])),(l()(),d["ɵeld"](82,0,null,null,1,"span",[],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["Last Name"])),(l()(),d["ɵted"](-1,null,[" "])),(l()(),d["ɵand"](16777216,null,null,1,null,o)),d["ɵdid"](86,16384,null,0,U.NgIf,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵand"](16777216,null,null,1,null,a)),d["ɵdid"](89,16384,null,0,U.NgIf,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵted"](-1,2,["\n\n\n    "])),(l()(),d["ɵeld"](92,0,null,2,10,"div",[["class","div-lbl-edit div-border-n"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,[" "])),(l()(),d["ɵeld"](94,0,null,null,1,"span",[],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["User Name"])),(l()(),d["ɵted"](-1,null,[" "])),(l()(),d["ɵand"](16777216,null,null,1,null,r)),d["ɵdid"](98,16384,null,0,U.NgIf,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵand"](16777216,null,null,1,null,i)),d["ɵdid"](101,16384,null,0,U.NgIf,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵted"](-1,2,["\n\n\n  "])),(l()(),d["ɵted"](-1,1,["\n  "])),(l()(),d["ɵeld"](105,0,null,1,1,"div",[["class","div-title"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["GENDER"])),(l()(),d["ɵted"](-1,1,["\n  "])),(l()(),d["ɵeld"](108,0,null,1,18,"ion-item",[["class","item item-block"]],null,null,null,M.b,M.a)),d["ɵdid"](109,1097728,null,3,D.Item,[A.Form,m.Config,d.ElementRef,d.Renderer,[2,F.ItemReorder]],null,null),d["ɵqud"](335544320,9,{contentLabel:0}),d["ɵqud"](603979776,10,{_buttons:1}),d["ɵqud"](603979776,11,{_icons:1}),d["ɵdid"](113,16384,null,0,L.ItemContent,[],null,null),(l()(),d["ɵted"](-1,2,["\n\n    "])),(l()(),d["ɵeld"](115,0,null,2,10,"div",[["class","div-lbl-edit"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,[" "])),(l()(),d["ɵeld"](117,0,null,null,1,"span",[],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["I am"])),(l()(),d["ɵted"](-1,null,["\n\n      "])),(l()(),d["ɵted"](-1,null,["\n\n\n\n      "])),(l()(),d["ɵeld"](121,0,null,null,2,"a",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.showGenderPicker()&&t}return t},null,null)),(l()(),d["ɵted"](122,null,[""," "])),(l()(),d["ɵeld"](123,0,null,null,0,"img",[["src","assets/img/arrow.png"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n\n      "])),(l()(),d["ɵted"](-1,null,["\n\n    "])),(l()(),d["ɵted"](-1,2,["\n  "])),(l()(),d["ɵted"](-1,1,["\n  "])),(l()(),d["ɵeld"](128,0,null,1,1,"div",[["class","div-title"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["DATE OF BIRTH"])),(l()(),d["ɵted"](-1,1,["\n\n  "])),(l()(),d["ɵeld"](131,0,null,1,21,"ion-card",[["class","ioncard"],["style","padding-top: 15px"]],null,null,null,null,null)),d["ɵdid"](132,16384,null,0,W.Card,[m.Config,d.ElementRef,d.Renderer],null,null),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵeld"](134,0,null,null,17,"div",[["class","div-lbl-edit2"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,[" "])),(l()(),d["ɵeld"](136,0,null,null,1,"span",[],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["I'm born on"])),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵeld"](139,0,null,null,11,"a",[],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n        "])),(l()(),d["ɵeld"](141,0,null,null,6,"ion-datetime",[["name","BirthDate"]],[[2,"datetime-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==d["ɵnov"](l,142)._click(e)&&t}if("keyup.space"===n){t=!1!==d["ɵnov"](l,142)._keyup()&&t}if("ngModelChange"===n){t=!1!==(u.account.BirthDate=e)&&t}return t},O.b,O.a)),d["ɵdid"](142,1228800,null,0,G.DateTime,[A.Form,m.Config,d.ElementRef,d.Renderer,[2,D.Item],[2,q.PickerController]],null,null),d["ɵprd"](1024,null,c.NG_VALUE_ACCESSOR,function(l){return[l]},[G.DateTime]),d["ɵdid"](144,671744,null,0,c.NgModel,[[8,null],[8,null],[8,null],[2,c.NG_VALUE_ACCESSOR]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),d["ɵprd"](2048,null,c.NgControl,null,[c.NgModel]),d["ɵdid"](146,16384,null,0,c.NgControlStatus,[c.NgControl],null,null),(l()(),d["ɵted"](-1,null,["\n\n        "])),(l()(),d["ɵted"](-1,null,["\n          "])),(l()(),d["ɵeld"](149,0,null,null,0,"img",[["src","assets/img/arrow.png"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵted"](-1,null,["\n  "])),(l()(),d["ɵted"](-1,1,["\n  "])),(l()(),d["ɵeld"](154,0,null,1,1,"div",[["class","div-title"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["HEIGHT"])),(l()(),d["ɵted"](-1,1,["\n\n\n\n  "])),(l()(),d["ɵeld"](157,0,null,1,21,"ion-card",[["class","ioncard"],["style","padding-top: 15px"]],null,null,null,null,null)),d["ɵdid"](158,16384,null,0,W.Card,[m.Config,d.ElementRef,d.Renderer],null,null),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵeld"](160,0,null,null,17,"div",[["class","div-lbl-edit2"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,[" "])),(l()(),d["ɵeld"](162,0,null,null,1,"span",[],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["My height is"])),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵeld"](165,0,null,null,11,"a",[],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n        "])),(l()(),d["ɵeld"](167,0,null,null,6,"ion-multi-picker",[["item-content",""],["name","Height"]],[[2,"multi-picke-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==d["ɵnov"](l,168)._click(e)&&t}if("keyup.space"===n){t=!1!==d["ɵnov"](l,168)._keyup()&&t}if("ngModelChange"===n){t=!1!==(u.UIHeight=e)&&t}return t},B.b,B.a)),d["ɵdid"](168,1228800,null,0,$.MultiPicker,[A.Form,[2,D.Item],[2,q.PickerController]],{multiPickerColumns:[0,"multiPickerColumns"],separator:[1,"separator"]},null),d["ɵprd"](1024,null,c.NG_VALUE_ACCESSOR,function(l){return[l]},[$.MultiPicker]),d["ɵdid"](170,671744,null,0,c.NgModel,[[8,null],[8,null],[8,null],[2,c.NG_VALUE_ACCESSOR]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),d["ɵprd"](2048,null,c.NgControl,null,[c.NgModel]),d["ɵdid"](172,16384,null,0,c.NgControlStatus,[c.NgControl],null,null),(l()(),d["ɵted"](-1,null,["\n        "])),(l()(),d["ɵted"](-1,null,["\n          "])),(l()(),d["ɵeld"](175,0,null,null,0,"img",[["src","assets/img/arrow.png"]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵted"](-1,null,["\n  "])),(l()(),d["ɵted"](-1,1,["\n\n"])),(l()(),d["ɵted"](-1,null,["\n"])),(l()(),d["ɵeld"](181,0,null,null,2,"ion-footer",[],null,null,null,null,null)),d["ɵdid"](182,16384,null,0,K.Footer,[m.Config,d.ElementRef,d.Renderer,[2,f.ViewController]],null,null),(l()(),d["ɵted"](-1,null,["\n\n"]))],function(l,n){var e=n.component;l(n,4,0,"primary");l(n,8,0,"");l(n,13,0,"menu");l(n,74,0,!e.DisplayFirstName);l(n,77,0,e.DisplayFirstName);l(n,86,0,!e.DisplayLastName);l(n,89,0,e.DisplayLastName);l(n,98,0,!e.DisplayUserName);l(n,101,0,e.DisplayUserName);l(n,144,0,"BirthDate",e.account.BirthDate);l(n,168,0,e.parentColumns,"-");l(n,170,0,"Height",e.UIHeight)},function(l,n){var e=n.component;l(n,3,0,d["ɵnov"](n,4)._hidden,d["ɵnov"](n,4)._sbPadding);l(n,6,0,d["ɵnov"](n,8).isHidden);l(n,12,0,d["ɵnov"](n,13)._hidden);l(n,32,0,d["ɵnov"](n,33).statusbarPadding,d["ɵnov"](n,33)._hasRefresher);l(n,47,0,d["ɵinlineInterpolate"](1,"",e.imageFileName,""));l(n,49,0,d["ɵnov"](n,50)._hidden);l(n,122,0,e.account.Gender);l(n,141,0,d["ɵnov"](n,142)._disabled,d["ɵnov"](n,146).ngClassUntouched,d["ɵnov"](n,146).ngClassTouched,d["ɵnov"](n,146).ngClassPristine,d["ɵnov"](n,146).ngClassDirty,d["ɵnov"](n,146).ngClassValid,d["ɵnov"](n,146).ngClassInvalid,d["ɵnov"](n,146).ngClassPending);l(n,167,0,d["ɵnov"](n,168)._disabled,d["ɵnov"](n,172).ngClassUntouched,d["ɵnov"](n,172).ngClassTouched,d["ɵnov"](n,172).ngClassPristine,d["ɵnov"](n,172).ngClassDirty,d["ɵnov"](n,172).ngClassValid,d["ɵnov"](n,172).ngClassInvalid,d["ɵnov"](n,172).ngClassPending)})}e.d(n,"a",function(){return el});var d=e(0),c=e(9),p=e(31),m=e(2),f=e(5),g=e(36),h=e(26),v=e(6),b=e(20),C=e(19),y=e(13),R=e(84),w=e(40),x=e(77),V=e(27),I=e(49),k=e(37),N=e(32),S=e(28),E=e(21),_=e(3),P=e(7),T=e(24),M=e(47),D=e(17),A=e(14),F=e(33),L=e(41),H=e(159),U=e(12),W=e(50),O=e(334),G=e(161),q=e(85),B=e(335),$=e(125),K=e(51),Q=e(238),Y=e(16),j=e(168),z=e(44),Z=e(38),J=e(74),X=e(60),ll=e(46),nl=d["ɵcrt"]({encapsulation:2,styles:[],data:{}}),el=d["ɵccf"]("page-profile",Q.a,function(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,1,"page-profile",[],null,null,null,s,nl)),d["ɵdid"](1,49152,null,0,Q.a,[b.NavController,c.FormBuilder,Y.NavParams,j.a,z.LoadingController,Z.AlertController,J.c,q.PickerController,X.Events,ll.a],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,43,"ion-header",[],null,null,null,null,null)),u["ɵdid"](1,16384,null,0,o.Header,[a.Config,u.ElementRef,u.Renderer,[2,r.ViewController]],null,null),(l()(),u["ɵted"](-1,null,["\n\n  "])),(l()(),u["ɵeld"](3,0,null,null,39,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,i.b,i.a)),u["ɵdid"](4,49152,null,0,s.Navbar,[d.App,[2,r.ViewController],[2,c.NavController],a.Config,u.ElementRef,u.Renderer],{color:[0,"color"]},null),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](6,0,null,3,2,"ion-title",[],null,null,null,p.b,p.a)),u["ɵdid"](7,49152,null,0,m.ToolbarTitle,[a.Config,u.ElementRef,u.Renderer,[2,f.Toolbar],[2,s.Navbar]],null,null),(l()(),u["ɵted"](-1,0,["Trackers"])),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](10,0,null,3,21,"ion-item",[["class","item item-block"]],null,null,null,g.b,g.a)),u["ɵdid"](11,1097728,null,3,h.Item,[v.Form,a.Config,u.ElementRef,u.Renderer,[2,b.ItemReorder]],null,null),u["ɵqud"](335544320,1,{contentLabel:0}),u["ɵqud"](603979776,2,{_buttons:1}),u["ɵqud"](603979776,3,{_icons:1}),u["ɵdid"](15,16384,null,0,C.ItemContent,[],null,null),(l()(),u["ɵted"](-1,2,["\n      "])),(l()(),u["ɵeld"](17,0,null,0,4,"ion-avatar",[["item-start",""]],null,null,null,null,null)),u["ɵdid"](18,16384,null,0,y.Avatar,[],null,null),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](20,0,null,null,0,"img",[["src","assets/img/avtar.jpg"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n      "])),(l()(),u["ɵted"](-1,2,["\n      "])),(l()(),u["ɵeld"](23,0,null,2,1,"h2",[],null,null,null,null,null)),(l()(),u["ɵted"](24,null,[""," ",""])),(l()(),u["ɵted"](-1,2,["\n      "])),(l()(),u["ɵeld"](26,0,null,2,4,"p",[],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n        "])),(l()(),u["ɵeld"](28,0,null,null,1,"ion-icon",[["name","medal"],["role","img"]],[[2,"hide",null]],null,null,null,null)),u["ɵdid"](29,147456,[[3,4]],0,R.Icon,[a.Config,u.ElementRef,u.Renderer],{name:[0,"name"]},null),(l()(),u["ɵted"](-1,null,["296 Points\n      "])),(l()(),u["ɵted"](-1,2,["\n    "])),(l()(),u["ɵted"](-1,3,["\n    "])),(l()(),u["ɵeld"](33,0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==u["ɵnov"](l,35).toggle()&&t}return t},w.b,w.a)),u["ɵdid"](34,1097728,[[4,4]],0,x.Button,[[8,""],a.Config,u.ElementRef,u.Renderer],null,null),u["ɵdid"](35,1064960,null,0,V.MenuToggle,[I.MenuController,[2,r.ViewController],[2,x.Button],[2,s.Navbar]],{menuToggle:[0,"menuToggle"]},null),u["ɵdid"](36,16384,null,1,k.ToolbarItem,[a.Config,u.ElementRef,u.Renderer,[2,f.Toolbar],[2,s.Navbar]],null,null),u["ɵqud"](603979776,4,{_buttons:1}),(l()(),u["ɵted"](-1,0,["\n      "])),(l()(),u["ɵeld"](39,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),u["ɵdid"](40,147456,null,0,R.Icon,[a.Config,u.ElementRef,u.Renderer],{name:[0,"name"]},null),(l()(),u["ɵted"](-1,0,["\n    "])),(l()(),u["ɵted"](-1,3,["\n  "])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](45,0,null,null,6,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,N.b,N.a)),u["ɵdid"](46,4374528,null,0,S.Content,[a.Config,E.Platform,_.DomController,u.ElementRef,u.Renderer,d.App,P.Keyboard,u.NgZone,[2,r.ViewController],[2,c.NavController]],null,null),(l()(),u["ɵted"](-1,1,["\n\n  "])),(l()(),u["ɵeld"](48,0,null,1,2,"ion-card",[],null,null,null,null,null)),u["ɵdid"](49,16384,null,0,T.Card,[a.Config,u.ElementRef,u.Renderer],null,null),(l()(),u["ɵted"](-1,null,["\n    My health risk\n  "])),(l()(),u["ɵted"](-1,1,["\n"])),(l()(),u["ɵted"](-1,null,["\n"])),(l()(),u["ɵeld"](53,0,null,null,2,"ion-footer",[],null,null,null,null,null)),u["ɵdid"](54,16384,null,0,M.Footer,[a.Config,u.ElementRef,u.Renderer,[2,r.ViewController]],null,null),(l()(),u["ɵted"](-1,null,["\n\n"]))],function(l,n){l(n,4,0,"primary");l(n,29,0,"medal");l(n,35,0,"");l(n,40,0,"menu")},function(l,n){var e=n.component;l(n,3,0,u["ɵnov"](n,4)._hidden,u["ɵnov"](n,4)._sbPadding);l(n,24,0,e.account.FirstName,e.account.LastName);l(n,28,0,u["ɵnov"](n,29)._hidden);l(n,33,0,u["ɵnov"](n,35).isHidden);l(n,39,0,u["ɵnov"](n,40)._hidden);l(n,45,0,u["ɵnov"](n,46).statusbarPadding,u["ɵnov"](n,46)._hasRefresher)})}e.d(n,"a",function(){return L});var u=e(0),o=e(31),a=e(2),r=e(5),i=e(36),s=e(26),d=e(6),c=e(20),p=e(37),m=e(32),f=e(27),g=e(47),h=e(17),v=e(14),b=e(33),C=e(41),y=e(159),R=e(49),w=e(19),x=e(13),V=e(84),I=e(40),k=e(77),N=e(28),S=e(21),E=e(3),_=e(7),P=e(24),T=e(50),M=e(51),D=e(240),A=e(16),F=u["ɵcrt"]({encapsulation:2,styles:[],data:{}}),L=u["ɵccf"]("page-mytracker",D.a,function(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,1,"page-mytracker",[],null,null,null,t,F)),u["ɵdid"](1,49152,null,0,D.a,[c.NavController,A.NavParams],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return c["ɵvid"](0,[(l()(),c["ɵeld"](0,0,null,null,2,"ion-option",[],null,null,null,null,null)),c["ɵdid"](1,16384,[[4,4]],0,p.Option,[c.ElementRef],{value:[0,"value"]},null),(l()(),c["ɵted"](2,null,["",""]))],function(l,n){l(n,1,0,c["ɵinlineInterpolate"](1,"",n.context.$implicit.answer_num,""))},function(l,n){l(n,2,0,n.context.$implicit.answer)})}function u(l){return c["ɵvid"](0,[(l()(),c["ɵeld"](0,0,null,null,21,"div",[],null,null,null,null,null)),(l()(),c["ɵted"](-1,null,["\n                  "])),(l()(),c["ɵeld"](2,0,null,null,6,"ion-list-header",[["class","item"]],null,null,null,m.b,m.a)),c["ɵdid"](3,1097728,null,3,f.Item,[g.Form,h.Config,c.ElementRef,c.Renderer,[2,v.ItemReorder]],null,null),c["ɵqud"](335544320,1,{contentLabel:0}),c["ɵqud"](603979776,2,{_buttons:1}),c["ɵqud"](603979776,3,{_icons:1}),c["ɵdid"](7,16384,null,0,b.ListHeader,[h.Config,c.Renderer,c.ElementRef,[8,null]],null,null),(l()(),c["ɵted"](8,2,[" "," . "," "])),(l()(),c["ɵted"](-1,null,["\n                  "])),(l()(),c["ɵeld"](10,0,null,null,10,"ion-select",[["placeholder","Select Value"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"ionChange"],[null,"click"],[null,"keyup.space"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==c["ɵnov"](l,11)._click(e)&&t}if("keyup.space"===n){t=!1!==c["ɵnov"](l,11)._keyup()&&t}if("ngModelChange"===n){t=!1!==(u.FormSectionData[l.parent.context.$implicit.question_num].answer=e)&&t}if("ionChange"===n){t=!1!==u.supressQuestion(l.parent.context.$implicit)&&t}return t},C.b,C.a)),c["ɵdid"](11,1228800,null,1,y.Select,[R.App,g.Form,h.Config,c.ElementRef,c.Renderer,[2,f.Item],w.DeepLinker],{placeholder:[0,"placeholder"]},{ionChange:"ionChange"}),c["ɵqud"](603979776,4,{options:1}),c["ɵprd"](1024,null,x.NG_VALUE_ACCESSOR,function(l){return[l]},[y.Select]),c["ɵdid"](14,671744,null,0,x.NgModel,[[8,null],[8,null],[8,null],[2,x.NG_VALUE_ACCESSOR]],{model:[0,"model"]},{update:"ngModelChange"}),c["ɵprd"](2048,null,x.NgControl,null,[x.NgModel]),c["ɵdid"](16,16384,null,0,x.NgControlStatus,[x.NgControl],null,null),(l()(),c["ɵted"](-1,null,["\n                    "])),(l()(),c["ɵand"](16777216,null,null,1,null,t)),c["ɵdid"](19,802816,null,0,V.NgForOf,[c.ViewContainerRef,c.TemplateRef,c.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),c["ɵted"](-1,null,["\n                  "])),(l()(),c["ɵted"](-1,null,["\n              "]))],function(l,n){var e=n.component;l(n,11,0,"Select Value");l(n,14,0,e.FormSectionData[n.parent.context.$implicit.question_num].answer);l(n,19,0,n.parent.context.$implicit.hra_answer)},function(l,n){l(n,8,0,n.parent.context.index+1,n.parent.context.$implicit.question);l(n,10,0,c["ɵnov"](n,11)._disabled,c["ɵnov"](n,16).ngClassUntouched,c["ɵnov"](n,16).ngClassTouched,c["ɵnov"](n,16).ngClassPristine,c["ɵnov"](n,16).ngClassDirty,c["ɵnov"](n,16).ngClassValid,c["ɵnov"](n,16).ngClassInvalid,c["ɵnov"](n,16).ngClassPending)})}function o(l){return c["ɵvid"](0,[(l()(),c["ɵeld"](0,0,null,null,13,"ion-item",[["class","item item-block"]],null,null,null,m.b,m.a)),c["ɵdid"](1,1097728,null,3,f.Item,[g.Form,h.Config,c.ElementRef,c.Renderer,[2,v.ItemReorder]],null,null),c["ɵqud"](335544320,9,{contentLabel:0}),c["ɵqud"](603979776,10,{_buttons:1}),c["ɵqud"](603979776,11,{_icons:1}),c["ɵdid"](5,16384,null,0,I.ItemContent,[],null,null),(l()(),c["ɵted"](-1,2,["\n                      "])),(l()(),c["ɵeld"](7,0,null,4,1,"ion-radio",[],[[2,"radio-disabled",null]],[[null,"ionSelect"],[null,"click"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==c["ɵnov"](l,8)._click(e)&&t}if("ionSelect"===n){t=!1!==u.supressQuestion(l.parent.parent.context.$implicit)&&t}return t},k.b,k.a)),c["ɵdid"](8,245760,null,0,N.RadioButton,[g.Form,h.Config,c.ElementRef,c.Renderer,[2,f.Item],[2,S.RadioGroup]],{value:[0,"value"]},{ionSelect:"ionSelect"}),(l()(),c["ɵted"](-1,2,["\n                      "])),(l()(),c["ɵeld"](10,0,null,1,2,"ion-label",[],null,null,null,null,null)),c["ɵdid"](11,16384,[[9,4]],0,E.Label,[h.Config,c.ElementRef,c.Renderer,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),c["ɵted"](12,null,["",""])),(l()(),c["ɵted"](-1,2,["\n                    "]))],function(l,n){l(n,8,0,c["ɵinlineInterpolate"](1,"",n.context.$implicit.answer_num,""))},function(l,n){l(n,7,0,c["ɵnov"](n,8)._disabled);l(n,12,0,n.context.$implicit.answer)})}function a(l){return c["ɵvid"](0,[(l()(),c["ɵeld"](0,0,null,null,22,"div",[],null,null,null,null,null)),(l()(),c["ɵted"](-1,null,["\n                "])),(l()(),c["ɵeld"](2,0,null,null,19,"ion-list",[["radio-group",""],["role","radiogroup"]],[[8,"hidden",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,e){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.FormSectionData[l.parent.context.$implicit.question_num].answer=e)&&t}return t},null,null)),c["ɵdid"](3,1064960,null,1,S.RadioGroup,[c.Renderer,c.ElementRef,c.ChangeDetectorRef],null,null),c["ɵqud"](335544320,5,{_header:0}),c["ɵprd"](1024,null,x.NG_VALUE_ACCESSOR,function(l){return[l]},[S.RadioGroup]),c["ɵdid"](6,671744,null,0,x.NgModel,[[8,null],[8,null],[8,null],[2,x.NG_VALUE_ACCESSOR]],{model:[0,"model"]},{update:"ngModelChange"}),c["ɵprd"](2048,null,x.NgControl,null,[x.NgModel]),c["ɵdid"](8,16384,null,0,x.NgControlStatus,[x.NgControl],null,null),c["ɵdid"](9,16384,null,0,_.List,[h.Config,c.ElementRef,c.Renderer,P.Platform,T.GestureController,M.DomController],null,null),(l()(),c["ɵted"](-1,null,["\n                    "])),(l()(),c["ɵeld"](11,0,null,null,6,"ion-list-header",[["class","item"]],null,null,null,m.b,m.a)),c["ɵdid"](12,1097728,null,3,f.Item,[g.Form,h.Config,c.ElementRef,c.Renderer,[2,v.ItemReorder]],null,null),c["ɵqud"](335544320,6,{contentLabel:0}),c["ɵqud"](603979776,7,{_buttons:1}),c["ɵqud"](603979776,8,{_icons:1}),c["ɵdid"](16,16384,[[5,4]],0,b.ListHeader,[h.Config,c.Renderer,c.ElementRef,[8,null]],null,null),(l()(),c["ɵted"](17,2,["\n                        ",". ","\n                    "])),(l()(),c["ɵted"](-1,null,["\n                    "])),(l()(),c["ɵand"](16777216,null,null,1,null,o)),c["ɵdid"](20,802816,null,0,V.NgForOf,[c.ViewContainerRef,c.TemplateRef,c.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),c["ɵted"](-1,null,["\n                "])),(l()(),c["ɵted"](-1,null,["\n            "]))],function(l,n){l(n,6,0,n.component.FormSectionData[n.parent.context.$implicit.question_num].answer);l(n,20,0,n.parent.context.$implicit.hra_answer)},function(l,n){l(n,2,0,n.component.hideQuestion[n.parent.context.$implicit.question_num].check,c["ɵnov"](n,8).ngClassUntouched,c["ɵnov"](n,8).ngClassTouched,c["ɵnov"](n,8).ngClassPristine,c["ɵnov"](n,8).ngClassDirty,c["ɵnov"](n,8).ngClassValid,c["ɵnov"](n,8).ngClassInvalid,c["ɵnov"](n,8).ngClassPending);l(n,17,0,n.parent.context.index+1,n.parent.context.$implicit.question)})}function r(l){return c["ɵvid"](0,[(l()(),c["ɵeld"](0,0,null,null,10,"div",[],null,null,null,null,null)),(l()(),c["ɵted"](-1,null,["\n             "])),(l()(),c["ɵeld"](2,0,null,null,4,"div",[],[[8,"hidden",0]],null,null,null,null)),(l()(),c["ɵted"](-1,null,["\n              "])),(l()(),c["ɵand"](16777216,null,null,1,null,u)),c["ɵdid"](5,16384,null,0,V.NgIf,[c.ViewContainerRef,c.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),c["ɵted"](-1,null,["\n          "])),(l()(),c["ɵted"](-1,null,["\n            "])),(l()(),c["ɵand"](16777216,null,null,1,null,a)),c["ɵdid"](9,16384,null,0,V.NgIf,[c.ViewContainerRef,c.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),c["ɵted"](-1,null,["\n          "]))],function(l,n){l(n,5,0,"Dropdown"==n.context.$implicit.answer_type);l(n,9,0,"Objective"==n.context.$implicit.answer_type)},function(l,n){l(n,2,0,n.component.hideQuestion[n.context.$implicit.question_num].check)})}function i(l){return c["ɵvid"](0,[(l()(),c["ɵeld"](0,0,null,null,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.submitSection()&&t}return t},D.b,D.a)),c["ɵdid"](1,1097728,null,0,A.Button,[[8,""],h.Config,c.ElementRef,c.Renderer],{color:[0,"color"]},null),(l()(),c["ɵted"](-1,0,["Next"]))],function(l,n){l(n,1,0,"primary")},null)}function s(l){return c["ɵvid"](0,[(l()(),c["ɵeld"](0,0,null,null,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.submitLastSection()&&t}return t},D.b,D.a)),c["ɵdid"](1,1097728,null,0,A.Button,[[8,""],h.Config,c.ElementRef,c.Renderer],{color:[0,"color"]},null),(l()(),c["ɵted"](-1,0,["Finish"]))],function(l,n){l(n,1,0,"primary")},null)}function d(l){return c["ɵvid"](0,[(l()(),c["ɵeld"](0,0,null,null,38,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,F.b,F.a)),c["ɵdid"](1,4374528,null,0,L.Content,[h.Config,P.Platform,M.DomController,c.ElementRef,c.Renderer,R.App,H.Keyboard,c.NgZone,[2,U.ViewController],[2,W.NavController]],null,null),(l()(),c["ɵted"](-1,1,["\n    "])),(l()(),c["ɵeld"](3,0,null,1,19,"div",[["class","splashbg"]],null,null,null,null,null)),(l()(),c["ɵted"](-1,null,["\n        "])),(l()(),c["ɵeld"](5,0,null,null,10,"ion-header",[],null,null,null,null,null)),c["ɵdid"](6,16384,null,0,O.Header,[h.Config,c.ElementRef,c.Renderer,[2,U.ViewController]],null,null),(l()(),c["ɵted"](-1,null,["\n            "])),(l()(),c["ɵeld"](8,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,G.b,G.a)),c["ɵdid"](9,49152,null,0,q.Navbar,[R.App,[2,U.ViewController],[2,W.NavController],h.Config,c.ElementRef,c.Renderer],null,null),(l()(),c["ɵted"](-1,3,["\n              "])),(l()(),c["ɵeld"](11,0,null,3,2,"ion-title",[],null,null,null,B.b,B.a)),c["ɵdid"](12,49152,null,0,$.ToolbarTitle,[h.Config,c.ElementRef,c.Renderer,[2,K.Toolbar],[2,q.Navbar]],null,null),(l()(),c["ɵted"](-1,0,["Health Risk Assessment\n                  (HRA) "])),(l()(),c["ɵted"](-1,3,["\n            "])),(l()(),c["ɵted"](-1,null,["\n          "])),(l()(),c["ɵted"](-1,null,["\n          "])),(l()(),c["ɵeld"](17,0,null,null,4,"div",[["class","subtitle"]],null,null,null,null,null)),(l()(),c["ɵted"](-1,null,["\n          "])),(l()(),c["ɵeld"](19,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),c["ɵted"](-1,null,["You can pause and return to complete the HRA, however, you must complete the entire HRA before it can be processed "])),(l()(),c["ɵted"](-1,null,["\n        "])),(l()(),c["ɵted"](-1,null,["\n      "])),(l()(),c["ɵted"](-1,1,["\n      "])),(l()(),c["ɵeld"](24,0,null,1,13,"ion-card",[],null,null,null,null,null)),c["ɵdid"](25,16384,null,0,Q.Card,[h.Config,c.ElementRef,c.Renderer],null,null),(l()(),c["ɵted"](-1,null,["\n          "])),(l()(),c["ɵeld"](27,0,null,null,2,"ion-card-header",[],null,null,null,null,null)),c["ɵdid"](28,16384,null,0,Y.CardHeader,[h.Config,c.ElementRef,c.Renderer],null,null),(l()(),c["ɵted"](29,null,["\n            ","\n          "])),(l()(),c["ɵted"](-1,null,["\n          "])),(l()(),c["ɵeld"](31,0,null,null,5,"ion-card-content",[],null,null,null,null,null)),c["ɵdid"](32,16384,null,0,j.CardContent,[h.Config,c.ElementRef,c.Renderer],null,null),(l()(),c["ɵted"](-1,null,["\n           "])),(l()(),c["ɵand"](16777216,null,null,1,null,r)),c["ɵdid"](35,802816,null,0,V.NgForOf,[c.ViewContainerRef,c.TemplateRef,c.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),c["ɵted"](-1,null,["\n          "])),(l()(),c["ɵted"](-1,null,["\n        "])),(l()(),c["ɵted"](-1,1,["\n"])),(l()(),c["ɵted"](-1,null,["\n"])),(l()(),c["ɵeld"](40,0,null,null,12,"ion-footer",[],null,null,null,null,null)),c["ɵdid"](41,16384,null,0,z.Footer,[h.Config,c.ElementRef,c.Renderer,[2,U.ViewController]],null,null),(l()(),c["ɵted"](-1,null,["\n  "])),(l()(),c["ɵeld"](43,0,null,null,8,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,Z.b,Z.a)),c["ɵdid"](44,49152,null,0,K.Toolbar,[h.Config,c.ElementRef,c.Renderer],null,null),(l()(),c["ɵted"](-1,3,["\n\n    "])),(l()(),c["ɵand"](16777216,null,3,1,null,i)),c["ɵdid"](47,16384,null,0,V.NgIf,[c.ViewContainerRef,c.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),c["ɵted"](-1,3,["\n    "])),(l()(),c["ɵand"](16777216,null,3,1,null,s)),c["ɵdid"](50,16384,null,0,V.NgIf,[c.ViewContainerRef,c.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),c["ɵted"](-1,3,["\n  "])),(l()(),c["ɵted"](-1,null,["\n"])),(l()(),c["ɵted"](-1,null,["        \n\n"]))],function(l,n){var e=n.component;l(n,35,0,e.HraDetailQuestionList.lst_hra_question);l(n,47,0,e.HraDetailSections.length!=e.nextCardIndex);l(n,50,0,e.HraDetailSections.length==e.nextCardIndex)},function(l,n){var e=n.component;l(n,0,0,c["ɵnov"](n,1).statusbarPadding,c["ɵnov"](n,1)._hasRefresher);l(n,8,0,c["ɵnov"](n,9)._hidden,c["ɵnov"](n,9)._sbPadding);l(n,29,0,e.cardData.description);l(n,43,0,c["ɵnov"](n,44)._sbPadding)})}e.d(n,"a",function(){return ul});var c=e(0),p=e(162),m=e(47),f=e(17),g=e(14),h=e(2),v=e(33),b=e(154),C=e(331),y=e(163),R=e(6),w=e(30),x=e(9),V=e(12),I=e(41),k=e(284),N=e(153),S=e(98),E=e(65),_=e(56),P=e(3),T=e(11),M=e(7),D=e(19),A=e(13),F=e(28),L=e(21),H=e(24),U=e(5),W=e(20),O=e(31),G=e(36),q=e(26),B=e(37),$=e(32),K=e(27),Q=e(50),Y=e(160),j=e(66),z=e(51),Z=e(101),J=e(175),X=e(16),ll=e(87),nl=e(38),el=e(44),tl=c["ɵcrt"]({encapsulation:2,styles:[],data:{}}),ul=c["ɵccf"]("page-hra-qa",J.a,function(l){return c["ɵvid"](0,[(l()(),c["ɵeld"](0,0,null,null,1,"page-hra-qa",[],null,null,null,d,tl)),c["ɵdid"](1,49152,null,0,J.a,[W.NavController,X.NavParams,ll.a,nl.AlertController,el.LoadingController,x.NgForm],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return o["ɵvid"](0,[(l()(),o["ɵeld"](0,0,null,null,6,"li",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](2,0,null,null,0,"img",[["src","assets/img/arrow.png"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,[" "])),(l()(),o["ɵeld"](4,0,null,null,1,"label",[["class","col-lg-12 mrg-top5"]],null,null,null,null,null)),(l()(),o["ɵted"](5,null,[" "," "])),(l()(),o["ɵted"](-1,null,["\n        "]))],null,function(l,n){l(n,5,0,n.context.$implicit.description)})}function u(l){return o["ɵvid"](0,[(l()(),o["ɵeld"](0,0,null,null,11,"ion-header",[],null,null,null,null,null)),o["ɵdid"](1,16384,null,0,a.Header,[r.Config,o.ElementRef,o.Renderer,[2,i.ViewController]],null,null),(l()(),o["ɵted"](-1,null,["\n\n  "])),(l()(),o["ɵeld"](3,0,null,null,7,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,s.b,s.a)),o["ɵdid"](4,49152,null,0,d.Navbar,[c.App,[2,i.ViewController],[2,p.NavController],r.Config,o.ElementRef,o.Renderer],{color:[0,"color"]},null),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵeld"](6,0,null,3,2,"ion-title",[],null,null,null,m.b,m.a)),o["ɵdid"](7,49152,null,0,f.ToolbarTitle,[r.Config,o.ElementRef,o.Renderer,[2,g.Toolbar],[2,d.Navbar]],null,null),(l()(),o["ɵted"](-1,0,["Consent"])),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵted"](-1,3,["\n  "])),(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵeld"](13,0,null,null,52,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,h.b,h.a)),o["ɵdid"](14,4374528,null,0,v.Content,[r.Config,b.Platform,C.DomController,o.ElementRef,o.Renderer,c.App,y.Keyboard,o.NgZone,[2,i.ViewController],[2,p.NavController]],null,null),(l()(),o["ɵted"](-1,1,["\n  "])),(l()(),o["ɵted"](-1,1,["\n  "])),(l()(),o["ɵeld"](17,0,null,1,47,"div",[["class","div-consent"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵeld"](19,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),o["ɵted"](20,null,["\n      Congratulations "," on completing your Meschino Health Risk Assessment.\n    "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵeld"](22,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n      This report identifies important health risks as well as lifestyle strategies to help manage health issues of\n      importance to you.\n    "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵeld"](25,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n      This report has identified the following health issue(s) based on your responses.\n    "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵeld"](28,0,null,null,35,"div",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n\n      "])),(l()(),o["ɵeld"](30,0,null,null,4,"ul",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵand"](16777216,null,null,1,null,t)),o["ɵdid"](33,802816,null,0,R.NgForOf,[o.ViewContainerRef,o.TemplateRef,o.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](36,0,null,null,26,"div",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n\n        "])),(l()(),o["ɵeld"](38,0,null,null,4,"div",[["class","col-lg-12"],["id","divHRAMessage1"],["style","padding: 20px 0 5px 0;"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](40,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["Receive the latest research updates on the prevention and management of key health issues, along with Dr.\n            Meschino's short “Will Power Moment” videos, explaining proven strategies to keep you on track and\n            motivated.\n          "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n\n        "])),(l()(),o["ɵeld"](44,0,null,null,17,"ion-item",[["class","item item-block"]],null,null,null,w.b,w.a)),o["ɵdid"](45,1097728,null,3,x.Item,[V.Form,r.Config,o.ElementRef,o.Renderer,[2,I.ItemReorder]],null,null),o["ɵqud"](335544320,1,{contentLabel:0}),o["ɵqud"](603979776,2,{_buttons:1}),o["ɵqud"](603979776,3,{_icons:1}),o["ɵdid"](49,16384,null,0,k.ItemContent,[],null,null),(l()(),o["ɵted"](-1,2,["\n          "])),(l()(),o["ɵeld"](51,0,null,1,2,"ion-label",[],null,null,null,null,null)),o["ɵdid"](52,16384,[[1,4]],0,N.Label,[r.Config,o.ElementRef,o.Renderer,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),o["ɵted"](-1,null,["I accept that Meschino Health & Wellness will send me valuable information described in the above\n            paragraph."])),(l()(),o["ɵted"](-1,2,["\n          "])),(l()(),o["ɵeld"](55,0,null,0,5,"ion-checkbox",[["name","Accept"]],[[2,"checkbox-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==o["ɵnov"](l,56)._click(e)&&t}if("ngModelChange"===n){t=!1!==(u.account.Accept=e)&&t}return t},S.b,S.a)),o["ɵdid"](56,1228800,null,0,E.Checkbox,[r.Config,V.Form,[2,x.Item],o.ElementRef,o.Renderer],null,null),o["ɵprd"](1024,null,_.NG_VALUE_ACCESSOR,function(l){return[l]},[E.Checkbox]),o["ɵdid"](58,671744,null,0,_.NgModel,[[8,null],[8,null],[8,null],[2,_.NG_VALUE_ACCESSOR]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),o["ɵprd"](2048,null,_.NgControl,null,[_.NgModel]),o["ɵdid"](60,16384,null,0,_.NgControlStatus,[_.NgControl],null,null),(l()(),o["ɵted"](-1,2,["\n        "])),(l()(),o["ɵted"](-1,null,["\n\n      "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵted"](-1,null,["\n  "])),(l()(),o["ɵted"](-1,1,["\n"])),(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵeld"](67,0,null,null,11,"ion-footer",[],null,null,null,null,null)),o["ɵdid"](68,16384,null,0,P.Footer,[r.Config,o.ElementRef,o.Renderer,[2,i.ViewController]],null,null),(l()(),o["ɵted"](-1,null,["\n  "])),(l()(),o["ɵeld"](70,0,null,null,6,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,T.b,T.a)),o["ɵdid"](71,49152,null,0,g.Toolbar,[r.Config,o.ElementRef,o.Renderer],null,null),(l()(),o["ɵted"](-1,3,["\n\n    "])),(l()(),o["ɵeld"](73,0,null,3,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.submitConfirm()&&t}return t},M.b,M.a)),o["ɵdid"](74,1097728,null,0,D.Button,[[8,""],r.Config,o.ElementRef,o.Renderer],{color:[0,"color"]},null),(l()(),o["ɵted"](-1,0,["CONFIRM CONSENT"])),(l()(),o["ɵted"](-1,3,["\n  "])),(l()(),o["ɵted"](-1,null,["\n\n  "])),(l()(),o["ɵted"](-1,null,["\n"]))],function(l,n){var e=n.component;l(n,4,0,"primary");l(n,33,0,e.RiskReportDetails);l(n,58,0,"Accept",e.account.Accept);l(n,74,0,"primary")},function(l,n){var e=n.component;l(n,3,0,o["ɵnov"](n,4)._hidden,o["ɵnov"](n,4)._sbPadding);l(n,13,0,o["ɵnov"](n,14).statusbarPadding,o["ɵnov"](n,14)._hasRefresher);l(n,20,0,e.userName);l(n,55,0,o["ɵnov"](n,56)._disabled,o["ɵnov"](n,60).ngClassUntouched,o["ɵnov"](n,60).ngClassTouched,o["ɵnov"](n,60).ngClassPristine,o["ɵnov"](n,60).ngClassDirty,o["ɵnov"](n,60).ngClassValid,o["ɵnov"](n,60).ngClassInvalid,o["ɵnov"](n,60).ngClassPending);l(n,70,0,o["ɵnov"](n,71)._sbPadding)})}e.d(n,"a",function(){return q});var o=e(0),a=e(31),r=e(2),i=e(5),s=e(36),d=e(26),c=e(6),p=e(20),m=e(37),f=e(32),g=e(27),h=e(28),v=e(21),b=e(3),C=e(7),y=e(24),R=e(12),w=e(47),x=e(17),V=e(14),I=e(33),k=e(41),N=e(65),S=e(225),E=e(118),_=e(9),P=e(51),T=e(101),M=e(19),D=e(13),A=e(176),F=e(16),L=e(38),H=e(44),U=e(87),W=e(60),O=e(46),G=o["ɵcrt"]({encapsulation:2,styles:[],data:{}}),q=o["ɵccf"]("page-my-hra-result",A.a,function(l){return o["ɵvid"](0,[(l()(),o["ɵeld"](0,0,null,null,1,"page-my-hra-result",[],null,null,null,u,G)),o["ɵdid"](1,49152,null,0,A.a,[p.NavController,F.NavParams,L.AlertController,H.LoadingController,U.a,W.Events,O.a],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return o["ɵvid"](0,[(l()(),o["ɵeld"](0,0,null,null,14,"tr",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.gotoUrl("MyWellnessPlanPage")&&t}return t},null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](2,0,null,null,3,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](4,0,null,null,0,"img",[["src","assets/img/create_wellness_icn.png"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](7,0,null,null,1,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          Create My Wellness Plan\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](10,0,null,null,3,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](12,0,null,null,0,"img",[["src","assets/img/arrow.png"],["style","padding: 10px"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n      "]))],null,null)}function u(l){return o["ɵvid"](0,[(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵeld"](1,0,null,null,102,"ion-header",[],null,null,null,null,null)),o["ɵdid"](2,16384,null,0,a.Header,[r.Config,o.ElementRef,o.Renderer,[2,i.ViewController]],null,null),(l()(),o["ɵted"](-1,null,["\n\n  "])),(l()(),o["ɵeld"](4,0,null,null,33,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,s.b,s.a)),o["ɵdid"](5,49152,null,0,d.Navbar,[c.App,[2,i.ViewController],[2,p.NavController],r.Config,o.ElementRef,o.Renderer],{color:[0,"color"]},null),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵeld"](7,0,null,0,8,"button",[["icon-only",""],["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==o["ɵnov"](l,9).toggle()&&t}return t},m.b,m.a)),o["ɵdid"](8,1097728,[[1,4]],0,f.Button,[[8,""],r.Config,o.ElementRef,o.Renderer],null,null),o["ɵdid"](9,1064960,null,0,g.MenuToggle,[h.MenuController,[2,i.ViewController],[2,f.Button],[2,d.Navbar]],{menuToggle:[0,"menuToggle"]},null),o["ɵdid"](10,16384,null,1,v.ToolbarItem,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),o["ɵqud"](603979776,1,{_buttons:1}),(l()(),o["ɵted"](-1,0,["\n      "])),(l()(),o["ɵeld"](13,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),o["ɵdid"](14,147456,null,0,C.Icon,[r.Config,o.ElementRef,o.Renderer],{name:[0,"name"]},null),(l()(),o["ɵted"](-1,0,["\n    "])),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵeld"](17,0,null,3,2,"ion-title",[],null,null,null,y.b,y.a)),o["ɵdid"](18,49152,null,0,R.ToolbarTitle,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),(l()(),o["ɵted"](-1,0,["My Wellness Wallet"])),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵeld"](21,0,null,2,15,"ion-buttons",[["end",""]],null,null,null,null,null)),o["ɵdid"](22,16384,null,1,v.ToolbarItem,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),o["ɵqud"](603979776,2,{_buttons:1}),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](25,0,null,null,10,"button",[["icon-only",""],["id","notification-button"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.goNotification()&&t}return t},m.b,m.a)),o["ɵdid"](26,1097728,[[2,4]],0,f.Button,[[8,""],r.Config,o.ElementRef,o.Renderer],null,null),(l()(),o["ɵted"](-1,0,["\n        "])),(l()(),o["ɵeld"](28,0,null,0,6,"ion-icon",[["name","notifications"],["role","img"]],[[2,"hide",null]],null,null,null,null)),o["ɵdid"](29,147456,null,0,C.Icon,[r.Config,o.ElementRef,o.Renderer],{name:[0,"name"]},null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](31,0,null,null,2,"ion-badge",[["color","danger"],["id","notifications-badge"]],null,null,null,null,null)),o["ɵdid"](32,16384,null,0,w.Badge,[r.Config,o.ElementRef,o.Renderer],{color:[0,"color"]},null),(l()(),o["ɵted"](33,null,["",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,0,["\n      "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵted"](-1,3,["\n  "])),(l()(),o["ɵted"](-1,null,["\n  "])),(l()(),o["ɵeld"](39,0,null,null,63,"div",[["class","div-center"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵeld"](41,0,null,null,36,"table",[["style","width: 100%"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](43,0,null,null,34,"tbody",[],null,null,null,null,null)),(l()(),o["ɵeld"](44,0,null,null,32,"tr",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](46,0,null,null,12,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](48,0,null,null,9,"div",[["class","div-bio-bg fr"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n            "])),(l()(),o["ɵeld"](50,0,null,null,2,"ion-title",[],null,null,null,y.b,y.a)),o["ɵdid"](51,49152,null,0,R.ToolbarTitle,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),(l()(),o["ɵted"](52,0,["",""])),(l()(),o["ɵted"](-1,null,["\n            "])),(l()(),o["ɵeld"](54,0,null,null,2,"ion-title",[["class","no-pd-title"]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.ViewTemplate("BioAge")&&t}return t},y.b,y.a)),o["ɵdid"](55,49152,null,0,R.ToolbarTitle,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),(l()(),o["ɵted"](-1,0,["Bio Age"])),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](60,0,null,null,1,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n            \n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](63,0,null,null,12,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](65,0,null,null,9,"div",[["class","div-bio-bg fl"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n            "])),(l()(),o["ɵeld"](67,0,null,null,2,"ion-title",[],null,null,null,y.b,y.a)),o["ɵdid"](68,49152,null,0,R.ToolbarTitle,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),(l()(),o["ɵted"](69,0,["",""])),(l()(),o["ɵted"](-1,null,["\n            "])),(l()(),o["ɵeld"](71,0,null,null,2,"ion-title",[["class","no-pd-title"]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.ViewTemplate("MHRScore")&&t}return t},y.b,y.a)),o["ɵdid"](72,49152,null,0,R.ToolbarTitle,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),(l()(),o["ɵted"](-1,0,["MHR Score"])),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵeld"](79,0,null,null,22,"table",[["class","tbl-hra"],["style","width: 100% ;"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](81,0,null,null,20,"tbody",[],null,null,null,null,null)),(l()(),o["ɵeld"](82,0,null,null,14,"tr",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.gotoUrl("MyHraPage")&&t}return t},null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](84,0,null,null,3,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](86,0,null,null,0,"img",[["src","assets/img/MyHRA_icn.png"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](89,0,null,null,1,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          My HRA\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](92,0,null,null,3,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](94,0,null,null,0,"img",[["src","assets/img/arrow.png"],["style","padding: 10px"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵand"](16777216,null,null,1,null,t)),o["ɵdid"](100,16384,null,0,x.NgIf,[o.ViewContainerRef,o.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵted"](-1,null,["\n  "])),(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵeld"](105,0,null,null,2,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,V.b,V.a)),o["ɵdid"](106,4374528,null,0,I.Content,[r.Config,k.Platform,N.DomController,o.ElementRef,o.Renderer,c.App,S.Keyboard,o.NgZone,[2,i.ViewController],[2,p.NavController]],null,null),(l()(),o["ɵted"](-1,1,["\n\n"]))],function(l,n){var e=n.component;l(n,5,0,"primary");l(n,9,0,"");l(n,14,0,"menu");l(n,29,0,"notifications");l(n,32,0,"danger");l(n,100,0,e.IsHRACompleted)},function(l,n){var e=n.component;l(n,4,0,o["ɵnov"](n,5)._hidden,o["ɵnov"](n,5)._sbPadding);l(n,7,0,o["ɵnov"](n,9).isHidden);l(n,13,0,o["ɵnov"](n,14)._hidden);l(n,28,0,o["ɵnov"](n,29)._hidden);l(n,33,0,e.notificationCount);l(n,52,0,e.bio_age);l(n,69,0,e.mhrs_score);l(n,105,0,o["ɵnov"](n,106).statusbarPadding,o["ɵnov"](n,106)._hasRefresher)})}e.d(n,"a",function(){return F});var o=e(0),a=e(31),r=e(2),i=e(5),s=e(36),d=e(26),c=e(6),p=e(20),m=e(19),f=e(13),g=e(84),h=e(40),v=e(77),b=e(27),C=e(49),y=e(37),R=e(32),w=e(157),x=e(12),V=e(28),I=e(21),k=e(3),N=e(7),S=e(24),E=e(103),_=e(16),P=e(44),T=e(46),M=e(124),D=e(60),A=o["ɵcrt"]({encapsulation:2,styles:[],data:{}}),F=o["ɵccf"]("page-my-wellness-wallet",E.a,function(l){return o["ɵvid"](0,[(l()(),o["ɵeld"](0,0,null,null,1,"page-my-wellness-wallet",[],null,null,null,u,A)),o["ɵdid"](1,49152,null,0,E.a,[p.NavController,_.NavParams,P.LoadingController,T.a,M.a,D.Events],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return o["ɵvid"](0,[(l()(),o["ɵeld"](0,0,null,null,9,"tr",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.goToReportDetail(l.context.$implicit.risk_page_num)&&t}return t},null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](2,0,null,null,1,"td",[["style","padding: 10px"]],null,null,null,null,null)),(l()(),o["ɵted"](3,null,["\n            ","\n          "])),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](5,0,null,null,3,"td",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n            "])),(l()(),o["ɵeld"](7,0,null,null,0,"img",[["src","assets/img/down_arrow.png"],["style","padding: 10px"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵted"](-1,null,["\n        "]))],null,function(l,n){l(n,3,0,n.context.$implicit.title)})}function u(l){return o["ɵvid"](0,[(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵeld"](1,0,null,null,37,"ion-header",[],null,null,null,null,null)),o["ɵdid"](2,16384,null,0,a.Header,[r.Config,o.ElementRef,o.Renderer,[2,i.ViewController]],null,null),(l()(),o["ɵted"](-1,null,["\n\n  "])),(l()(),o["ɵeld"](4,0,null,null,33,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,s.b,s.a)),o["ɵdid"](5,49152,null,0,d.Navbar,[c.App,[2,i.ViewController],[2,p.NavController],r.Config,o.ElementRef,o.Renderer],{color:[0,"color"]},null),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵeld"](7,0,null,0,8,"button",[["icon-only",""],["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==o["ɵnov"](l,9).toggle()&&t}return t},m.b,m.a)),o["ɵdid"](8,1097728,[[1,4]],0,f.Button,[[8,""],r.Config,o.ElementRef,o.Renderer],null,null),o["ɵdid"](9,1064960,null,0,g.MenuToggle,[h.MenuController,[2,i.ViewController],[2,f.Button],[2,d.Navbar]],{menuToggle:[0,"menuToggle"]},null),o["ɵdid"](10,16384,null,1,v.ToolbarItem,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),o["ɵqud"](603979776,1,{_buttons:1}),(l()(),o["ɵted"](-1,0,["\n      "])),(l()(),o["ɵeld"](13,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),o["ɵdid"](14,147456,null,0,C.Icon,[r.Config,o.ElementRef,o.Renderer],{name:[0,"name"]},null),(l()(),o["ɵted"](-1,0,["\n    "])),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵeld"](17,0,null,3,2,"ion-title",[],null,null,null,y.b,y.a)),o["ɵdid"](18,49152,null,0,R.ToolbarTitle,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),(l()(),o["ɵted"](-1,0,["Create My Wellness Plan"])),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵeld"](21,0,null,2,15,"ion-buttons",[["end",""]],null,null,null,null,null)),o["ɵdid"](22,16384,null,1,v.ToolbarItem,[r.Config,o.ElementRef,o.Renderer,[2,b.Toolbar],[2,d.Navbar]],null,null),o["ɵqud"](603979776,2,{_buttons:1}),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](25,0,null,null,10,"button",[["icon-only",""],["id","notification-button"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.goNotification()&&t}return t},m.b,m.a)),o["ɵdid"](26,1097728,[[2,4]],0,f.Button,[[8,""],r.Config,o.ElementRef,o.Renderer],null,null),(l()(),o["ɵted"](-1,0,["\n        "])),(l()(),o["ɵeld"](28,0,null,0,6,"ion-icon",[["name","notifications"],["role","img"]],[[2,"hide",null]],null,null,null,null)),o["ɵdid"](29,147456,null,0,C.Icon,[r.Config,o.ElementRef,o.Renderer],{name:[0,"name"]},null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](31,0,null,null,2,"ion-badge",[["color","danger"],["id","notifications-badge"]],null,null,null,null,null)),o["ɵdid"](32,16384,null,0,w.Badge,[r.Config,o.ElementRef,o.Renderer],{color:[0,"color"]},null),(l()(),o["ɵted"](33,null,["",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,0,["\n      "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵted"](-1,3,["\n  "])),(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵeld"](40,0,null,null,26,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,x.b,x.a)),o["ɵdid"](41,4374528,null,0,V.Content,[r.Config,I.Platform,k.DomController,o.ElementRef,o.Renderer,c.App,N.Keyboard,o.NgZone,[2,i.ViewController],[2,p.NavController]],null,null),(l()(),o["ɵted"](-1,1,["\n    "])),(l()(),o["ɵeld"](43,0,null,1,4,"div",[["class","title"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](45,0,null,null,1,"h3",[],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,[" Major Health Risk "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,1,[" \n  "])),(l()(),o["ɵeld"](49,0,null,1,16,"ion-card",[],null,null,null,null,null)),o["ɵdid"](50,16384,null,0,S.Card,[r.Config,o.ElementRef,o.Renderer],null,null),(l()(),o["ɵted"](-1,null,["\n\n    "])),(l()(),o["ɵeld"](52,0,null,null,12,"ion-card-content",[],null,null,null,null,null)),o["ɵdid"](53,16384,null,0,E.CardContent,[r.Config,o.ElementRef,o.Renderer],null,null),(l()(),o["ɵted"](-1,null,["\n\n      "])),(l()(),o["ɵeld"](55,0,null,null,5,"table",[["class","tbl-hra"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](57,0,null,null,3,"tbody",[],null,null,null,null,null)),(l()(),o["ɵand"](16777216,null,null,1,null,t)),o["ɵdid"](59,802816,null,0,_.NgForOf,[o.ViewContainerRef,o.TemplateRef,o.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](62,0,null,null,1,"div",[["style","height: 10px;"]],null,null,null,null,null)),(l()(),o["ɵted"](-1,null,["\n\n      "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵted"](-1,null,["\n  "])),(l()(),o["ɵted"](-1,1,["\n\n"]))],function(l,n){var e=n.component;l(n,5,0,"primary");l(n,9,0,"");l(n,14,0,"menu");l(n,29,0,"notifications");l(n,32,0,"danger");l(n,59,0,e.HealthRisks)},function(l,n){var e=n.component;l(n,4,0,o["ɵnov"](n,5)._hidden,o["ɵnov"](n,5)._sbPadding);l(n,7,0,o["ɵnov"](n,9).isHidden);l(n,13,0,o["ɵnov"](n,14)._hidden);l(n,28,0,o["ɵnov"](n,29)._hidden);l(n,33,0,e.notificationCount);l(n,40,0,o["ɵnov"](n,41).statusbarPadding,o["ɵnov"](n,41)._hasRefresher)})}e.d(n,"a",function(){return W});var o=e(0),a=e(31),r=e(2),i=e(5),s=e(36),d=e(26),c=e(6),p=e(20),m=e(19),f=e(13),g=e(84),h=e(40),v=e(77),b=e(27),C=e(49),y=e(37),R=e(32),w=e(157),x=e(28),V=e(21),I=e(3),k=e(7),N=e(24),S=e(50),E=e(66),_=e(12),P=e(177),T=e(16),M=e(38),D=e(44),A=e(87),F=e(46),L=e(124),H=e(60),U=o["ɵcrt"]({encapsulation:2,styles:[],data:{}}),W=o["ɵccf"]("page-my-wellness-plan",P.a,function(l){return o["ɵvid"](0,[(l()(),o["ɵeld"](0,0,null,null,1,"page-my-wellness-plan",[],null,null,null,u,U)),o["ɵdid"](1,49152,null,0,P.a,[p.NavController,T.NavParams,M.AlertController,D.LoadingController,A.a,F.a,L.a,H.Events],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,6,null,null,null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                "])),(l()(),f["ɵeld"](2,0,null,null,3,"div",[["class","canvas__container"],["style","background-image: url('../../../assets/img/red.png') ;"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                    "])),(l()(),f["ɵeld"](4,0,null,null,0,"img",[],[[8,"src",4]],null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                "])),(l()(),f["ɵted"](-1,null,["\n                            "]))],null,function(l,n){l(n,4,0,f["ɵinlineInterpolate"](2,"",n.component.siteUrl,"images/new-layout/Risks Icons/",n.parent.context.$implicit.image_location,""))})}function u(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,6,null,null,null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                "])),(l()(),f["ɵeld"](2,0,null,null,3,"div",[["class","canvas__container"],["style","background-image: url('../../../assets/img/yellow.png') ;"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                    "])),(l()(),f["ɵeld"](4,0,null,null,0,"img",[],[[8,"src",4]],null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                "])),(l()(),f["ɵted"](-1,null,["\n                            "]))],null,function(l,n){l(n,4,0,f["ɵinlineInterpolate"](2,"",n.component.siteUrl,"images/new-layout/Risks Icons/",n.parent.context.$implicit.image_location,""))})}function o(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,6,null,null,null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                "])),(l()(),f["ɵeld"](2,0,null,null,3,"div",[["class","canvas__container"],["style","background-image: url('../../../assets/img/green.png') ;"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                    "])),(l()(),f["ɵeld"](4,0,null,null,0,"img",[],[[8,"src",4]],null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                "])),(l()(),f["ɵted"](-1,null,["\n                            "]))],null,function(l,n){l(n,4,0,f["ɵinlineInterpolate"](2,"",n.component.siteUrl,"images/new-layout/Risks Icons/",n.parent.context.$implicit.image_location,""))})}function a(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,32,"div",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                        "])),(l()(),f["ɵted"](-1,null,["\n                         "])),(l()(),f["ɵeld"](3,0,null,null,2,"ion-card-header",[],null,null,null,null,null)),f["ɵdid"](4,16384,null,0,g.CardHeader,[h.Config,f.ElementRef,f.Renderer],null,null),(l()(),f["ɵted"](5,null,["\n                                ","\n                        "])),(l()(),f["ɵted"](-1,null,["\n                        "])),(l()(),f["ɵeld"](7,0,null,null,10,"div",[["class","div-cirle-center"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                            "])),(l()(),f["ɵand"](16777216,null,null,1,null,t)),f["ɵdid"](10,16384,null,0,v.NgIf,[f.ViewContainerRef,f.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),f["ɵted"](-1,null,["\n                            "])),(l()(),f["ɵand"](16777216,null,null,1,null,u)),f["ɵdid"](13,16384,null,0,v.NgIf,[f.ViewContainerRef,f.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),f["ɵted"](-1,null,["\n                            "])),(l()(),f["ɵand"](16777216,null,null,1,null,o)),f["ɵdid"](16,16384,null,0,v.NgIf,[f.ViewContainerRef,f.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),f["ɵted"](-1,null,["\n\n\n                        "])),(l()(),f["ɵted"](-1,null,["\n                        "])),(l()(),f["ɵted"](-1,null,["\n                        "])),(l()(),f["ɵeld"](20,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),f["ɵted"](21,null,["\n                            ","\n                        "])),(l()(),f["ɵted"](-1,null,["\n                        "])),(l()(),f["ɵeld"](23,0,null,null,2,"ion-title",[],null,null,null,b.b,b.a)),f["ɵdid"](24,49152,null,0,C.ToolbarTitle,[h.Config,f.ElementRef,f.Renderer,[2,y.Toolbar],[2,R.Navbar]],null,null),(l()(),f["ɵted"](25,0,[" "," "])),(l()(),f["ɵted"](-1,null,["\n                        "])),(l()(),f["ɵeld"](27,0,null,null,2,"span",[],null,null,null,null,null)),(l()(),f["ɵted"](28,null,["\n                            ","\n                        "])),f["ɵppd"](29,2),(l()(),f["ɵted"](-1,null,["\n                        "])),(l()(),f["ɵeld"](31,0,null,null,0,"hr",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                    "]))],function(l,n){l(n,10,0,1==n.context.$implicit.risk_score_num);l(n,13,0,2==n.context.$implicit.risk_score_num);l(n,16,0,3==n.context.$implicit.risk_score_num)},function(l,n){l(n,5,0,n.context.$implicit.risk_description);l(n,21,0,n.context.$implicit.feedback);l(n,25,0,n.context.$implicit.tool_phoneApp_description);l(n,28,0,f["ɵunv"](n,28,0,l(n,29,0,f["ɵnov"](n.parent,0),n.context.$implicit.last_updated,"short")))})}function r(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,5,null,null,null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                            "])),(l()(),f["ɵeld"](2,0,null,null,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.SetGoals(l.parent.context.$implicit.goal_num)&&t}return t},w.b,w.a)),f["ɵdid"](3,1097728,null,0,x.Button,[[8,""],h.Config,f.ElementRef,f.Renderer],{color:[0,"color"]},null),(l()(),f["ɵted"](-1,0,["\n                                                SET GOAL\n                                            "])),(l()(),f["ɵted"](-1,null,["\n                                        "]))],function(l,n){l(n,3,0,"primary")},null)}function i(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,5,null,null,null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                            "])),(l()(),f["ɵeld"](2,0,null,null,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.SetGoals(l.parent.context.$implicit.goal_num)&&t}return t},w.b,w.a)),f["ɵdid"](3,1097728,null,0,x.Button,[[8,""],h.Config,f.ElementRef,f.Renderer],{color:[0,"color"]},null),(l()(),f["ɵted"](-1,0,["\n                                                VIEW GOAL\n                                            "])),(l()(),f["ɵted"](-1,null,["\n                                        "]))],function(l,n){l(n,3,0,"primary")},null)}function s(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,22,"tr",[["class","div-goals-items"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                    "])),(l()(),f["ɵeld"](2,0,null,null,3,"td",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                        "])),(l()(),f["ɵeld"](4,0,null,null,0,"img",[],[[8,"src",4]],null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                    "])),(l()(),f["ɵted"](-1,null,["\n                                    "])),(l()(),f["ɵeld"](7,0,null,null,5,"td",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                        "])),(l()(),f["ɵeld"](9,0,null,null,2,"ion-title",[],null,null,null,b.b,b.a)),f["ɵdid"](10,49152,null,0,C.ToolbarTitle,[h.Config,f.ElementRef,f.Renderer,[2,y.Toolbar],[2,R.Navbar]],null,null),(l()(),f["ɵted"](11,0,[" "," "])),(l()(),f["ɵted"](-1,null,["\n                                    "])),(l()(),f["ɵted"](-1,null,["\n                                    "])),(l()(),f["ɵeld"](14,0,null,null,7,"td",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                        "])),(l()(),f["ɵand"](16777216,null,null,1,null,r)),f["ɵdid"](17,16384,null,0,v.NgIf,[f.ViewContainerRef,f.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),f["ɵted"](-1,null,["\n                                        "])),(l()(),f["ɵand"](16777216,null,null,1,null,i)),f["ɵdid"](20,16384,null,0,v.NgIf,[f.ViewContainerRef,f.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),f["ɵted"](-1,null,["\n\n                                    "])),(l()(),f["ɵted"](-1,null,["\n                                "]))],function(l,n){l(n,17,0,null==n.context.$implicit.goal_status_num||1==n.context.$implicit.goal_status_num);l(n,20,0,null!==n.context.$implicit.goal_status_num&&1!=n.context.$implicit.goal_status_num)},function(l,n){l(n,4,0,f["ɵinlineInterpolate"](2,"",n.component.siteUrl,"/",n.context.$implicit.goal_image_location.replace("~/",""),""));l(n,11,0,n.context.$implicit.goal_description)})}function d(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,4,"tbody",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                "])),(l()(),f["ɵand"](16777216,null,null,1,null,s)),f["ɵdid"](3,802816,null,0,v.NgForOf,[f.ViewContainerRef,f.TemplateRef,f.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),f["ɵted"](-1,null,["\n                            "]))],function(l,n){l(n,3,0,n.component.GoalList)},null)}function c(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,7,"tbody",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                "])),(l()(),f["ɵeld"](2,0,null,null,4,"tr",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                                    "])),(l()(),f["ɵeld"](4,0,null,null,1,"td",[["colspan","3"],["style","padding-left: 50px;text-align: center;"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,[" No Recommended Goals\n                                    "])),(l()(),f["ɵted"](-1,null,["\n                                "])),(l()(),f["ɵted"](-1,null,["\n                            "]))],null,null)}function p(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,16,"div",[["class","div-goals"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                        "])),(l()(),f["ɵted"](-1,null,["\n                        \n                        "])),(l()(),f["ɵeld"](3,0,null,null,2,"ion-card-header",[],null,null,null,null,null)),f["ɵdid"](4,16384,null,0,g.CardHeader,[h.Config,f.ElementRef,f.Renderer],null,null),(l()(),f["ɵted"](-1,null,["\n                                Recommended Goals\n                        "])),(l()(),f["ɵted"](-1,null,["\n                        "])),(l()(),f["ɵeld"](7,0,null,null,8,"table",[["class","tbl-hra"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                            "])),(l()(),f["ɵand"](16777216,null,null,1,null,d)),f["ɵdid"](10,16384,null,0,v.NgIf,[f.ViewContainerRef,f.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),f["ɵted"](-1,null,["\n                            "])),(l()(),f["ɵand"](16777216,null,null,1,null,c)),f["ɵdid"](13,16384,null,0,v.NgIf,[f.ViewContainerRef,f.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),f["ɵeld"](14,0,null,null,1,"tbody",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n\n                        "])),(l()(),f["ɵted"](-1,null,["\n\n                    "]))],function(l,n){var e=n.component;l(n,10,0,0!=(null==e.GoalList?null:e.GoalList.length));l(n,13,0,0==(null==e.GoalList?null:e.GoalList.length))},null)}function m(l){return f["ɵvid"](0,[f["ɵpid"](0,v.DatePipe,[f.LOCALE_ID]),(l()(),f["ɵted"](-1,null,["\n\n"])),(l()(),f["ɵeld"](2,0,null,null,36,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,V.b,V.a)),f["ɵdid"](3,4374528,null,0,I.Content,[h.Config,k.Platform,N.DomController,f.ElementRef,f.Renderer,S.App,E.Keyboard,f.NgZone,[2,_.ViewController],[2,P.NavController]],null,null),(l()(),f["ɵted"](-1,1,["\n    "])),(l()(),f["ɵeld"](5,0,null,1,32,"ion-header",[],null,null,null,null,null)),f["ɵdid"](6,16384,null,0,T.Header,[h.Config,f.ElementRef,f.Renderer,[2,_.ViewController]],null,null),(l()(),f["ɵted"](-1,null,["\n        "])),(l()(),f["ɵeld"](8,0,null,null,6,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,M.b,M.a)),f["ɵdid"](9,49152,null,0,R.Navbar,[S.App,[2,_.ViewController],[2,P.NavController],h.Config,f.ElementRef,f.Renderer],{color:[0,"color"]},null),(l()(),f["ɵted"](-1,3,["\n            "])),(l()(),f["ɵeld"](11,0,null,3,2,"ion-title",[],null,null,null,b.b,b.a)),f["ɵdid"](12,49152,null,0,C.ToolbarTitle,[h.Config,f.ElementRef,f.Renderer,[2,y.Toolbar],[2,R.Navbar]],null,null),(l()(),f["ɵted"](-1,0,["Create My Wellness Plan"])),(l()(),f["ɵted"](-1,3,["\n        "])),(l()(),f["ɵted"](-1,null,["\n\n        "])),(l()(),f["ɵeld"](16,0,null,null,20,"div",[["class","div-center"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n\n            "])),(l()(),f["ɵeld"](18,0,null,null,17,"div",[["class","div-content-risk"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                "])),(l()(),f["ɵeld"](20,0,null,null,2,"ion-title",[],null,null,null,b.b,b.a)),f["ɵdid"](21,49152,null,0,C.ToolbarTitle,[h.Config,f.ElementRef,f.Renderer,[2,y.Toolbar],[2,R.Navbar]],null,null),(l()(),f["ɵted"](22,0,["",""])),(l()(),f["ɵted"](-1,null,["\n                "])),(l()(),f["ɵeld"](24,0,null,null,10,"div",[],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n                    "])),(l()(),f["ɵand"](16777216,null,null,1,null,a)),f["ɵdid"](27,802816,null,0,v.NgForOf,[f.ViewContainerRef,f.TemplateRef,f.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),f["ɵted"](-1,null,["\n                    "])),(l()(),f["ɵand"](16777216,null,null,1,null,p)),f["ɵdid"](30,16384,null,0,v.NgIf,[f.ViewContainerRef,f.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),f["ɵted"](-1,null,["\n\n                    "])),(l()(),f["ɵeld"](32,0,null,null,1,"div",[["style","height: 60px;"]],null,null,null,null,null)),(l()(),f["ɵted"](-1,null,["\n\n                    "])),(l()(),f["ɵted"](-1,null,["\n                "])),(l()(),f["ɵted"](-1,null,["\n            "])),(l()(),f["ɵted"](-1,null,["\n        "])),(l()(),f["ɵted"](-1,null,["\n\n    "])),(l()(),f["ɵted"](-1,1,["\n\n"]))],function(l,n){var e=n.component;l(n,9,0,"primary");l(n,27,0,e.MeterList);l(n,30,0,e.ShowRecommendedGoals)},function(l,n){var e=n.component;l(n,2,0,f["ɵnov"](n,3).statusbarPadding,f["ɵnov"](n,3)._hasRefresher);l(n,8,0,f["ɵnov"](n,9)._hidden,f["ɵnov"](n,9)._sbPadding);l(n,22,0,e.title)})}e.d(n,"a",function(){return W});var f=e(0),g=e(160),h=e(2),v=e(12),b=e(37),C=e(32),y=e(27),R=e(26),w=e(19),x=e(13),V=e(28),I=e(21),k=e(3),N=e(7),S=e(6),E=e(24),_=e(5),P=e(20),T=e(31),M=e(36),D=e(178),A=e(16),F=e(38),L=e(44),H=e(87),U=f["ɵcrt"]({encapsulation:2,styles:[],data:{}}),W=f["ɵccf"]("page-my-riskdetail",D.a,function(l){return f["ɵvid"](0,[(l()(),f["ɵeld"](0,0,null,null,1,"page-my-riskdetail",[],null,null,null,m,U)),f["ɵdid"](1,49152,null,0,D.a,[P.NavController,A.NavParams,F.AlertController,L.LoadingController,H.a],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,1,"span",[["class","msg-col"],["text-wrap",""]],[[8,"id",0]],null,null,null,null)),(l()(),i["ɵted"](1,null,["",""]))],null,function(l,n){l(n,0,0,i["ɵinlineInterpolate"](1,"less-",n.parent.context.$implicit.Id,""));l(n,1,0,n.parent.context.$implicit.Message.length>55?n.parent.context.$implicit.Message.substring(0,55)+"...":n.parent.context.$implicit.Message)})}function u(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,1,"span",[["class","msg-col"],["text-wrap",""]],[[8,"id",0]],null,null,null,null)),(l()(),i["ɵted"](1,null,["",""]))],null,function(l,n){l(n,0,0,i["ɵinlineInterpolate"](1,"full-",n.parent.context.$implicit.Id,""));l(n,1,0,n.parent.context.$implicit.Message)})}function o(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.OpenArticle(l.parent.context.$implicit,l.parent.context.$implicit.showfull)&&t}return t},s.b,s.a)),i["ɵdid"](1,1097728,[[10,4]],0,d.Button,[[8,""],c.Config,i.ElementRef,i.Renderer],{color:[0,"color"]},null),(l()(),i["ɵted"](2,0,["\n          ","\n        "]))],function(l,n){l(n,1,0,"primary")},function(l,n){l(n,2,0,n.parent.context.$implicit.showfull?"less":"more")})}function a(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,37,"ion-item-sliding",[["class","content-msg-list"]],null,null,null,p.b,p.a)),i["ɵdid"](1,49152,null,2,m.ItemSliding,[[2,f.List],g.Platform,i.Renderer,i.ElementRef,i.NgZone],null,null),i["ɵqud"](335544320,7,{item:0}),i["ɵqud"](603979776,8,{_itemOptions:1}),(l()(),i["ɵted"](-1,null,["\n      "])),(l()(),i["ɵeld"](5,0,null,0,23,"ion-item",[["class","item item-block"]],[[2,"msg-unread",null]],[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.MarkMessageRead(l.context.$implicit)&&t}return t},h.b,h.a)),i["ɵdid"](6,1097728,[[7,4]],3,v.Item,[b.Form,c.Config,i.ElementRef,i.Renderer,[2,C.ItemReorder]],null,null),i["ɵqud"](335544320,9,{contentLabel:0}),i["ɵqud"](603979776,10,{_buttons:1}),i["ɵqud"](603979776,11,{_icons:1}),i["ɵdid"](10,16384,null,0,y.ItemContent,[],null,null),(l()(),i["ɵted"](-1,2,["\n        "])),(l()(),i["ɵeld"](12,0,null,0,0,"img",[["item-left",""],["src","assets/img/appicon.png"]],null,null,null,null,null)),(l()(),i["ɵted"](-1,2,["\n        "])),(l()(),i["ɵand"](16777216,null,2,1,null,t)),i["ɵdid"](15,16384,null,0,R.NgIf,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵted"](-1,2,["\n        "])),(l()(),i["ɵand"](16777216,null,2,1,null,u)),i["ɵdid"](18,16384,null,0,R.NgIf,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵted"](-1,2,["\n        "])),(l()(),i["ɵand"](16777216,null,2,1,null,o)),i["ɵdid"](21,16384,null,0,R.NgIf,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵted"](-1,2,["\n        "])),(l()(),i["ɵeld"](23,0,null,2,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,2,["\n        "])),(l()(),i["ɵeld"](25,0,null,2,2,"span",[["class","msg-col2"]],null,null,null,null,null)),(l()(),i["ɵted"](26,null,[" "," "])),i["ɵppd"](27,2),(l()(),i["ɵted"](-1,2,["\n\n      "])),(l()(),i["ɵted"](-1,null,["\n      "])),(l()(),i["ɵeld"](30,0,null,1,6,"ion-item-options",[],null,null,null,null,null)),i["ɵdid"](31,16384,[[8,4]],0,w.ItemOptions,[i.ElementRef,g.Platform],null,null),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵeld"](33,0,null,null,2,"button",[["class","warning"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.removeItem(l.context.$implicit)&&t}return t},s.b,s.a)),i["ɵdid"](34,1097728,null,0,d.Button,[[8,""],c.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,0,["Delete"])),(l()(),i["ɵted"](-1,null,["\n      "])),(l()(),i["ɵted"](-1,null,["\n    "]))],function(l,n){l(n,15,0,!n.context.$implicit.showfull);l(n,18,0,n.context.$implicit.showfull);l(n,21,0,!n.context.$implicit.HideButton)},function(l,n){l(n,5,0,!n.context.$implicit.IsRead);l(n,26,0,i["ɵunv"](n,26,0,l(n,27,0,i["ɵnov"](n.parent,0),n.context.$implicit.CreateDate,"longDate")))})}function r(l){return i["ɵvid"](0,[i["ɵpid"](0,R.DatePipe,[i.LOCALE_ID]),i["ɵqud"](402653184,1,{content:0}),(l()(),i["ɵeld"](2,0,null,null,31,"ion-header",[],null,null,null,null,null)),i["ɵdid"](3,16384,null,0,x.Header,[c.Config,i.ElementRef,i.Renderer,[2,V.ViewController]],null,null),(l()(),i["ɵted"](-1,null,["\n\n  "])),(l()(),i["ɵeld"](5,0,null,null,27,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,I.b,I.a)),i["ɵdid"](6,49152,null,0,k.Navbar,[N.App,[2,V.ViewController],[2,S.NavController],c.Config,i.ElementRef,i.Renderer],{color:[0,"color"]},null),(l()(),i["ɵted"](-1,3,["\n    "])),(l()(),i["ɵeld"](8,0,null,1,10,"ion-buttons",[["start",""]],null,null,null,null,null)),i["ɵdid"](9,16384,null,1,E.ToolbarItem,[c.Config,i.ElementRef,i.Renderer,[2,_.Toolbar],[2,k.Navbar]],null,null),i["ɵqud"](603979776,2,{_buttons:1}),(l()(),i["ɵted"](-1,null,["\n      "])),(l()(),i["ɵeld"](12,0,null,null,5,"button",[["id","custom-back-btn"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.goBack()&&t}return t},s.b,s.a)),i["ɵdid"](13,1097728,[[2,4]],0,d.Button,[[8,""],c.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,0,["\n        "])),(l()(),i["ɵeld"](15,0,null,0,1,"ion-icon",[["name","arrow-back"],["role","img"]],[[2,"hide",null]],null,null,null,null)),i["ɵdid"](16,147456,null,0,P.Icon,[c.Config,i.ElementRef,i.Renderer],{name:[0,"name"]},null),(l()(),i["ɵted"](-1,0,["\n      "])),(l()(),i["ɵted"](-1,null,["\n    "])),(l()(),i["ɵted"](-1,3,["\n    "])),(l()(),i["ɵeld"](20,0,null,3,2,"ion-title",[],null,null,null,T.b,T.a)),i["ɵdid"](21,49152,null,0,M.ToolbarTitle,[c.Config,i.ElementRef,i.Renderer,[2,_.Toolbar],[2,k.Navbar]],null,null),(l()(),i["ɵted"](-1,0,["Notifications"])),(l()(),i["ɵted"](-1,3,["\n    "])),(l()(),i["ɵeld"](24,0,null,2,7,"ion-buttons",[["end",""]],null,null,null,null,null)),i["ɵdid"](25,16384,null,1,E.ToolbarItem,[c.Config,i.ElementRef,i.Renderer,[2,_.Toolbar],[2,k.Navbar]],null,null),i["ɵqud"](603979776,3,{_buttons:1}),(l()(),i["ɵted"](-1,null,["\n      "])),(l()(),i["ɵeld"](28,0,null,null,2,"button",[["id","clear-btn"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.clearall()&&t}return t},s.b,s.a)),i["ɵdid"](29,1097728,[[3,4]],0,d.Button,[[8,""],c.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,0,["\n        Clear All\n      "])),(l()(),i["ɵted"](-1,null,["\n    "])),(l()(),i["ɵted"](-1,3,["\n  "])),(l()(),i["ɵted"](-1,null,["\n"])),(l()(),i["ɵted"](-1,null,["\n"])),(l()(),i["ɵeld"](35,0,null,null,29,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,D.b,D.a)),i["ɵdid"](36,4374528,[[1,4]],0,A.Content,[c.Config,g.Platform,F.DomController,i.ElementRef,i.Renderer,N.App,L.Keyboard,i.NgZone,[2,V.ViewController],[2,S.NavController]],null,null),(l()(),i["ɵted"](-1,1,["\n\n  "])),(l()(),i["ɵeld"](38,0,null,1,18,"ion-item",[["class","item item-block"]],null,null,null,h.b,h.a)),i["ɵdid"](39,1097728,null,3,v.Item,[b.Form,c.Config,i.ElementRef,i.Renderer,[2,C.ItemReorder]],null,null),i["ɵqud"](335544320,4,{contentLabel:0}),i["ɵqud"](603979776,5,{_buttons:1}),i["ɵqud"](603979776,6,{_icons:1}),i["ɵdid"](43,16384,null,0,y.ItemContent,[],null,null),(l()(),i["ɵted"](-1,2,["\n    "])),(l()(),i["ɵeld"](45,0,null,1,2,"ion-label",[],null,null,null,null,null)),i["ɵdid"](46,16384,[[4,4]],0,H.Label,[c.Config,i.ElementRef,i.Renderer,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),i["ɵted"](-1,null,["Want to receive Notification?"])),(l()(),i["ɵted"](-1,2,["\n    "])),(l()(),i["ɵeld"](49,0,null,4,6,"ion-toggle",[["color","secondary"],["slot","start"]],[[2,"toggle-disabled",null],[2,"toggle-checked",null],[2,"toggle-activated",null]],[[null,"ionChange"],[null,"keyup"]],function(l,n,e){var t=!0,u=l.component;if("keyup"===n){t=!1!==i["ɵnov"](l,51)._keyup(e)&&t}if("ionChange"===n){t=!1!==u.notify(e)&&t}return t},U.b,U.a)),i["ɵprd"](5120,null,W.NG_VALUE_ACCESSOR,function(l){return[l]},[O.Toggle]),i["ɵdid"](51,1228800,null,0,O.Toggle,[b.Form,c.Config,g.Platform,i.ElementRef,i.Renderer,G.Haptic,[2,v.Item],q.GestureController,F.DomController,i.NgZone],{color:[0,"color"],checked:[1,"checked"]},{ionChange:"ionChange"}),(l()(),i["ɵted"](-1,null,["\n      "])),(l()(),i["ɵeld"](53,0,null,null,1,"div",[["class","toggle-text"]],null,null,null,null,null)),(l()(),i["ɵted"](54,null,["",""])),(l()(),i["ɵted"](-1,null,["\n    "])),(l()(),i["ɵted"](-1,2,["\n  "])),(l()(),i["ɵted"](-1,1,["\n  "])),(l()(),i["ɵeld"](58,0,null,1,5,"ion-list",[],null,null,null,null,null)),i["ɵdid"](59,16384,null,0,f.List,[c.Config,i.ElementRef,i.Renderer,g.Platform,q.GestureController,F.DomController],null,null),(l()(),i["ɵted"](-1,null,["\n    "])),(l()(),i["ɵand"](16777216,null,null,1,null,a)),i["ɵdid"](62,802816,null,0,R.NgForOf,[i.ViewContainerRef,i.TemplateRef,i.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),i["ɵted"](-1,null,["\n  "])),(l()(),i["ɵted"](-1,1,["\n"])),(l()(),i["ɵted"](-1,null,["\n"])),(l()(),i["ɵeld"](66,0,null,null,2,"ion-footer",[],null,null,null,null,null)),i["ɵdid"](67,16384,null,0,B.Footer,[c.Config,i.ElementRef,i.Renderer,[2,V.ViewController]],null,null),(l()(),i["ɵted"](-1,null,["\n\n"]))],function(l,n){var e=n.component;l(n,6,0,"primary");l(n,16,0,"arrow-back");l(n,51,0,"secondary",e.ischecked);l(n,62,0,e.Notifications)},function(l,n){var e=n.component;l(n,5,0,i["ɵnov"](n,6)._hidden,i["ɵnov"](n,6)._sbPadding);l(n,15,0,i["ɵnov"](n,16)._hidden);l(n,35,0,i["ɵnov"](n,36).statusbarPadding,i["ɵnov"](n,36)._hasRefresher);l(n,49,0,i["ɵnov"](n,51)._disabled,i["ɵnov"](n,51)._value,i["ɵnov"](n,51)._activated);l(n,54,0,e.ischecked?"YES":"NO")})}e.d(n,"a",function(){return ll});var i=e(0),s=e(19),d=e(13),c=e(2),p=e(502),m=e(213),f=e(56),g=e(3),h=e(47),v=e(17),b=e(14),C=e(33),y=e(41),R=e(12),w=e(212),x=e(31),V=e(5),I=e(36),k=e(26),N=e(6),S=e(20),E=e(77),_=e(27),P=e(49),T=e(37),M=e(32),D=e(28),A=e(21),F=e(7),L=e(24),H=e(65),U=e(503),W=e(9),O=e(219),G=e(70),q=e(11),B=e(51),$=e(102),K=e(16),Q=e(44),Y=e(38),j=e(74),z=e(46),Z=e(124),J=e(60),X=i["ɵcrt"]({encapsulation:2,styles:[],data:{}}),ll=i["ɵccf"]("page-notification",$.a,function(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,1,"page-notification",[],null,null,null,r,X)),i["ɵdid"](1,49152,null,0,$.a,[S.NavController,W.FormBuilder,K.NavParams,Q.LoadingController,Y.AlertController,j.c,z.a,Z.a,J.Events],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,23,"ion-card",[["class","signup-card custom-border intro-desc"]],null,null,null,null,null)),i["ɵdid"](1,16384,null,0,s.Card,[d.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵeld"](3,0,null,null,19,"ion-card-content",[],null,null,null,null,null)),i["ɵdid"](4,16384,null,0,c.CardContent,[d.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](6,0,null,null,15,"div",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](9,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    The Modifiable Health Risk Score is a total score out of 100. The higher your score the better you\n                    are managing lifestyle factors that impact risk for developing, and in some instances managing, many\n                    common degenerative diseases. The Modifiable Health Risk Score takes into account things in your\n                    life that you have absolute, or significant, control over, such as nutrition, weight, waist\n                    circumference, exercise habits, medication adherence, blood pressure, cholesterol levels, smoking,\n                    alcohol consumption, amount of sleep, as well as stress/anxiety/ relationship and emotional\n                    wellness.\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](12,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](14,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Once you know your score your goal is to work on the modifiable health risk factors that will help\n                    you achieve a higher score. Your feedback report contains the details as to how you can best\n                    accomplish this goal."])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](17,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](19,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    As you work towards improving you score we suggest that you re-take the Assessment every three\n                    months to see how much your Modifiable Health Risk Score has improved from your previous\n                    assessments. No matter what your score is today, there is usually some action you can take to\n                    improve your score over the next three months. Set the goal today and let’s keep your wellness\n                    journey moving in the right direction.\n                "])),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵted"](-1,null,["\n    "]))],null,null)}function u(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,13,"ion-card",[["class","signup-card custom-border intro-desc"]],null,null,null,null,null)),i["ɵdid"](1,16384,null,0,s.Card,[d.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵeld"](3,0,null,null,9,"ion-card-content",[],null,null,null,null,null)),i["ɵdid"](4,16384,null,0,c.CardContent,[d.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](6,0,null,null,5,"div",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](9,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Your Bio Age (biological age) indicates how old your body is compared to your actual chronological\n                    age. As you improve your Modifiable Health Risk Score you also improve your Bio Age Score. Science\n                    has shown us that you can slow and reverse the aging process by implementing proactive nutrition and\n                    lifestyle wellness practices. You can literally “turn back the clock” using a personalized wellness\n                    strategy.\n                "])),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵted"](-1,null,["\n    "]))],null,null)}function o(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,32,"ion-card",[["class","signup-card custom-border intro-desc"]],null,null,null,null,null)),i["ɵdid"](1,16384,null,0,s.Card,[d.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵeld"](3,0,null,null,28,"ion-card-content",[],null,null,null,null,null)),i["ɵdid"](4,16384,null,0,c.CardContent,[d.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](6,0,null,null,24,"div",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](9,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Be aware that The Meschino Wellness Platform cannot detect or provide advice about the management of\n                    the following health challenges:\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](12,0,null,null,10,"ul",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](14,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Food Allergies\n                    "])),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](17,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                        Drug Allergies\n                    "])),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](20,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                        Food Sensitivities or Intolerances\n                    "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](24,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](26,0,null,null,3,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    In these cases, and other cases involving health conditions of the Intestinal Tract (i.e. active\n                    ulcer, inflammatory bowel diseases such as Crohn’s disease and Ulcerative Colitis, Gastric by-pass\n                    Surgery, or any previous Bowel Surgery etc.) you must seek nutritional guidance from your medical\n                    practitioner or designated registered dietician.\n                    "])),(l()(),i["ɵeld"](28,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    The Meschino Wellness Platform is intended for educational purposes only. It is a tool that can help\n                    users develop their own personal wellness plan in the majority of cases, but does not replace the\n                    requirement to seek medical evaluation, lifestyle advice and treatment from a medical professional.\n                    The Meschino Wellness Platform provides targeted nutrition and lifestyle content by collecting and\n                    analyzing personal health data. You may wish to share the contents of your Feedback Report (My\n                    Wellness Report), along with your tracking tool values (i.e. blood pressure tracker) with your\n                    medical doctor and other healthcare professionals, who help manage your health, as a means of\n                    keeping them informed about your self-care and enlisting their recommendations to help fine-tune\n                    your lifestyle management.\n                "])),(l()(),i["ɵted"](-1,null,["\n\n            "])),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵted"](-1,null,["\n    "]))],null,null)}function a(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,224,"ion-card",[["class","signup-card custom-border intro-desc"]],null,null,null,null,null)),i["ɵdid"](1,16384,null,0,s.Card,[d.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵeld"](3,0,null,null,220,"ion-card-content",[],null,null,null,null,null)),i["ɵdid"](4,16384,null,0,c.CardContent,[d.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](6,0,null,null,199,"div",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](9,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Meschino Wellness Account Privacy Statement"])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](12,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Meschino Health & Wellness (thereafter referred to as “Meschino Wellness”) is committed to protecting\n                    your\n                    privacy. This privacy statement applies to the personal information (which includes personal health\n                    information) collected by the Meschino Wellness Platform.\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](15,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](17,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](19,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Introduction"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](22,0,null,null,4,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](24,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["The Meschino Wellness Platform is intended for educational purposes only. It is a tool that can\n                        help users\n                        develop their own personal wellness plan, but does not replace the requirement to seek medical\n                        evaluation,\n                        lifestyle advice and treatment from a medical professional."])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](28,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](30,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    The Meschino Wellness Platform provides targeted nutrition and lifestyle content by collecting and\n                    analyzing personal health data, which you may wish to share with your medical doctor and other\n                    healthcare professionals who help manage your health. It can collect, analyze and store many\n                    different types of information such as medication use, immunization records, data originating from\n                    health and fitness\n                    devices (including pedometers, blood glucose monitors, blood pressure monitors) and from other\n                    applications\n                    (such as chronic management applications, fitness training applications, weight loss applications,\n                    blood\n                    pressure applications and more).\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](33,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](35,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Importantly, The Meschino Wellness Platform cannot detect or help manage food or drug allergies,\n                    food\n                    sensitivities or intolerances. In these cases, and other cases involving health conditions of the\n                    intestinal\n                    tract (i.e. active ulcer, inflammatory bowel disease, gastric by-pass surgery etc.) you must seek\n                    nutritional\n                    guidance from your medical practitioner or designated registered dietician.\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](38,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](40,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](42,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Integration"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](45,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    You can utilize components of the Meschino Wellness Platform directly to view and manage your health\n                    information, or you can use selected websites and devices that have been created by application\n                    providers and\n                    device manufacturers to work with Meschino Wellness. Several mechanisms allow you to manage how your\n                    health\n                    information can be accessed, used and shared.\n                    Meschino Wellness provides you with the technology and services to assist you in collecting, storing\n                    and\n                    analyzing your health related information online. It is a technology platform that allows access by\n                    multiple\n                    applications and devices, in order to work with your health data to improve personal health literacy\n                    and\n                    overall wellness.\n\n                "])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](48,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](50,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](52,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Collection of Personal Information"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](55,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness asks you to enter an identifier and password to sign in. The first time you sign\n                    in to\n                    Meschino Wellness, Meschino Wellness asks you to create an account. To create an account, you must\n                    provide\n                    personal information such as name, date of birth, e-mail address, postal code and country/region.\n                    Meschino\n                    Wellness may request other optional information, but Meschino Wellness will clearly indicate that\n                    such\n                    information is optional.\n                "])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](58,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](60,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](62,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["How Meschino Wellness uses your personal information"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](65,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness commits to use or disclose personal information collected through Meschino\n                    Wellness,\n                    including personal health information, exclusively to provide Meschino Wellness services (which\n                    includes the\n                    billing, support, maintenance and incident resolution services) and as described in this privacy\n                    statement,\n                    unless expressly otherwise agreed to by you. Usage of the personal information (including personal\n                    health\n                    information) for the provision of Meschino Wellness solutions includes that Meschino Wellness may\n                    use your\n                    personal information:\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](68,0,null,null,7,"ul",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](70,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["to provide you with information about Meschino Wellness, including updates, and notifications\n                    "])),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](73,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                        to send you Meschino Wellness e-mail communication, if any.\n                    "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](77,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](79,0,null,null,7,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness occasionally hires other companies to provide services on its behalf, such as\n                    answering\n                    customer questions about products and services. Meschino Wellness gives those companies only the\n                    personal\n                    information they need to deliver the service. Meschino Wellness requires the companies to maintain\n                    the\n                    confidentiality of the personal information and prohibits them from using such information for any\n                    other\n                    purpose.\n                    "])),(l()(),i["ɵeld"](81,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    In addition, Meschino Wellness may use and/or disclose your personal information if Meschino\n                    Wellness believes\n                    such action is necessary to comply with applicable legislation or legal process served on Meschino\n                    Wellness.\n                    "])),(l()(),i["ɵeld"](83,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Personal information collected on Meschino Wellness is stored and processed in on servers in Canada\n                    or the\n                    United State.\n                    "])),(l()(),i["ɵeld"](85,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Meschino Wellness has processes and employees (i.e. Head of Privacy and other resources) whose\n                    responsibility is to ensure the protection of your privacy and to notify you in the event that\n                    Meschino\n                    Wellness becomes aware of a breach affecting your personal information.\n\n                "])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](88,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](90,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](92,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["How Meschino Wellness uses aggregate information and statistics"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](95,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness may use aggregated information from Meschino Wellness to identify and compare the\n                    status of\n                    specific common health issues as compared to other bench marks established in the specified industry\n                    or\n                    organization. This data is represented as a percent of the entire organization only. This aggregated\n                    information is not associated with any individual account and would not identify you. Meschino\n                    Wellness will\n                    not use or disclose your individual account and record information from Meschino Wellness.\n                "])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](98,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](100,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](102,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Account access and controls"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](105,0,null,null,5,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    The decision to create an account with Meschino Wellness is yours. The required account information\n                    consists\n                    of a small amount of information such as your name, e-mail address, region and Meschino Wellness\n                    credentials.\n                    Meschino Wellness may request other optional information, but clearly indicates that such\n                    information is\n                    optional. You can review and update your account information. You can modify, add or delete any\n                    optional\n                    account information by signing into your Meschino Wellness account and editing your account profile.\n                    "])),(l()(),i["ɵeld"](107,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["When you close your account (by signing into your Meschino Wellness account and editing your\n                    account\n                    profile), Meschino Wellness deletes all Records for which you are the sole Custodian. Meschino\n                    Wellness waits\n                    90 days before permanently deleting your account information in order to help avoid accidental or\n                    malicious\n                    removal of your health information.\n                    "])),(l()(),i["ɵeld"](109,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,['When a user with "View and modify" or Custodian access deletes a piece of health information,\n                    Meschino\n                    Wellness archives the information so that it is visible only to Record of Custodians. Solutions and\n                    other\n                    users with whom you have shared your information, but who are not Custodians of the Record, are not\n                    able to\n                    see archived health information.\n\n                '])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](112,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](114,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](116,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["E-mail controls"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](119,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness may send you e-mail communications. You will only receive these communications\n                    because you\n                    have authorized Meschino Wellness do so. If you do not want to receive this information, you can\n                    unsubscribe\n                    through a link at the bottom of the newsletter.\n                "])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](122,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](124,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](126,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Security of your personal information"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](129,0,null,null,3,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness is committed to protecting the security of your personal information. Meschino\n                    Wellness is\n                    hosted on a robust industry leading hosting partner. The hosting platform meets a broad set of\n                    international\n                    and industry-specific compliance standards, such as ISO 27001, HIPAA, FedRAMP, SOC 1 and SOC 2, as\n                    well as\n                    country-specific standards including Australia IRAP, UK G-Cloud, and Singapore MTCS. The hosting\n                    partner was\n                    also the first to adopt the uniform international code of practice for cloud privacy, ISO/IEC 27018,\n                    which\n                    governs the processing of personal information by cloud service providers.\n                    "])),(l()(),i["ɵeld"](131,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Rigorous third-party audits, such as by the British Standards Institute, verify the hosting\n                    platforms\n                    adherence to the strict security controls these standards mandate. As part of our commitment to\n                    transparency,\n                    you can verify our implementation of many security controls by requesting audit results from the\n                    certifying\n                    third parties or through our Host Platform account representative.\n                "])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](134,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](136,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](138,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Use of cookies"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](141,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness use cookies with Meschino Wellness to enable you to sign in and to help\n                    personalize Meschino\n                    Wellness. A cookie is a small text file that a web page server places on your hard disk. It is not\n                    possible to\n                    use cookies to run programs or deliver viruses to your computer. A Web server assigns cookies\n                    uniquely to you\n                    and only a Web server in the domain that issued the cookie to you can read the cookies.\n                    One of the primary purposes of cookies is to provide a convenience feature to save you time. For\n                    example, if\n                    you personalize a Web page, or navigate within a site, a cookie helps the site to recall your\n                    specific\n                    information on subsequent visits. Using cookies simplifies the process of delivering relevant\n                    content, eases\n                    site navigation, and so on. When you return to the Web site, you can retrieve the information you\n                    previously\n                    provided, so you can easily use the site's features that you customized.\n                    You have the ability to accept or decline cookies. Most Web browsers automatically accept cookies,\n                    but you can\n                    usually modify your browser setting to decline some or all cookies if you prefer. If you choose to\n                    decline all\n                    cookies, you may not be able to use interactive features of this or other Web sites that depend on\n                    cookies.\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](144,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](146,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](148,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Use of Web beacons"])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](151,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschinowellness.com Web pages may contain electronic images known as Web beacons sometimes called\n                    single-pixel gifs that may be used:\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](154,0,null,null,10,"ul",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](156,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,[" to assist in delivering cookies on Meschino Wellness sites"])),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](159,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,[" to enable Meschino Wellness to count users who have visited those pages"])),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](162,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,[" to deliver co-branded services"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](166,0,null,null,3,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness may include Web beacons in e-mail messages or in its newsletters in order to\n                    determine\n                    whether you opened or acted upon those messages.\n                    "])),(l()(),i["ɵeld"](168,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness may also employ Web beacons from third parties to help it compile aggregated\n                    statistics and\n                    determine the effectiveness of its promotional campaigns. Meschino Wellness prohibits third parties\n                    from using\n                    Web beacons on Meschino Wellness sites to collect or access your personal information. Meschino\n                    Wellness may\n                    collect information about your visit to meschiowellness.com, including the pages you view, the links\n                    you\n                    click, and other actions taken in connection with the Service. Meschino Wellness also collects\n                    certain\n                    standard, non-personally identifiable information that your browser sends to every Web site you\n                    visit, such as\n                    your IP address, browser type and language, access times, and referring Web site addresses.\n\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](171,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](173,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](175,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Changes to this privacy statement"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](178,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness may occasionally update this privacy statement. In such event, Meschino Wellness\n                    will notify\n                    you either by placing a prominent notice on the home page of the Meschino Wellness Web site or by\n                    sending you\n                    a notification directly. Meschino Wellness encourages you to review this privacy statement\n                    periodically to\n                    stay informed about how Meschino Wellness helps you to protect the personal information collected.\n                    Your\n                    continued use of Meschino Wellness constitutes your agreement to this privacy statement and any\n                    updates.\n                    Please be aware that this privacy statement does not apply to personal information you may have\n                    provided to\n                    Meschino Wellness in the context of other, separately operated, Meschino Wellness products or\n                    services.\n                "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](181,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](183,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,[" "])),(l()(),i["ɵeld"](185,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Contact information for privacy related questions and/or complaint"])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](188,0,null,null,4,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Meschino Wellness welcomes your comments regarding this privacy statement. If you have a complaint\n                    concerning\n                    Meschino Wellness’ privacy standards, please submit it to the applicable Privacy Office, however, as\n                    recommended by the Office of the Privacy Commissioner of Canada, you are strongly encouraged to try\n                    first to\n                    settle the matter directly with us, please contact us at "])),(l()(),i["ɵeld"](190,0,null,null,1,"span",[["style","color: blue;"]],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                        privacy@meschinowellness.com."])),(l()(),i["ɵted"](-1,null,[" All questions and/or\n                    complaints will be treated as confidential.\n                "])),(l()(),i["ɵted"](-1,null,["\n\n                "])),(l()(),i["ɵeld"](194,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](196,0,null,null,3,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    "])),(l()(),i["ɵeld"](198,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["DISCLOSURE"])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](201,0,null,null,3,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    The assessment you’re about to complete will evaluate important aspects of your diet, lifestyle and\n                    other\n                    health practices, as well as health conditions and risk factors that play a significant role in your\n                    health\n                    and longevity profile. Based upon scientific evidence available from experimental and clinical\n                    studies, we\n                    will assemble a number of nutrition, exercise and other lifestyle considerations specific to your\n                    individual\n                    circumstances.\n                    "])),(l()(),i["ɵeld"](203,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                    Your personalized wellness report is to be used for educational purposes only and does not take into\n                    account\n                    any food, drug or supplement allergies or sensitivities. You must consult your health practitioner\n                    before\n                    making any changes to your dietary, exercise or supplementation practices.\n\n                "])),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](207,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](209,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["By Signing up you have:"])),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](212,0,null,null,10,"ul",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](214,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Read and undersatnd the disclosure. "])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](217,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["At least 15 years old."])),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](220,0,null,null,1,"li",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["Trust Meschino Health and Wellness with the personal and private health information you provide.\n                "])),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵted"](-1,null,["\n    "]))],null,null)}function r(l){return i["ɵvid"](0,[(l()(),i["ɵted"](-1,null,["\n"])),(l()(),i["ɵeld"](1,0,null,null,10,"ion-header",[],null,null,null,null,null)),i["ɵdid"](2,16384,null,0,p.Header,[d.Config,i.ElementRef,i.Renderer,[2,m.ViewController]],null,null),(l()(),i["ɵted"](-1,null,["\n    "])),(l()(),i["ɵeld"](4,0,null,null,6,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,f.b,f.a)),i["ɵdid"](5,49152,null,0,g.Navbar,[h.App,[2,m.ViewController],[2,v.NavController],d.Config,i.ElementRef,i.Renderer],{color:[0,"color"]},null),(l()(),i["ɵted"](-1,3,["\n        "])),(l()(),i["ɵeld"](7,0,null,3,2,"ion-title",[],null,null,null,b.b,b.a)),i["ɵdid"](8,49152,null,0,C.ToolbarTitle,[d.Config,i.ElementRef,i.Renderer,[2,y.Toolbar],[2,g.Navbar]],null,null),(l()(),i["ɵted"](9,0,["",""])),(l()(),i["ɵted"](-1,3,["\n\n    "])),(l()(),i["ɵted"](-1,null,["\n"])),(l()(),i["ɵted"](-1,null,["\n"])),(l()(),i["ɵeld"](13,0,null,null,14,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,R.b,R.a)),i["ɵdid"](14,4374528,null,0,w.Content,[d.Config,x.Platform,V.DomController,i.ElementRef,i.Renderer,h.App,I.Keyboard,i.NgZone,[2,m.ViewController],[2,v.NavController]],null,null),(l()(),i["ɵted"](-1,1,["\n    "])),(l()(),i["ɵand"](16777216,null,1,1,null,t)),i["ɵdid"](17,16384,null,0,k.NgIf,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵted"](-1,1,["\n    "])),(l()(),i["ɵand"](16777216,null,1,1,null,u)),i["ɵdid"](20,16384,null,0,k.NgIf,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵted"](-1,1,["\n    "])),(l()(),i["ɵand"](16777216,null,1,1,null,o)),i["ɵdid"](23,16384,null,0,k.NgIf,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵted"](-1,1,["\n\n    "])),(l()(),i["ɵand"](16777216,null,1,1,null,a)),i["ɵdid"](26,16384,null,0,k.NgIf,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵted"](-1,1,["\n\n"])),(l()(),i["ɵted"](-1,null,["\n"])),(l()(),i["ɵeld"](29,0,null,null,2,"ion-footer",[],null,null,null,null,null)),i["ɵdid"](30,16384,null,0,N.Footer,[d.Config,i.ElementRef,i.Renderer,[2,m.ViewController]],null,null),(l()(),i["ɵted"](-1,null,["\n"]))],function(l,n){var e=n.component;l(n,5,0,"primary");l(n,17,0,"MHRScore"==e.TempaletName);l(n,20,0,"BioAge"==e.TempaletName);l(n,23,0,"PrecautionsandDisclaimer"==e.TempaletName);l(n,26,0,"TermsAndConditions"==e.TempaletName)},function(l,n){var e=n.component;l(n,4,0,i["ɵnov"](n,5)._hidden,i["ɵnov"](n,5)._sbPadding);l(n,9,0,e.Title);l(n,13,0,i["ɵnov"](n,14).statusbarPadding,i["ɵnov"](n,14)._hasRefresher)})}e.d(n,"a",function(){return P});var i=e(0),s=e(50),d=e(2),c=e(66),p=e(31),m=e(5),f=e(36),g=e(26),h=e(6),v=e(20),b=e(37),C=e(32),y=e(27),R=e(28),w=e(21),x=e(3),V=e(7),I=e(24),k=e(12),N=e(51),S=e(89),E=e(16),_=i["ɵcrt"]({encapsulation:2,styles:[],data:{}}),P=i["ɵccf"]("page-template",S.a,function(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,1,"page-template",[],null,null,null,r,_)),i["ɵdid"](1,49152,null,0,S.a,[v.NavController,E.NavParams],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,15,"ion-content",[["scroll","false"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,o.b,o.a)),u["ɵdid"](1,4374528,null,0,a.Content,[r.Config,i.Platform,s.DomController,u.ElementRef,u.Renderer,d.App,c.Keyboard,u.NgZone,[2,p.ViewController],[2,m.NavController]],null,null),(l()(),u["ɵted"](-1,1,["\n  "])),(l()(),u["ɵeld"](3,0,null,1,0,"div",[["class","splash-bg"]],null,null,null,null,null)),(l()(),u["ɵted"](-1,1,["\n    "])),(l()(),u["ɵeld"](5,0,null,1,9,"div",[["class","button-info"],["padding",""]],null,null,null,null,null)),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵeld"](7,0,null,null,2,"button",[["block",""],["class","signup"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.signup()&&t}return t},f.b,f.a)),u["ɵdid"](8,1097728,null,0,g.Button,[[8,""],r.Config,u.ElementRef,u.Renderer],{block:[0,"block"]},null),(l()(),u["ɵted"](-1,0,["SIGNUP"])),(l()(),u["ɵted"](-1,null,["\n    "])),(l()(),u["ɵeld"](11,0,null,null,2,"button",[["block",""],["class","login"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.login()&&t}return t},f.b,f.a)),u["ɵdid"](12,1097728,null,0,g.Button,[[8,""],r.Config,u.ElementRef,u.Renderer],{block:[0,"block"]},null),(l()(),u["ɵted"](-1,0,["LOGIN"])),(l()(),u["ɵted"](-1,null,["\n  "])),(l()(),u["ɵted"](-1,1,["\n"])),(l()(),u["ɵted"](-1,null,["\n"]))],function(l,n){l(n,8,0,"");l(n,12,0,"")},function(l,n){l(n,0,0,u["ɵnov"](n,1).statusbarPadding,u["ɵnov"](n,1)._hasRefresher)})}e.d(n,"a",function(){return y});var u=e(0),o=e(28),a=e(21),r=e(2),i=e(3),s=e(7),d=e(6),c=e(24),p=e(5),m=e(20),f=e(19),g=e(13),h=e(179),v=e(86),b=e(60),C=u["ɵcrt"]({encapsulation:2,styles:[],data:{}}),y=u["ɵccf"]("page-welcome",h.a,function(l){return u["ɵvid"](0,[(l()(),u["ɵeld"](0,0,null,null,1,"page-welcome",[],null,null,null,t,C)),u["ɵdid"](1,49152,null,0,h.a,[m.NavController,v.ToastController,b.Events],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){return s["ɵvid"](0,[(l()(),s["ɵeld"](0,0,null,null,70,"ion-card",[["class","signup-card"]],null,null,null,null,null)),s["ɵdid"](1,16384,null,0,d.Card,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵeld"](3,0,null,null,66,"ion-card-content",[],null,null,null,null,null)),s["ɵdid"](4,16384,null,0,p.CardContent,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](6,0,null,null,56,"ion-list",[],null,null,null,null,null)),s["ɵdid"](7,16384,null,0,m.List,[c.Config,s.ElementRef,s.Renderer,f.Platform,g.GestureController,h.DomController],null,null),(l()(),s["ɵted"](-1,null,["\n          "])),(l()(),s["ɵeld"](9,0,null,null,16,"ion-item",[["class","custom-border item item-block"]],null,null,null,v.b,v.a)),s["ɵdid"](10,1097728,null,3,b.Item,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,y.ItemReorder]],null,null),s["ɵqud"](335544320,1,{contentLabel:0}),s["ɵqud"](603979776,2,{_buttons:1}),s["ɵqud"](603979776,3,{_icons:1}),s["ɵdid"](14,16384,null,0,R.ItemContent,[],null,null),(l()(),s["ɵted"](-1,2,["\n            "])),(l()(),s["ɵeld"](16,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),s["ɵdid"](17,16384,[[1,4]],0,w.Label,[c.Config,s.ElementRef,s.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),s["ɵted"](-1,null,["First Name"])),(l()(),s["ɵted"](-1,2,["\n            "])),(l()(),s["ɵeld"](20,0,null,3,4,"ion-input",[["formControlName","FirstName"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,e){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.account.FirstName=e)&&t}return t},x.b,x.a)),s["ɵdid"](21,671744,null,0,V.FormControlName,[[3,V.ControlContainer],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),s["ɵprd"](2048,null,V.NgControl,null,[V.FormControlName]),s["ɵdid"](23,16384,null,0,V.NgControlStatus,[V.NgControl],null,null),s["ɵdid"](24,5423104,null,0,I.TextInput,[c.Config,f.Platform,C.Form,k.App,s.ElementRef,s.Renderer,[2,N.Content],[2,b.Item],[2,V.NgControl],h.DomController],{type:[0,"type"]},null),(l()(),s["ɵted"](-1,2,["\n          "])),(l()(),s["ɵted"](-1,null,["\n\n          "])),(l()(),s["ɵeld"](27,0,null,null,16,"ion-item",[["class","custom-border item item-block"]],null,null,null,v.b,v.a)),s["ɵdid"](28,1097728,null,3,b.Item,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,y.ItemReorder]],null,null),s["ɵqud"](335544320,4,{contentLabel:0}),s["ɵqud"](603979776,5,{_buttons:1}),s["ɵqud"](603979776,6,{_icons:1}),s["ɵdid"](32,16384,null,0,R.ItemContent,[],null,null),(l()(),s["ɵted"](-1,2,["\n            "])),(l()(),s["ɵeld"](34,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),s["ɵdid"](35,16384,[[4,4]],0,w.Label,[c.Config,s.ElementRef,s.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),s["ɵted"](-1,null,["Last Name"])),(l()(),s["ɵted"](-1,2,["\n            "])),(l()(),s["ɵeld"](38,0,null,3,4,"ion-input",[["formControlName","LastName"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,e){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.account.LastName=e)&&t}return t},x.b,x.a)),s["ɵdid"](39,671744,null,0,V.FormControlName,[[3,V.ControlContainer],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),s["ɵprd"](2048,null,V.NgControl,null,[V.FormControlName]),s["ɵdid"](41,16384,null,0,V.NgControlStatus,[V.NgControl],null,null),s["ɵdid"](42,5423104,null,0,I.TextInput,[c.Config,f.Platform,C.Form,k.App,s.ElementRef,s.Renderer,[2,N.Content],[2,b.Item],[2,V.NgControl],h.DomController],{type:[0,"type"]},null),(l()(),s["ɵted"](-1,2,["\n          "])),(l()(),s["ɵted"](-1,null,["\n\n          "])),(l()(),s["ɵeld"](45,0,null,null,16,"ion-item",[["class","custom-border item item-block"]],null,null,null,v.b,v.a)),s["ɵdid"](46,1097728,null,3,b.Item,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,y.ItemReorder]],null,null),s["ɵqud"](335544320,7,{contentLabel:0}),s["ɵqud"](603979776,8,{_buttons:1}),s["ɵqud"](603979776,9,{_icons:1}),s["ɵdid"](50,16384,null,0,R.ItemContent,[],null,null),(l()(),s["ɵted"](-1,2,["\n            "])),(l()(),s["ɵeld"](52,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),s["ɵdid"](53,16384,[[7,4]],0,w.Label,[c.Config,s.ElementRef,s.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),s["ɵted"](-1,null,["User Name"])),(l()(),s["ɵted"](-1,2,["\n            "])),(l()(),s["ɵeld"](56,0,null,3,4,"ion-input",[["formControlName","UserName"],["type","email"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,e){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.account.UserName=e)&&t}return t},x.b,x.a)),s["ɵdid"](57,671744,null,0,V.FormControlName,[[3,V.ControlContainer],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),s["ɵprd"](2048,null,V.NgControl,null,[V.FormControlName]),s["ɵdid"](59,16384,null,0,V.NgControlStatus,[V.NgControl],null,null),s["ɵdid"](60,5423104,null,0,I.TextInput,[c.Config,f.Platform,C.Form,k.App,s.ElementRef,s.Renderer,[2,N.Content],[2,b.Item],[2,V.NgControl],h.DomController],{type:[0,"type"]},null),(l()(),s["ɵted"](-1,2,["\n          "])),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](64,0,null,null,4,"div",[["class","note"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["\n          "])),(l()(),s["ɵeld"](66,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["*User your email as username."])),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵted"](-1,null,["\n    "]))],function(l,n){var e=n.component;l(n,21,0,"FirstName",e.account.FirstName);l(n,24,0,"text");l(n,39,0,"LastName",e.account.LastName);l(n,42,0,"text");l(n,57,0,"UserName",e.account.UserName);l(n,60,0,"email")},function(l,n){l(n,20,0,s["ɵnov"](n,23).ngClassUntouched,s["ɵnov"](n,23).ngClassTouched,s["ɵnov"](n,23).ngClassPristine,s["ɵnov"](n,23).ngClassDirty,s["ɵnov"](n,23).ngClassValid,s["ɵnov"](n,23).ngClassInvalid,s["ɵnov"](n,23).ngClassPending);l(n,38,0,s["ɵnov"](n,41).ngClassUntouched,s["ɵnov"](n,41).ngClassTouched,s["ɵnov"](n,41).ngClassPristine,s["ɵnov"](n,41).ngClassDirty,s["ɵnov"](n,41).ngClassValid,s["ɵnov"](n,41).ngClassInvalid,s["ɵnov"](n,41).ngClassPending);l(n,56,0,s["ɵnov"](n,59).ngClassUntouched,s["ɵnov"](n,59).ngClassTouched,s["ɵnov"](n,59).ngClassPristine,s["ɵnov"](n,59).ngClassDirty,s["ɵnov"](n,59).ngClassValid,s["ɵnov"](n,59).ngClassInvalid,s["ɵnov"](n,59).ngClassPending)})}function u(l){return s["ɵvid"](0,[(l()(),s["ɵeld"](0,0,null,null,19,"ion-card",[["class","signup-card"]],null,null,null,null,null)),s["ɵdid"](1,16384,null,0,d.Card,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵeld"](3,0,null,null,15,"ion-card-content",[["class","cardcontent"]],null,null,null,null,null)),s["ɵdid"](4,16384,null,0,p.CardContent,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n\n          "])),(l()(),s["ɵted"](-1,null,["\n              "])),(l()(),s["ɵeld"](7,0,null,null,2,"ion-label",[],null,null,null,null,null)),s["ɵdid"](8,16384,null,0,w.Label,[c.Config,s.ElementRef,s.Renderer,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),s["ɵted"](-1,null,["I'M A: "])),(l()(),s["ɵted"](-1,null,["\n              "])),(l()(),s["ɵeld"](11,0,null,null,2,"ion-label",[["color","primary"]],null,null,null,null,null)),s["ɵdid"](12,16384,null,0,w.Label,[c.Config,s.ElementRef,s.Renderer,[8,null],[8,null],[8,null],[8,null]],{color:[0,"color"]},null),(l()(),s["ɵted"](13,null,["","   "])),(l()(),s["ɵted"](-1,null,["\n              "])),(l()(),s["ɵeld"](15,0,null,null,1,"a",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.showGenderPicker()&&t}return t},null,null)),(l()(),s["ɵted"](-1,null,["Select"])),(l()(),s["ɵted"](-1,null,["\n            "])),(l()(),s["ɵted"](-1,null,["\n\n          \n      "])),(l()(),s["ɵted"](-1,null,["\n    "]))],function(l,n){l(n,12,0,"primary")},function(l,n){l(n,13,0,n.component.account.Gender)})}function o(l){return s["ɵvid"](0,[(l()(),s["ɵeld"](0,0,null,null,40,"ion-card",[["class","signup-card"]],null,null,null,null,null)),s["ɵdid"](1,16384,null,0,d.Card,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](3,0,null,null,36,"ion-card-content",[],null,null,null,null,null)),s["ɵdid"](4,16384,null,0,p.CardContent,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n            "])),(l()(),s["ɵeld"](6,0,null,null,32,"ion-list",[["radio-group",""],["role","radiogroup"]],null,null,null,null,null)),s["ɵprd"](5120,null,V.NG_VALUE_ACCESSOR,function(l){return[l]},[S.RadioGroup]),s["ɵdid"](8,16384,null,0,m.List,[c.Config,s.ElementRef,s.Renderer,f.Platform,g.GestureController,h.DomController],null,null),s["ɵdid"](9,1064960,null,1,S.RadioGroup,[s.Renderer,s.ElementRef,s.ChangeDetectorRef],null,null),s["ɵqud"](335544320,10,{_header:0}),(l()(),s["ɵted"](-1,null,["\n                "])),(l()(),s["ɵeld"](12,0,null,null,6,"ion-list-header",[["class","item"]],null,null,null,v.b,v.a)),s["ɵdid"](13,1097728,null,3,b.Item,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,y.ItemReorder]],null,null),s["ɵqud"](335544320,11,{contentLabel:0}),s["ɵqud"](603979776,12,{_buttons:1}),s["ɵqud"](603979776,13,{_icons:1}),s["ɵdid"](17,16384,[[10,4]],0,E.ListHeader,[c.Config,s.Renderer,s.ElementRef,[8,null]],null,null),(l()(),s["ɵted"](-1,2,["\n                    WHEN WHERE YOU BORN?\n                "])),(l()(),s["ɵted"](-1,null,["\n                "])),(l()(),s["ɵeld"](20,0,null,null,17,"ion-item",[["class","custom-border item item-block"]],null,null,null,v.b,v.a)),s["ɵdid"](21,1097728,null,3,b.Item,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,y.ItemReorder]],null,null),s["ɵqud"](335544320,14,{contentLabel:0}),s["ɵqud"](603979776,15,{_buttons:1}),s["ɵqud"](603979776,16,{_icons:1}),s["ɵdid"](25,16384,null,0,R.ItemContent,[],null,null),(l()(),s["ɵted"](-1,2,["\n                  "])),(l()(),s["ɵeld"](27,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),s["ɵdid"](28,16384,[[14,4]],0,w.Label,[c.Config,s.ElementRef,s.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),s["ɵted"](-1,null,["Birthdate"])),(l()(),s["ɵted"](-1,2,["\n                  "])),(l()(),s["ɵeld"](31,0,null,3,5,"ion-datetime",[["formControlName","BirthDate"]],[[2,"datetime-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==s["ɵnov"](l,32)._click(e)&&t}if("keyup.space"===n){t=!1!==s["ɵnov"](l,32)._keyup()&&t}if("ngModelChange"===n){t=!1!==(u.account.BirthDate=e)&&t}return t},_.b,_.a)),s["ɵdid"](32,1228800,null,0,P.DateTime,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,b.Item],[2,T.PickerController]],null,null),s["ɵprd"](1024,null,V.NG_VALUE_ACCESSOR,function(l){return[l]},[P.DateTime]),s["ɵdid"](34,671744,null,0,V.FormControlName,[[3,V.ControlContainer],[8,null],[8,null],[2,V.NG_VALUE_ACCESSOR]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),s["ɵprd"](2048,null,V.NgControl,null,[V.FormControlName]),s["ɵdid"](36,16384,null,0,V.NgControlStatus,[V.NgControl],null,null),(l()(),s["ɵted"](-1,2,["\n                "])),(l()(),s["ɵted"](-1,null,["\n              "])),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵted"](-1,null,["\n      "]))],function(l,n){l(n,34,0,"BirthDate",n.component.account.BirthDate)},function(l,n){l(n,31,0,s["ɵnov"](n,32)._disabled,s["ɵnov"](n,36).ngClassUntouched,s["ɵnov"](n,36).ngClassTouched,s["ɵnov"](n,36).ngClassPristine,s["ɵnov"](n,36).ngClassDirty,s["ɵnov"](n,36).ngClassValid,s["ɵnov"](n,36).ngClassInvalid,s["ɵnov"](n,36).ngClassPending)})}function a(l){return s["ɵvid"](0,[(l()(),s["ɵeld"](0,0,null,null,40,"ion-card",[["class","signup-card"]],null,null,null,null,null)),s["ɵdid"](1,16384,null,0,d.Card,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵeld"](3,0,null,null,36,"ion-card-content",[],null,null,null,null,null)),s["ɵdid"](4,16384,null,0,p.CardContent,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n          "])),(l()(),s["ɵeld"](6,0,null,null,32,"ion-list",[["radio-group",""],["role","radiogroup"]],null,null,null,null,null)),s["ɵprd"](5120,null,V.NG_VALUE_ACCESSOR,function(l){return[l]},[S.RadioGroup]),s["ɵdid"](8,16384,null,0,m.List,[c.Config,s.ElementRef,s.Renderer,f.Platform,g.GestureController,h.DomController],null,null),s["ɵdid"](9,1064960,null,1,S.RadioGroup,[s.Renderer,s.ElementRef,s.ChangeDetectorRef],null,null),s["ɵqud"](335544320,17,{_header:0}),(l()(),s["ɵted"](-1,null,["\n                  "])),(l()(),s["ɵeld"](12,0,null,null,6,"ion-list-header",[["class","item"]],null,null,null,v.b,v.a)),s["ɵdid"](13,1097728,null,3,b.Item,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,y.ItemReorder]],null,null),s["ɵqud"](335544320,18,{contentLabel:0}),s["ɵqud"](603979776,19,{_buttons:1}),s["ɵqud"](603979776,20,{_icons:1}),s["ɵdid"](17,16384,[[17,4]],0,E.ListHeader,[c.Config,s.Renderer,s.ElementRef,[8,null]],null,null),(l()(),s["ɵted"](-1,2,["\n                      HOW TALL ARE YOU?\n                  "])),(l()(),s["ɵted"](-1,null,["\n                \n                  "])),(l()(),s["ɵeld"](20,0,null,null,17,"ion-item",[["class","custom-border item item-block"]],null,null,null,v.b,v.a)),s["ɵdid"](21,1097728,null,3,b.Item,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,y.ItemReorder]],null,null),s["ɵqud"](335544320,21,{contentLabel:0}),s["ɵqud"](603979776,22,{_buttons:1}),s["ɵqud"](603979776,23,{_icons:1}),s["ɵdid"](25,16384,null,0,R.ItemContent,[],null,null),(l()(),s["ɵted"](-1,2,["\n                    "])),(l()(),s["ɵeld"](27,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),s["ɵdid"](28,16384,[[21,4]],0,w.Label,[c.Config,s.ElementRef,s.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),s["ɵted"](-1,null,["Height"])),(l()(),s["ɵted"](-1,2,["\n                    "])),(l()(),s["ɵeld"](31,0,null,3,5,"ion-multi-picker",[["formControlName","Height"],["item-content",""]],[[2,"multi-picke-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==s["ɵnov"](l,32)._click(e)&&t}if("keyup.space"===n){t=!1!==s["ɵnov"](l,32)._keyup()&&t}if("ngModelChange"===n){t=!1!==(u.account.Height=e)&&t}return t},M.b,M.a)),s["ɵdid"](32,1228800,null,0,D.MultiPicker,[C.Form,[2,b.Item],[2,T.PickerController]],{multiPickerColumns:[0,"multiPickerColumns"],separator:[1,"separator"]},null),s["ɵprd"](1024,null,V.NG_VALUE_ACCESSOR,function(l){return[l]},[D.MultiPicker]),s["ɵdid"](34,671744,null,0,V.FormControlName,[[3,V.ControlContainer],[8,null],[8,null],[2,V.NG_VALUE_ACCESSOR]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),s["ɵprd"](2048,null,V.NgControl,null,[V.FormControlName]),s["ɵdid"](36,16384,null,0,V.NgControlStatus,[V.NgControl],null,null),(l()(),s["ɵted"](-1,2,["\n                  "])),(l()(),s["ɵted"](-1,null,["\n                "])),(l()(),s["ɵted"](-1,null,["\n          "])),(l()(),s["ɵted"](-1,null,["\n        "]))],function(l,n){var e=n.component;l(n,32,0,e.parentColumns,"-");l(n,34,0,"Height",e.account.Height)},function(l,n){l(n,31,0,s["ɵnov"](n,32)._disabled,s["ɵnov"](n,36).ngClassUntouched,s["ɵnov"](n,36).ngClassTouched,s["ɵnov"](n,36).ngClassPristine,s["ɵnov"](n,36).ngClassDirty,s["ɵnov"](n,36).ngClassValid,s["ɵnov"](n,36).ngClassInvalid,s["ɵnov"](n,36).ngClassPending)})}function r(l){return s["ɵvid"](0,[(l()(),s["ɵeld"](0,0,null,null,58,"ion-card",[["class","signup-card"]],null,null,null,null,null)),s["ɵdid"](1,16384,null,0,d.Card,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n            "])),(l()(),s["ɵeld"](3,0,null,null,54,"ion-card-content",[],null,null,null,null,null)),s["ɵdid"](4,16384,null,0,p.CardContent,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,null,["\n                "])),(l()(),s["ɵeld"](6,0,null,null,17,"ion-item",[["class","custom-border item item-block"]],null,null,null,v.b,v.a)),s["ɵdid"](7,1097728,null,3,b.Item,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,y.ItemReorder]],null,null),s["ɵqud"](335544320,24,{contentLabel:0}),s["ɵqud"](603979776,25,{_buttons:1}),s["ɵqud"](603979776,26,{_icons:1}),s["ɵdid"](11,16384,null,0,R.ItemContent,[],null,null),(l()(),s["ɵted"](-1,2,["\n                    "])),(l()(),s["ɵeld"](13,0,null,1,3,"ion-label",[["stacked",""]],null,null,null,null,null)),s["ɵdid"](14,16384,[[24,4]],0,w.Label,[c.Config,s.ElementRef,s.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),s["ɵted"](15,null,["",""])),s["ɵpid"](131072,A.a,[F.a,s.ChangeDetectorRef]),(l()(),s["ɵted"](-1,2,["\n                    "])),(l()(),s["ɵeld"](18,0,null,3,4,"ion-input",[["formControlName","Password"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,e){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.account.Password=e)&&t}return t},x.b,x.a)),s["ɵdid"](19,671744,null,0,V.FormControlName,[[3,V.ControlContainer],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),s["ɵprd"](2048,null,V.NgControl,null,[V.FormControlName]),s["ɵdid"](21,16384,null,0,V.NgControlStatus,[V.NgControl],null,null),s["ɵdid"](22,5423104,null,0,I.TextInput,[c.Config,f.Platform,C.Form,k.App,s.ElementRef,s.Renderer,[2,N.Content],[2,b.Item],[2,V.NgControl],h.DomController],{type:[0,"type"]},null),(l()(),s["ɵted"](-1,2,["\n                "])),(l()(),s["ɵted"](-1,null,["\n                "])),(l()(),s["ɵeld"](25,0,null,null,16,"ion-item",[["class","custom-border item item-block"]],null,null,null,v.b,v.a)),s["ɵdid"](26,1097728,null,3,b.Item,[C.Form,c.Config,s.ElementRef,s.Renderer,[2,y.ItemReorder]],null,null),s["ɵqud"](335544320,27,{contentLabel:0}),s["ɵqud"](603979776,28,{_buttons:1}),s["ɵqud"](603979776,29,{_icons:1}),s["ɵdid"](30,16384,null,0,R.ItemContent,[],null,null),(l()(),s["ɵted"](-1,2,["\n                    "])),(l()(),s["ɵeld"](32,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),s["ɵdid"](33,16384,[[27,4]],0,w.Label,[c.Config,s.ElementRef,s.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),s["ɵted"](-1,null,["Confirm password"])),(l()(),s["ɵted"](-1,2,["\n                    "])),(l()(),s["ɵeld"](36,0,null,3,4,"ion-input",[["formControlName","confirmpassword"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,e){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.account.confirmpassword=e)&&t}return t},x.b,x.a)),s["ɵdid"](37,671744,null,0,V.FormControlName,[[3,V.ControlContainer],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),s["ɵprd"](2048,null,V.NgControl,null,[V.FormControlName]),s["ɵdid"](39,16384,null,0,V.NgControlStatus,[V.NgControl],null,null),s["ɵdid"](40,5423104,null,0,I.TextInput,[c.Config,f.Platform,C.Form,k.App,s.ElementRef,s.Renderer,[2,N.Content],[2,b.Item],[2,V.NgControl],h.DomController],{type:[0,"type"]},null),(l()(),s["ɵted"](-1,2,["\n                "])),(l()(),s["ɵted"](-1,null,["\n                "])),(l()(),s["ɵeld"](43,0,null,null,13,"div",[["class","term-note"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["\n                  "])),(l()(),s["ɵeld"](45,0,null,null,5,"ion-checkbox",[["formControlName","IsAgreeTermsCondiotion"]],[[2,"checkbox-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==s["ɵnov"](l,46)._click(e)&&t}if("ngModelChange"===n){t=!1!==(u.account.IsAgreeTermsCondiotion=e)&&t}return t},L.b,L.a)),s["ɵdid"](46,1228800,null,0,H.Checkbox,[c.Config,C.Form,[2,b.Item],s.ElementRef,s.Renderer],null,null),s["ɵprd"](1024,null,V.NG_VALUE_ACCESSOR,function(l){return[l]},[H.Checkbox]),s["ɵdid"](48,671744,null,0,V.FormControlName,[[3,V.ControlContainer],[8,null],[8,null],[2,V.NG_VALUE_ACCESSOR]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),s["ɵprd"](2048,null,V.NgControl,null,[V.FormControlName]),s["ɵdid"](50,16384,null,0,V.NgControlStatus,[V.NgControl],null,null),(l()(),s["ɵted"](-1,null,["\n                  "])),(l()(),s["ɵeld"](52,0,null,null,3,"div",[["class","signup-text"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["By singing up for meschino wellness you are agreeing to our \n                    "])),(l()(),s["ɵeld"](54,0,null,null,1,"a",[["href","#"]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.ViewTemplate("TermsAndConditions")&&t}return t},null,null)),(l()(),s["ɵted"](-1,null,["privacy policy and terms"])),(l()(),s["ɵted"](-1,null,["\n                "])),(l()(),s["ɵted"](-1,null,["\n            "])),(l()(),s["ɵted"](-1,null,["\n          "]))],function(l,n){var e=n.component;l(n,19,0,"Password",e.account.Password);l(n,22,0,"password");l(n,37,0,"confirmpassword",e.account.confirmpassword);l(n,40,0,"password");l(n,48,0,"IsAgreeTermsCondiotion",e.account.IsAgreeTermsCondiotion)},function(l,n){l(n,15,0,s["ɵunv"](n,15,0,s["ɵnov"](n,16).transform("PASSWORD")));l(n,18,0,s["ɵnov"](n,21).ngClassUntouched,s["ɵnov"](n,21).ngClassTouched,s["ɵnov"](n,21).ngClassPristine,s["ɵnov"](n,21).ngClassDirty,s["ɵnov"](n,21).ngClassValid,s["ɵnov"](n,21).ngClassInvalid,s["ɵnov"](n,21).ngClassPending);l(n,36,0,s["ɵnov"](n,39).ngClassUntouched,s["ɵnov"](n,39).ngClassTouched,s["ɵnov"](n,39).ngClassPristine,s["ɵnov"](n,39).ngClassDirty,s["ɵnov"](n,39).ngClassValid,s["ɵnov"](n,39).ngClassInvalid,s["ɵnov"](n,39).ngClassPending);l(n,45,0,s["ɵnov"](n,46)._disabled,s["ɵnov"](n,50).ngClassUntouched,s["ɵnov"](n,50).ngClassTouched,s["ɵnov"](n,50).ngClassPristine,s["ɵnov"](n,50).ngClassDirty,s["ɵnov"](n,50).ngClassValid,s["ɵnov"](n,50).ngClassInvalid,s["ɵnov"](n,50).ngClassPending)})}function i(l){return s["ɵvid"](0,[(l()(),s["ɵeld"](0,0,null,null,11,"ion-header",[],null,null,null,null,null)),s["ɵdid"](1,16384,null,0,U.Header,[c.Config,s.ElementRef,s.Renderer,[2,W.ViewController]],null,null),(l()(),s["ɵted"](-1,null,["\n  "])),(l()(),s["ɵeld"](3,0,null,null,7,"ion-navbar",[["class","toolbar"],["color","primary"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,O.b,O.a)),s["ɵdid"](4,49152,null,0,G.Navbar,[k.App,[2,W.ViewController],[2,q.NavController],c.Config,s.ElementRef,s.Renderer],{color:[0,"color"]},null),(l()(),s["ɵted"](-1,3,["\n    "])),(l()(),s["ɵeld"](6,0,null,3,3,"ion-title",[],null,null,null,B.b,B.a)),s["ɵdid"](7,49152,null,0,$.ToolbarTitle,[c.Config,s.ElementRef,s.Renderer,[2,K.Toolbar],[2,G.Navbar]],null,null),(l()(),s["ɵted"](8,0,["",""])),s["ɵpid"](131072,A.a,[F.a,s.ChangeDetectorRef]),(l()(),s["ɵted"](-1,3,["\n  "])),(l()(),s["ɵted"](-1,null,["\n"])),(l()(),s["ɵted"](-1,null,["\n"])),(l()(),s["ɵeld"](13,0,null,null,77,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Q.b,Q.a)),s["ɵdid"](14,4374528,null,0,N.Content,[c.Config,f.Platform,h.DomController,s.ElementRef,s.Renderer,k.App,Y.Keyboard,s.NgZone,[2,W.ViewController],[2,q.NavController]],null,null),(l()(),s["ɵted"](-1,1,["   \n  "])),(l()(),s["ɵeld"](16,0,null,1,51,"ul",[["class","custom-tab"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["\n    "])),(l()(),s["ɵeld"](18,0,null,null,8,"li",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.changeTabButton(0)&&t}return t},null,null)),s["ɵdid"](19,278528,null,0,j.NgClass,[s.IterableDiffers,s.KeyValueDiffers,s.ElementRef,s.Renderer2],{ngClass:[0,"ngClass"]},null),s["ɵpod"](20,{active:0}),(l()(),s["ɵted"](-1,null,["\n         "])),(l()(),s["ɵeld"](22,0,null,null,0,"span",[["class","ico-detail ico"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](24,0,null,null,1,"span",[["class","text"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["Enter Details"])),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵted"](-1,null,["\n    "])),(l()(),s["ɵeld"](28,0,null,null,8,"li",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.changeTabButton(1)&&t}return t},null,null)),s["ɵdid"](29,278528,null,0,j.NgClass,[s.IterableDiffers,s.KeyValueDiffers,s.ElementRef,s.Renderer2],{ngClass:[0,"ngClass"]},null),s["ɵpod"](30,{active:0}),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵeld"](32,0,null,null,0,"span",[["class","ico-gender ico"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](34,0,null,null,1,"span",[["class","text"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["Gender"])),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵted"](-1,null,["\n    "])),(l()(),s["ɵeld"](38,0,null,null,8,"li",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.changeTabButton(2)&&t}return t},null,null)),s["ɵdid"](39,278528,null,0,j.NgClass,[s.IterableDiffers,s.KeyValueDiffers,s.ElementRef,s.Renderer2],{ngClass:[0,"ngClass"]},null),s["ɵpod"](40,{active:0}),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](42,0,null,null,0,"span",[["class","ico-age ico"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](44,0,null,null,1,"span",[["class","text"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["Date of Birth"])),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵted"](-1,null,["\n    "])),(l()(),s["ɵeld"](48,0,null,null,8,"li",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.changeTabButton(3)&&t}return t},null,null)),s["ɵdid"](49,278528,null,0,j.NgClass,[s.IterableDiffers,s.KeyValueDiffers,s.ElementRef,s.Renderer2],{ngClass:[0,"ngClass"]},null),s["ɵpod"](50,{active:0}),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](52,0,null,null,0,"span",[["class","ico-measure ico"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](54,0,null,null,1,"span",[["class","text"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["Height"])),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵted"](-1,null,["\n    "])),(l()(),s["ɵeld"](58,0,null,null,8,"li",[],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.changeTabButton(4)&&t}return t},null,null)),s["ɵdid"](59,278528,null,0,j.NgClass,[s.IterableDiffers,s.KeyValueDiffers,s.ElementRef,s.Renderer2],{ngClass:[0,"ngClass"]},null),s["ɵpod"](60,{active:0}),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](62,0,null,null,0,"span",[["class","ico-password ico"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵeld"](64,0,null,null,1,"span",[["class","text"]],null,null,null,null,null)),(l()(),s["ɵted"](-1,null,["Enter Password"])),(l()(),s["ɵted"](-1,null,["\n      "])),(l()(),s["ɵted"](-1,null,["\n  "])),(l()(),s["ɵted"](-1,1,["\n  "])),(l()(),s["ɵeld"](69,0,null,1,20,"form",[["novalidate",""]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"submit"],[null,"reset"]],function(l,n,e){var t=!0;if("submit"===n){t=!1!==s["ɵnov"](l,71).onSubmit(e)&&t}if("reset"===n){t=!1!==s["ɵnov"](l,71).onReset()&&t}return t},null,null)),s["ɵdid"](70,16384,null,0,V["ɵbf"],[],null,null),s["ɵdid"](71,540672,null,0,V.FormGroupDirective,[[8,null],[8,null]],{form:[0,"form"]},null),s["ɵprd"](2048,null,V.ControlContainer,null,[V.FormGroupDirective]),s["ɵdid"](73,16384,null,0,V.NgControlStatusGroup,[V.ControlContainer],null,null),(l()(),s["ɵted"](-1,null,["\n    "])),(l()(),s["ɵand"](16777216,null,null,1,null,t)),s["ɵdid"](76,16384,null,0,j.NgIf,[s.ViewContainerRef,s.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),s["ɵted"](-1,null,["\n    "])),(l()(),s["ɵand"](16777216,null,null,1,null,u)),s["ɵdid"](79,16384,null,0,j.NgIf,[s.ViewContainerRef,s.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),s["ɵted"](-1,null,["\n    "])),(l()(),s["ɵand"](16777216,null,null,1,null,o)),s["ɵdid"](82,16384,null,0,j.NgIf,[s.ViewContainerRef,s.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),s["ɵted"](-1,null,["\n    "])),(l()(),s["ɵand"](16777216,null,null,1,null,a)),s["ɵdid"](85,16384,null,0,j.NgIf,[s.ViewContainerRef,s.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),s["ɵted"](-1,null,["\n        "])),(l()(),s["ɵand"](16777216,null,null,1,null,r)),s["ɵdid"](88,16384,null,0,j.NgIf,[s.ViewContainerRef,s.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),s["ɵted"](-1,null,["\n          "])),(l()(),s["ɵted"](-1,1,["\n"])),(l()(),s["ɵted"](-1,null,["\n"])),(l()(),s["ɵeld"](92,0,null,null,10,"ion-footer",[],null,null,null,null,null)),s["ɵdid"](93,16384,null,0,z.Footer,[c.Config,s.ElementRef,s.Renderer,[2,W.ViewController]],null,null),(l()(),s["ɵted"](-1,null,["\n  "])),(l()(),s["ɵeld"](95,0,null,null,6,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,Z.b,Z.a)),s["ɵdid"](96,49152,null,0,K.Toolbar,[c.Config,s.ElementRef,s.Renderer],null,null),(l()(),s["ɵted"](-1,3,["\n    "])),(l()(),s["ɵeld"](98,0,null,3,2,"button",[["class","big-btn"],["color","primary"],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==u.changeTab(u.currentSlide)&&t}return t},J.b,J.a)),s["ɵdid"](99,1097728,null,0,X.Button,[[8,""],c.Config,s.ElementRef,s.Renderer],{color:[0,"color"]},null),(l()(),s["ɵted"](100,0,["",""])),(l()(),s["ɵted"](-1,3,["\n  "])),(l()(),s["ɵted"](-1,null,["\n"])),(l()(),s["ɵted"](-1,null,["\n"]))],function(l,n){var e=n.component;l(n,4,0,"primary");l(n,19,0,l(n,20,0,e.slides[0].active));l(n,29,0,l(n,30,0,e.slides[1].active));l(n,39,0,l(n,40,0,e.slides[2].active));l(n,49,0,l(n,50,0,e.slides[3].active));l(n,59,0,l(n,60,0,e.slides[4].active));l(n,71,0,e.signupForm);l(n,76,0,e.slides[0].active);l(n,79,0,e.slides[1].active);l(n,82,0,e.slides[2].active);l(n,85,0,e.slides[3].active);l(n,88,0,e.slides[4].active);l(n,99,0,"primary")},function(l,n){var e=n.component;l(n,3,0,s["ɵnov"](n,4)._hidden,s["ɵnov"](n,4)._sbPadding);l(n,8,0,s["ɵunv"](n,8,0,s["ɵnov"](n,9).transform("SIGNUP_TITLE")));l(n,13,0,s["ɵnov"](n,14).statusbarPadding,s["ɵnov"](n,14)._hasRefresher);l(n,69,0,s["ɵnov"](n,73).ngClassUntouched,s["ɵnov"](n,73).ngClassTouched,s["ɵnov"](n,73).ngClassPristine,s["ɵnov"](n,73).ngClassDirty,s["ɵnov"](n,73).ngClassValid,s["ɵnov"](n,73).ngClassInvalid,s["ɵnov"](n,73).ngClassPending);l(n,95,0,s["ɵnov"](n,96)._sbPadding);l(n,100,0,e.buttonText)})}e.d(n,"a",function(){return rl});var s=e(0),d=e(50),c=e(2),p=e(66),m=e(56),f=e(3),g=e(11),h=e(7),v=e(47),b=e(17),C=e(14),y=e(33),R=e(41),w=e(65),x=e(224),V=e(9),I=e(119),k=e(6),N=e(21),S=e(98),E=e(154),_=e(334),P=e(161),T=e(85),M=e(335),D=e(125),A=e(145),F=e(55),L=e(225),H=e(118),U=e(31),W=e(5),O=e(36),G=e(26),q=e(20),B=e(37),$=e(32),K=e(27),Q=e(28),Y=e(24),j=e(12),z=e(51),Z=e(101),J=e(19),X=e(13),ll=e(131),nl=e(46),el=e(86),tl=e(38),ul=e(44),ol=e(60),al=s["ɵcrt"]({encapsulation:2,styles:[],data:{}}),rl=s["ɵccf"]("page-signup",ll.a,function(l){return s["ɵvid"](0,[(l()(),s["ɵeld"](0,0,null,null,1,"page-signup",[],null,null,null,i,al)),s["ɵdid"](1,49152,null,0,ll.a,[q.NavController,nl.a,el.ToastController,V.FormBuilder,F.a,tl.AlertController,ul.LoadingController,T.PickerController,ol.Events],null,null)],null,null)},{},{},[])},function(l,n,e){"use strict";function t(l){}function u(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,14,"ion-item",[["class","item item-block"]],null,null,null,El.b,El.a)),i["ɵdid"](1,1097728,null,3,_l.Item,[Pl.Form,Tl.Config,i.ElementRef,i.Renderer,[2,Ml.ItemReorder]],null,null),i["ɵqud"](335544320,7,{contentLabel:0}),i["ɵqud"](603979776,8,{_buttons:1}),i["ɵqud"](603979776,9,{_icons:1}),i["ɵdid"](5,16384,null,0,Dl.ItemContent,[],null,null),(l()(),i["ɵted"](-1,2,["\n                "])),(l()(),i["ɵeld"](7,0,null,2,2,"ion-icon",[["role","img"]],[[2,"hide",null]],null,null,null,null)),i["ɵdid"](8,147456,[[9,4]],0,Al.Icon,[Tl.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵeld"](9,0,null,null,0,"img",[["height","14px"],["width","15px"]],[[8,"src",4]],null,null,null,null)),(l()(),i["ɵted"](-1,2,["\n                "])),(l()(),i["ɵeld"](11,0,null,2,2,"button",[["class","menu-item"],["menuClose",""]],null,[[null,"click"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==i["ɵnov"](l,12).close()&&t}if("click"===n){t=!1!==u.openPage(l.context.$implicit)&&t}return t},null,null)),i["ɵdid"](12,16384,null,0,Fl.MenuClose,[Ll.MenuController],{menuClose:[0,"menuClose"]},null),(l()(),i["ɵted"](13,null,["\n                    ","\n                "])),(l()(),i["ɵted"](-1,2,["\n            "]))],function(l,n){l(n,12,0,"")},function(l,n){l(n,7,0,i["ɵnov"](n,8)._hidden);l(n,9,0,i["ɵinlineInterpolate"](1,"assets/icon/",n.context.$implicit.manuIcon,".png"));l(n,13,0,n.context.$implicit.title)})}function o(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,13,"ion-item",[["class","item item-block"]],null,null,null,El.b,El.a)),i["ɵdid"](1,1097728,null,3,_l.Item,[Pl.Form,Tl.Config,i.ElementRef,i.Renderer,[2,Ml.ItemReorder]],null,null),i["ɵqud"](335544320,16,{contentLabel:0}),i["ɵqud"](603979776,17,{_buttons:1}),i["ɵqud"](603979776,18,{_icons:1}),i["ɵdid"](5,16384,null,0,Dl.ItemContent,[],null,null),(l()(),i["ɵted"](-1,2,["\n                "])),(l()(),i["ɵeld"](7,0,null,2,2,"ion-icon",[["role","img"]],[[2,"hide",null]],null,null,null,null)),i["ɵdid"](8,147456,[[18,4]],0,Al.Icon,[Tl.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵeld"](9,0,null,null,0,"img",[["height","18px"],["src","assets/img/app_icon.png"],["width","18px"]],null,null,null,null,null)),(l()(),i["ɵted"](-1,2,["\n                "])),(l()(),i["ɵeld"](11,0,null,2,1,"button",[["class","menu-item"]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.openPortal()&&t}return t},null,null)),(l()(),i["ɵted"](-1,null,["\n                    Visit Website\n                "])),(l()(),i["ɵted"](-1,2,["\n            "]))],null,function(l,n){l(n,7,0,i["ɵnov"](n,8)._hidden)})}function a(l){return i["ɵvid"](0,[i["ɵqud"](402653184,1,{nav:0}),(l()(),i["ɵeld"](1,0,null,null,100,"ion-menu",[["class","main-menu"],["role","navigation"]],null,null,null,Hl.b,Hl.a)),i["ɵprd"](6144,null,Ul.RootNode,null,[Wl.Menu]),i["ɵdid"](3,245760,null,2,Wl.Menu,[Ll.MenuController,i.ElementRef,Tl.Config,Ol.Platform,i.Renderer,Gl.Keyboard,ql.GestureController,Bl.DomController,$l.App],{content:[0,"content"]},null),i["ɵqud"](335544320,2,{menuContent:0}),i["ɵqud"](335544320,3,{menuNav:0}),(l()(),i["ɵted"](-1,0,["\n    "])),(l()(),i["ɵeld"](7,0,null,0,25,"ion-header",[["color","primary"]],null,null,null,null,null)),i["ɵdid"](8,16384,null,0,Kl.Header,[Tl.Config,i.ElementRef,i.Renderer,[2,Ql.ViewController]],{color:[0,"color"]},null),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵeld"](10,0,null,null,21,"ion-item",[["class","item item-block"]],null,null,null,El.b,El.a)),i["ɵdid"](11,1097728,null,3,_l.Item,[Pl.Form,Tl.Config,i.ElementRef,i.Renderer,[2,Ml.ItemReorder]],null,null),i["ɵqud"](335544320,4,{contentLabel:0}),i["ɵqud"](603979776,5,{_buttons:1}),i["ɵqud"](603979776,6,{_icons:1}),i["ɵdid"](15,16384,null,0,Dl.ItemContent,[],null,null),(l()(),i["ɵted"](-1,2,["\n            "])),(l()(),i["ɵeld"](17,0,null,0,4,"ion-avatar",[["item-start",""]],null,null,null,null,null)),i["ɵdid"](18,16384,null,0,Yl.Avatar,[],null,null),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](20,0,null,null,0,"img",[],[[8,"src",4]],null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵted"](-1,2,["\n            "])),(l()(),i["ɵeld"](23,0,null,2,1,"h2",[],null,null,null,null,null)),(l()(),i["ɵted"](24,null,["",""])),(l()(),i["ɵted"](-1,2,["\n            "])),(l()(),i["ɵeld"](26,0,null,2,4,"p",[],null,null,null,null,null)),(l()(),i["ɵted"](-1,null,["\n                "])),(l()(),i["ɵeld"](28,0,null,null,1,"ion-icon",[["name","medal"],["role","img"]],[[2,"hide",null]],null,null,null,null)),i["ɵdid"](29,147456,[[6,4]],0,Al.Icon,[Tl.Config,i.ElementRef,i.Renderer],{name:[0,"name"]},null),(l()(),i["ɵted"](30,null,[""," Points\n            "])),(l()(),i["ɵted"](-1,2,["\n        "])),(l()(),i["ɵted"](-1,null,["\n    "])),(l()(),i["ɵted"](-1,0,["\n    "])),(l()(),i["ɵeld"](34,0,null,0,54,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,jl.b,jl.a)),i["ɵdid"](35,4374528,[[2,4]],0,zl.Content,[Tl.Config,Ol.Platform,Bl.DomController,i.ElementRef,i.Renderer,$l.App,Gl.Keyboard,i.NgZone,[2,Ql.ViewController],[2,Zl.NavController]],null,null),(l()(),i["ɵted"](-1,1,["\n        "])),(l()(),i["ɵeld"](37,0,null,1,50,"ion-list",[],null,null,null,null,null)),i["ɵdid"](38,16384,null,0,Jl.List,[Tl.Config,i.ElementRef,i.Renderer,Ol.Platform,ql.GestureController,Bl.DomController],null,null),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵand"](16777216,null,null,1,null,u)),i["ɵdid"](41,802816,null,0,Xl.NgForOf,[i.ViewContainerRef,i.TemplateRef,i.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](43,0,null,null,14,"ion-item",[["class","item item-block"]],null,null,null,El.b,El.a)),i["ɵdid"](44,1097728,null,3,_l.Item,[Pl.Form,Tl.Config,i.ElementRef,i.Renderer,[2,Ml.ItemReorder]],null,null),i["ɵqud"](335544320,10,{contentLabel:0}),i["ɵqud"](603979776,11,{_buttons:1}),i["ɵqud"](603979776,12,{_icons:1}),i["ɵdid"](48,16384,null,0,Dl.ItemContent,[],null,null),(l()(),i["ɵted"](-1,2,["\n                "])),(l()(),i["ɵeld"](50,0,null,2,2,"ion-icon",[["role","img"]],[[2,"hide",null]],null,null,null,null)),i["ɵdid"](51,147456,[[12,4]],0,Al.Icon,[Tl.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵeld"](52,0,null,null,0,"img",[["height","18px"],["src","assets/img/advise.png"],["width","18px"]],null,null,null,null,null)),(l()(),i["ɵted"](-1,2,["\n                "])),(l()(),i["ɵeld"](54,0,null,2,2,"button",[["class","menu-item"],["menuClose",""]],null,[[null,"click"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==i["ɵnov"](l,55).close()&&t}if("click"===n){t=!1!==u.ViewTemplate("TermsAndConditions")&&t}return t},null,null)),i["ɵdid"](55,16384,null,0,Fl.MenuClose,[Ll.MenuController],{menuClose:[0,"menuClose"]},null),(l()(),i["ɵted"](-1,null,["\n                    Privacy Policy and Terms\n                "])),(l()(),i["ɵted"](-1,2,["\n            "])),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](59,0,null,null,14,"ion-item",[["class","item item-block"]],null,null,null,El.b,El.a)),i["ɵdid"](60,1097728,null,3,_l.Item,[Pl.Form,Tl.Config,i.ElementRef,i.Renderer,[2,Ml.ItemReorder]],null,null),i["ɵqud"](335544320,13,{contentLabel:0}),i["ɵqud"](603979776,14,{_buttons:1}),i["ɵqud"](603979776,15,{_icons:1}),i["ɵdid"](64,16384,null,0,Dl.ItemContent,[],null,null),(l()(),i["ɵted"](-1,2,["\n                "])),(l()(),i["ɵeld"](66,0,null,2,2,"ion-icon",[["role","img"]],[[2,"hide",null]],null,null,null,null)),i["ɵdid"](67,147456,[[15,4]],0,Al.Icon,[Tl.Config,i.ElementRef,i.Renderer],null,null),(l()(),i["ɵeld"](68,0,null,null,0,"img",[["height","18px"],["src","assets/img/disclaimer.png"],["width","18px"]],null,null,null,null,null)),(l()(),i["ɵted"](-1,2,["\n                "])),(l()(),i["ɵeld"](70,0,null,2,2,"button",[["class","menu-item"],["menuClose",""]],null,[[null,"click"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==i["ɵnov"](l,71).close()&&t}if("click"===n){t=!1!==u.ViewTemplate("PrecautionsandDisclaimer")&&t}return t},null,null)),i["ɵdid"](71,16384,null,0,Fl.MenuClose,[Ll.MenuController],{menuClose:[0,"menuClose"]},null),(l()(),i["ɵted"](-1,null,["\n                    Precautions and Disclaimer\n                "])),(l()(),i["ɵted"](-1,2,["\n            "])),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵand"](16777216,null,null,1,null,o)),i["ɵdid"](76,16384,null,0,Xl.NgIf,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵted"](-1,null,["\n            "])),(l()(),i["ɵeld"](78,0,null,null,8,"ion-item",[["class","item item-block"]],null,null,null,El.b,El.a)),i["ɵdid"](79,1097728,null,3,_l.Item,[Pl.Form,Tl.Config,i.ElementRef,i.Renderer,[2,Ml.ItemReorder]],null,null),i["ɵqud"](335544320,19,{contentLabel:0}),i["ɵqud"](603979776,20,{_buttons:1}),i["ɵqud"](603979776,21,{_icons:1}),i["ɵdid"](83,16384,null,0,Dl.ItemContent,[],null,null),(l()(),i["ɵted"](-1,2,["\n                "])),(l()(),i["ɵeld"](85,0,null,2,0,"img",[["src","assets/img/ad.png"]],null,[[null,"click"]],function(l,n,e){var t=!0;if("click"===n){t=!1!==l.component.downloadPDF()&&t}return t},null,null)),(l()(),i["ɵted"](-1,2,["\n            "])),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵted"](-1,1,["\n    "])),(l()(),i["ɵted"](-1,0,["\n    "])),(l()(),i["ɵeld"](90,0,null,0,10,"ion-footer",[["color","primary"],["padding",""]],null,null,null,null,null)),i["ɵdid"](91,16384,null,0,ln.Footer,[Tl.Config,i.ElementRef,i.Renderer,[2,Ql.ViewController]],{color:[0,"color"]},null),(l()(),i["ɵted"](-1,null,["\n        "])),(l()(),i["ɵeld"](93,0,null,null,6,"button",[["class","big-btn"],["color","primary"],["ion-button",""],["menuClose",""]],null,[[null,"click"]],function(l,n,e){var t=!0,u=l.component;if("click"===n){t=!1!==i["ɵnov"](l,95).close()&&t}if("click"===n){t=!1!==u.logOut()&&t}return t},nn.b,nn.a)),i["ɵdid"](94,1097728,null,0,en.Button,[[8,""],Tl.Config,i.ElementRef,i.Renderer],{color:[0,"color"]},null),i["ɵdid"](95,16384,null,0,Fl.MenuClose,[Ll.MenuController],{menuClose:[0,"menuClose"]},null),(l()(),i["ɵted"](-1,0,["\n            "])),(l()(),i["ɵeld"](97,0,null,0,1,"ion-icon",[["name","shuffle"],["padding",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),i["ɵdid"](98,147456,null,0,Al.Icon,[Tl.Config,i.ElementRef,i.Renderer],{name:[0,"name"]},null),(l()(),i["ɵted"](-1,0,["\n            Logout\n        "])),(l()(),i["ɵted"](-1,null,["\n    "])),(l()(),i["ɵted"](-1,0,["\n"])),(l()(),i["ɵted"](-1,null,["\n"])),(l()(),i["ɵeld"](103,0,null,null,2,"ion-nav",[],null,null,null,tn.b,tn.a)),i["ɵprd"](6144,null,Ul.RootNode,null,[un.Nav]),i["ɵdid"](105,4374528,[[1,4],["content",4]],0,un.Nav,[[2,Ql.ViewController],[2,Zl.NavController],$l.App,Tl.Config,Ol.Platform,i.ElementRef,i.NgZone,i.Renderer,i.ComponentFactoryResolver,ql.GestureController,on.TransitionController,[2,an.DeepLinker],Bl.DomController,i.ErrorHandler],{root:[0,"root"]},null)],function(l,n){var e=n.component;l(n,3,0,i["ɵnov"](n,105));l(n,8,0,"primary");l(n,29,0,"medal");l(n,41,0,e.pages);l(n,55,0,"");l(n,71,0,"");l(n,76,0,!e.IshiddenLink);l(n,91,0,"primary");l(n,94,0,"primary");l(n,95,0,"");l(n,98,0,"shuffle");l(n,105,0,e.rootPage)},function(l,n){var e=n.component;l(n,20,0,i["ɵinlineInterpolate"](1,"",e.profilepic,""));l(n,24,0,e.user_name);l(n,28,0,i["ɵnov"](n,29)._hidden);l(n,30,0,e.rewardpoints);l(n,34,0,i["ɵnov"](n,35).statusbarPadding,i["ɵnov"](n,35)._hasRefresher);l(n,50,0,i["ɵnov"](n,51)._hidden);l(n,66,0,i["ɵnov"](n,67)._hidden);l(n,97,0,i["ɵnov"](n,98)._hidden)})}Object.defineProperty(n,"__esModule",{value:!0});var r=e(57),i=e(0),s=(e(1),e(74)),d=e(142),c=e(143),p=e(274),m=e(194),f=e(61),g=e(406),h=(e(10),e(9)),v=e(220),b=(e(39),e(169)),C=e(179),y=e(80),R=e(99),w=e(102),x=e(123),V=e(89),I=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},k=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},N=function(){function l(l,n,e,t,u,o,a,r,i,s,d,c){var p=this;this.translate=l,this.platform=n,this.settings=e,this.config=t,this.statusBar=u,this.splashScreen=o,this.events=a,this.fcm=r,this.toastController=i,this.alertCtl=s,this.uniqueDeviceID=d,this.userService=c,this.rootPage=C.a,this.IshiddenLink=!1,this.pages=[{title:"My Wellness Wallet",component:"MyWellnessWalletPage",manuIcon:"wellnesswallet"},{title:"My Profile",component:"ProfilePage",manuIcon:"profile"}],this.user_name="",this.rewardpoints=0,this.profilepic="assets/img/loader.gif",this.MainSiteUrl=x.a.App_Url,this.PortalURL="",n.ready().then(function(){p.statusBar.styleDefault(),p.splashScreen.hide(),p.uniqueDeviceID.get().then(function(l){localStorage.setItem("remUUID",l)}).catch(function(l){return alert(l)})}),this.initTranslate(),a.subscribe("user:created",function(l){if(void 0!==localStorage.getItem("UserName")&&null!==localStorage.getItem("UserName")&&(p.user_name=l.FirstName+" "+l.LastName,p.rewardpoints=l.RewardPoint,p.profilepic=l.ProfileImage,null!==localStorage.getItem("UserName")&&localStorage.getItem("UserName").length>0)){var n=localStorage.getItem("UserName");p.IshiddenLink=null!==localStorage.getItem("UserAccessLevel")&&"Full"!==localStorage.getItem("UserAccessLevel"),p.notificationSetup(n,null)}}),this.LoadNotifications()}return l.prototype.presentToast=function(l){return I(this,void 0,void 0,function(){return k(this,function(n){switch(n.label){case 0:return[4,this.toastController.create({message:l,duration:3e3})];case 1:return n.sent().present(),[2]}})})},l.prototype.notificationSetup=function(l,n){var e=this;this.fcm.getToken(l,null),this.fcm.onNotifications().subscribe(function(l){e.platform.is("ios"),e.presentToast(l.body),e.nav.push(w.a)})},l.prototype.initTranslate=function(){var l=this;this.translate.setDefaultLang("en");var n=this.translate.getBrowserLang();if(n)if("zh"===n){var e=this.translate.getBrowserCultureLang();e.match(/-CN|CHS|Hans/i)?this.translate.use("zh-cmn-Hans"):e.match(/-TW|CHT|Hant/i)&&this.translate.use("zh-cmn-Hant")}else this.translate.use(this.translate.getBrowserLang());else this.translate.use("en");this.translate.get(["BACK_BUTTON_TEXT"]).subscribe(function(n){l.config.set("ios","backButtonText","")})},l.prototype.openPage=function(l){this.nav.setRoot(l.component)},l.prototype.logOut=function(){var l=localStorage.getItem("remuser"),n=localStorage.getItem("rempwd"),e=localStorage.getItem("remUUID");localStorage.clear(),localStorage.setItem("remUUID",e),localStorage.setItem("remuser",l),localStorage.setItem("rempwd",n),this.nav.push(y.a)},l.prototype.downloadPDF=function(){window.open("https://meschinowellness.blob.core.windows.net/downloads/Optimal_Living_Program.pdf","_system","location=yes")},l.prototype.openPortal=function(){this.PortalURL=this.MainSiteUrl+"account/MobileAppLogin?SecretToken="+localStorage.getItem("SecretToken")+"&DeviceId="+localStorage.getItem("deviceid")+"&tokenP="+localStorage.getItem("Password");var l=this.PortalURL;console.log(l),window.open(l,"_system","location=yes")},l.prototype.LoadNotifications=function(){var l=this;setInterval(function(){if(null!==localStorage.getItem("PushNotificationYesNo")&&"Yes"==localStorage.getItem("PushNotificationYesNo")){var n={DeviceId:localStorage.getItem("deviceid"),SecretToken:localStorage.getItem("SecretToken")};l.userService.GetUserPushNotificationDetail(n).subscribe(function(n){l.events.publish("NotificationDetail",n.lstPushNotificationDetail);var e=n.lstPushNotificationDetail.filter(function(l){return 0==l.IsRead}).length,t=e>0?e:"";localStorage.setItem("NotificationCount",t)})}},3e4)},l.prototype.ViewTemplate=function(l){this.nav.push(V.a,{Content:l})},l}(),S=e(248),E=e(230),_=e(241),P=e(236),T=e(233),M=e(232),D=e(249),A=e(235),F=e(227),L=e(244),H=e(242),U=e(243),W=e(237),O=e(239),G=e(245),q=e(168),B=e(100),$=e(223),K=this&&this.__awaiter||function(l,n,e,t){return new(e||(e=Promise))(function(u,o){function a(l){try{i(t.next(l))}catch(l){o(l)}}function r(l){try{i(t.throw(l))}catch(l){o(l)}}function i(l){l.done?u(l.value):new e(function(n){n(l.value)}).then(a,r)}i((t=t.apply(l,n||[])).next())})},Q=this&&this.__generator||function(l,n){function e(e){return function(a){return function(e){if(t)throw new TypeError("Generator is already executing.");for(;r;)try{if(t=1,u&&(o=2&e[0]?u.return:e[0]?u.throw||((o=u.return)&&o.call(u),0):u.next)&&!(o=o.call(u,e[1])).done)return o;switch(u=0,o&&(e=[2&e[0],o.value]),e[0]){case 0:case 1:o=e;break;case 4:return r.label++,{value:e[1],done:!1};case 5:r.label++,u=e[1],e=[0];continue;case 7:e=r.ops.pop(),r.trys.pop();continue;default:if(o=r.trys,!(o=o.length>0&&o[o.length-1])&&(6===e[0]||2===e[0])){r=0;continue}if(3===e[0]&&(!o||e[1]>o[0]&&e[1]<o[3])){r.label=e[1];break}if(6===e[0]&&r.label<o[1]){r.label=o[1],o=e;break}if(o&&r.label<o[2]){r.label=o[2],r.ops.push(e);break}o[2]&&r.ops.pop(),r.trys.pop();continue}e=n.call(l,r)}catch(l){e=[6,l],u=0}finally{t=o=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var t,u,o,a,r={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},Y=function(){function l(l){this.toastController=l}return l.prototype.presentToast=function(l){return K(this,void 0,void 0,function(){return Q(this,function(n){switch(n.label){case 0:return[4,this.toastController.create({message:l,duration:4e3})];case 1:return n.sent().present(),[2]}})})},l.prototype.presentErrorToast=function(l){return K(this,void 0,void 0,function(){return Q(this,function(n){switch(n.label){case 0:return[4,this.toastController.create({message:l,position:"top",duration:3e3,cssClass:"toast-error"})];case 1:return n.sent().present(),[2]}})})},l}(),j=e(222),z=e(229),Z=e(246),J=e(247),X=function(l){return new g.a(l,"./assets/i18n/",".json")},ll=function(){return function(){}}(),nl=e(150),el=e(336),tl=e(337),ul=e(338),ol=e(339),al=e(340),rl=e(341),il=e(342),sl=e(343),dl=e(344),cl=e(350),pl=e(349),ml=e(365),fl=e(351),gl=e(364),hl=e(348),vl=e(357),bl=e(354),Cl=e(358),yl=e(361),Rl=e(346),wl=e(360),xl=e(359),Vl=e(355),Il=e(356),kl=e(347),Nl=e(362),Sl=e(363),El=e(47),_l=e(17),Pl=e(14),Tl=e(2),Ml=e(33),Dl=e(41),Al=e(49),Fl=e(172),Ll=e(40),Hl=e(352),Ul=e(79),Wl=e(171),Ol=e(3),Gl=e(24),ql=e(11),Bl=e(7),$l=e(6),Kl=e(31),Ql=e(5),Yl=e(159),jl=e(28),zl=e(21),Zl=e(20),Jl=e(56),Xl=e(12),ln=e(51),nn=e(19),en=e(13),tn=e(353),un=e(130),on=e(71),an=e(30),rn=e(55),sn=e(221),dn=e(60),cn=e(86),pn=e(38),mn=e(46),fn=i["ɵcrt"]({encapsulation:2,styles:[],data:{}}),gn=i["ɵccf"]("page-app-main",N,function(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,1,"page-app-main",[],null,null,null,a,fn)),i["ɵdid"](1,49152,null,0,N,[rn.a,Ol.Platform,sn.a,Tl.Config,c.a,d.a,dn.Events,R.a,cn.ToastController,pn.AlertController,b.a,mn.a],null,null)],null,null)},{},{},[]),hn=e(289),vn=e(126),bn=e(127),Cn=e(129),yn=e(128),Rn=e(170),wn=e(296),xn=e(70),Vn=e(44),In=e(345),kn=e(149),Nn=e(88),Sn=e(303),En=e(85),_n=e(307),Pn=e(292),Tn=e(122),Mn=e(87),Dn=e(124),An=e(504),Fn=e(290),Ln=e(203),Hn=e(295),Un=e(226),Wn=i["ɵcmf"](ll,[nl.IonicApp],function(l){return i["ɵmod"]([i["ɵmpd"](512,i.ComponentFactoryResolver,i["ɵCodegenComponentFactoryResolver"],[[8,[el.a,tl.a,ul.a,ol.a,al.a,rl.a,il.a,sl.a,dl.a,cl.a,pl.a,ml.a,fl.a,gl.a,hl.a,vl.a,bl.a,Cl.a,yl.a,Rl.a,wl.a,xl.a,Vl.a,Il.a,kl.a,Nl.a,Sl.a,gn]],[3,i.ComponentFactoryResolver],i.NgModuleRef]),i["ɵmpd"](5120,i.LOCALE_ID,i["ɵq"],[[3,i.LOCALE_ID]]),i["ɵmpd"](4608,Xl.NgLocalization,Xl.NgLocaleLocalization,[i.LOCALE_ID,[2,Xl["ɵa"]]]),i["ɵmpd"](5120,i.APP_ID,i["ɵi"],[]),i["ɵmpd"](5120,i.IterableDiffers,i["ɵn"],[]),i["ɵmpd"](5120,i.KeyValueDiffers,i["ɵo"],[]),i["ɵmpd"](4608,r.DomSanitizer,r["ɵe"],[Xl.DOCUMENT]),i["ɵmpd"](6144,i.Sanitizer,null,[r.DomSanitizer]),i["ɵmpd"](4608,r.HAMMER_GESTURE_CONFIG,hn.IonicGestureConfig,[]),i["ɵmpd"](5120,r.EVENT_MANAGER_PLUGINS,function(l,n,e,t,u){return[new r["ɵDomEventsPlugin"](l,n),new r["ɵKeyEventsPlugin"](e),new r["ɵHammerGesturesPlugin"](t,u)]},[Xl.DOCUMENT,i.NgZone,Xl.DOCUMENT,Xl.DOCUMENT,r.HAMMER_GESTURE_CONFIG]),i["ɵmpd"](4608,r.EventManager,r.EventManager,[r.EVENT_MANAGER_PLUGINS,i.NgZone]),i["ɵmpd"](135680,r["ɵDomSharedStylesHost"],r["ɵDomSharedStylesHost"],[Xl.DOCUMENT]),i["ɵmpd"](4608,r["ɵDomRendererFactory2"],r["ɵDomRendererFactory2"],[r.EventManager,r["ɵDomSharedStylesHost"]]),i["ɵmpd"](6144,i.RendererFactory2,null,[r["ɵDomRendererFactory2"]]),i["ɵmpd"](6144,r["ɵSharedStylesHost"],null,[r["ɵDomSharedStylesHost"]]),i["ɵmpd"](4608,i.Testability,i.Testability,[i.NgZone]),i["ɵmpd"](4608,r.Meta,r.Meta,[Xl.DOCUMENT]),i["ɵmpd"](4608,r.Title,r.Title,[Xl.DOCUMENT]),i["ɵmpd"](4608,s.i,s.o,[Xl.DOCUMENT,i.PLATFORM_ID,s.m]),i["ɵmpd"](4608,s.p,s.p,[s.i,s.n]),i["ɵmpd"](5120,s.a,function(l){return[l]},[s.p]),i["ɵmpd"](4608,s.l,s.l,[]),i["ɵmpd"](6144,s.j,null,[s.l]),i["ɵmpd"](4608,s.h,s.h,[s.j]),i["ɵmpd"](6144,s.b,null,[s.h]),i["ɵmpd"](4608,s.f,s.k,[s.b,i.Injector]),i["ɵmpd"](4608,s.c,s.c,[s.f]),i["ɵmpd"](4608,h.FormBuilder,h.FormBuilder,[]),i["ɵmpd"](4608,h["ɵi"],h["ɵi"],[]),i["ɵmpd"](5120,vn.b,X,[s.c]),i["ɵmpd"](4608,bn.a,bn.b,[]),i["ɵmpd"](4608,Cn.b,Cn.a,[]),i["ɵmpd"](4608,yn.b,yn.a,[]),i["ɵmpd"](4608,Rn.a,Rn.a,[]),i["ɵmpd"](4608,rn.a,rn.a,[Rn.a,vn.b,bn.a,Cn.b,yn.b,rn.b,rn.c]),i["ɵmpd"](5120,B.b,B.f,[B.d,[2,B.c]]),i["ɵmpd"](4608,$.AngularFirestore,$.AngularFirestore,[B.d,[2,B.c],[2,$.EnablePersistenceToken],[2,$.FirestoreSettingsToken],i.PLATFORM_ID,i.NgZone,[2,$.PersistenceSettingsToken]]),i["ɵmpd"](4608,wn.ActionSheetController,wn.ActionSheetController,[$l.App,Tl.Config]),i["ɵmpd"](4608,pn.AlertController,pn.AlertController,[$l.App,Tl.Config]),i["ɵmpd"](4608,dn.Events,dn.Events,[]),i["ɵmpd"](4608,Pl.Form,Pl.Form,[]),i["ɵmpd"](4608,xn.Haptic,xn.Haptic,[Ol.Platform]),i["ɵmpd"](4608,Gl.Keyboard,Gl.Keyboard,[Tl.Config,Ol.Platform,i.NgZone,Bl.DomController]),i["ɵmpd"](4608,Vn.LoadingController,Vn.LoadingController,[$l.App,Tl.Config]),i["ɵmpd"](5120,Xl.LocationStrategy,In.provideLocationStrategy,[Xl.PlatformLocation,[2,Xl.APP_BASE_HREF],Tl.Config]),i["ɵmpd"](4608,Xl.Location,Xl.Location,[Xl.LocationStrategy]),i["ɵmpd"](5120,kn.UrlSerializer,kn.setupUrlSerializer,[$l.App,kn.DeepLinkConfigToken]),i["ɵmpd"](5120,an.DeepLinker,an.setupDeepLinker,[$l.App,kn.UrlSerializer,Xl.Location,Nn.ModuleLoader,i.ComponentFactoryResolver]),i["ɵmpd"](4608,Sn.ModalController,Sn.ModalController,[$l.App,Tl.Config,an.DeepLinker]),i["ɵmpd"](4608,En.PickerController,En.PickerController,[$l.App,Tl.Config]),i["ɵmpd"](4608,_n.PopoverController,_n.PopoverController,[$l.App,Tl.Config,an.DeepLinker]),i["ɵmpd"](4608,Pn.TapClick,Pn.TapClick,[Tl.Config,Ol.Platform,Bl.DomController,$l.App,ql.GestureController]),i["ɵmpd"](4608,cn.ToastController,cn.ToastController,[$l.App,Tl.Config]),i["ɵmpd"](4608,on.TransitionController,on.TransitionController,[Ol.Platform,Tl.Config]),i["ɵmpd"](5120,m.b,m.d,[m.c]),i["ɵmpd"](4608,Tn.a,Tn.a,[s.c]),i["ɵmpd"](4608,v.a,v.a,[]),i["ɵmpd"](4608,Mn.a,Mn.a,[s.c,Tn.a]),i["ɵmpd"](4608,Dn.a,Dn.a,[Tn.a]),i["ɵmpd"](4608,mn.a,mn.a,[Tn.a]),i["ɵmpd"](4608,q.a,q.a,[]),i["ɵmpd"](4608,d.a,d.a,[]),i["ɵmpd"](4608,c.a,c.a,[]),i["ɵmpd"](4608,p.a,p.a,[]),i["ɵmpd"](4608,j.a,j.a,[]),i["ɵmpd"](4608,R.a,R.a,[j.a,$.AngularFirestore,Ol.Platform,mn.a]),i["ɵmpd"](4608,Y,Y,[cn.ToastController]),i["ɵmpd"](5120,sn.a,t,[m.b]),i["ɵmpd"](4608,b.a,b.a,[]),i["ɵmpd"](4608,h.NgForm,h.NgForm,[[8,null],[8,null]]),i["ɵmpd"](512,Xl.CommonModule,Xl.CommonModule,[]),i["ɵmpd"](512,i.ErrorHandler,An.IonicErrorHandler,[]),i["ɵmpd"](256,Tl.ConfigToken,{mode:"md"},[]),i["ɵmpd"](1024,Fn.PlatformConfigToken,Fn.providePlatformConfigs,[]),i["ɵmpd"](1024,Ol.Platform,Ol.setupPlatform,[r.DOCUMENT,Fn.PlatformConfigToken,i.NgZone]),i["ɵmpd"](1024,Tl.Config,Tl.setupConfig,[Tl.ConfigToken,Ol.Platform]),i["ɵmpd"](512,Bl.DomController,Bl.DomController,[Ol.Platform]),i["ɵmpd"](512,Ll.MenuController,Ll.MenuController,[]),i["ɵmpd"](512,$l.App,$l.App,[Tl.Config,Ol.Platform,[2,Ll.MenuController]]),i["ɵmpd"](512,ql.GestureController,ql.GestureController,[$l.App]),i["ɵmpd"](256,kn.DeepLinkConfigToken,{links:[{loadChildren:"../pages/dashboard/dashboard.module.ngfactory#DashboardPageModuleNgFactory",name:"DashboardPage",segment:"dashboard",priority:"low",defaultHistory:[]},{loadChildren:"../pages/forgetpassword/forgetpassword.module.ngfactory#ForgetPageModuleNgFactory",name:"ForgetPasswordPage",segment:"forgetpassword",priority:"low",defaultHistory:[]},{loadChildren:"../pages/hra-body/hra-body.module.ngfactory#HraBodyPageModuleNgFactory",name:"HraBodyPage",segment:"hra-body",priority:"low",defaultHistory:[]},{loadChildren:"../pages/intro-video/intro-video.module.ngfactory#IntroVideoPageModuleNgFactory",name:"IntroVideoPage",segment:"intro-video",priority:"low",defaultHistory:[]},{loadChildren:"../pages/intro/intro.module.ngfactory#IntroPageModuleNgFactory",name:"IntroPage",segment:"intro",priority:"low",defaultHistory:[]},{loadChildren:"../pages/login/login.module.ngfactory#LoginPageModuleNgFactory",name:"LoginPage",segment:"login",priority:"low",defaultHistory:[]},{loadChildren:"../pages/menu/menu.module.ngfactory#MenuPageModuleNgFactory",name:"MenuPage",segment:"menu",priority:"low",defaultHistory:[]},{loadChildren:"../pages/my-hra/my-hra.module.ngfactory#MyHraPageModuleNgFactory",name:"MyHraPage",segment:"my-hra",priority:"low",defaultHistory:[]},{loadChildren:"../pages/my-profile/profile.module.ngfactory#ProfilePageModuleNgFactory",name:"ProfilePage",segment:"profile",priority:"low",defaultHistory:[]},{loadChildren:"../pages/my-trackers/mytracker.module.ngfactory#MyTrackerPageModuleNgFactory",name:"MyTrackerPage",segment:"mytracker",priority:"low",defaultHistory:[]},{loadChildren:"../pages/my-wellness-wallet/hra-qa/hra-qa.module.ngfactory#HraQaPageModuleNgFactory",name:"HraQaPage",segment:"hra-qa",priority:"low",defaultHistory:[]},{loadChildren:"../pages/my-wellness-wallet/hra-result/hra-result.module.ngfactory#HraResultPageModuleNgFactory",name:"MyHraResultPage",segment:"hra-result",priority:"low",defaultHistory:[]},{loadChildren:"../pages/my-wellness-wallet/my-wellness-wallet.module.ngfactory#MyWellnessWalletPageModuleNgFactory",name:"MyWellnessWalletPage",segment:"my-wellness-wallet",priority:"low",defaultHistory:[]},{loadChildren:"../pages/my-wellness-wallet/mywellnessplan/mywellnessplan.module.ngfactory#MyWellnessPlanPageModuleNgFactory",name:"MyWellnessPlanPage",segment:"mywellnessplan",priority:"low",defaultHistory:[]},{loadChildren:"../pages/my-wellness-wallet/riskdetail/riskdetail.module.ngfactory#RiskDetailPageModuleNgFactory",name:"RiskDetailPage",segment:"riskdetail",priority:"low",defaultHistory:[]},{loadChildren:"../pages/notification/notification.module.ngfactory#NotificationPageModuleNgFactory",name:"NotificationPage",segment:"notification",priority:"low",defaultHistory:[]},{loadChildren:"../pages/templates/template.module.ngfactory#TemplatePageModuleNgFactory",name:"TemplatePage",segment:"template",priority:"low",defaultHistory:[]},{loadChildren:"../pages/welcome/welcome.module.ngfactory#WelcomePageModuleNgFactory",name:"WelcomePage",segment:"welcome",priority:"low",defaultHistory:[]},{loadChildren:"../pages/signup/signup.module.ngfactory#SignupPageModuleNgFactory",name:"SignupPage",segment:"signup",priority:"low",defaultHistory:[]}]},[]),i["ɵmpd"](512,i.Compiler,i.Compiler,[]),i["ɵmpd"](512,Ln.NgModuleLoader,Ln.NgModuleLoader,[i.Compiler]),i["ɵmpd"](1024,Nn.ModuleLoader,Nn.provideModuleLoader,[Ln.NgModuleLoader,i.Injector]),i["ɵmpd"](1024,i.APP_INITIALIZER,function(l,n,e,t,u,o,a,i,s,d,c,p,m){return[r["ɵh"](l),Hn.registerModeConfigs(n),dn.setupProvideEvents(e,t),Pn.setupTapClick(u,o,a,i,s),Nn.setupPreloading(d,c,p,m)]},[[2,i.NgProbeToken],Tl.Config,Ol.Platform,Bl.DomController,Tl.Config,Ol.Platform,Bl.DomController,$l.App,ql.GestureController,Tl.Config,kn.DeepLinkConfigToken,Nn.ModuleLoader,i.NgZone]),i["ɵmpd"](512,i.ApplicationInitStatus,i.ApplicationInitStatus,[[2,i.APP_INITIALIZER]]),i["ɵmpd"](131584,i.ApplicationRef,i.ApplicationRef,[i.NgZone,i["ɵConsole"],i.Injector,i.ErrorHandler,i.ComponentFactoryResolver,i.ApplicationInitStatus]),i["ɵmpd"](512,i.ApplicationModule,i.ApplicationModule,[i.ApplicationRef]),i["ɵmpd"](512,r.BrowserModule,r.BrowserModule,[[3,r.BrowserModule]]),i["ɵmpd"](512,s.e,s.e,[]),i["ɵmpd"](512,s.d,s.d,[]),i["ɵmpd"](512,h["ɵba"],h["ɵba"],[]),i["ɵmpd"](512,h.ReactiveFormsModule,h.ReactiveFormsModule,[]),i["ɵmpd"](512,h.FormsModule,h.FormsModule,[]),i["ɵmpd"](512,In.IonicModule,In.IonicModule,[]),i["ɵmpd"](512,In.IonicPageModule,In.IonicPageModule,[]),i["ɵmpd"](512,T.a,T.a,[]),i["ɵmpd"](512,M.a,M.a,[]),i["ɵmpd"](512,f.a,f.a,[]),i["ɵmpd"](512,Un.MultiPickerModule,Un.MultiPickerModule,[]),i["ɵmpd"](512,D.a,D.a,[]),i["ɵmpd"](512,A.a,A.a,[]),i["ɵmpd"](512,S.a,S.a,[]),i["ɵmpd"](512,E.a,E.a,[]),i["ɵmpd"](512,_.a,_.a,[]),i["ɵmpd"](512,P.a,P.a,[]),i["ɵmpd"](512,H.a,H.a,[]),i["ɵmpd"](512,G.a,G.a,[]),i["ɵmpd"](512,F.a,F.a,[]),i["ɵmpd"](512,L.a,L.a,[]),i["ɵmpd"](512,U.a,U.a,[]),i["ɵmpd"](512,W.a,W.a,[]),i["ɵmpd"](512,O.a,O.a,[]),i["ɵmpd"](512,z.a,z.a,[]),i["ɵmpd"](512,Z.a,Z.a,[]),i["ɵmpd"](512,J.a,J.a,[]),i["ɵmpd"](512,m.a,m.a,[]),i["ɵmpd"](512,B.a,B.a,[]),i["ɵmpd"](512,$.AngularFirestoreModule,$.AngularFirestoreModule,[]),i["ɵmpd"](512,ll,ll,[]),i["ɵmpd"](256,s.m,"XSRF-TOKEN",[]),i["ɵmpd"](256,s.n,"X-XSRF-TOKEN",[]),i["ɵmpd"](256,Nn.LAZY_LOADED_TOKEN,V.a,[]),i["ɵmpd"](256,rn.c,void 0,[]),i["ɵmpd"](256,rn.b,void 0,[]),i["ɵmpd"](256,B.d,{apiKey:"AIzaSyCxxXSgvooUrArq-9boQWd1bOabjuLQTZQ",authDomain:"meschinowellness-61e33.firebaseapp.com",databaseURL:"https://meschinowellness-61e33.firebaseio.com",projectId:"meschinowellness-61e33",storageBucket:"meschinowellness-61e33.appspot.com",messagingSenderId:"414018168893"},[]),i["ɵmpd"](256,B.c,void 0,[]),i["ɵmpd"](256,nl.AppRootToken,N,[]),i["ɵmpd"](256,Xl.APP_BASE_HREF,"/",[]),i["ɵmpd"](256,m.c,null,[])])});Object(i.enableProdMode)(),Object(r.platformBrowser)().bootstrapModuleFactory(Wn)},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=413},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=414},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=415},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=416},,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=419},,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=425},,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=427},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=428},,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=431},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=432},,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=436},,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=438},,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=440},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=441},,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=450},,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=452},,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=458},,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=465},function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=466},,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=473},,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=475},,,,,,,,,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=487},,,,,function(l,n){function e(l){throw new Error("Cannot find module '"+l+"'.")}e.keys=function(){return[]},e.resolve=e,l.exports=e,e.id=492}]),[366]);
+webpackJsonp([1],{
+
+/***/ 147:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__templates_template__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__intro_video_intro_video__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_settings_wellnessconstant__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_settings_alertmessage_service__ = __webpack_require__(149);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var SignupPage = /** @class */ (function () {
+    function SignupPage(navCtrl, user, formBuilder, translateService, pickerCtl, alertCtl, loading, events, alertMessageSrv) {
+        this.navCtrl = navCtrl;
+        this.user = user;
+        this.formBuilder = formBuilder;
+        this.translateService = translateService;
+        this.pickerCtl = pickerCtl;
+        this.alertCtl = alertCtl;
+        this.loading = loading;
+        this.events = events;
+        this.alertMessageSrv = alertMessageSrv;
+        // The account fields for the login form.
+        // If you're using the username field with or without email, make
+        // sure to add it to the type
+        this.account = {
+            FirstName: "",
+            LastName: "",
+            UserName: "",
+            PhoneNumber: "",
+            Gender: "",
+            BirthDate: "",
+            Height: "",
+            Password: "",
+            confirmpassword: "",
+            apiKey: "",
+            deviceid: "",
+            IsAgreeTermsCondiotion: false,
+            ReferralCode: ""
+        };
+        this.signupForm = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormGroup"]({
+            Firstname: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            LastName: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            PhoneNumber: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            UserName: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            Gender: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            BirthDate: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            Height: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            Password: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            confirmpassword: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            IsAgreeTermsCondiotion: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"](),
+            ReferralCode: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormControl"]()
+        });
+        this.slides = [
+            { active: true },
+            { active: false },
+            { active: false },
+            { active: false },
+            { active: false }
+        ];
+        this.currentSlide = 0;
+        this.buttonText = "Next";
+        // Using parentCol
+        this.parentColumns = __WEBPACK_IMPORTED_MODULE_7__providers_settings_wellnessconstant__["a" /* WellnessConstants */].parentColumns;
+        this.createForm();
+    }
+    SignupPage.prototype.createForm = function () {
+        this.signupForm = this.formBuilder.group({
+            FirstName: "",
+            LastName: "",
+            UserName: "",
+            PhoneNumber: "",
+            Gender: "",
+            BirthDate: "",
+            Height: "",
+            Password: "",
+            confirmpassword: "",
+            IsAgreeTermsCondiotion: false,
+            ReferralCode: ""
+        });
+    };
+    /*
+    async presentAlert(msg) {
+      const alert = await this.alertCtl.create({
+        message: msg,
+        cssClass: "action-sheets-basic-page",
+        buttons: [
+          {
+            text: "OK",
+            handler: () => {}
+          }
+        ]
+      });
+      await alert.present();
+    }
+   */
+    SignupPage.prototype.showGenderPicker = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var opts, picker;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        opts = {
+                            buttons: [
+                                {
+                                    text: "Cancel",
+                                    role: "cancel"
+                                },
+                                {
+                                    text: "Done"
+                                }
+                            ],
+                            columns: [
+                                {
+                                    name: "Gender",
+                                    options: [
+                                        { text: "Male", value: "Male" },
+                                        { text: "Female", value: "Female" }
+                                    ]
+                                }
+                            ]
+                        };
+                        return [4 /*yield*/, this.pickerCtl.create(opts)];
+                    case 1:
+                        picker = _a.sent();
+                        picker.present();
+                        picker.onDidDismiss(function (data) { return __awaiter(_this, void 0, void 0, function () {
+                            var col;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0: return [4 /*yield*/, picker.getColumn("Gender")];
+                                    case 1:
+                                        col = _a.sent();
+                                        this.account.Gender = col.options[col.selectedIndex].value;
+                                        return [2 /*return*/];
+                                }
+                            });
+                        }); });
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    SignupPage.prototype.IsFormValidated = function () {
+        var msg;
+        if (this.currentSlide == 0) {
+            if (this.account.FirstName == "") {
+                msg = "Please enter First Name.";
+            }
+            else if (this.account.LastName == "") {
+                msg = "Please enter Last Name.";
+            }
+            else if (this.account.PhoneNumber == "") {
+                msg = "Please enter PhoneNumber.";
+            }
+            else if (this.account.UserName == "") {
+                msg = "Please enter Username.";
+            }
+            else if (this.account.PhoneNumber !== "") {
+                var info = this.isValidMobile(this.account.PhoneNumber);
+                if (!info.isValid) {
+                    msg = info.msg;
+                }
+                else {
+                    msg = "";
+                }
+            }
+        }
+        else if (this.currentSlide == 1) {
+            if (this.account.Gender == "") {
+                msg = "Please select your Gender.";
+            }
+        }
+        else if (this.currentSlide == 2) {
+            if (this.account.BirthDate == "") {
+                msg = "Please select your date of birth.";
+            }
+        }
+        else if (this.currentSlide == 3) {
+            if (this.account.Height == "") {
+                msg = "Please select your Height.";
+            }
+        }
+        else if (this.currentSlide == 4) {
+            if (this.account.Password == "") {
+                msg = "Please enter a Password.";
+            }
+            else if (this.account.confirmpassword == "") {
+                msg = "Confirm Password & Password must be same.";
+            }
+            else if (this.account.Password != this.account.confirmpassword) {
+                msg = "Confirm Password & Password must be same.";
+            }
+            else if (this.account.ReferralCode.length > 0 && this.account.ReferralCode.length !== 6) {
+                msg = "Referral code must have 9 characters.";
+            }
+            else if (this.account.IsAgreeTermsCondiotion === undefined ||
+                this.account.IsAgreeTermsCondiotion == false) {
+                msg = "Please accept privacy policy and terms.";
+            }
+        }
+        if (msg != "" && msg != undefined) {
+            this.alertMessageSrv.presentAlert(msg);
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    SignupPage.prototype.SaveUserTokenInDB = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var accountinfo;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        accountinfo = {
+                            deviceid: localStorage.getItem("deviceid"),
+                            SecretToken: localStorage.getItem("SecretToken"),
+                            DeviceType: localStorage.getItem("DeviceType"),
+                            UserTokenId: localStorage.getItem("FCMToken")
+                        };
+                        return [4 /*yield*/, this.user.SaveUserTokenIdData(accountinfo).subscribe(function (resp) {
+                                console.log("save token success");
+                            }, function (err) {
+                                //this.presentAlert(err.error.SystemMessage);
+                                console.log(err);
+                            })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    SignupPage.prototype.numberOnlyValidation = function (value) {
+        if (isNaN(value) || value.includes(".")) {
+            console.log(false);
+            // invalid character, prevent input
+            return false;
+        }
+        else {
+            console.log(true);
+            return true;
+        }
+    };
+    SignupPage.prototype.isValidMobile = function (value) {
+        var msgInfo = { msg: "", isValid: true };
+        var firstLetter = value.charAt(0);
+        var remainingLetter = "";
+        if (firstLetter == "+") {
+            remainingLetter = value.replace(firstLetter, "");
+        }
+        else {
+            remainingLetter = value;
+        }
+        // remove space
+        remainingLetter = remainingLetter.replace(/\s/g, "");
+        console.log(firstLetter);
+        console.log(remainingLetter);
+        var regExp = /^[0-9]{10,20}$/;
+        if (msgInfo.isValid && !regExp.test(remainingLetter)) {
+            msgInfo.isValid = false;
+            msgInfo.msg = "Phone number start with + country code and should be 10-20 length";
+            //console.log(msgInfo.isValid, 'if test isvalid');
+        }
+        else {
+            msgInfo.isValid = true;
+            //console.log(msgInfo.isValid, 'else isvalid');
+        }
+        return msgInfo;
+    };
+    SignupPage.prototype.doSignup = function () {
+        var _this = this;
+        this.loader = this.alertMessageSrv.PleaseWait();
+        this.account.Password != this.account.confirmpassword;
+        this.account.apiKey = "71e73c14-2723-4d6e-a489-c9675738fdf4";
+        this.account.deviceid = localStorage.getItem("remUUID");
+        localStorage.setItem("deviceid", this.account.deviceid);
+        //alert('deviceid : '+this.account.deviceid);
+        if (localStorage.getItem("remUUID") == null)
+            this.account.deviceid = "c9675738fdf4";
+        this.loader.present().then(function () {
+            _this.SetHeight_inInches();
+            _this.user.signup(_this.account).subscribe(function (resp) {
+                // Set for user name and password
+                localStorage.setItem("UserName", _this.account.UserName);
+                localStorage.setItem("Password", _this.account.Password);
+                localStorage.setItem("FirstName", _this.account.FirstName);
+                localStorage.setItem("LastName", _this.account.LastName);
+                localStorage.setItem("PhoneNumber", _this.account.PhoneNumber);
+                _this.SetUserInfo(resp);
+                if (localStorage.getItem("deviceid") !== "" &&
+                    localStorage.getItem("deviceid") !== undefined &&
+                    localStorage.getItem("FCMToken") !== "" &&
+                    localStorage.getItem("FCMToken") !== undefined &&
+                    localStorage.getItem("DeviceType") !== "" &&
+                    localStorage.getItem("DeviceType") !== undefined) {
+                    _this.SaveUserTokenInDB();
+                }
+                localStorage.setItem("remuser", _this.account.UserName);
+                localStorage.setItem("rempwd", _this.account.Password);
+                setTimeout(function () {
+                    _this.loader.dismiss();
+                    _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__intro_video_intro_video__["a" /* IntroVideoPage */]);
+                }, 3000);
+                //this.navCtrl.setRoot(MyHraPage);
+                //this.navCtrl.push(IntroPage);
+            }, function (err) {
+                console.log(err);
+                _this.loader.dismiss();
+                _this.alertMessageSrv.ErrorMsg(err, "App User Register");
+            });
+        });
+    };
+    SignupPage.prototype.SetUserInfo = function (data) {
+        this.events.publish("user:created", data);
+    };
+    SignupPage.prototype.SetHeight_inInches = function () {
+        var inputVal = this.account.Height;
+        var arrVal = inputVal.split("-");
+        if (arrVal[0].indexOf("cm") !== -1) {
+            var inch = Math.round((parseInt(arrVal[1]) * 1) / 2.54);
+            console.log(inch, "CM - INCH");
+            this.account.Height = inch + "";
+        }
+        else if (arrVal[0].indexOf("feet") !== -1) {
+            var inch = parseInt(arrVal[1]) * 12 + parseInt(arrVal[2]);
+            console.log(inch, "FEET - INCH");
+            this.account.Height = inch + "";
+        }
+    };
+    SignupPage.prototype.changeTabButton = function (index) {
+        if (!this.IsFormValidated()) {
+            this.currentSlide = index;
+            this.slides.forEach(function (val, index) {
+                val.active = false;
+            });
+            this.slides[this.currentSlide].active = true;
+            if (this.slides.length - 1 <= this.currentSlide) {
+                this.buttonText = "Submit";
+            }
+        }
+    };
+    SignupPage.prototype.changeTab = function (index) {
+        if (!this.IsFormValidated()) {
+            if (index == this.slides.length - 1) {
+                this.doSignup();
+                return false;
+            }
+            this.slides.forEach(function (val, index) {
+                val.active = false;
+            });
+            this.currentSlide = index + 1;
+            this.slides[this.currentSlide].active = true;
+            if (this.slides.length - 1 <= this.currentSlide) {
+                this.buttonText = "Submit";
+            }
+        }
+    };
+    SignupPage.prototype.ViewTemplate = function (Name) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__templates_template__["a" /* TemplatePage */], {
+            Content: Name
+        });
+    };
+    SignupPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-signup",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\signup\signup.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>{{ \'SIGNUP_TITLE\' | translate }}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>   \n  <ul class="custom-tab">\n    <li  [ngClass]="{\'active\':slides[0].active}" (click)="changeTabButton(0)">\n         <span class="ico-detail ico"></span>\n        <span class="text">Enter Details</span>\n      </li>\n    <li [ngClass]="{\'active\':slides[1].active}" (click)="changeTabButton(1)">\n      <span class="ico-gender ico"></span>\n        <span class="text">Gender</span>\n      </li>\n    <li [ngClass]="{\'active\':slides[2].active}" (click)="changeTabButton(2)">\n        <span class="ico-age ico"></span>\n        <span class="text">Date of Birth</span>\n      </li>\n    <li [ngClass]="{\'active\':slides[3].active}" (click)="changeTabButton(3)">\n        <span class="ico-measure ico"></span>\n        <span class="text">Height</span>\n      </li>\n    <li [ngClass]="{\'active\':slides[4].active}" (click)="changeTabButton(4)">\n        <span class="ico-password ico"></span>\n        <span class="text">Enter Password</span>\n      </li>\n  </ul>\n  <form [formGroup]="signupForm">\n    <ion-card class="signup-card" *ngIf="slides[0].active">\n      <ion-card-content>\n        <ion-list>\n          <ion-item class="custom-border">\n            <ion-label stacked>First Name</ion-label>\n            <ion-input type="text" [(ngModel)]="account.FirstName" formControlName="FirstName"></ion-input>\n          </ion-item>\n          <ion-item class="custom-border">\n            <ion-label stacked>Last Name</ion-label>\n            <ion-input type="text" [(ngModel)]="account.LastName" formControlName="LastName"></ion-input>\n          </ion-item>\n          <ion-item class="custom-border">\n            <ion-label stacked>Phone Number</ion-label>\n            <ion-input type="text" [(ngModel)]="account.PhoneNumber" formControlName="PhoneNumber" placeholder="+1 604 555 8955"></ion-input>\n          </ion-item>\n\n          <ion-item class="custom-border">\n            <ion-label stacked>User Name</ion-label>\n            <ion-input type="email" [(ngModel)]="account.UserName" formControlName="UserName" ></ion-input>\n          </ion-item>\n        </ion-list>\n        <div class="note">\n          <p>*Use your email as Username.</p>\n        </div>\n      </ion-card-content>\n    </ion-card>\n    <ion-card class="signup-card" *ngIf="slides[1].active">\n      <ion-card-content class="cardcontent">\n\n          <!-- <ion-item> -->\n              <ion-label>I\'M A: </ion-label>\n              <ion-label color="primary">{{ account.Gender }} &nbsp;&nbsp;</ion-label>\n              <a (click)="showGenderPicker()">Select</a>\n            <!-- </ion-item> -->\n\n          \n      </ion-card-content>\n    </ion-card>\n    <ion-card class="signup-card" *ngIf="slides[2].active" >\n        <ion-card-content>\n            <ion-list radio-group>\n                <ion-list-header>\n                    WHEN WHERE YOU BORN?\n                </ion-list-header>\n                <ion-item class="custom-border">\n                  <ion-label stacked>Birthdate</ion-label>\n                  <ion-datetime [(ngModel)]="account.BirthDate" formControlName="BirthDate" ></ion-datetime>\n                </ion-item>\n              </ion-list>\n        </ion-card-content>\n      </ion-card>\n    <ion-card class="signup-card" *ngIf="slides[3].active">\n      <ion-card-content>\n          <ion-list radio-group>\n                  <ion-list-header>\n                      HOW TALL ARE YOU?\n                  </ion-list-header>\n                \n                  <ion-item class="custom-border">\n                    <ion-label stacked>Height</ion-label>\n                    <ion-multi-picker  [(ngModel)]="account.Height" \n                    formControlName="Height"  item-content [multiPickerColumns]="parentColumns" [separator]="\'-\'"></ion-multi-picker>\n                  </ion-item>\n                </ion-list>\n          </ion-card-content>\n        </ion-card>\n        <ion-card class="signup-card" *ngIf="slides[4].active">\n            <ion-card-content>\n                <ion-item class="custom-border">\n                    <ion-label stacked>{{ \'PASSWORD\' | translate }}</ion-label>\n                    <ion-input type="password" [(ngModel)]="account.Password" formControlName="Password"></ion-input>\n                </ion-item>\n                <ion-item class="custom-border">\n                    <ion-label stacked>Confirm password</ion-label>\n                    <ion-input type="password" [(ngModel)]="account.confirmpassword" formControlName="confirmpassword"></ion-input>\n                </ion-item>\n                <ion-item class="custom-border">\n                  <ion-label stacked>Referral Code</ion-label>\n                  <ion-input type="text" [(ngModel)]="account.ReferralCode" formControlName="ReferralCode" ></ion-input>\n               </ion-item>\n                <ion-item>\n                  <div class="msg-content">Password must have minimum 6 characters and includes one uppercase letter (‘A - Z’), one lowercase letter (‘a - z’) and a number (‘0 - 9’).</div>\n                </ion-item>                \n                <div class="term-note">\n                  <ion-checkbox [(ngModel)]="account.IsAgreeTermsCondiotion" formControlName="IsAgreeTermsCondiotion"></ion-checkbox>\n                  <div class="signup-text">By singing up for meschino wellness you are agreeing to our \n                    <a href="#" (click)="ViewTemplate(\'TermsAndConditions\')">privacy policy and terms</a></div>\n                </div>\n            </ion-card-content>\n          </ion-card>\n          </form>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button color="primary" class="big-btn" (click)="changeTab(currentSlide)" >{{buttonText}}</button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\signup\signup.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["f" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormBuilder"],
+            __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["PickerController"],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_8__providers_settings_alertmessage_service__["a" /* AlertMessagesService */]])
+    ], SignupPage);
+    return SignupPage;
+}());
+
+//# sourceMappingURL=signup.js.map
+
+/***/ }),
+
+/***/ 148:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntroVideoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__my_hra_my_hra__ = __webpack_require__(261);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the IntroVideoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var IntroVideoPage = /** @class */ (function () {
+    function IntroVideoPage(navCtrl, navParams, menu) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.menu = menu;
+    }
+    IntroVideoPage.prototype.ionViewDidLoad = function () {
+        this.video = this.mVideoPlayer.nativeElement;
+        this.video.play();
+        console.log('ionViewDidLoad IntroVideoPage');
+    };
+    IntroVideoPage.prototype.goToMyHra = function () {
+        this.video.pause();
+        this.menu.enable(true);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__my_hra_my_hra__["a" /* MyHraPage */]);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('videoPlayer'),
+        __metadata("design:type", Object)
+    ], IntroVideoPage.prototype, "mVideoPlayer", void 0);
+    IntroVideoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-intro-video',template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\intro-video\intro-video.html"*/'<!--\n  Generated template for the IntroVideoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="custom-intro-header content-bg">\n  <ion-navbar color="primary">\n    <ion-title>HRA Introduction</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="content-bg">\n  <ion-list class="list-video">\n    <ion-item class="content-bg">\n      <video width="100%" controls autoplay="autoplay" #videoPlayer>\n        <source src="https://mediasvc611wkrxkhq32k.blob.core.windows.net/asset-cc27435d-1500-80c6-2ea5-f1e515046a95/Health%20Risk%20Assessment%20-%20No%20Title.mp4?sv=2012-02-12&sr=c&si=f57a5f8d-3c43-454b-9c2a-d1f1805e9111&sig=BozyWHb1N1TOlIdDsC9GQOc2tV4vKewhxqFmrbMtw18%3D&st=2015-06-18T11%3A15%3A28Z&se=2115-05-25T11%3A15%3A28Z" type="video/mp4">\n        <source src="mov_bbb.ogg" type="video/ogg">\n        Your browser does not support HTML5 video.\n      </video>\n    </ion-item>\n    </ion-list>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button color="primary" class="big-btn" (click)="goToMyHra()">Start</button>\n  </ion-toolbar>\n</ion-footer>\n  \n'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\intro-video\intro-video.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"]])
+    ], IntroVideoPage);
+    return IntroVideoPage;
+}());
+
+//# sourceMappingURL=intro-video.js.map
+
+/***/ }),
+
+/***/ 149:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlertMessagesService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+var AlertMessagesService = /** @class */ (function () {
+    function AlertMessagesService(toastCtl, loadingCtl, alertCtl) {
+        this.toastCtl = toastCtl;
+        this.loadingCtl = loadingCtl;
+        this.alertCtl = alertCtl;
+    }
+    AlertMessagesService.prototype.presentToast = function (message) {
+        return __awaiter(this, void 0, void 0, function () {
+            var toast;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.toastCtl.create({
+                            message: message,
+                            duration: 4000,
+                            position: "top"
+                        })];
+                    case 1:
+                        toast = _a.sent();
+                        toast.present();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AlertMessagesService.prototype.presentErrorToast = function (message) {
+        return __awaiter(this, void 0, void 0, function () {
+            var toast;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.toastCtl.create({
+                            message: message,
+                            position: "top",
+                            duration: 4000,
+                            cssClass: "toast-error"
+                        })];
+                    case 1:
+                        toast = _a.sent();
+                        toast.present();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AlertMessagesService.prototype.PleaseWait = function () {
+        return this.loadingCtl.create({
+            content: "Please wait..."
+        });
+    };
+    AlertMessagesService.prototype.LoadingMsg = function (msg) {
+        return this.loadingCtl.create({
+            content: msg
+        });
+    };
+    AlertMessagesService.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AlertMessagesService.prototype.ErrorMsg = function (err, apiName) {
+        if (err.error !== undefined && err.error.SystemMessage !== undefined) {
+            this.presentAlert(err.error.SystemMessage);
+        }
+        else {
+            this.presentAlert("Server Message -" + apiName + " : " + JSON.stringify(err));
+        }
+    };
+    AlertMessagesService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ToastController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"]])
+    ], AlertMessagesService);
+    return AlertMessagesService;
+}());
+
+//# sourceMappingURL=alertmessage.service.js.map
+
+/***/ }),
+
+/***/ 15:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_api__ = __webpack_require__(71);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__api_api__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mocks_providers_items__ = __webpack_require__(259);
+/* unused harmony reexport Items */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_settings__ = __webpack_require__(534);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__settings_settings__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hra_hra__ = __webpack_require__(535);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__hra_hra__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user_notification__ = __webpack_require__(536);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__user_notification__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__steps_stepschallenge__ = __webpack_require__(260);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_5__steps_stepschallenge__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__user_user__ = __webpack_require__(538);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_6__user_user__["a"]; });
+
+
+
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 150:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StepDashboardPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__notification_notification__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__log_steps_logsteps__ = __webpack_require__(289);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+/**
+ * Generated class for the IntroPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var StepDashboardPage = /** @class */ (function () {
+    function StepDashboardPage(navCtrl, navParams, loadingCtrl, alertCtl, userService, stepChallengeService, events, menu) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtl = alertCtl;
+        this.userService = userService;
+        this.stepChallengeService = stepChallengeService;
+        this.events = events;
+        this.menu = menu;
+        this.model = {};
+        this.progressmodel = {};
+        this.notificationCount = ""; //localStorage.getItem("NotificationCount");
+        this.menu.enable(true);
+        this.loadInitialData();
+    }
+    StepDashboardPage.prototype.loadInitialData = function () {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken")
+        };
+        this.userService.GetPushNotificationCount(userAcc).subscribe(function (res) {
+            var msgcount = res.Count;
+            _this.notificationCount = msgcount > 0 ? msgcount : "";
+            localStorage.setItem("notificationCount", _this.notificationCount);
+        });
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService
+                .GetUserOverallProgressOfStepChallenge(userAcc)
+                .subscribe(function (resp) {
+                _this.loader.dismiss();
+                if (resp.SystemStatus == "Success") {
+                    _this.model = resp;
+                    _this.percent = _this.model.PercentOfStep;
+                    _this.subtitle = _this.model.PercentOfStep + "%";
+                    console.log(_this.model);
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Get User Overall Progress Of StepChallenge : " +
+                    JSON.stringify(err));
+            });
+            _this.stepChallengeService
+                .GetUserStepChallengeProgressOverviewCount(userAcc)
+                .subscribe(function (resp) {
+                if (resp.SystemStatus == "Success") {
+                    _this.progressmodel = resp;
+                    console.log(_this.progressmodel, 'progressmodel');
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.presentAlert("Server Message - Get User Step Challenge Progress Overview Count : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    StepDashboardPage.prototype.EmitterNotificationCount = function () {
+        var _this = this;
+        this.events.subscribe("PushNotification", function (PushNotification) {
+            var msgcount = PushNotification.Count;
+            _this.notificationCount = msgcount > 0 ? msgcount : "";
+            localStorage.setItem("notificationCount", _this.notificationCount);
+        });
+    };
+    StepDashboardPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad TemplatePage");
+    };
+    StepDashboardPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    StepDashboardPage.prototype.ionViewDidEnter = function () {
+        //  this.navBar.backButtonClick = () => {
+        //    console.log('Back button click');
+        //this.navCtrl.push(NotificationPage)
+        //  };
+    };
+    StepDashboardPage.prototype.GoOverView = function (name) {
+        this.navCtrl.setPages([{ page: name }]);
+    };
+    StepDashboardPage.prototype.goLogsteps = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__log_steps_logsteps__["a" /* LogStepsPage */]);
+    };
+    StepDashboardPage.prototype.goNotification = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__notification_notification__["a" /* NotificationPage */]);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("navbar"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Navbar"])
+    ], StepDashboardPage.prototype, "navBar", void 0);
+    StepDashboardPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-step-dashboard",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\step-dashboard.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n        <button ion-button menuToggle icon-only>\n\n            <ion-icon name=\'menu\'></ion-icon>\n\n        </button>\n\n        <ion-title>Step Challenge</ion-title>\n\n        <ion-buttons end class="left-nav-buttons">\n\n            <button id="notification-button" ion-button icon-only (click)="goNotification()">\n\n                <ion-icon name="notifications">\n\n                    <ion-badge id="notifications-badge" color="danger">{{notificationCount}}</ion-badge>\n\n                </ion-icon>\n\n            </button>\n\n        </ion-buttons>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <div class="pt-3 pb-3">\n\n        <div class="app-cart ml-3 mr-3 mb-4 position-relative overflow-hidden">\n\n            <img class="sports-girl img-fluid" src="assets/img/sports-girl-bg.png" alt="sports-girl">\n\n            <!-- <div class="pie_progress" role="progressbar" data-goal="58" data-barsize="15" aria-valuemin="0"\n\n                aria-valuemax="100">\n\n                <span class="pie_progress__number">0%</span>\n\n            </div> -->\n\n            <div class="pie_progress">\n\n                <circle-progress [percent]="percent" [radius]="60" [clockwise]="true" [showSubtitle]="true"\n\n                    [showTitle]="false" [responsive]="true" [subtitle]="subtitle" [subtitleFontSize]="24">\n\n                </circle-progress>\n\n            </div>\n\n            <div class="text-center">\n\n                <button type="button"\n\n                    class="custom-btn custom-btn-light mt-3 w-100 font-family-Conv_Gotham-Medium font-weight-bold py-2 font-size-17">{{model.TotalNumOfSteps}}\n\n                    Steps\n\n                    in {{model.TotalDays}} Days</button>\n\n            </div>\n\n        </div>\n\n        <div class="app-cart ml-3 mr-3 mb-4">\n\n            <div class="custom-row">\n\n                <div class="custom-col">\n\n                    <p>Challenge Started</p>\n\n                    <span>{{model.StartDate}}</span>\n\n                </div>\n\n                <div class="custom-col-auto">\n\n                    <img class="img-fluid" src="assets/img/goal-icon.png" alt="goal-icon">\n\n                </div>\n\n            </div>\n\n            <div class="custom-row">\n\n                <div class="custom-col">\n\n                    <p>Steps Remaining</p>\n\n                    <span>{{model.StepsRemaining}}</span>\n\n                </div>\n\n                <div class="custom-col-auto">\n\n                    <img class="img-fluid" src="assets/img/steps-icon.png" alt="steps-icon">\n\n                </div>\n\n            </div>\n\n            <div class="custom-row">\n\n                <div class="custom-col">\n\n                    <p>Days Remaining</p>\n\n                    <span>{{model.DaysRemaining}}</span>\n\n                </div>\n\n                <div class="custom-col-auto">\n\n                    <img class="img-fluid" src="assets/img/calender-icon.png" alt="calender-icon">\n\n                </div>\n\n            </div>\n\n            <div class="custom-row">\n\n                <div class="custom-col">\n\n                    <p>Personal Best</p>\n\n                    <span>{{progressmodel.PersonalBest}}</span>\n\n                </div>\n\n                <div class="custom-col-auto">\n\n                    <img class="img-fluid" src="assets/img/steps-icon.png" alt="steps-icon">\n\n                </div>\n\n            </div>\n\n            <div class="custom-row">\n\n                <div class="custom-col">\n\n                    <p>Steps Average</p>\n\n                    <span>{{progressmodel.StepAverage}}</span>\n\n                </div>\n\n                <div class="custom-col-auto">\n\n                    <img class="img-fluid" src="assets/img/steps-icon.png" alt="steps-icon">\n\n                </div>\n\n            </div>\n\n\n\n        </div>\n\n\n\n        <div class="ml-3 mr-3 mb-4 custom-row text-center">\n\n            <div class="custom-col pr-2">\n\n                <button type="button" class="custom-btn custom-btn-primary w-100 font-weight-bold font-size-17"\n\n                    (click)="goLogsteps()"> <img class="align-middle img-fluid pr-2" src="assets/img/log-steps.png"\n\n                        style="width: 33px;" alt="log-steps">Log\n\n                    Steps</button>\n\n            </div>\n\n            <div class="custom-col pl-2">\n\n                <button type="button" class="custom-btn custom-btn-primary w-100 font-weight-bold font-size-17"\n\n                    (click)="GoOverView(\'LogOverviewPage\')"><img class="align-middle img-fluid pr-2"\n\n                        src="assets/img/overview.png" style="width: 25px;" alt="overview">Overview</button>\n\n            </div>\n\n        </div>\n\n    </div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\step-dashboard.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["f" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["e" /* StepChallengeService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"]])
+    ], StepDashboardPage);
+    return StepDashboardPage;
+}());
+
+//# sourceMappingURL=step-dashboard.js.map
+
+/***/ }),
+
+/***/ 204:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 204;
+
+/***/ }),
+
+/***/ 255:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/dashboard/dashboard.module": [
+		256
+	],
+	"../pages/forgetpassword/forgetpassword.module": [
+		257
+	],
+	"../pages/hra-body/hra-body.module": [
+		267
+	],
+	"../pages/intro-video/intro-video.module": [
+		268
+	],
+	"../pages/intro/intro.module": [
+		269
+	],
+	"../pages/login/login.module": [
+		270
+	],
+	"../pages/menu/menu.module": [
+		578,
+		0
+	],
+	"../pages/my-hra/my-hra.module": [
+		271
+	],
+	"../pages/my-profile/profile.module": [
+		273
+	],
+	"../pages/my-trackers/mytracker.module": [
+		272
+	],
+	"../pages/my-wellness-wallet/hra-qa/hra-qa.module": [
+		278
+	],
+	"../pages/my-wellness-wallet/hra-result/hra-result.module": [
+		279
+	],
+	"../pages/my-wellness-wallet/my-wellness-wallet.module": [
+		280
+	],
+	"../pages/my-wellness-wallet/mywellnessplan/mywellnessplan.module": [
+		281
+	],
+	"../pages/my-wellness-wallet/riskdetail/riskdetail.module": [
+		282
+	],
+	"../pages/notification/notification.module": [
+		284
+	],
+	"../pages/notificationmsg/notimsg.module": [
+		283
+	],
+	"../pages/signup/signup.module": [
+		287
+	],
+	"../pages/step-challenges/addlogs/addlogs.module": [
+		285
+	],
+	"../pages/step-challenges/log-overview/logoverview.module": [
+		288
+	],
+	"../pages/step-challenges/log-steps/logsteps.module": [
+		290
+	],
+	"../pages/step-challenges/step-dashboard.module": [
+		291
+	],
+	"../pages/step-challenges/stepchallengehistory/stepchallengehistory.module": [
+		292
+	],
+	"../pages/templates/template.module": [
+		293
+	],
+	"../pages/welcome/welcome.module": [
+		294
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 255;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 256:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardPageModule", function() { return DashboardPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(531);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var DashboardPageModule = /** @class */ (function () {
+    function DashboardPageModule() {
+    }
+    DashboardPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */]),
+            ],
+        })
+    ], DashboardPageModule);
+    return DashboardPageModule;
+}());
+
+//# sourceMappingURL=dashboard.module.js.map
+
+/***/ }),
+
+/***/ 257:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ForgetPageModule", function() { return ForgetPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__forgetpassword__ = __webpack_require__(258);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var ForgetPageModule = /** @class */ (function () {
+    function ForgetPageModule() {
+    }
+    ForgetPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__forgetpassword__["a" /* ForgetPasswordPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_3__forgetpassword__["a" /* ForgetPasswordPage */]),
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_3__forgetpassword__["a" /* ForgetPasswordPage */]
+            ]
+        })
+    ], ForgetPageModule);
+    return ForgetPageModule;
+}());
+
+//# sourceMappingURL=forgetpassword.module.js.map
+
+/***/ }),
+
+/***/ 258:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgetPasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_settings_wellnessconstant__ = __webpack_require__(44);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+var ForgetPasswordPage = /** @class */ (function () {
+    function ForgetPasswordPage(navCtrl, user, formBuilder, translateService, loading, alertCtl) {
+        this.navCtrl = navCtrl;
+        this.user = user;
+        this.formBuilder = formBuilder;
+        this.translateService = translateService;
+        this.loading = loading;
+        this.alertCtl = alertCtl;
+        // The account fields for the login form.
+        // If you're using the username field with or without email, make
+        // sure to add it to the type
+        this.account = {
+            Email: "",
+            apiKey: "",
+            deviceid: ""
+        };
+        this.commandUrl = __WEBPACK_IMPORTED_MODULE_6__providers_settings_wellnessconstant__["a" /* WellnessConstants */].App_Url + 'api/WellnessAPI/UserForgotPassword';
+    }
+    ForgetPasswordPage.prototype.validateFuncation = function () {
+        var msg;
+        if (this.account.Email == "") {
+            msg = "Please enter email.";
+        }
+        if (msg != "" && msg != undefined) {
+            this.presentAlert(msg);
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    ForgetPasswordPage.prototype.doSubmit = function () {
+        var _this = this;
+        if (!this.validateFuncation()) {
+            this.loader = this.loading.create({
+                content: "Please wait..."
+            });
+            this.account.apiKey = "71e73c14-2723-4d6e-a489-c9675738fdf4";
+            this.account.deviceid = "c9675738fdf4";
+            this.loader.present().then(function () {
+                _this.user.forgetpassword(_this.account).subscribe(function (res) {
+                    _this.loader.dismiss();
+                    console.log(res);
+                    _this.presentAlert(res.SystemMessage);
+                }, function (err) {
+                    _this.loader.dismiss();
+                    //this.presentAlert("Server Message - User Forgot Password : "+ err.error.SystemMessage);
+                    _this.presentAlert("Server Message - User Forgot Password : " + JSON.stringify(err));
+                });
+            });
+        }
+    };
+    ForgetPasswordPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ForgetPasswordPage.prototype.loginup = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__login_login__["a" /* LoginPage */]);
+    };
+    ForgetPasswordPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-forgetpassword",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\forgetpassword\forgetpassword.html"*/'<ion-content scroll="false">\n  <div class="splash-bg">\n    <h1>Forget password</h1>\n  </div>\n <ion-card class="login-card">\n  <ion-card-content>\n      <ion-list>\n          <ion-item class="custom-border">\n              <ion-label stacked>Email</ion-label>\n            <ion-input type="text" [(ngModel)]="account.Email" name="Email"></ion-input>\n          </ion-item>\n        </ion-list>\n  </ion-card-content>\n</ion-card>\n  <div padding class="button-position">\n      <button  ion-button color="primary"  class="big-btn"  (click)="doSubmit()">Submit </button>\n      <button ion-button clear full class="forgot-btn" (click)="loginup()">Back to login </button>\n</div>\n</ion-content>\n '/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\forgetpassword\forgetpassword.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["f" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormBuilder"],
+            __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["AlertController"]])
+    ], ForgetPasswordPage);
+    return ForgetPasswordPage;
+}());
+
+//# sourceMappingURL=forgetpassword.js.map
+
+/***/ }),
+
+/***/ 259:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Items; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_item__ = __webpack_require__(533);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var Items = /** @class */ (function () {
+    function Items() {
+        this.items = [];
+        this.defaultItem = {
+            "name": "Burt Bear",
+            "profilePic": "assets/img/speakers/bear.jpg",
+            "about": "Burt is a Bear.",
+        };
+        var items = [
+            {
+                "name": "Burt Bear",
+                "profilePic": "assets/img/speakers/bear.jpg",
+                "about": "Burt is a Bear."
+            },
+            {
+                "name": "Charlie Cheetah",
+                "profilePic": "assets/img/speakers/cheetah.jpg",
+                "about": "Charlie is a Cheetah."
+            },
+            {
+                "name": "Donald Duck",
+                "profilePic": "assets/img/speakers/duck.jpg",
+                "about": "Donald is a Duck."
+            },
+            {
+                "name": "Eva Eagle",
+                "profilePic": "assets/img/speakers/eagle.jpg",
+                "about": "Eva is an Eagle."
+            },
+            {
+                "name": "Ellie Elephant",
+                "profilePic": "assets/img/speakers/elephant.jpg",
+                "about": "Ellie is an Elephant."
+            },
+            {
+                "name": "Molly Mouse",
+                "profilePic": "assets/img/speakers/mouse.jpg",
+                "about": "Molly is a Mouse."
+            },
+            {
+                "name": "Paul Puppy",
+                "profilePic": "assets/img/speakers/puppy.jpg",
+                "about": "Paul is a Puppy."
+            }
+        ];
+        for (var _i = 0, items_1 = items; _i < items_1.length; _i++) {
+            var item = items_1[_i];
+            this.items.push(new __WEBPACK_IMPORTED_MODULE_1__models_item__["a" /* Item */](item));
+        }
+    }
+    Items.prototype.query = function (params) {
+        if (!params) {
+            return this.items;
+        }
+        return this.items.filter(function (item) {
+            for (var key in params) {
+                var field = item[key];
+                if (typeof field == 'string' && field.toLowerCase().indexOf(params[key].toLowerCase()) >= 0) {
+                    return item;
+                }
+                else if (field == params[key]) {
+                    return item;
+                }
+            }
+            return null;
+        });
+    };
+    Items.prototype.add = function (item) {
+        this.items.push(item);
+    };
+    Items.prototype.delete = function (item) {
+        this.items.splice(this.items.indexOf(item), 1);
+    };
+    Items = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], Items);
+    return Items;
+}());
+
+//# sourceMappingURL=items.js.map
+
+/***/ }),
+
+/***/ 260:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StepChallengeService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_api__ = __webpack_require__(71);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var StepChallengeService = /** @class */ (function () {
+    function StepChallengeService(api) {
+        this.api = api;
+    }
+    StepChallengeService.prototype.GetUserOverallProgressOfStepChallenge = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/GetUserOverallProgressOfStepChallenge", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.GetUserStepChallengeProgressOverviewCount = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/GetUserStepChallengeProgressOverviewCount", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.SaveLogStepsNumber = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/SaveLogStepsNumber", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.GetLoggedStepsActivitiesByDate = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/GetLoggedStepsActivitiesByDate", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.DeleteLoggedStepsActivities = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/DeleteLoggedStepsActivities", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.SearchStepsActivities = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/SearchStepsActivities", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.SaveStepsActivitiesData = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/SaveStepsActivitiesData", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.GetOverviewAndGraphicViewData = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/GetOverviewAndGraphicViewData", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.GetUserStepChallengeHistory = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/GetUserStepChallengeHistory", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.DeletePreviousChallengeHistory = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/DeletePreviousChallengeHistory", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.ResetUserStepChallenge = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/ResetUserStepChallenge", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService.prototype.StartUserNewStepChallenge = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/StartUserNewStepChallenge", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    StepChallengeService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__api_api__["a" /* Api */]])
+    ], StepChallengeService);
+    return StepChallengeService;
+}());
+
+//# sourceMappingURL=stepschallenge.js.map
+
+/***/ }),
+
+/***/ 261:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyHraPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__my_wellness_wallet_hra_qa_hra_qa__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+/**
+ * Generated class for the MyHraPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MyHraPage = /** @class */ (function () {
+    function MyHraPage(navCtrl, navParams, hraApi, alertCtl, loading) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.hraApi = hraApi;
+        this.alertCtl = alertCtl;
+        this.loading = loading;
+        this.account = {
+            deviceid: "",
+            SecretToken: "",
+            FirstName: "",
+            LastName: ""
+        };
+        this.rewardpoints = 0;
+        this.profilepic = "assets/img/avtar.jpg";
+        this.bio_age = "0";
+        this.mhrs_score = "0";
+        this.HraDetailSections = { lst_hra_section: [] };
+        this.resetFlg = true;
+        this.loader = this.loading.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            //this.loadUserInfo();
+            //});
+            _this.GetMyHraDetail();
+        });
+        this.RiskReportDetails = JSON.parse(localStorage.getItem("RiskReportDetails"));
+        if (this.RiskReportDetails && this.RiskReportDetails.length > 0) {
+            this.presentConfirm();
+        }
+        else {
+            console.log("Reset Form");
+        }
+    }
+    // loadUserInfo() {
+    //   this.account.FirstName = localStorage.getItem("FirstName");
+    //   this.account.LastName = localStorage.getItem("LastName");
+    //   this.rewardpoints = parseInt(localStorage.getItem("RewardPoint"));
+    //   this.profilepic = localStorage.getItem("ProfileImage");
+    //   //this.bio_age = localStorage.getItem("bio_age");
+    //   //this.mhrs_score = localStorage.getItem("mhrs_score");
+    //   // this.loader.dismiss();
+    // }
+    MyHraPage.prototype.presentConfirm = function () {
+        var _this = this;
+        var alert = this.alertCtl.create({
+            message: "You did not complete the HRA during your last session, Would you like to continue from where left off?",
+            cssClass: "action-sheets-basic-page",
+            buttons: [
+                {
+                    text: "Resume",
+                    role: "cancel",
+                    handler: function () {
+                        _this.resetFlg = false;
+                    }
+                },
+                {
+                    text: "Beginning",
+                    handler: function () {
+                        _this.resetFlg = true;
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    MyHraPage.prototype.ionViewCanEnter = function () {
+        console.log('page view enter');
+    };
+    MyHraPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad MyHraPage");
+    };
+    MyHraPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MyHraPage.prototype.GetMyHraDetail = function () {
+        var _this = this;
+        this.account.deviceid = localStorage.getItem("deviceid");
+        this.account.SecretToken = localStorage.getItem("SecretToken");
+        this.loader.present().then(function () {
+            _this.hraApi.GetHraSections(_this.account).subscribe(function (resp) {
+                _this.loader.dismiss();
+                _this.HraDetailSections = resp;
+                console.log("HRA-response : ", _this.HraDetailSections);
+                localStorage.setItem("HraDetailSections", JSON.stringify(_this.HraDetailSections.lst_hra_section));
+                localStorage.setItem("RiskReportDetails", JSON.stringify(_this.HraDetailSections.RiskReportDetails));
+            }, function (err) {
+                _this.loader.dismiss();
+                // Unable to log in
+                //this.presentAlert("Server Message- Get HRA Sections : "+err.error.SystemMessage);
+                _this.presentAlert("Server Message - Get HRA Sections " + JSON.stringify(err));
+                //this.navCtrl.push(LoginPage);
+            });
+        });
+    };
+    MyHraPage.prototype.goToHraDetail = function (cardData, nextCardIndex) {
+        if (this.IsCheckAllow(cardData, true)) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__my_wellness_wallet_hra_qa_hra_qa__["a" /* HraQaPage */], {
+                cardData: cardData,
+                nextCardIndex: nextCardIndex,
+                resetFlg: this.resetFlg
+            });
+        }
+        else {
+            this.presentAlert("Invalid steps!");
+        }
+    };
+    MyHraPage.prototype.IsCheckAllow = function (cardData, allowNext) {
+        if (this.HraDetailSections.lstCompletedSection.indexOf(cardData.report_section_num) !== -1 ||
+            (this.HraDetailSections.lstCompletedSection.indexOf(cardData.report_section_num - 1) !== -1 && allowNext)
+            || cardData.report_section_num == 16) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    MyHraPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-my-hra",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-hra\my-hra.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>My HRA</ion-title>\n       <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button> \n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div class="title">\n  <h3>My Wellness Wallet</h3>    \n  <p>Please complete the HRA process</p>\n</div> \n  <ion-card (click)="goToHraDetail(cardData,(i+1))" *ngFor="let cardData of HraDetailSections.lst_hra_section; let i = index;" [ngClass] = "(HraDetailSections.lstCompletedSection.indexOf(cardData.report_section_num) !== -1) ? \'active\' : \'\' ">\n    <ion-icon *ngIf="HraDetailSections.lstCompletedSection.indexOf(cardData.report_section_num) !== -1" class="list-icon" color="primary" name="checkmark-circle"></ion-icon>\n    <ion-icon *ngIf="HraDetailSections.lstCompletedSection.indexOf(cardData.report_section_num) === -1" class="list-icon" name="radio-button-off" ></ion-icon>\n    <button menuClose ion-item [disabled]="IsCheckAllow(cardData, false) ? false : true">\n     {{cardData.description}}\n    </button>\n    \n  </ion-card>\n</ion-content>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-hra\my-hra.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["b" /* HraService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"]])
+    ], MyHraPage);
+    return MyHraPage;
+}());
+
+//# sourceMappingURL=my-hra.js.map
+
+/***/ }),
+
+/***/ 262:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HraQaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__hra_result_hra_result__ = __webpack_require__(263);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+var HraQaPage = /** @class */ (function () {
+    function HraQaPage(navCtrl, navParams, hraApi, alertCtl, loadingCtrl, form) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.hraApi = hraApi;
+        this.alertCtl = alertCtl;
+        this.loadingCtrl = loadingCtrl;
+        this.form = form;
+        this.account = {
+            deviceid: "",
+            SecretToken: "",
+            report_section_num: 0,
+            lst_hra_response: []
+        };
+        this.HraQuestion = [{ hraAnswer: [] }];
+        this.HraDetailQuestionList = { lst_hra_question: [] };
+        this.FormSectionData = [{ answer: 0 }];
+        this.resetFlg = false;
+        this.hideQuestion = [{ check: true }];
+        this.IsScrolled = true;
+        this.IsFirstScrolled = false;
+        this.cardData = this.navParams.get("cardData");
+        this.nextCardIndex = this.navParams.get("nextCardIndex");
+        this.resetFlg = this.navParams.get("resetFlg");
+        this.RiskReportDetails = JSON.parse(localStorage.getItem("RiskReportDetails"));
+        this.HraDetailSections = JSON.parse(localStorage.getItem("HraDetailSections"));
+        // if (this.HraDetailSections.length > 0) {
+        // }
+        if (this.resetFlg) {
+            this.FormSectionData = [{ answer: 0 }];
+        }
+        else {
+            for (var Data in this.RiskReportDetails) {
+                var temp = {
+                    answer: this.RiskReportDetails[Data].answer_num || 0
+                };
+                var temBool = { check: false };
+                this.FormSectionData[this.RiskReportDetails[Data].question_num] = temp;
+                this.hideQuestion[this.RiskReportDetails[Data].question_num] = temBool;
+            }
+        }
+        this.zone = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]({ enableLongStackTrace: false });
+        console.log(this.nextCardIndex, "nextCardIndex");
+        if (this.nextCardIndex == 1) {
+            this.IsScrolled = false;
+        }
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait..."
+        });
+        this.RiskReportDetails = JSON.parse(localStorage.getItem("RiskReportDetails"));
+    }
+    HraQaPage_1 = HraQaPage;
+    HraQaPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad HraBodyPage");
+        this.GetSectionDataBySection();
+    };
+    HraQaPage.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        this.ContentTemplate.ionScrollEnd.subscribe(function (data) {
+            var div_scrollElement = document.getElementById('div_scrollElement');
+            //console.log(data, 'scrolling');
+            var scrollTop = _this.ContentTemplate.scrollTop;
+            var dimensions = _this.ContentTemplate.getContentDimensions();
+            var contentHeight = dimensions.contentHeight;
+            _this.WindowHeight = contentHeight;
+            var scrollHeight = dimensions.scrollHeight;
+            // console.log(dimensions, 'scrolling');
+            if (div_scrollElement !== null && div_scrollElement !== undefined) {
+                div_scrollElement.hidden = true;
+            }
+            //console.log( (scrollTop + contentHeight + 20)); 
+            if ((scrollTop + contentHeight + 30) > scrollHeight) {
+                _this.zone.run(function () {
+                    _this.IsScrolled = false;
+                });
+            }
+        });
+    };
+    HraQaPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HraQaPage.prototype.presentAlertRedirect = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page"
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        // code for hide
+                        return [4 /*yield*/, alert.present().then(function () {
+                                // hide the alert after 2 sec
+                                setTimeout(function () {
+                                    alert.dismiss();
+                                    _this.goToHraDetail(_this.HraDetailSections[_this.nextCardIndex], _this.nextCardIndex + 1);
+                                }, 2000);
+                            })];
+                    case 2:
+                        // code for hide
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HraQaPage.prototype.presentAlertLastRedirect = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page"
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present().then(function () {
+                                // hide the alert after 2 sec
+                                setTimeout(function () {
+                                    alert.dismiss();
+                                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__hra_result_hra_result__["a" /* MyHraResultPage */]);
+                                }, 2000);
+                            })];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HraQaPage.prototype.submitLastSection = function () {
+        var _this = this;
+        var ansData = [];
+        for (var Data in this.HraDetailQuestionList.lst_hra_question) {
+            var questionNumber = this.HraDetailQuestionList.lst_hra_question[Data]
+                .question_num;
+            if (this.FormSectionData[questionNumber]) {
+                ansData.push({
+                    QuestionNum: questionNumber,
+                    AnswerNum: this.FormSectionData[questionNumber].answer
+                });
+            }
+        }
+        this.account.deviceid = localStorage.getItem("deviceid");
+        this.account.SecretToken = localStorage.getItem("SecretToken");
+        this.account.lst_hra_response = ansData;
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            _this.hraApi.SaveHRAResponse(_this.account).subscribe(function (res) {
+                console.log(res);
+                _this.loader.dismiss();
+                _this.presentAlertLastRedirect(_this.cardData.description + " section data saved successfully.");
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Save HRA Response - " +
+                    JSON.stringify(err)
+                //err.error.SystemMessage
+                );
+            });
+        });
+    };
+    HraQaPage.prototype.submitSection = function () {
+        var _this = this;
+        var ansData = [];
+        for (var Data in this.HraDetailQuestionList.lst_hra_question) {
+            var questionNumber = this.HraDetailQuestionList.lst_hra_question[Data]
+                .question_num;
+            if ((questionNumber == 277 || questionNumber == 278) &&
+                this.FormSectionData[questionNumber]) {
+                console.log("current question ", questionNumber);
+                ansData.push({
+                    QuestionNum: questionNumber,
+                    AnswerNum: this.GetBodyMetricsAnswerValue(questionNumber, this.FormSectionData[questionNumber].answer)
+                });
+            }
+            else if (this.FormSectionData[questionNumber]) {
+                ansData.push({
+                    QuestionNum: questionNumber,
+                    AnswerNum: this.FormSectionData[questionNumber].answer
+                });
+            }
+        }
+        if (ansData.length > 0) {
+            this.account.deviceid = localStorage.getItem("deviceid");
+            this.account.SecretToken = localStorage.getItem("SecretToken");
+            this.account.lst_hra_response = ansData;
+            console.log(ansData, "ansData");
+            this.loader = this.loadingCtrl.create({
+                content: "Please wait..."
+            });
+            this.loader.present().then(function () {
+                _this.hraApi.SaveHRAResponse(_this.account).subscribe(function (res) {
+                    _this.loader.dismiss();
+                    _this.presentAlertRedirect(_this.cardData.description + " section data saved successfully.");
+                }, function (err) {
+                    _this.loader.dismiss();
+                    console.error("ERROR", err);
+                    _this.presentAlert("Save HRA Response - " +
+                        JSON.stringify(err)
+                    //err.error.SystemMessage
+                    );
+                });
+            });
+        }
+        else {
+            this.presentAlert(this.cardData.description + " Answer not selected ");
+        }
+    };
+    HraQaPage.prototype.goToHraDetail = function (cardData, nextCardIndex) {
+        this.navCtrl.push(HraQaPage_1, {
+            cardData: cardData,
+            nextCardIndex: nextCardIndex
+        });
+    };
+    HraQaPage.prototype.GetSectionDataBySection = function () {
+        var _this = this;
+        this.account.deviceid = localStorage.getItem("deviceid");
+        this.account.SecretToken = localStorage.getItem("SecretToken");
+        this.account.report_section_num = this.cardData.report_section_num;
+        this.loader.present().then(function () {
+            _this.hraApi.GetHRAQuestionDetails(_this.account).subscribe(function (resp) {
+                _this.loader.dismiss();
+                _this.HraDetailQuestionList = resp;
+                // console.log("resp", resp);
+                for (var Data in _this.HraDetailQuestionList.lst_hra_question) {
+                    var questionNumber = _this.HraDetailQuestionList.lst_hra_question[Data].question_num;
+                    if (!_this.FormSectionData[questionNumber]) {
+                        var temp = {
+                            answer: _this.HraDetailQuestionList.lst_hra_question[Data]
+                                .hra_answer[0].answer_num
+                        };
+                        _this.FormSectionData[questionNumber] = temp;
+                        var temBool = { check: false };
+                        _this.hideQuestion[questionNumber] = temBool;
+                    }
+                    _this.GetCorrectAnswer(Data, questionNumber);
+                }
+                _this.InitialSupressQuestion();
+            }, function (err) {
+                _this.loader.dismiss();
+                // Unable to log in
+                _this.presentAlert("Get HRA Question Details " +
+                    JSON.stringify(err)
+                //err.error.SystemMessage
+                );
+            });
+        });
+    };
+    HraQaPage.prototype.GetCorrectAnswer = function (Data, queNo) {
+        var questiondetails = this.HraDetailQuestionList.lst_hra_question.filter(function (q) { return q.question_num == queNo; });
+        if (questiondetails !== null && questiondetails.length > 0) {
+            var ansdefault = questiondetails[0].hra_answer.filter(function (a) { return a.default_answer == true; });
+            if (ansdefault !== null) {
+                this.FormSectionData[queNo].answer = ansdefault[0].answer_num;
+            }
+            else {
+                this.FormSectionData[queNo].answer = 1;
+            }
+        }
+        else {
+        }
+    };
+    HraQaPage.prototype.InitialSupressQuestion = function () {
+        console.log(this.HraDetailQuestionList, "this.HraDetailQuestionList ");
+        var supressQuestionData = this.HraDetailQuestionList
+            .lst_hra_question_suppress;
+        var uniqueSupressQues = supressQuestionData
+            .map(function (item) { return item.question_num; })
+            .filter(function (value, index, self) { return self.indexOf(value) === index; });
+        console.log(uniqueSupressQues, "uniqueSupressQues");
+        var _loop_1 = function (que) {
+            ansdefault = this_1.GetAnswerValue(uniqueSupressQues[que]);
+            var quesSupressInit = supressQuestionData.filter(function (q) {
+                return q.question_num == uniqueSupressQues[que] && q.answer_num == ansdefault;
+            });
+            if (quesSupressInit !== null) {
+                for (var supque in quesSupressInit) {
+                    this_1.hideQuestion[quesSupressInit[supque].question_num_suppress] = {
+                        check: true
+                    };
+                }
+            }
+        };
+        var this_1 = this, ansdefault;
+        for (var que in uniqueSupressQues) {
+            _loop_1(que);
+        }
+    };
+    HraQaPage.prototype.supressQuestion = function (qdata) {
+        console.log(qdata, " qdata ");
+        console.log(this.HraDetailQuestionList, "this.HraDetailQuestionList ");
+        var supressQuestionData = this.HraDetailQuestionList
+            .lst_hra_question_suppress;
+        // console.log(supressQuestionData, ' supressQuestionData ')
+        var uniqueSupressQues = supressQuestionData.filter(function (q) { return q.question_num == qdata.question_num; });
+        // console.log(uniqueSupressQues, 'uniqueSupressQues');
+        var ansdefault = this.FormSectionData[qdata.question_num].answer;
+        //console.log(this.FormSectionData, ' FormSectionData ')
+        //console.log(ansdefault, ' ansdefault  supressQuestion ')
+        // show all
+        for (var que in uniqueSupressQues) {
+            this.hideQuestion[uniqueSupressQues[que].question_num_suppress] = {
+                check: false
+            };
+        }
+        // now hide selected
+        for (var que in uniqueSupressQues) {
+            if (uniqueSupressQues[que].answer_num == ansdefault) {
+                this.hideQuestion[uniqueSupressQues[que].question_num_suppress] = {
+                    check: true
+                };
+            }
+        }
+    };
+    HraQaPage.prototype.GetAnswerValue = function (queNo) {
+        console.log(queNo, "queNo");
+        var ansValue = 1;
+        var questiondetails = this.HraDetailQuestionList.lst_hra_question.filter(function (q) { return q.question_num == queNo; });
+        if (questiondetails !== null && questiondetails.length > 0) {
+            var ansdefault = questiondetails[0].hra_answer.filter(function (a) { return a.default_answer == true; });
+            ansValue = ansdefault !== null ? ansdefault[0].answer_num : 1;
+            return ansValue;
+        }
+    };
+    HraQaPage.prototype.GetBodyMetricsAnswerValue = function (queNo, answer_num) {
+        console.log(queNo, "GetBodyMetricsAnswerValue");
+        var ansValue = answer_num;
+        var questiondetails = this.HraDetailQuestionList.lst_hra_question.filter(function (q) { return q.question_num == queNo; });
+        if (questiondetails !== null && questiondetails.length > 0) {
+            var ansoptions = questiondetails[0].hra_answer.filter(function (a) { return a.answer_num == answer_num; });
+            ansValue = ansoptions[0].answer;
+            return ansValue;
+        }
+        else {
+            return answer_num;
+        }
+    };
+    HraQaPage.prototype.scrollEnd = function () {
+        this.ContentTemplate.scrollTo(this.WindowHeight, 300); //scrollToBottom();
+        var div_scrollElement = document.getElementById('div_scrollElement');
+        div_scrollElement.hidden = true;
+    };
+    var HraQaPage_1;
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"])
+    ], HraQaPage.prototype, "ContentTemplate", void 0);
+    HraQaPage = HraQaPage_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-hra-qa",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\hra-qa\hra-qa.html"*/'<ion-content #ContentTemplate>\n  <div class="splashbg">\n    <ion-header>\n      <ion-navbar>\n        <ion-title>Health Risk Assessment\n          (HRA) </ion-title>\n      </ion-navbar>\n    </ion-header>\n    <div class="subtitle">\n      <p>You can pause and return to complete the HRA, however, you must complete the entire HRA before it can be\n        processed </p>\n    </div>\n  </div>\n  <ion-card>\n    <ion-card-header>\n      {{cardData.description}}\n    </ion-card-header>\n    <ion-card-content>\n      <div *ngFor="let wdata of HraDetailQuestionList.lst_hra_question ; index as i">\n        <div [hidden]="hideQuestion[wdata.question_num].check">\n          <div *ngIf="wdata.answer_type == \'Dropdown\'">\n            <ion-list-header> {{i + 1}} . {{wdata.question}} </ion-list-header>\n            <ion-select [(ngModel)]="FormSectionData[wdata.question_num].answer" placeholder="Select Value"\n              (ionChange)="supressQuestion(wdata)">\n              <ion-option *ngFor="let qanswer of wdata.hra_answer; index as l" value="{{qanswer.answer_num}}">\n                {{qanswer.answer}}</ion-option>\n            </ion-select>\n          </div>\n        </div>\n        <div *ngIf="wdata.answer_type == \'Objective\'">\n          <ion-list radio-group [(ngModel)]="FormSectionData[wdata.question_num].answer"\n            [hidden]="hideQuestion[wdata.question_num].check">\n            <ion-list-header>\n              {{ i + 1 }}. {{wdata.question}}\n            </ion-list-header>\n            <ion-item *ngFor="let qanswer of wdata.hra_answer; index as l">\n              <ion-radio value="{{qanswer.answer_num}}" (ionSelect)="supressQuestion(wdata)"></ion-radio>\n              <ion-label>{{qanswer.answer}}</ion-label>\n            </ion-item>\n          </ion-list>\n        </div>\n      </div>\n    </ion-card-content>\n  </ion-card>\n  \n</ion-content>\n<ion-footer>\n  <div class="bot-scroll" *ngIf="IsScrolled" id="div_scrollElement" (click)="scrollEnd();">\n    <img src="assets/img/mouse.png" class="scrollicon">\n  </div>\n  <ion-toolbar>\n\n    <button *ngIf="this.HraDetailSections.length != nextCardIndex" ion-button color="primary" class="big-btn"\n      (click)="submitSection()" [disabled]="IsScrolled">Next</button>\n    <button *ngIf="this.HraDetailSections.length == nextCardIndex" ion-button color="primary" class="big-btn "\n      (click)="submitLastSection()" [disabled]="IsScrolled">Finish</button>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\hra-qa\hra-qa.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["b" /* HraService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["NgForm"]])
+    ], HraQaPage);
+    return HraQaPage;
+}());
+
+//# sourceMappingURL=hra-qa.js.map
+
+/***/ }),
+
+/***/ 263:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyHraResultPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mywellnessplan_mywellnessplan__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+/**
+ * Generated class for the MyHra result Page page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MyHraResultPage = /** @class */ (function () {
+    function MyHraResultPage(navCtrl, navParams, alertCtl, loading, hraApi, events, userService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtl = alertCtl;
+        this.loading = loading;
+        this.hraApi = hraApi;
+        this.events = events;
+        this.userService = userService;
+        this.account = {
+            deviceid: "",
+            SecretToken: "",
+            RiskReportNum: 0,
+            Accept: false
+        };
+        this.resetFlg = true;
+        this.userName =
+            localStorage.getItem("FirstName") +
+                " " +
+                localStorage.getItem("LastName");
+        this.loader = this.loading.create({
+            content: "Please wait..."
+        });
+        localStorage.setItem("IsHRACompleted", "true");
+        this.GetMyHraResults();
+    }
+    MyHraResultPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad My HRA confirm Page");
+    };
+    MyHraResultPage.prototype.GetMyHraResults = function () {
+        var _this = this;
+        this.account.deviceid = localStorage.getItem("deviceid");
+        this.account.SecretToken = localStorage.getItem("SecretToken");
+        this.loader.present().then(function () {
+            //this.loader.dismiss();
+            _this.hraApi.GetRiskReportNum(_this.account).subscribe(function (resp1) {
+                //debugger;
+                //console.log(resp1);
+                console.log(_this.hraApi.hraRiskReport.RiskReportNum);
+                _this.account.RiskReportNum = parseInt(_this.hraApi.hraRiskReport.RiskReportNum); //localStorage.getItem('riskreportnum'));
+                _this.hraApi.GetHraReport(_this.account).subscribe(function (resp) {
+                    _this.loader.dismiss();
+                    console.log(_this.hraApi.hraResults);
+                    _this.RiskReportDetails = _this.hraApi.hraResults.UserConditions;
+                    //debugger;
+                    console.log({ LstReport: _this.RiskReportDetails });
+                }, function (err) {
+                    _this.loader.dismiss();
+                    // Unable to log in
+                    _this.presentAlert("Server Message - Get Identified Conditions API: " + JSON.stringify(err));
+                    //this.navCtrl.push(LoginPage);
+                });
+            }, function (err) {
+                _this.loader.dismiss();
+                // Unable to log in
+                //this.presentAlert(err.error.SystemMessage);
+                //this.navCtrl.push(LoginPage);
+            });
+        });
+    };
+    MyHraResultPage.prototype.submitConfirm = function () {
+        console.log(this.account.Accept);
+        if (this.account.Accept) {
+            this.presentAlertRedirect("HRA confirm section data saved successfully.");
+        }
+        else {
+            this.presentAlert("Please tick check box to accept");
+        }
+    };
+    MyHraResultPage.prototype.presentAlertRedirect = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        //await alert.present();
+                        return [4 /*yield*/, alert.present().then(function () {
+                                // hide the alert after 2 sec
+                                _this.LoadHRAUserData();
+                                setTimeout(function () {
+                                    alert.dismiss();
+                                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__mywellnessplan_mywellnessplan__["a" /* MyWellnessPlanPage */]);
+                                }, 1000);
+                            })];
+                    case 2:
+                        //await alert.present();
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MyHraResultPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MyHraResultPage.prototype.LoadHRAUserData = function () {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken")
+        };
+        this.userService.getUserData(userAcc).subscribe(function (res) {
+            console.log(res, "getUserData");
+            var data = {};
+            localStorage.setItem("RewardPoint", res.RewardPoint);
+            localStorage.setItem("bio_age", res.bio_age);
+            localStorage.setItem("mhrs_score", res.mhrs_score);
+            // Read all the data;
+            data["FirstName"] = localStorage.getItem("FirstName");
+            data["LastName"] = localStorage.getItem("LastName");
+            data["ProfileImage"] = localStorage.getItem("ProfileImage");
+            data["Gender"] = localStorage.getItem("Gender");
+            data["Height"] = localStorage.getItem("Height");
+            data["BirthDate"] = localStorage.getItem("BirthDate");
+            data["RewardPoint"] = localStorage.getItem("RewardPoint");
+            data["bio_age"] = localStorage.getItem("bio_age");
+            data["mhrs_score"] = localStorage.getItem("mhrs_score");
+            console.log("Event published : " + data);
+            _this.events.publish("user:created", data);
+        });
+    };
+    MyHraResultPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-my-hra-result",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\hra-result\hra-result.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Consent</ion-title>\n\n    <!--\n\n    <ion-item>\n\n      <ion-avatar item-start>\n\n        <img src="assets/img/avtar.jpg">\n\n      </ion-avatar>\n\n      <h2>{{account.FirstName}} {{account.LastName}}</h2>\n\n      <p>\n\n        <ion-icon name="medal"></ion-icon>296 Points\n\n      </p>\n\n    </ion-item>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button> -->\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <!-- <div class="title">\n\n    <h3>My HRA Wallet</h3>\n\n    <p>HRA process - Confirmation\n\n\n\n    </p>\n\n  </div> -->\n\n  <div class="div-consent">\n\n    <p>\n\n      Congratulations {{userName}} on completing your Meschino Health Risk Assessment.\n\n    </p>\n\n    <p>\n\n      This report identifies important health risks as well as lifestyle strategies to help manage health issues of\n\n      importance to you.\n\n    </p>\n\n    <p>\n\n      This report has identified the following health issue(s) based on your responses.\n\n    </p>\n\n    <div>\n\n\n\n      <ul>\n\n        <li *ngFor="let rpt of RiskReportDetails ; index as i">\n\n          <img src="assets/img/arrow.png"> <label class="col-lg-12 mrg-top5"> {{rpt.description}} </label>\n\n        </li>\n\n      </ul>\n\n      <div>\n\n\n\n        <div class="col-lg-12" id="divHRAMessage1" style="padding: 20px 0 5px 0;">\n\n          <p>Receive the latest research updates on the prevention and management of key health issues, along with Dr.\n\n            Meschino\'s short “Will Power Moment” videos, explaining proven strategies to keep you on track and\n\n            motivated.\n\n          </p>\n\n        </div>\n\n\n\n        <ion-item>\n\n          <ion-label>I accept that Meschino Health & Wellness will send me valuable information described in the above\n\n            paragraph.</ion-label>\n\n          <ion-checkbox [(ngModel)]="account.Accept" name="Accept"></ion-checkbox>\n\n        </ion-item>\n\n\n\n      </div>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n\n\n    <button ion-button color="primary" class="big-btn" (click)="submitConfirm()">CONFIRM CONSENT</button>\n\n  </ion-toolbar>\n\n\n\n  <!-- <p class="imp-note">\n\n        <b>Important Note:</b>&nbsp;By opting in to our communications you will begin receiving emails with valuable\n\n        information on health and nutrition from Dr. Meschino. We respect your privacy - we do not sell or\n\n        distribute information gathered in this form. Information gathered in this form is used solely for the\n\n        purpose of providing valuable information on health and nutrition from Dr. Meschino. Review our&nbsp;privacy\n\n        policy.\n\n      </p>\n\n      <div class="address">\n\n        <b>Address:</b> Meschino Health &amp; Wellness,\n\n        5500 Explorer Drive, 3rd Floor,\n\n        Mississauga, Ontario,\n\n        <br>\n\n        Canada L4W 5C7.\n\n        <b>Contact Number:</b>1-844-770-1075 x390 <b>Email:</b> <a\n\n          href="mailto:support@meschinowellness.com">support@meschinowellness.com</a>\n\n      </div>\n\n    -->\n\n</ion-footer>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\hra-result\hra-result.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["b" /* HraService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["f" /* UserService */]])
+    ], MyHraResultPage);
+    return MyHraResultPage;
+}());
+
+//# sourceMappingURL=hra-result.js.map
+
+/***/ }),
+
+/***/ 264:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyWellnessPlanPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__riskdetail_riskdetail__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__notification_notification__ = __webpack_require__(72);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+/**
+ * Generated class for the MyHraPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MyWellnessPlanPage = /** @class */ (function () {
+    function MyWellnessPlanPage(navCtrl, navParams, alertCtl, loading, hraApi, userService, notificationService, events, menu) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtl = alertCtl;
+        this.loading = loading;
+        this.hraApi = hraApi;
+        this.userService = userService;
+        this.notificationService = notificationService;
+        this.events = events;
+        this.menu = menu;
+        this.account = {
+            deviceid: "",
+            SecretToken: "",
+            UserId: ""
+        };
+        this.notificationCount = ""; //localStorage.getItem("NotificationCount");
+        this.menu.enable(true);
+        this.loader = this.loading.create({
+            content: "Please wait..."
+        });
+        localStorage.removeItem("RiskNumber");
+        this.loader.present().then(function () {
+            _this.loadInitialNotificationCount();
+            _this.EmitterNotificationCount();
+            _this.GetHealthRisks();
+        });
+    }
+    MyWellnessPlanPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad MyWellnessPlanPage");
+    };
+    MyWellnessPlanPage.prototype.ionViewDidLeave = function () {
+        console.log('ionViewDidLeave');
+        //debugger;
+    };
+    MyWellnessPlanPage.prototype.ionViewWillLeave = function () {
+        console.log('ionViewWillLeave');
+        //debugger;
+    };
+    MyWellnessPlanPage.prototype.loadInitialNotificationCount = function () {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+        };
+        this.userService.GetPushNotificationCount(userAcc).subscribe(function (res) {
+            var msgcount = res.Count;
+            _this.notificationCount = msgcount > 0 ? msgcount : "";
+            localStorage.setItem("notificationCount", _this.notificationCount);
+        });
+    };
+    MyWellnessPlanPage.prototype.EmitterNotificationCount = function () {
+        var _this = this;
+        this.events.subscribe("PushNotification", function (PushNotification) {
+            var msgcount = PushNotification.Count;
+            _this.notificationCount = msgcount > 0 ? msgcount : "";
+            localStorage.setItem("notificationCount", _this.notificationCount);
+        });
+    };
+    MyWellnessPlanPage.prototype.GetHealthRisks = function () {
+        var _this = this;
+        this.account.deviceid = localStorage.getItem("deviceid");
+        this.account.SecretToken = localStorage.getItem("SecretToken");
+        this.account.UserId = localStorage.getItem("UserId");
+        this.hraApi.GetMajorHealthRisks(this.account).subscribe(function (resp) {
+            _this.loader.dismiss();
+            _this.HealthRisks = _this.hraApi.MajorHealthRisks.RiskList;
+        }, function (err) {
+            _this.loader.dismiss();
+            // Unable to log in
+            _this.presentAlert("Server Message - Get Major Health Risks: " + JSON.stringify(err));
+            //this.navCtrl.push(LoginPage);
+        });
+    };
+    MyWellnessPlanPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MyWellnessPlanPage.prototype.goToReportDetail = function (id) {
+        localStorage.setItem("RiskNumber", id);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__riskdetail_riskdetail__["a" /* RiskDetailPage */]);
+    };
+    MyWellnessPlanPage.prototype.goNotification = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__notification_notification__["a" /* NotificationPage */]);
+    };
+    MyWellnessPlanPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-my-wellness-plan",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\mywellnessplan\mywellnessplan.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle icon-only>\n\n      <ion-icon name=\'menu\'></ion-icon>\n\n    </button>\n\n    <ion-title>Create My Wellness Plan</ion-title>\n\n    <ion-buttons end class="left-nav-buttons">\n\n      <button id="notification-button" ion-button icon-only (click)="goNotification()">\n\n        <ion-icon name="notifications">\n\n          <ion-badge id="notifications-badge" color="danger">{{notificationCount}}</ion-badge>\n\n        </ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <div class="title">\n\n    <h3> Major Health Risk </h3>\n\n  </div>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <table class="tbl-hra">\n\n        <tr (click)="goToReportDetail(d.risk_page_num)" *ngFor="let d of HealthRisks">\n\n          <td style="padding: 10px">\n\n            {{d.title}}\n\n          </td>\n\n          <td>\n\n            <img src="assets/img/down_arrow.png" style="padding: 10px">\n\n          </td>\n\n        </tr>\n\n      </table>\n\n      <div style="height: 10px;">\n\n      </div>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\mywellnessplan\mywellnessplan.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["b" /* HraService */],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["f" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["c" /* NotificationService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"]])
+    ], MyWellnessPlanPage);
+    return MyWellnessPlanPage;
+}());
+
+//# sourceMappingURL=mywellnessplan.js.map
+
+/***/ }),
+
+/***/ 265:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RiskDetailPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_settings_wellnessconstant__ = __webpack_require__(44);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+//import { InAppBrowser } from 'ionic-native';
+
+
+
+/**
+ * Generated class for the MyHraPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var RiskDetailPage = /** @class */ (function () {
+    function RiskDetailPage(navCtrl, navParams, alertCtl, loading, hraApi) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtl = alertCtl;
+        this.loading = loading;
+        this.hraApi = hraApi;
+        this.account = {
+            deviceid: "",
+            SecretToken: "",
+            RiskNumber: 0,
+            password: ""
+        };
+        this.GoalList = [];
+        this.MeterList = [];
+        this.siteUrl = __WEBPACK_IMPORTED_MODULE_3__providers_settings_wellnessconstant__["a" /* WellnessConstants */].App_Url;
+        this.redirectURL = "";
+        this.ShowRecommendedGoals = true;
+        this.loader = this.loading.create({
+            content: "Please wait..."
+        });
+        this.title = "Major Health Risk Detail";
+        this.redirectURL =
+            this.siteUrl +
+                "account/SetGoalLogin?SecretToken=" +
+                localStorage.getItem("SecretToken") +
+                "&DeviceId=" +
+                localStorage.getItem("deviceid") +
+                "&tokenP=" +
+                localStorage.getItem("Password") +
+                "&GoalNum=";
+        this.ShowRecommendedGoals = false;
+        this.loader.present().then(function () {
+            _this.GetHealthRiskDetails();
+        });
+    }
+    RiskDetailPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    RiskDetailPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad RiskDetailPage");
+    };
+    RiskDetailPage.prototype.GetHealthRiskDetails = function () {
+        var _this = this;
+        this.account.deviceid = localStorage.getItem("deviceid");
+        this.account.SecretToken = localStorage.getItem("SecretToken");
+        this.account.RiskNumber = parseInt(localStorage.getItem("RiskNumber"));
+        this.loader.present().then(function () {
+            _this.hraApi.GetHealthRiskDetail(_this.account).subscribe(function (resp) {
+                _this.loader.dismiss();
+                _this.ShowRecommendedGoals = true;
+                _this.HealthRiskDetail = _this.hraApi.HealthRiskDetail;
+                _this.MeterList = _this.hraApi.HealthRiskDetail.MeterList;
+                _this.GoalList = _this.hraApi.HealthRiskDetail.GoalList;
+            }, function (err) {
+                _this.loader.dismiss();
+                // Unable to log in
+                _this.presentAlert("Server Message - Get Health Risk Detail : " + JSON.stringify(err));
+                //this.navCtrl.push(LoginPage);
+            });
+        });
+    };
+    RiskDetailPage.prototype.goToReportDetail = function (cardData, nextCardIndex) {
+        //this.navCtrl.push();
+    };
+    RiskDetailPage.prototype.SetGoals = function (num) {
+        if (localStorage.getItem("UserAccessLevel") !== null && localStorage.getItem("UserAccessLevel") !== "Full") {
+            var alertP = this.alertCtl.create({
+                message: "We are sorry, you do not have the permission to set goals. This features is available only on premium version. Please contact the administrator to upgrade.",
+                cssClass: "action-sheets-basic-page",
+                buttons: [
+                    {
+                        text: "Ok"
+                    }
+                ]
+            });
+            alertP.present();
+        }
+        else {
+            var url_1 = this.redirectURL + num;
+            var alertP = this.alertCtl.create({
+                message: "You will be redirected to a browser. Do you want to continue?",
+                cssClass: "action-sheets-basic-page",
+                buttons: [
+                    {
+                        text: "Yes",
+                        handler: function () {
+                            console.log(url_1, "url");
+                            //alert(url);
+                            setTimeout(function () {
+                                window.open(url_1, "_system", "location=yes");
+                            }, 1000);
+                        }
+                    },
+                    {
+                        text: "No",
+                        handler: function () {
+                            //alertP.dismiss();
+                        }
+                    }
+                ]
+            });
+            alertP.present();
+        }
+    };
+    RiskDetailPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-my-riskdetail",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\riskdetail\riskdetail.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-content>\n\n    <ion-header>\n\n        <ion-navbar color="primary">\n\n            <ion-title>Create My Wellness Plan</ion-title>\n\n        </ion-navbar>\n\n\n\n        <div class="div-center">\n\n\n\n            <div class="div-content-risk">\n\n                <ion-title>{{title}}</ion-title>\n\n                <div>\n\n                    <div *ngFor="let m of MeterList">\n\n                        <!-- <ion-title>{{m.risk_description}}</ion-title>\n\n                        <img src="assets/img/title_line.png">\n\n                         -->\n\n                         <ion-card-header>\n\n                                {{m.risk_description}}\n\n                        </ion-card-header>\n\n                        <div class="div-cirle-center">\n\n                            <ng-container *ngIf="m.risk_score_num == 1">\n\n                                <div class="canvas__container"\n\n                                    style="background-image: url(\'../../../assets/img/red.png\') ;">\n\n                                    <img src="{{siteUrl}}images/new-layout/Risks Icons/{{m.image_location}}">\n\n                                </div>\n\n                            </ng-container>\n\n                            <ng-container *ngIf="m.risk_score_num == 2">\n\n                                <div class="canvas__container"\n\n                                    style="background-image: url(\'../../../assets/img/yellow.png\') ;">\n\n                                    <img src="{{siteUrl}}images/new-layout/Risks Icons/{{m.image_location}}">\n\n                                </div>\n\n                            </ng-container>\n\n                            <ng-container *ngIf="m.risk_score_num == 3">\n\n                                <div class="canvas__container"\n\n                                    style="background-image: url(\'../../../assets/img/green.png\') ;">\n\n                                    <img src="{{siteUrl}}images/new-layout/Risks Icons/{{m.image_location}}">\n\n                                </div>\n\n                            </ng-container>\n\n\n\n\n\n                        </div>\n\n                        <!-- <img style="height: 100px; width:100px; "\n\n                        src="http://stage-meschinowellness.azurewebsites.net/images/new-layout/Risks Icons/{{m.image_location}}"> -->\n\n                        <p>\n\n                            {{m.feedback}}\n\n                        </p>\n\n                        <ion-title> {{m.tool_phoneApp_description}} </ion-title>\n\n                        <span>\n\n                            {{m.last_updated | date: \'short\'}}\n\n                        </span>\n\n                        <hr>\n\n                    </div>\n\n                    <div class="div-goals" *ngIf="ShowRecommendedGoals">\n\n                        <!-- <ion-title>Recommended Goals</ion-title>\n\n                        <img src="assets/img/title_line.png"> -->\n\n                        \n\n                        <ion-card-header>\n\n                                Recommended Goals\n\n                        </ion-card-header>\n\n                        <table class="tbl-hra">\n\n                            <tbody *ngIf="GoalList?.length != 0">\n\n                                <tr *ngFor="let g of GoalList" class="div-goals-items">\n\n                                    <td>\n\n                                        <img src="{{siteUrl}}/{{g.goal_image_location.replace(\'~/\', \'\')}}">\n\n                                    </td>\n\n                                    <td>\n\n                                        <ion-title> {{g.goal_description}} </ion-title>\n\n                                    </td>\n\n                                    <td>\n\n                                        <ng-container *ngIf="g.goal_status_num == null || g.goal_status_num == 1">\n\n                                            <button ion-button color="primary" class="big-btn" (click)="SetGoals(g.goal_num);">\n\n                                                SET GOAL\n\n                                            </button>\n\n                                        </ng-container>\n\n                                        <ng-container *ngIf="g.goal_status_num !== null && g.goal_status_num != 1 ">\n\n                                            <button ion-button color="primary" class="big-btn" (click)="SetGoals(g.goal_num);">\n\n                                                VIEW GOAL\n\n                                            </button>\n\n                                        </ng-container>\n\n\n\n                                    </td>\n\n                                </tr>\n\n                            </tbody>\n\n                            <tbody *ngIf="GoalList?.length == 0">\n\n                                <tr>\n\n                                    <td style="padding-left: 50px;text-align: center;" colspan="3"> No Recommended Goals\n\n                                    </td>\n\n                                </tr>\n\n                            <tbody>\n\n\n\n                        </table>\n\n\n\n                    </div>\n\n\n\n                    <div style="height: 60px;">\n\n\n\n                    </div>\n\n                </div>\n\n            </div>\n\n        </div>\n\n\n\n    </ion-header>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\riskdetail\riskdetail.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["b" /* HraService */]])
+    ], RiskDetailPage);
+    return RiskDetailPage;
+}());
+
+//# sourceMappingURL=riskdetail.js.map
+
+/***/ }),
+
+/***/ 266:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotificationMsgPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__notification_notification__ = __webpack_require__(72);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+/**
+ * Generated class for the IntroPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var NotificationMsgPage = /** @class */ (function () {
+    function NotificationMsgPage(navCtrl, navParams, loadingCtrl, alertCtl, notificationService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtl = alertCtl;
+        this.notificationService = notificationService;
+        this.item = {};
+        this.item = JSON.parse(localStorage.getItem("noti-item"));
+        this.Title = "Message Info";
+        this.MarkMessageRead(this.item);
+    }
+    NotificationMsgPage.prototype.MarkMessageRead = function (item) {
+        var _this = this;
+        if (!item.IsRead) {
+            var userAcc = {
+                DeviceId: localStorage.getItem("deviceid"),
+                SecretToken: localStorage.getItem("SecretToken"),
+                Id: item.Id
+            };
+            this.notificationService
+                .UpdateIsReadPushNotificationDetail(userAcc)
+                .subscribe(function (resp) {
+                console.log("Marked user read data");
+                item.IsRead = true;
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Update Is Read Push Notification Detail : " +
+                    JSON.stringify(err));
+            });
+        }
+    };
+    NotificationMsgPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad TemplatePage");
+    };
+    NotificationMsgPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    NotificationMsgPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        this.navBar.backButtonClick = function () {
+            ///here you can do wathever you want to replace the backbutton event
+            console.log('Back button click');
+            localStorage.removeItem("noti-item");
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__notification_notification__["a" /* NotificationPage */]);
+        };
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('navbar'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Navbar"])
+    ], NotificationMsgPage.prototype, "navBar", void 0);
+    NotificationMsgPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-notimsg",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\notificationmsg\notimsg.html"*/'<!--\n\n  Generated template for the IntroPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <ion-navbar #navbar color="primary">\n\n        <ion-title>{{Title}}</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <ion-card class="signup-card custom-border intro-desc">\n\n        <ion-card-content>\n\n            {{item.Message}}\n\n\n\n            <br />\n\n            <span class="msg-col2"> {{ item.CreateDate | date: \'longDate\'}} </span>\n\n    \n\n        </ion-card-content>\n\n    </ion-card>\n\n</ion-content>\n\n<ion-footer>\n\n</ion-footer>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\notificationmsg\notimsg.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["c" /* NotificationService */]])
+    ], NotificationMsgPage);
+    return NotificationMsgPage;
+}());
+
+//# sourceMappingURL=notimsg.js.map
+
+/***/ }),
+
+/***/ 267:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HraBodyPageModule", function() { return HraBodyPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hra_body__ = __webpack_require__(539);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HraBodyPageModule = /** @class */ (function () {
+    function HraBodyPageModule() {
+    }
+    HraBodyPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__hra_body__["a" /* HraBodyPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__hra_body__["a" /* HraBodyPage */]),
+            ],
+        })
+    ], HraBodyPageModule);
+    return HraBodyPageModule;
+}());
+
+//# sourceMappingURL=hra-body.module.js.map
+
+/***/ }),
+
+/***/ 268:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IntroVideoPageModule", function() { return IntroVideoPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intro_video__ = __webpack_require__(148);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var IntroVideoPageModule = /** @class */ (function () {
+    function IntroVideoPageModule() {
+    }
+    IntroVideoPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__intro_video__["a" /* IntroVideoPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__intro_video__["a" /* IntroVideoPage */]),
+            ],
+        })
+    ], IntroVideoPageModule);
+    return IntroVideoPageModule;
+}());
+
+//# sourceMappingURL=intro-video.module.js.map
+
+/***/ }),
+
+/***/ 269:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IntroPageModule", function() { return IntroPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intro__ = __webpack_require__(540);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var IntroPageModule = /** @class */ (function () {
+    function IntroPageModule() {
+    }
+    IntroPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__intro__["a" /* IntroPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__intro__["a" /* IntroPage */]),
+            ],
+        })
+    ], IntroPageModule);
+    return IntroPageModule;
+}());
+
+//# sourceMappingURL=intro.module.js.map
+
+/***/ }),
+
+/***/ 270:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login__ = __webpack_require__(92);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var LoginPageModule = /** @class */ (function () {
+    function LoginPageModule() {
+    }
+    LoginPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__login__["a" /* LoginPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_3__login__["a" /* LoginPage */]),
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_3__login__["a" /* LoginPage */]
+            ]
+        })
+    ], LoginPageModule);
+    return LoginPageModule;
+}());
+
+//# sourceMappingURL=login.module.js.map
+
+/***/ }),
+
+/***/ 271:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyHraPageModule", function() { return MyHraPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__my_hra__ = __webpack_require__(261);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var MyHraPageModule = /** @class */ (function () {
+    function MyHraPageModule() {
+    }
+    MyHraPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__my_hra__["a" /* MyHraPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__my_hra__["a" /* MyHraPage */]),
+            ],
+        })
+    ], MyHraPageModule);
+    return MyHraPageModule;
+}());
+
+//# sourceMappingURL=my-hra.module.js.map
+
+/***/ }),
+
+/***/ 272:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyTrackerPageModule", function() { return MyTrackerPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mytracker__ = __webpack_require__(541);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var MyTrackerPageModule = /** @class */ (function () {
+    function MyTrackerPageModule() {
+    }
+    MyTrackerPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__mytracker__["a" /* MyTrackerPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__mytracker__["a" /* MyTrackerPage */]),
+            ],
+        })
+    ], MyTrackerPageModule);
+    return MyTrackerPageModule;
+}());
+
+//# sourceMappingURL=mytracker.module.js.map
+
+/***/ }),
+
+/***/ 273:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ion_multi_picker__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ion_multi_picker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ion_multi_picker__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+// import { File } from '@ionic-native/file';
+// import { Camera } from '@ionic-native/camera';
+
+
+var ProfilePageModule = /** @class */ (function () {
+    function ProfilePageModule() {
+    }
+    ProfilePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ion_multi_picker__["MultiPickerModule"]
+            ],
+            providers: [
+            //Camera
+            ]
+        })
+    ], ProfilePageModule);
+    return ProfilePageModule;
+}());
+
+//# sourceMappingURL=profile.module.js.map
+
+/***/ }),
+
+/***/ 278:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HraQaPageModule", function() { return HraQaPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hra_qa__ = __webpack_require__(262);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HraQaPageModule = /** @class */ (function () {
+    function HraQaPageModule() {
+    }
+    HraQaPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__hra_qa__["a" /* HraQaPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__hra_qa__["a" /* HraQaPage */])
+            ],
+        })
+    ], HraQaPageModule);
+    return HraQaPageModule;
+}());
+
+//# sourceMappingURL=hra-qa.module.js.map
+
+/***/ }),
+
+/***/ 279:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HraResultPageModule", function() { return HraResultPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hra_result__ = __webpack_require__(263);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HraResultPageModule = /** @class */ (function () {
+    function HraResultPageModule() {
+    }
+    HraResultPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__hra_result__["a" /* MyHraResultPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__hra_result__["a" /* MyHraResultPage */]),
+            ],
+        })
+    ], HraResultPageModule);
+    return HraResultPageModule;
+}());
+
+//# sourceMappingURL=hra-result.module.js.map
+
+/***/ }),
+
+/***/ 280:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyWellnessWalletPageModule", function() { return MyWellnessWalletPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__my_wellness_wallet__ = __webpack_require__(94);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var MyWellnessWalletPageModule = /** @class */ (function () {
+    function MyWellnessWalletPageModule() {
+    }
+    MyWellnessWalletPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__my_wellness_wallet__["a" /* MyWellnessWalletPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__my_wellness_wallet__["a" /* MyWellnessWalletPage */]),
+            ],
+        })
+    ], MyWellnessWalletPageModule);
+    return MyWellnessWalletPageModule;
+}());
+
+//# sourceMappingURL=my-wellness-wallet.module.js.map
+
+/***/ }),
+
+/***/ 281:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyWellnessPlanPageModule", function() { return MyWellnessPlanPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mywellnessplan__ = __webpack_require__(264);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var MyWellnessPlanPageModule = /** @class */ (function () {
+    function MyWellnessPlanPageModule() {
+    }
+    MyWellnessPlanPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__mywellnessplan__["a" /* MyWellnessPlanPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__mywellnessplan__["a" /* MyWellnessPlanPage */]),
+            ],
+        })
+    ], MyWellnessPlanPageModule);
+    return MyWellnessPlanPageModule;
+}());
+
+//# sourceMappingURL=mywellnessplan.module.js.map
+
+/***/ }),
+
+/***/ 282:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RiskDetailPageModule", function() { return RiskDetailPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__riskdetail__ = __webpack_require__(265);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var RiskDetailPageModule = /** @class */ (function () {
+    function RiskDetailPageModule() {
+    }
+    RiskDetailPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__riskdetail__["a" /* RiskDetailPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__riskdetail__["a" /* RiskDetailPage */]),
+            ],
+        })
+    ], RiskDetailPageModule);
+    return RiskDetailPageModule;
+}());
+
+//# sourceMappingURL=riskdetail.module.js.map
+
+/***/ }),
+
+/***/ 283:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotificationMsgPageModule", function() { return NotificationMsgPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__notimsg__ = __webpack_require__(266);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var NotificationMsgPageModule = /** @class */ (function () {
+    function NotificationMsgPageModule() {
+    }
+    NotificationMsgPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__notimsg__["a" /* NotificationMsgPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__notimsg__["a" /* NotificationMsgPage */])
+            ],
+            providers: []
+        })
+    ], NotificationMsgPageModule);
+    return NotificationMsgPageModule;
+}());
+
+//# sourceMappingURL=notimsg.module.js.map
+
+/***/ }),
+
+/***/ 284:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotificationPageModule", function() { return NotificationPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__notification__ = __webpack_require__(72);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var NotificationPageModule = /** @class */ (function () {
+    function NotificationPageModule() {
+    }
+    NotificationPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__notification__["a" /* NotificationPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__notification__["a" /* NotificationPage */])
+            ],
+            providers: [
+            //Camera
+            ]
+        })
+    ], NotificationPageModule);
+    return NotificationPageModule;
+}());
+
+//# sourceMappingURL=notification.module.js.map
+
+/***/ }),
+
+/***/ 285:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddlogsModule", function() { return AddlogsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addlogs__ = __webpack_require__(286);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var AddlogsModule = /** @class */ (function () {
+    function AddlogsModule() {
+    }
+    AddlogsModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__addlogs__["a" /* AddlogsPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__addlogs__["a" /* AddlogsPage */]),
+            ],
+        })
+    ], AddlogsModule);
+    return AddlogsModule;
+}());
+
+//# sourceMappingURL=addlogs.module.js.map
+
+/***/ }),
+
+/***/ 286:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddlogsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_settings_wellnessconstant__ = __webpack_require__(44);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+/**
+ * Generated class for the IntroPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AddlogsPage = /** @class */ (function () {
+    function AddlogsPage(viewCtrl, navParams, loadingCtrl, alertCtl, stepChallengeService) {
+        this.viewCtrl = viewCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtl = alertCtl;
+        this.stepChallengeService = stepChallengeService;
+        this.listItems = [];
+        this.model = { exduration: "", stepscount: "", exname: "", exerciseType: "" };
+        // obtain data
+        console.log(this.navParams, "nav params");
+        this.data = this.navParams.data.Activities;
+        this.curDate = this.navParams.data.curDate;
+        this.listItems = this.data[0].lstIntensity;
+        (this.model.exname = this.data[0].exname),
+            (this.model.exerciseType = this.data[0].exerciseType),
+            console.log(this.listItems);
+    }
+    AddlogsPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad TemplatePage");
+    };
+    AddlogsPage.prototype.closedPopup = function () {
+        var resp = { SystemMessage: "Dismissed" };
+        this.viewCtrl.dismiss(resp);
+    };
+    AddlogsPage.prototype.onSave = function () {
+        var _this = this;
+        if (this.model.intensity === undefined || (this.model.intensity !== undefined && this.model.intensity === "")) {
+            this.presentAlert("Please select any intensity");
+            return;
+        }
+        if (this.model.exduration === undefined || this.model.exduration == "" ||
+            (this.model.exduration !== undefined &&
+                this.model.exduration !== "" &&
+                !this.numberOnlyValidation(this.model.exduration))) {
+            this.presentAlert("Please enter any number between 1-999");
+            return;
+        }
+        var data = this.model;
+        var userinfo = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+            exerciseType: this.model.exerciseType,
+            exname: this.model.exname.trim(),
+            exduration: this.model.exduration,
+            exDate: __WEBPACK_IMPORTED_MODULE_3__providers_settings_wellnessconstant__["a" /* WellnessConstants */].GetFormatedDate(this.curDate, 'AddLogs'),
+            intensity: this.model.intensity,
+        };
+        console.log(userinfo);
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait...",
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService.SaveStepsActivitiesData(userinfo).subscribe(function (resp) {
+                _this.loader.dismiss();
+                if (resp.SystemStatus == "Success") {
+                    _this.viewCtrl.dismiss(resp);
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Get User Overall Progress Of StepChallenge : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    AddlogsPage.prototype.numberOnlyValidation = function (value) {
+        var num = parseInt(value);
+        if (num === undefined || num == 0 || num > 999 || num < 1) {
+            return false;
+        }
+        else if (isNaN(value) || value.includes(".")) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    AddlogsPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { },
+                                },
+                            ],
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AddlogsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-addlogs",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\addlogs\addlogs.html"*/'<ion-content no-bounce>\n\n    <ion-item>\n\n        <ion-label>Intensity</ion-label>\n\n        <ion-select class="combo-large" [(ngModel)]="model.intensity" okText="Okay" cancelText="Dismiss">\n\n            <ion-option *ngFor="let item of listItems" value="{{item.Text}}">{{item.Text}}</ion-option>\n\n        </ion-select>\n\n    </ion-item>\n\n    <!-- <ion-item>\n\n        <ion-label>Minutes</ion-label>\n\n        <input placeholder="Enter duration" type="text" [(ngModel)]="model.exduration">\n\n    </ion-item> -->\n\n    <ion-item>\n\n        <ion-label color="light-grey">\n\n            <ion-icon item-left name="time"></ion-icon>Minutes\n\n        </ion-label>\n\n        <ion-input type="text" [(ngModel)]="model.exduration" class="input-brdr"></ion-input>\n\n    </ion-item>\n\n    <ion-grid>\n\n        <ion-row>\n\n            <ion-col width-50>\n\n                <button ion-button block outline (click)="onSave()">SAVE</button>\n\n            </ion-col>\n\n            <ion-col width-50>\n\n                <button ion-button block outline (click)="closedPopup();">CANCEL</button>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\addlogs\addlogs.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ViewController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["e" /* StepChallengeService */]])
+    ], AddlogsPage);
+    return AddlogsPage;
+}());
+
+//# sourceMappingURL=addlogs.js.map
+
+/***/ }),
+
+/***/ 287:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupPageModule", function() { return SignupPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ion_multi_picker__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ion_multi_picker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ion_multi_picker__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup__ = __webpack_require__(147);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var SignupPageModule = /** @class */ (function () {
+    function SignupPageModule() {
+    }
+    SignupPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_4__signup__["a" /* SignupPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_4__signup__["a" /* SignupPage */]),
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild(),
+                __WEBPACK_IMPORTED_MODULE_3_ion_multi_picker__["MultiPickerModule"]
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_4__signup__["a" /* SignupPage */]
+            ]
+        })
+    ], SignupPageModule);
+    return SignupPageModule;
+}());
+
+//# sourceMappingURL=signup.module.js.map
+
+/***/ }),
+
+/***/ 288:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogOtherActivitiesPageModule", function() { return LogOtherActivitiesPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logoverview__ = __webpack_require__(546);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var LogOtherActivitiesPageModule = /** @class */ (function () {
+    function LogOtherActivitiesPageModule() {
+    }
+    LogOtherActivitiesPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__logoverview__["a" /* LogOverviewPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__logoverview__["a" /* LogOverviewPage */]),
+            ],
+        })
+    ], LogOtherActivitiesPageModule);
+    return LogOtherActivitiesPageModule;
+}());
+
+//# sourceMappingURL=logoverview.module.js.map
+
+/***/ }),
+
+/***/ 289:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogStepsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addlogs_addlogs__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__step_dashboard__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_settings_wellnessconstant__ = __webpack_require__(44);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+/**
+ * Generated class for the IntroPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LogStepsPage = /** @class */ (function () {
+    function LogStepsPage(navCtrl, navParams, loadingCtrl, pickerCtl, alertCtl, modalCtrl, stepChallengeService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.pickerCtl = pickerCtl;
+        this.alertCtl = alertCtl;
+        this.modalCtrl = modalCtrl;
+        this.stepChallengeService = stepChallengeService;
+        this.account = { Activities: "", LogStepsNumber: "" };
+        this.LogsStepActivities = [];
+        this.TotalSteps = "";
+        this.OtherActivities = [];
+        this.OptionItems = [];
+        this.CurrentDate = new Date().toDateString();
+        this.AddActivities = [];
+        this.IsCancelled = false;
+        this.GetLogsActivities();
+        this.LoadOtherActivities();
+    }
+    LogStepsPage.prototype.AddlogsModal = function () {
+        var _this = this;
+        var selDate = new Date(this.CurrentDate);
+        if (selDate > new Date()) {
+            this.presentAlert("You can't add logs for future dates!");
+            return;
+        }
+        if (this.account.Activities != null && this.account.Activities) {
+            var profileModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__addlogs_addlogs__["a" /* AddlogsPage */], {
+                Activities: this.AddActivities,
+                curDate: this.CurrentDate
+            });
+            profileModal.onDidDismiss(function (data) {
+                console.log(data);
+                if (data.SystemStatus == "Success") {
+                    console.log(data);
+                    _this.presentAlert(data.SystemMessage);
+                    _this.account.Activities = "";
+                    _this.GetLogsActivities();
+                }
+                else {
+                    _this.presentAlert(data.SystemMessage);
+                }
+            });
+            profileModal.present();
+        }
+        else {
+            this.presentAlert("Please select activities!");
+        }
+    };
+    LogStepsPage.prototype.AddLogs = function () {
+        var _this = this;
+        var selDate = new Date(this.CurrentDate);
+        if (selDate > new Date()) {
+            this.presentAlert("You can't add logs for future dates!");
+            return;
+        }
+        if (this.account.LogStepsNumber === undefined || this.account.LogStepsNumber == "" ||
+            (this.account.LogStepsNumber !== undefined &&
+                this.account.LogStepsNumber !== "" &&
+                !this.numberOnlyValidation(this.account.LogStepsNumber))) {
+            this.presentAlert("Please enter any number between 1-999999");
+            return;
+        }
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+            LogStepsNumber: this.account.LogStepsNumber,
+            Date: __WEBPACK_IMPORTED_MODULE_5__providers_settings_wellnessconstant__["a" /* WellnessConstants */].GetFormatedDate(this.CurrentDate, 'Logsteps'),
+        };
+        console.log(userAcc, 'request');
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService.SaveLogStepsNumber(userAcc).subscribe(function (resp) {
+                _this.loader.dismiss();
+                if (resp.SystemStatus == "Success") {
+                    console.log(resp);
+                    _this.account.LogStepsNumber = "";
+                    _this.GetLogsActivities();
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Save Log Steps Number : " + JSON.stringify(err));
+            });
+        });
+    };
+    LogStepsPage.prototype.GetLogsActivities = function () {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+            Date: this.CurrentDate
+        };
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService
+                .GetLoggedStepsActivitiesByDate(userAcc)
+                .subscribe(function (resp) {
+                _this.loader.dismiss();
+                if (resp.SystemStatus == "Success") {
+                    _this.LogsStepActivities = resp.ListOfSteps;
+                    _this.TotalSteps = resp.TotalSteps;
+                    console.log(resp);
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Get User Overall Progress Of StepChallenge : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    LogStepsPage.prototype.numberOnlyValidation = function (value) {
+        var num = parseInt(value);
+        if (num === undefined || num == 0 || num > 999999 || num < 1) {
+            return false;
+        }
+        else if (isNaN(value) || value.includes(".")) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    LogStepsPage.prototype.LoadOtherActivities = function () {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+            SearchText: ""
+        };
+        this.stepChallengeService.SearchStepsActivities(userAcc).subscribe(function (resp) {
+            if (resp.SystemStatus == "Success") {
+                var listOfActivities = resp.ListOfActivities;
+                _this.OtherActivities = resp.ListOfActivities;
+                listOfActivities.forEach(function (item) {
+                    var oactivities = { text: item.exname, value: item.id };
+                    _this.OptionItems.push(oactivities);
+                });
+                console.log(_this.OtherActivities, "OtherActivities");
+            }
+            else {
+                _this.presentAlert(resp.SystemMessage);
+            }
+        }, function (err) {
+            _this.presentAlert("Server Message - Get User Overall Progress Of StepChallenge : " +
+                JSON.stringify(err));
+        });
+    };
+    LogStepsPage.prototype.DeleteLoggedStepsActivities = function (id) {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+            step_tracking_num: id
+        };
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService.DeleteLoggedStepsActivities(userAcc).subscribe(function (resp) {
+                _this.loader.dismiss();
+                if (resp.SystemStatus == "Success") {
+                    _this.presentAlert(resp.SystemMessage);
+                    _this.GetLogsActivities();
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Delete Logged Steps Activities : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    LogStepsPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad TemplatePage");
+    };
+    LogStepsPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    LogStepsPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        this.navBar.backButtonClick = function () {
+            console.log('Back button click - logsteps');
+            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__step_dashboard__["a" /* StepDashboardPage */]);
+        };
+    };
+    LogStepsPage.prototype.NextScreen = function (name) {
+        localStorage.setItem("backstepspage", 'LogStepsPage');
+        this.navCtrl.push(name);
+    };
+    LogStepsPage.prototype.showActivitiesPicker = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var opts, picker;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        opts = {
+                            buttons: [
+                                {
+                                    text: "Cancel",
+                                    role: "cancel",
+                                    handler: function () {
+                                        _this.IsCancelled = true;
+                                        _this.account.Activities = "";
+                                    }
+                                },
+                                {
+                                    text: "Done",
+                                    handler: function () {
+                                        _this.IsCancelled = false;
+                                    }
+                                }
+                            ],
+                            columns: [
+                                {
+                                    name: "Activities",
+                                    options: this.OptionItems
+                                    // options: [
+                                    //   { text: "select", value: "" },
+                                    //   { text: "Activities 1", value: "Activities 1" },
+                                    //   { text: "Activities 2", value: "Activities 2" }
+                                    // ]
+                                }
+                            ]
+                        };
+                        return [4 /*yield*/, this.pickerCtl.create(opts)];
+                    case 1:
+                        picker = _a.sent();
+                        picker.present();
+                        picker.onDidDismiss(function (data) { return __awaiter(_this, void 0, void 0, function () {
+                            var col;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        console.log(data, "test - p");
+                                        return [4 /*yield*/, picker.getColumn("Activities")];
+                                    case 1:
+                                        col = _a.sent();
+                                        if (col.options[col.selectedIndex].value != "" && !this.IsCancelled) {
+                                            this.account.Activities = col.options[col.selectedIndex].text;
+                                            this.AddActivities = this.OtherActivities.filter(function (q) { return q.id == col.options[col.selectedIndex].value; });
+                                            console.log(this.AddActivities, "Add -act");
+                                        }
+                                        return [2 /*return*/];
+                                }
+                            });
+                        }); });
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    LogStepsPage.prototype.SetDate = function (title, action) {
+        var curDate = new Date(this.CurrentDate);
+        switch (action) {
+            case "Previous":
+                curDate.setDate(curDate.getDate() - 1);
+                this.CurrentDate = curDate.toDateString();
+                break;
+            case "Next":
+                curDate.setDate(curDate.getDate() + 1);
+                this.CurrentDate = curDate.toDateString();
+                break;
+            default:
+                this.CurrentDate = new Date().toDateString();
+                break;
+        }
+        this.GetLogsActivities();
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("navbar"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Navbar"])
+    ], LogStepsPage.prototype, "navBar", void 0);
+    LogStepsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-logsteps",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\log-steps\logsteps.html"*/'<ion-header>\n\n    <ion-navbar #navbar color="primary">\n\n        <ion-title>Log Steps / Activities</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <div class="custom-row align-items-center mt-3 mb-3">\n\n        <div class="custom-col pl-3">\n\n            <div class="font-family-Conv_gotham-book-webfont font-size-20 font-weight-800">\n\n                <button (click)="SetDate(\'Today\', \'Previous\')" class="btn-pre">&#8249;</button>\n\n                <span (click)="SetDate(\'Today\', \'\')"> TODAY </span>\n\n                <button (click)="SetDate(\'Today\', \'Next\')" class="btn-next">&#8250;</button>\n\n            </div>\n\n            <small class="text-light">{{CurrentDate}}</small>\n\n        </div>\n\n        <div class="custom-col-auto mr-3">\n\n            <!-- <div class="custom-btn-primary rounded-circle d-flex align-items-center justify-content-center"\n\n                style="width: 30px; height: 30px;">\n\n                <img class="pb-2 pt-2 pl-2 pr-2" src="assets/img/calendar.png" alt="calendar" style="width:34px;">\n\n            </div> -->\n\n        </div>\n\n    </div>\n\n    <div class="app-cart ml-3 mr-3 mb-3">\n\n        <div class="titli-1">Log Steps</div>\n\n        <div class="custom-row">\n\n            <div class="custom-col">\n\n                <input placeholder="Enter number of steps to log" type="text" class="form-control"\n\n                    [(ngModel)]="account.LogStepsNumber">\n\n            </div>\n\n        </div>\n\n        <button type="button" class="custom-btn custom-btn-primary w-100 font-weight-bold font-size-17 py-2 px-2"\n\n            (click)="AddLogs()">\n\n            <img class="align-middle img-fluid pr-2" src="assets/img/log-steps.png" style="width:37px;"\n\n                alt="log-steps">ADD</button>\n\n    </div>\n\n    <div class="text-center primary-color mb-3 font-family-Conv_Gotham-Medium font-size-20">OR</div>\n\n    <div class="app-cart ml-3 mr-3 mb-3">\n\n        <div class="titli-1">Log Other Activities</div>\n\n        <div class="custom-row">\n\n            <div class="custom-col">\n\n                <!-- <ion-searchbar #searchbar placeholder="Search activity by name"\n\n               class="form-control"></ion-searchbar> -->\n\n\n\n                <input placeholder="Search activity by name" readonly type="text" class="form-control"\n\n                    (focus)="showActivitiesPicker()" [(ngModel)]="account.Activities"> \n\n            </div>\n\n        </div>\n\n        <button type="button" class="custom-btn custom-btn-primary w-100 font-weight-bold font-size-17 py-2 px-2"\n\n            (click)="AddlogsModal();">\n\n            ADD</button>\n\n    </div>\n\n    <div class="app-cart ml-3 mr-3 mb-4">\n\n        <div class="titli-1">Logged Steps / Activities</div>\n\n        <div class="custom-row" *ngFor="let item of LogsStepActivities">\n\n            <div class="custom-col">\n\n                <span>{{item.exercise_name}}</span>\n\n                <div class="small font-family-Conv_Gotham-Medium">{{item.steps_count}}</div>\n\n            </div>\n\n            <div class="custom-col-auto" (click)="DeleteLoggedStepsActivities(item.step_tracking_num)">\n\n                <img style="width: 20px;" class="img-fluid" src="assets/img/remove.png" alt="remove">\n\n            </div>\n\n        </div>\n\n\n\n        <div class="mt-4 pb-2 text-center">\n\n            <div class="primary-color font-family-Conv_Gotham-Medium font-size-25">{{TotalSteps}}</div>\n\n            <div class="font-family-Conv_gotham-book-webfont font-size-17">Total Steps</div>\n\n        </div>\n\n    </div>\n\n    <div class="ml-3 mr-3 mb-3">\n\n        <button (click)="NextScreen(\'StepChallengeHistoryPage\')" type="button"\n\n            class="custom-btn text-uppercase custom-btn-primary w-100 font-weight-bold font-size-17 py-2 px-2">\n\n            My Challenges</button>\n\n    </div>\n\n</ion-content>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\log-steps\logsteps.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["PickerController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["e" /* StepChallengeService */]])
+    ], LogStepsPage);
+    return LogStepsPage;
+}());
+
+//# sourceMappingURL=logsteps.js.map
+
+/***/ }),
+
+/***/ 290:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogStepsPageModule", function() { return LogStepsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logsteps__ = __webpack_require__(289);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var LogStepsPageModule = /** @class */ (function () {
+    function LogStepsPageModule() {
+    }
+    LogStepsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__logsteps__["a" /* LogStepsPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__logsteps__["a" /* LogStepsPage */]),
+            ],
+        })
+    ], LogStepsPageModule);
+    return LogStepsPageModule;
+}());
+
+//# sourceMappingURL=logsteps.module.js.map
+
+/***/ }),
+
+/***/ 291:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StepDashboardPageModule", function() { return StepDashboardPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step_dashboard__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng_circle_progress__ = __webpack_require__(548);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+// Import ng-circle-progress
+
+var StepDashboardPageModule = /** @class */ (function () {
+    function StepDashboardPageModule() {
+    }
+    StepDashboardPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__step_dashboard__["a" /* StepDashboardPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_3_ng_circle_progress__["a" /* NgCircleProgressModule */].forRoot({
+                    // "radius": 60,
+                    "space": -15,
+                    "outerStrokeGradient": true,
+                    "outerStrokeWidth": 15,
+                    "outerStrokeColor": "#4882c2",
+                    "outerStrokeGradientStopColor": "#53a9ff",
+                    "innerStrokeColor": "#e7e8ea",
+                    "innerStrokeWidth": 15,
+                    "animateTitle": false,
+                    "animationDuration": 1000,
+                    "showUnits": false,
+                    "showBackground": false,
+                    "clockwise": false,
+                    "startFromZero": false,
+                    "backgroundPadding": -40,
+                    "subtitleColor": "#35b2ee",
+                    "backgroundStrokeWidth": 0
+                }),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__step_dashboard__["a" /* StepDashboardPage */]),
+            ],
+        })
+    ], StepDashboardPageModule);
+    return StepDashboardPageModule;
+}());
+
+//# sourceMappingURL=step-dashboard.module.js.map
+
+/***/ }),
+
+/***/ 292:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StepChallengeHistoryPageModule", function() { return StepChallengeHistoryPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__stepchallengehistory__ = __webpack_require__(549);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var StepChallengeHistoryPageModule = /** @class */ (function () {
+    function StepChallengeHistoryPageModule() {
+    }
+    StepChallengeHistoryPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__stepchallengehistory__["a" /* StepChallengeHistoryPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__stepchallengehistory__["a" /* StepChallengeHistoryPage */]),
+            ],
+        })
+    ], StepChallengeHistoryPageModule);
+    return StepChallengeHistoryPageModule;
+}());
+
+//# sourceMappingURL=stepchallengehistory.module.js.map
+
+/***/ }),
+
+/***/ 293:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TemplatePageModule", function() { return TemplatePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__template__ = __webpack_require__(93);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var TemplatePageModule = /** @class */ (function () {
+    function TemplatePageModule() {
+    }
+    TemplatePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__template__["a" /* TemplatePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__template__["a" /* TemplatePage */])
+            ],
+            providers: []
+        })
+    ], TemplatePageModule);
+    return TemplatePageModule;
+}());
+
+//# sourceMappingURL=template.module.js.map
+
+/***/ }),
+
+/***/ 294:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WelcomePageModule", function() { return WelcomePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__welcome__ = __webpack_require__(295);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var WelcomePageModule = /** @class */ (function () {
+    function WelcomePageModule() {
+    }
+    WelcomePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__welcome__["a" /* WelcomePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_3__welcome__["a" /* WelcomePage */]),
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_3__welcome__["a" /* WelcomePage */]
+            ]
+        })
+    ], WelcomePageModule);
+    return WelcomePageModule;
+}());
+
+//# sourceMappingURL=welcome.module.js.map
+
+/***/ }),
+
+/***/ 295:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signup_signup__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__my_wellness_wallet_my_wellness_wallet__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_settings_alertmessage_service__ = __webpack_require__(149);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * The Welcome Page is a splash page that quickly describes the app,
+ * and then directs the user to create an account or log in.
+ * If you'd like to immediately put the user onto a login/signup page,
+ * we recommend not using the Welcome page.
+ */
+var WelcomePage = /** @class */ (function () {
+    function WelcomePage(navCtrl, toastCtrl, events, menu, alertSrv) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.toastCtrl = toastCtrl;
+        this.events = events;
+        this.menu = menu;
+        this.alertSrv = alertSrv;
+        this.loader = this.alertSrv.LoadingMsg("Loading...");
+        this.loader.present().then(function () {
+            if (localStorage.getItem("UserInfo") !== undefined &&
+                localStorage.getItem("UserInfo") !== null) {
+                var userInfo = JSON.parse(localStorage.getItem("UserInfo"));
+                _this.menu.enable(true);
+                console.log(userInfo);
+                _this.events.publish("user:created", userInfo);
+                setTimeout(function () {
+                    _this.loader.dismiss();
+                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__my_wellness_wallet_my_wellness_wallet__["a" /* MyWellnessWalletPage */]);
+                }, 1000);
+            }
+            else {
+                _this.menu.enable(false);
+                _this.loader.dismiss();
+            }
+        });
+    }
+    WelcomePage.prototype.ionViewDidLoad = function () { };
+    WelcomePage.prototype.login = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
+    };
+    WelcomePage.prototype.signup = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__signup_signup__["a" /* SignupPage */]);
+    };
+    WelcomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-welcome",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\welcome\welcome.html"*/'<ion-content scroll="false">\n  <div class="splash-bg"></div>\n    <div padding class="button-info">\n    <button ion-button block (click)="signup()" class="signup">SIGNUP</button>\n    <button ion-button block (click)="login()" class="login">LOGIN</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\welcome\welcome.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ToastController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"],
+            __WEBPACK_IMPORTED_MODULE_5__providers_settings_alertmessage_service__["a" /* AlertMessagesService */]])
+    ], WelcomePage);
+    return WelcomePage;
+}());
+
+//# sourceMappingURL=welcome.js.map
+
+/***/ }),
+
+/***/ 336:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FcmService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_firebase__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+var FcmService = /** @class */ (function () {
+    function FcmService(firebase, afs, platform) {
+        this.firebase = firebase;
+        this.afs = afs;
+        this.platform = platform;
+    }
+    FcmService.prototype.deleteToken = function () {
+        this.firebase.unregister();
+    };
+    FcmService.prototype.getToken = function (userId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var token, deviceType;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!this.platform.is("android")) return [3 /*break*/, 2];
+                        deviceType = "android";
+                        return [4 /*yield*/, this.firebase.getToken()];
+                    case 1:
+                        token = _a.sent();
+                        _a.label = 2;
+                    case 2:
+                        if (!this.platform.is("ios")) return [3 /*break*/, 5];
+                        deviceType = "ios";
+                        return [4 /*yield*/, this.firebase.getToken()];
+                    case 3:
+                        token = _a.sent();
+                        //alert(token);
+                        return [4 /*yield*/, this.firebase.grantPermission()];
+                    case 4:
+                        //alert(token);
+                        _a.sent();
+                        _a.label = 5;
+                    case 5:
+                        localStorage.setItem("FCMToken", token);
+                        localStorage.setItem("DeviceType", deviceType);
+                        this.saveToken(token, userId);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    FcmService.prototype.saveToken = function (token, userId) {
+        if (!token)
+            return;
+        var devicesRef = this.afs.collection("devices");
+        var data = {
+            token: token,
+            userId: userId
+        };
+        return devicesRef.doc(token).set(data);
+    };
+    FcmService.prototype.onNotifications = function () {
+        return this.firebase.onNotificationOpen();
+    };
+    FcmService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_native_firebase__["a" /* Firebase */],
+            __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__["AngularFirestore"],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["Platform"]])
+    ], FcmService);
+    return FcmService;
+}());
+
+//# sourceMappingURL=fcm.service.js.map
+
+/***/ }),
+
+/***/ 344:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(469);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 44:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WellnessConstants; });
+var WellnessConstants = /** @class */ (function () {
+    function WellnessConstants() {
+    }
+    Object.defineProperty(WellnessConstants, "Prod_url", {
+        get: function () {
+            return "https://www.meschinowellness.com/";
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(WellnessConstants, "Demo_url", {
+        get: function () {
+            return "http://demo-meschinowellness.azurewebsites.net/";
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(WellnessConstants, "Staging_url", {
+        get: function () {
+            return "http://stage-meschinowellness.azurewebsites.net/";
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(WellnessConstants, "App_Url", {
+        get: function () {
+            return "https://www.meschinowellness.com/";
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(WellnessConstants, "weightData", {
+        get: function () {
+            return [
+                { description: "140" },
+                { description: "141" },
+                { description: "142" },
+                { description: "143" },
+                { description: "144" },
+                { description: "145" },
+                { description: "146" },
+                { description: "147" },
+                { description: "148" },
+                { description: "149" },
+                { description: "150" },
+                { description: "151" },
+                { description: "152" },
+                { description: "153" },
+                { description: "154" },
+                { description: "155" },
+                { description: "156" },
+                { description: "157" },
+                { description: "158" },
+                { description: "159" }
+            ];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(WellnessConstants, "waistData", {
+        get: function () {
+            return [
+                { description: "28" },
+                { description: "30" },
+                { description: "32" },
+                { description: "34" },
+                { description: "36" },
+                { description: "38" },
+                { description: "40" },
+                { description: "42" },
+                { description: "44" },
+                { description: "46" },
+                { description: "48" },
+                { description: "50" },
+                { description: "52" },
+                { description: "54" },
+                { description: "56" },
+                { description: "58" },
+                { description: "60" },
+                { description: "62" },
+                { description: "64" },
+                { description: "66" },
+                { description: "68" },
+                { description: "70" }
+            ];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(WellnessConstants, "parentColumns", {
+        get: function () {
+            return [
+                {
+                    name: "unit",
+                    options: [
+                        { text: "Feet/ Inches", value: "feet" },
+                        { text: "CMS", value: "cm" }
+                    ]
+                },
+                {
+                    name: "Value",
+                    parentCol: "unit",
+                    options: [
+                        { text: "  1", value: "1", parentVal: "feet" },
+                        { text: "  2", value: "2", parentVal: "feet" },
+                        { text: "  3", value: "3", parentVal: "feet" },
+                        { text: "  4", value: "4", parentVal: "feet" },
+                        { text: "  5", value: "5", parentVal: "feet" },
+                        { text: "  6", value: "6", parentVal: "feet" },
+                        { text: "  7", value: "7", parentVal: "feet" },
+                        //{ text: "  8", value: "8", parentVal: "feet" },
+                        { text: " 30", value: "30", parentVal: "cm" },
+                        { text: " 31", value: "31", parentVal: "cm" },
+                        { text: " 32", value: "32", parentVal: "cm" },
+                        { text: " 33", value: "33", parentVal: "cm" },
+                        { text: " 34", value: "34", parentVal: "cm" },
+                        { text: " 35", value: "35", parentVal: "cm" },
+                        { text: " 36", value: "36", parentVal: "cm" },
+                        { text: " 37", value: "37", parentVal: "cm" },
+                        { text: " 38", value: "38", parentVal: "cm" },
+                        { text: " 39", value: "39", parentVal: "cm" },
+                        { text: " 40", value: "40", parentVal: "cm" },
+                        { text: " 41", value: "41", parentVal: "cm" },
+                        { text: " 42", value: "42", parentVal: "cm" },
+                        { text: " 43", value: "43", parentVal: "cm" },
+                        { text: " 44", value: "44", parentVal: "cm" },
+                        { text: " 45", value: "45", parentVal: "cm" },
+                        { text: " 46", value: "46", parentVal: "cm" },
+                        { text: " 47", value: "47", parentVal: "cm" },
+                        { text: " 48", value: "48", parentVal: "cm" },
+                        { text: " 49", value: "49", parentVal: "cm" },
+                        { text: " 50", value: "50", parentVal: "cm" },
+                        { text: " 51", value: "51", parentVal: "cm" },
+                        { text: " 52", value: "52", parentVal: "cm" },
+                        { text: " 53", value: "53", parentVal: "cm" },
+                        { text: " 54", value: "54", parentVal: "cm" },
+                        { text: " 55", value: "55", parentVal: "cm" },
+                        { text: " 56", value: "56", parentVal: "cm" },
+                        { text: " 57", value: "57", parentVal: "cm" },
+                        { text: " 58", value: "58", parentVal: "cm" },
+                        { text: " 59", value: "59", parentVal: "cm" },
+                        { text: " 60", value: "60", parentVal: "cm" },
+                        { text: " 61", value: "61", parentVal: "cm" },
+                        { text: " 62", value: "62", parentVal: "cm" },
+                        { text: " 63", value: "63", parentVal: "cm" },
+                        { text: " 64", value: "64", parentVal: "cm" },
+                        { text: " 65", value: "65", parentVal: "cm" },
+                        { text: " 66", value: "66", parentVal: "cm" },
+                        { text: " 67", value: "67", parentVal: "cm" },
+                        { text: " 68", value: "68", parentVal: "cm" },
+                        { text: " 69", value: "69", parentVal: "cm" },
+                        { text: " 70", value: "70", parentVal: "cm" },
+                        { text: " 71", value: "71", parentVal: "cm" },
+                        { text: " 72", value: "72", parentVal: "cm" },
+                        { text: " 73", value: "73", parentVal: "cm" },
+                        { text: " 74", value: "74", parentVal: "cm" },
+                        { text: " 75", value: "75", parentVal: "cm" },
+                        { text: " 76", value: "76", parentVal: "cm" },
+                        { text: " 77", value: "77", parentVal: "cm" },
+                        { text: " 78", value: "78", parentVal: "cm" },
+                        { text: " 79", value: "79", parentVal: "cm" },
+                        { text: " 80", value: "80", parentVal: "cm" },
+                        { text: " 81", value: "81", parentVal: "cm" },
+                        { text: " 82", value: "82", parentVal: "cm" },
+                        { text: " 83", value: "83", parentVal: "cm" },
+                        { text: " 84", value: "84", parentVal: "cm" },
+                        { text: " 85", value: "85", parentVal: "cm" },
+                        { text: " 86", value: "86", parentVal: "cm" },
+                        { text: " 87", value: "87", parentVal: "cm" },
+                        { text: " 88", value: "88", parentVal: "cm" },
+                        { text: " 89", value: "89", parentVal: "cm" },
+                        { text: " 90", value: "90", parentVal: "cm" },
+                        { text: " 91", value: "91", parentVal: "cm" },
+                        { text: " 92", value: "92", parentVal: "cm" },
+                        { text: " 93", value: "93", parentVal: "cm" },
+                        { text: " 94", value: "94", parentVal: "cm" },
+                        { text: " 95", value: "95", parentVal: "cm" },
+                        { text: " 96", value: "96", parentVal: "cm" },
+                        { text: " 97", value: "97", parentVal: "cm" },
+                        { text: " 98", value: "98", parentVal: "cm" },
+                        { text: " 99", value: "99", parentVal: "cm" },
+                        { text: " 100", value: "100", parentVal: "cm" },
+                        { text: " 101", value: "101", parentVal: "cm" },
+                        { text: " 102", value: "102", parentVal: "cm" },
+                        { text: " 103", value: "103", parentVal: "cm" },
+                        { text: " 104", value: "104", parentVal: "cm" },
+                        { text: " 105", value: "105", parentVal: "cm" },
+                        { text: " 106", value: "106", parentVal: "cm" },
+                        { text: " 107", value: "107", parentVal: "cm" },
+                        { text: " 108", value: "108", parentVal: "cm" },
+                        { text: " 109", value: "109", parentVal: "cm" },
+                        { text: " 110", value: "110", parentVal: "cm" },
+                        { text: " 111", value: "111", parentVal: "cm" },
+                        { text: " 112", value: "112", parentVal: "cm" },
+                        { text: " 113", value: "113", parentVal: "cm" },
+                        { text: " 114", value: "114", parentVal: "cm" },
+                        { text: " 115", value: "115", parentVal: "cm" },
+                        { text: " 116", value: "116", parentVal: "cm" },
+                        { text: " 117", value: "117", parentVal: "cm" },
+                        { text: " 118", value: "118", parentVal: "cm" },
+                        { text: " 119", value: "119", parentVal: "cm" },
+                        { text: " 120", value: "120", parentVal: "cm" },
+                        { text: " 121", value: "121", parentVal: "cm" },
+                        { text: " 122", value: "122", parentVal: "cm" },
+                        { text: " 123", value: "123", parentVal: "cm" },
+                        { text: " 124", value: "124", parentVal: "cm" },
+                        { text: " 125", value: "125", parentVal: "cm" },
+                        { text: " 126", value: "126", parentVal: "cm" },
+                        { text: " 127", value: "127", parentVal: "cm" },
+                        { text: " 128", value: "128", parentVal: "cm" },
+                        { text: " 129", value: "129", parentVal: "cm" },
+                        { text: " 130", value: "130", parentVal: "cm" },
+                        { text: " 131", value: "131", parentVal: "cm" },
+                        { text: " 132", value: "132", parentVal: "cm" },
+                        { text: " 133", value: "133", parentVal: "cm" },
+                        { text: " 134", value: "134", parentVal: "cm" },
+                        { text: " 135", value: "135", parentVal: "cm" },
+                        { text: " 136", value: "136", parentVal: "cm" },
+                        { text: " 137", value: "137", parentVal: "cm" },
+                        { text: " 138", value: "138", parentVal: "cm" },
+                        { text: " 139", value: "139", parentVal: "cm" },
+                        { text: " 140", value: "140", parentVal: "cm" },
+                        { text: " 141", value: "141", parentVal: "cm" },
+                        { text: " 142", value: "142", parentVal: "cm" },
+                        { text: " 143", value: "143", parentVal: "cm" },
+                        { text: " 144", value: "144", parentVal: "cm" },
+                        { text: " 145", value: "145", parentVal: "cm" },
+                        { text: " 146", value: "146", parentVal: "cm" },
+                        { text: " 147", value: "147", parentVal: "cm" },
+                        { text: " 148", value: "148", parentVal: "cm" },
+                        { text: " 149", value: "149", parentVal: "cm" },
+                        { text: " 150", value: "150", parentVal: "cm" },
+                        { text: " 151", value: "151", parentVal: "cm" },
+                        { text: " 152", value: "152", parentVal: "cm" },
+                        { text: " 153", value: "153", parentVal: "cm" },
+                        { text: " 154", value: "154", parentVal: "cm" },
+                        { text: " 155", value: "155", parentVal: "cm" },
+                        { text: " 156", value: "156", parentVal: "cm" },
+                        { text: " 157", value: "157", parentVal: "cm" },
+                        { text: " 158", value: "158", parentVal: "cm" },
+                        { text: " 159", value: "159", parentVal: "cm" },
+                        { text: " 160", value: "160", parentVal: "cm" },
+                        { text: " 161", value: "161", parentVal: "cm" },
+                        { text: " 162", value: "162", parentVal: "cm" },
+                        { text: " 163", value: "163", parentVal: "cm" },
+                        { text: " 164", value: "164", parentVal: "cm" },
+                        { text: " 165", value: "165", parentVal: "cm" },
+                        { text: " 166", value: "166", parentVal: "cm" },
+                        { text: " 167", value: "167", parentVal: "cm" },
+                        { text: " 168", value: "168", parentVal: "cm" },
+                        { text: " 169", value: "169", parentVal: "cm" },
+                        { text: " 170", value: "170", parentVal: "cm" },
+                        { text: " 171", value: "171", parentVal: "cm" },
+                        { text: " 172", value: "172", parentVal: "cm" },
+                        { text: " 173", value: "173", parentVal: "cm" },
+                        { text: " 174", value: "174", parentVal: "cm" },
+                        { text: " 175", value: "175", parentVal: "cm" },
+                        { text: " 176", value: "176", parentVal: "cm" },
+                        { text: " 177", value: "177", parentVal: "cm" },
+                        { text: " 178", value: "178", parentVal: "cm" },
+                        { text: " 179", value: "179", parentVal: "cm" },
+                        { text: " 180", value: "180", parentVal: "cm" },
+                        { text: " 181", value: "181", parentVal: "cm" },
+                        { text: " 182", value: "182", parentVal: "cm" },
+                        { text: " 183", value: "183", parentVal: "cm" },
+                        { text: " 184", value: "184", parentVal: "cm" },
+                        { text: " 185", value: "185", parentVal: "cm" },
+                        { text: " 186", value: "186", parentVal: "cm" },
+                        { text: " 187", value: "187", parentVal: "cm" },
+                        { text: " 188", value: "188", parentVal: "cm" },
+                        { text: " 189", value: "189", parentVal: "cm" },
+                        { text: " 190", value: "190", parentVal: "cm" },
+                        { text: " 191", value: "191", parentVal: "cm" },
+                        { text: " 192", value: "192", parentVal: "cm" },
+                        { text: " 193", value: "193", parentVal: "cm" },
+                        { text: " 194", value: "194", parentVal: "cm" },
+                        { text: " 195", value: "195", parentVal: "cm" },
+                        { text: " 196", value: "196", parentVal: "cm" },
+                        { text: " 197", value: "197", parentVal: "cm" },
+                        { text: " 198", value: "198", parentVal: "cm" },
+                        { text: " 199", value: "199", parentVal: "cm" },
+                        { text: " 200", value: "200", parentVal: "cm" },
+                        { text: " 201", value: "201", parentVal: "cm" },
+                        { text: " 202", value: "202", parentVal: "cm" },
+                        { text: " 203", value: "203", parentVal: "cm" },
+                        { text: " 204", value: "204", parentVal: "cm" },
+                        { text: " 205", value: "205", parentVal: "cm" },
+                        { text: " 206", value: "206", parentVal: "cm" },
+                        { text: " 207", value: "207", parentVal: "cm" },
+                        { text: " 208", value: "208", parentVal: "cm" },
+                        { text: " 209", value: "209", parentVal: "cm" },
+                        { text: " 210", value: "210", parentVal: "cm" },
+                        { text: " 211", value: "211", parentVal: "cm" },
+                        { text: " 212", value: "212", parentVal: "cm" },
+                        { text: " 213", value: "213", parentVal: "cm" },
+                        { text: " 214", value: "214", parentVal: "cm" },
+                        { text: " 215", value: "215", parentVal: "cm" },
+                        { text: " 216", value: "216", parentVal: "cm" },
+                        { text: " 217", value: "217", parentVal: "cm" },
+                        { text: " 218", value: "218", parentVal: "cm" },
+                        { text: " 219", value: "219", parentVal: "cm" },
+                        { text: " 220", value: "220", parentVal: "cm" },
+                        { text: " 221", value: "221", parentVal: "cm" },
+                        { text: " 222", value: "222", parentVal: "cm" },
+                        { text: " 223", value: "223", parentVal: "cm" },
+                        { text: " 224", value: "224", parentVal: "cm" },
+                        { text: " 225", value: "225", parentVal: "cm" },
+                        { text: " 226", value: "226", parentVal: "cm" },
+                        { text: " 227", value: "227", parentVal: "cm" },
+                        { text: " 228", value: "228", parentVal: "cm" },
+                        { text: " 229", value: "229", parentVal: "cm" },
+                        { text: " 230", value: "230", parentVal: "cm" },
+                        { text: " 231", value: "231", parentVal: "cm" },
+                        { text: " 232", value: "232", parentVal: "cm" },
+                        { text: " 233", value: "233", parentVal: "cm" },
+                        { text: " 234", value: "234", parentVal: "cm" },
+                        { text: " 235", value: "235", parentVal: "cm" },
+                        { text: " 236", value: "236", parentVal: "cm" },
+                        { text: " 237", value: "237", parentVal: "cm" },
+                        { text: " 238", value: "238", parentVal: "cm" },
+                        { text: " 239", value: "239", parentVal: "cm" },
+                        { text: " 240", value: "240", parentVal: "cm" },
+                        { text: " 241", value: "241", parentVal: "cm" },
+                        { text: " 242", value: "242", parentVal: "cm" },
+                        { text: " 243", value: "243", parentVal: "cm" }
+                    ]
+                },
+                {
+                    name: "inches",
+                    parentCol: "Value",
+                    options: [
+                        { text: "0", value: "0", parentVal: "1" },
+                        { text: "1", value: "1", parentVal: "1" },
+                        { text: "2", value: "2", parentVal: "1" },
+                        { text: "3", value: "3", parentVal: "1" },
+                        { text: "4", value: "4", parentVal: "1" },
+                        { text: "5", value: "5", parentVal: "1" },
+                        { text: "6", value: "6", parentVal: "1" },
+                        { text: "7", value: "7", parentVal: "1" },
+                        { text: "8", value: "8", parentVal: "1" },
+                        { text: "9", value: "9", parentVal: "1" },
+                        { text: "10", value: "10", parentVal: "1" },
+                        { text: "11", value: "11", parentVal: "1" },
+                        { text: "12", value: "12", parentVal: "1" },
+                        { text: "0", value: "0", parentVal: "2" },
+                        { text: "1", value: "1", parentVal: "2" },
+                        { text: "2", value: "2", parentVal: "2" },
+                        { text: "3", value: "3", parentVal: "2" },
+                        { text: "4", value: "4", parentVal: "2" },
+                        { text: "5", value: "5", parentVal: "2" },
+                        { text: "6", value: "6", parentVal: "2" },
+                        { text: "7", value: "7", parentVal: "2" },
+                        { text: "8", value: "8", parentVal: "2" },
+                        { text: "9", value: "9", parentVal: "2" },
+                        { text: "10", value: "10", parentVal: "2" },
+                        { text: "11", value: "11", parentVal: "2" },
+                        { text: "12", value: "12", parentVal: "2" },
+                        { text: "0", value: "0", parentVal: "3" },
+                        { text: "1", value: "1", parentVal: "3" },
+                        { text: "2", value: "2", parentVal: "3" },
+                        { text: "3", value: "3", parentVal: "3" },
+                        { text: "4", value: "4", parentVal: "3" },
+                        { text: "5", value: "5", parentVal: "3" },
+                        { text: "6", value: "6", parentVal: "3" },
+                        { text: "7", value: "7", parentVal: "3" },
+                        { text: "8", value: "8", parentVal: "3" },
+                        { text: "9", value: "9", parentVal: "3" },
+                        { text: "10", value: "10", parentVal: "3" },
+                        { text: "11", value: "11", parentVal: "3" },
+                        { text: "12", value: "12", parentVal: "3" },
+                        { text: "0", value: "0", parentVal: "4" },
+                        { text: "1", value: "1", parentVal: "4" },
+                        { text: "2", value: "2", parentVal: "4" },
+                        { text: "3", value: "3", parentVal: "4" },
+                        { text: "4", value: "4", parentVal: "4" },
+                        { text: "5", value: "5", parentVal: "4" },
+                        { text: "6", value: "6", parentVal: "4" },
+                        { text: "7", value: "7", parentVal: "4" },
+                        { text: "8", value: "8", parentVal: "4" },
+                        { text: "9", value: "9", parentVal: "4" },
+                        { text: "10", value: "10", parentVal: "4" },
+                        { text: "11", value: "11", parentVal: "4" },
+                        { text: "12", value: "12", parentVal: "4" },
+                        { text: "0", value: "0", parentVal: "5" },
+                        { text: "1", value: "1", parentVal: "5" },
+                        { text: "2", value: "2", parentVal: "5" },
+                        { text: "3", value: "3", parentVal: "5" },
+                        { text: "4", value: "4", parentVal: "5" },
+                        { text: "5", value: "5", parentVal: "5" },
+                        { text: "6", value: "6", parentVal: "5" },
+                        { text: "7", value: "7", parentVal: "5" },
+                        { text: "8", value: "8", parentVal: "5" },
+                        { text: "9", value: "9", parentVal: "5" },
+                        { text: "10", value: "10", parentVal: "5" },
+                        { text: "11", value: "11", parentVal: "5" },
+                        { text: "12", value: "12", parentVal: "5" },
+                        { text: "0", value: "0", parentVal: "6" },
+                        { text: "1", value: "1", parentVal: "6" },
+                        { text: "2", value: "2", parentVal: "6" },
+                        { text: "3", value: "3", parentVal: "6" },
+                        { text: "4", value: "4", parentVal: "6" },
+                        { text: "5", value: "5", parentVal: "6" },
+                        { text: "6", value: "6", parentVal: "6" },
+                        { text: "7", value: "7", parentVal: "6" },
+                        { text: "8", value: "8", parentVal: "6" },
+                        { text: "9", value: "9", parentVal: "6" },
+                        { text: "10", value: "10", parentVal: "6" },
+                        { text: "11", value: "11", parentVal: "6" },
+                        { text: "12", value: "12", parentVal: "6" },
+                        { text: "0", value: "0", parentVal: "7" },
+                        { text: "1", value: "1", parentVal: "7" },
+                        { text: "2", value: "2", parentVal: "7" },
+                        { text: "3", value: "3", parentVal: "7" },
+                        { text: "4", value: "4", parentVal: "7" },
+                        { text: "5", value: "5", parentVal: "7" },
+                        { text: "6", value: "6", parentVal: "7" },
+                        { text: "7", value: "7", parentVal: "7" },
+                        { text: "8", value: "8", parentVal: "7" },
+                        { text: "9", value: "9", parentVal: "7" },
+                        { text: "10", value: "10", parentVal: "7" },
+                        { text: "11", value: "11", parentVal: "7" },
+                        { text: "12", value: "12", parentVal: "7" }
+                        /*
+                          // { text: "0", value: "0", parentVal: "8" },
+                          // { text: "1", value: "1", parentVal: "8" },
+                          // { text: "2", value: "2", parentVal: "8" },
+                          // { text: "3", value: "3", parentVal: "8" },
+                          // { text: "4", value: "4", parentVal: "8" },
+                          // { text: "5", value: "5", parentVal: "8" },
+                          // { text: "6", value: "6", parentVal: "8" },
+                          // { text: "7", value: "7", parentVal: "8" },
+                          // { text: "8", value: "8", parentVal: "8" },
+                          // { text: "9", value: "9", parentVal: "8" },
+                          // { text: "10", value: "10", parentVal: "8" },
+                          // { text: "11", value: "11", parentVal: "8" }
+                          // // { text: " 12", value: "12", parentVal: "8" },
+                
+                          { text: "0", value: "0", parentVal: "130" },
+                          { text: "0", value: "0", parentVal: "141" },
+                          { text: "0", value: "0", parentVal: "142" },
+                          { text: "0", value: "0", parentVal: "143" },
+                          { text: "0", value: "0", parentVal: "144" },
+                          { text: "0", value: "0", parentVal: "145" },
+                          { text: "0", value: "0", parentVal: "146" },
+                          { text: "0", value: "0", parentVal: "147" },
+                          { text: "0", value: "0", parentVal: "148" },
+                          { text: "0", value: "0", parentVal: "149" },
+                          { text: "0", value: "0", parentVal: "150" },
+                          { text: "0", value: "0", parentVal: "151" },
+                          { text: "0", value: "0", parentVal: "152" },
+                          { text: "0", value: "0", parentVal: "153" },
+                          { text: "0", value: "0", parentVal: "154" },
+                          { text: "0", value: "0", parentVal: "155" },
+                          { text: "0", value: "0", parentVal: "156" },
+                          { text: "0", value: "0", parentVal: "157" },
+                          { text: "0", value: "0", parentVal: "158" },
+                          { text: "0", value: "0", parentVal: "159" },
+                          { text: "0", value: "0", parentVal: "160" },
+                          { text: "0", value: "0", parentVal: "161" },
+                          { text: "0", value: "0", parentVal: "162" },
+                          { text: "0", value: "0", parentVal: "163" },
+                          { text: "0", value: "0", parentVal: "164" },
+                          { text: "0", value: "0", parentVal: "165" },
+                          { text: "0", value: "0", parentVal: "166" },
+                          { text: "0", value: "0", parentVal: "167" },
+                          { text: "0", value: "0", parentVal: "168" },
+                          { text: "0", value: "0", parentVal: "169" },
+                          { text: "0", value: "0", parentVal: "170" },
+                          { text: "0", value: "0", parentVal: "171" },
+                          { text: "0", value: "0", parentVal: "172" },
+                          { text: "0", value: "0", parentVal: "173" },
+                          { text: "0", value: "0", parentVal: "174" },
+                          { text: "0", value: "0", parentVal: "175" },
+                          { text: "0", value: "0", parentVal: "176" },
+                          { text: "0", value: "0", parentVal: "177" },
+                          { text: "0", value: "0", parentVal: "178" },
+                          { text: "0", value: "0", parentVal: "179" },
+                          { text: "0", value: "0", parentVal: "180" },
+                          { text: "0", value: "0", parentVal: "181" },
+                          { text: "0", value: "0", parentVal: "182" },
+                          { text: "0", value: "0", parentVal: "183" },
+                          { text: "0", value: "0", parentVal: "184" },
+                          { text: "0", value: "0", parentVal: "185" },
+                          { text: "0", value: "0", parentVal: "186" },
+                          { text: "0", value: "0", parentVal: "187" },
+                          { text: "0", value: "0", parentVal: "188" },
+                          { text: "0", value: "0", parentVal: "189" },
+                          { text: "0", value: "0", parentVal: "190" },
+                          { text: "0", value: "0", parentVal: "191" },
+                          { text: "0", value: "0", parentVal: "192" },
+                          { text: "0", value: "0", parentVal: "193" },
+                          { text: "0", value: "0", parentVal: "194" },
+                          { text: "0", value: "0", parentVal: "195" },
+                          { text: "0", value: "0", parentVal: "196" },
+                          { text: "0", value: "0", parentVal: "197" },
+                          { text: "0", value: "0", parentVal: "198" },
+                          { text: "0", value: "0", parentVal: "199" },
+                          { text: "0", value: "0", parentVal: "200" },
+                          { text: "0", value: "0", parentVal: "201" },
+                          { text: "0", value: "0", parentVal: "202" },
+                          { text: "0", value: "0", parentVal: "203" },
+                          { text: "0", value: "0", parentVal: "204" },
+                          { text: "0", value: "0", parentVal: "205" },
+                          { text: "0", value: "0", parentVal: "206" },
+                          { text: "0", value: "0", parentVal: "207" },
+                          { text: "0", value: "0", parentVal: "208" },
+                          { text: "0", value: "0", parentVal: "209" },
+                          { text: "0", value: "0", parentVal: "210" },
+                          { text: "0", value: "0", parentVal: "211" },
+                          { text: "0", value: "0", parentVal: "212" },
+                          { text: "0", value: "0", parentVal: "213" },
+                          { text: "0", value: "0", parentVal: "214" },
+                          { text: "0", value: "0", parentVal: "215" },
+                          { text: "0", value: "0", parentVal: "216" },
+                          { text: "0", value: "0", parentVal: "217" },
+                          { text: "0", value: "0", parentVal: "218" },
+                          { text: "0", value: "0", parentVal: "219" },
+                          { text: "0", value: "0", parentVal: "220" },
+                          { text: "0", value: "0", parentVal: "221" },
+                          { text: "0", value: "0", parentVal: "222" },
+                          { text: "0", value: "0", parentVal: "223" },
+                          { text: "0", value: "0", parentVal: "224" },
+                          { text: "0", value: "0", parentVal: "225" },
+                          { text: "0", value: "0", parentVal: "226" },
+                          { text: "0", value: "0", parentVal: "227" },
+                          { text: "0", value: "0", parentVal: "228" },
+                          { text: "0", value: "0", parentVal: "229" },
+                          { text: "0", value: "0", parentVal: "230" },
+                          { text: "0", value: "0", parentVal: "231" },
+                          { text: "0", value: "0", parentVal: "232" },
+                          { text: "0", value: "0", parentVal: "233" },
+                          { text: "0", value: "0", parentVal: "234" },
+                          { text: "0", value: "0", parentVal: "235" },
+                          { text: "0", value: "0", parentVal: "236" },
+                          { text: "0", value: "0", parentVal: "237" },
+                          { text: "0", value: "0", parentVal: "238" },
+                          { text: "0", value: "0", parentVal: "239" },
+                          { text: "0", value: "0", parentVal: "240" },
+                          { text: "0", value: "0", parentVal: "241" },
+                          { text: "0", value: "0", parentVal: "242" },
+                          { text: "0", value: "0", parentVal: "243" }*/
+                    ]
+                }
+            ];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    WellnessConstants.GetFormatedDate = function (value, fromCall) {
+        var curStartDate = new Date(value);
+        console.log(curStartDate, fromCall);
+        var months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+        var WeekDays = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ];
+        var retDate = WeekDays[curStartDate.getDay()] +
+            ", " +
+            months[curStartDate.getMonth()] +
+            " " +
+            curStartDate.getDate() +
+            ", " +
+            curStartDate.getFullYear(); //curDate.toDateString();
+        console.log(retDate, 'Return dates');
+        return retDate;
+    };
+    return WellnessConstants;
+}());
+
+//# sourceMappingURL=wellnessconstant.js.map
+
+/***/ }),
+
+/***/ 469:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export createTranslateLoader */
+/* unused harmony export provideSettings */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_wheel_selector__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ngx_translate_http_loader__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__mocks_providers_items__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__(567);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_unique_device_id__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_welcome_welcome_module__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_hra_body_hra_body_module__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_my_wellness_wallet_hra_qa_hra_qa_module__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_my_hra_my_hra_module__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_intro_intro_module__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_intro_video_intro_video_module__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_signup_signup_module__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_login_login_module__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_dashboard_dashboard_module__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_my_wellness_wallet_mywellnessplan_mywellnessplan_module__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_my_wellness_wallet_hra_result_hra_result_module__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_my_wellness_wallet_my_wellness_wallet_module__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_my_profile_profile_module__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_my_trackers_mytracker_module__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_my_wellness_wallet_riskdetail_riskdetail_module__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_camera__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_forgetpassword_forgetpassword_module__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_notification_notification_module__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_templates_template_module__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_notificationmsg_notimsg_module__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__angular_fire__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__angular_fire_firestore__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_settings_fcm_service__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__ionic_native_firebase__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_settings_alertmessage_service__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_step_challenges_step_dashboard_module__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_step_challenges_log_overview_logoverview_module__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_step_challenges_log_steps_logsteps_module__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__providers_steps_stepschallenge__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_step_challenges_addlogs_addlogs_module__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_step_challenges_stepchallengehistory_stepchallengehistory_module__ = __webpack_require__(292);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// The translate loader needs to know where to load i18n files
+// in Ionic's static asset pipeline.
+function createTranslateLoader(http) {
+    return new __WEBPACK_IMPORTED_MODULE_8__ngx_translate_http_loader__["a" /* TranslateHttpLoader */](http, './assets/i18n/', '.json');
+}
+// const config = {
+//   apiKey: "AIzaSyCm7w_4jwHl7PlmgUTYZrvw4FOFoZRVHhE",
+//   authDomain: "meschinowellness-ff60f.firebaseapp.com",
+//   databaseURL: "https://meschinowellness-ff60f.firebaseio.com",
+//   projectId: "meschinowellness-ff60f",
+//   storageBucket: "meschinowellness-ff60f.appspot.com",
+//   messagingSenderId: "511777519229",
+// };
+var config = {
+    apiKey: "AIzaSyCxxXSgvooUrArq-9boQWd1bOabjuLQTZQ",
+    authDomain: "meschinowellness-61e33.firebaseapp.com",
+    databaseURL: "https://meschinowellness-61e33.firebaseio.com",
+    projectId: "meschinowellness-61e33",
+    storageBucket: "meschinowellness-61e33.appspot.com",
+    messagingSenderId: "414018168893"
+};
+//  appId: "1:414018168893:web:11a33e2116c614a104a254",
+//   measurementId: "G-0HRV1R9WPD"
+function provideSettings(storage) {
+    /**
+     * The Settings provider takes a set of default settings for your app.
+     *
+     * You can add new settings options at any time. Once the settings are saved,
+     * these values will not overwrite the saved values (this can be done manually if desired).
+     */
+    return;
+    // return new Settings(storage, {
+    //   option1: true,
+    //   option2: 'Ionitron J. Framework',
+    //   option3: '3',
+    //   option4: 'Hello'
+    // });
+}
+var AppModule = /** @class */ (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* MyApp */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_10__angular_forms__["ReactiveFormsModule"],
+                __WEBPACK_IMPORTED_MODULE_19__pages_intro_intro_module__["IntroPageModule"],
+                __WEBPACK_IMPORTED_MODULE_20__pages_intro_video_intro_video_module__["IntroVideoPageModule"],
+                __WEBPACK_IMPORTED_MODULE_21__pages_signup_signup_module__["SignupPageModule"],
+                __WEBPACK_IMPORTED_MODULE_22__pages_login_login_module__["LoginPageModule"],
+                __WEBPACK_IMPORTED_MODULE_15__pages_welcome_welcome_module__["WelcomePageModule"],
+                __WEBPACK_IMPORTED_MODULE_16__pages_hra_body_hra_body_module__["HraBodyPageModule"],
+                __WEBPACK_IMPORTED_MODULE_17__pages_my_wellness_wallet_hra_qa_hra_qa_module__["HraQaPageModule"],
+                __WEBPACK_IMPORTED_MODULE_18__pages_my_hra_my_hra_module__["MyHraPageModule"],
+                __WEBPACK_IMPORTED_MODULE_25__pages_my_wellness_wallet_hra_result_hra_result_module__["HraResultPageModule"],
+                __WEBPACK_IMPORTED_MODULE_29__pages_my_wellness_wallet_riskdetail_riskdetail_module__["RiskDetailPageModule"],
+                __WEBPACK_IMPORTED_MODULE_23__pages_dashboard_dashboard_module__["DashboardPageModule"],
+                __WEBPACK_IMPORTED_MODULE_24__pages_my_wellness_wallet_mywellnessplan_mywellnessplan_module__["MyWellnessPlanPageModule"],
+                __WEBPACK_IMPORTED_MODULE_26__pages_my_wellness_wallet_my_wellness_wallet_module__["MyWellnessWalletPageModule"],
+                __WEBPACK_IMPORTED_MODULE_44__pages_step_challenges_addlogs_addlogs_module__["AddlogsModule"],
+                __WEBPACK_IMPORTED_MODULE_41__pages_step_challenges_log_overview_logoverview_module__["LogOtherActivitiesPageModule"],
+                __WEBPACK_IMPORTED_MODULE_42__pages_step_challenges_log_steps_logsteps_module__["LogStepsPageModule"],
+                __WEBPACK_IMPORTED_MODULE_45__pages_step_challenges_stepchallengehistory_stepchallengehistory_module__["StepChallengeHistoryPageModule"],
+                __WEBPACK_IMPORTED_MODULE_40__pages_step_challenges_step_dashboard_module__["StepDashboardPageModule"],
+                __WEBPACK_IMPORTED_MODULE_27__pages_my_profile_profile_module__["ProfilePageModule"],
+                __WEBPACK_IMPORTED_MODULE_28__pages_my_trackers_mytracker_module__["MyTrackerPageModule"],
+                __WEBPACK_IMPORTED_MODULE_31__pages_forgetpassword_forgetpassword_module__["ForgetPageModule"],
+                __WEBPACK_IMPORTED_MODULE_32__pages_notification_notification_module__["NotificationPageModule"],
+                __WEBPACK_IMPORTED_MODULE_34__pages_notificationmsg_notimsg_module__["NotificationMsgPageModule"],
+                __WEBPACK_IMPORTED_MODULE_33__pages_templates_template_module__["TemplatePageModule"],
+                __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__["b" /* TranslateModule */].forRoot({
+                    loader: {
+                        provide: __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__["a" /* TranslateLoader */],
+                        useFactory: (createTranslateLoader),
+                        deps: [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]]
+                    }
+                }),
+                __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["IonicModule"].forRoot(__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* MyApp */], {
+                    mode: "md"
+                }, {
+                    links: [
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/forgetpassword/forgetpassword.module#ForgetPageModule', name: 'ForgetPasswordPage', segment: 'forgetpassword', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/hra-body/hra-body.module#HraBodyPageModule', name: 'HraBodyPage', segment: 'hra-body', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/intro-video/intro-video.module#IntroVideoPageModule', name: 'IntroVideoPage', segment: 'intro-video', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/my-hra/my-hra.module#MyHraPageModule', name: 'MyHraPage', segment: 'my-hra', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/my-trackers/mytracker.module#MyTrackerPageModule', name: 'MyTrackerPage', segment: 'mytracker', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/my-profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/my-wellness-wallet/hra-qa/hra-qa.module#HraQaPageModule', name: 'HraQaPage', segment: 'hra-qa', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/my-wellness-wallet/hra-result/hra-result.module#HraResultPageModule', name: 'MyHraResultPage', segment: 'hra-result', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/my-wellness-wallet/my-wellness-wallet.module#MyWellnessWalletPageModule', name: 'MyWellnessWalletPage', segment: 'my-wellness-wallet', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/my-wellness-wallet/mywellnessplan/mywellnessplan.module#MyWellnessPlanPageModule', name: 'MyWellnessPlanPage', segment: 'mywellnessplan', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/my-wellness-wallet/riskdetail/riskdetail.module#RiskDetailPageModule', name: 'RiskDetailPage', segment: 'riskdetail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/notificationmsg/notimsg.module#NotificationMsgPageModule', name: 'NotificationMsgPage', segment: 'notimsg', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/notification/notification.module#NotificationPageModule', name: 'NotificationPage', segment: 'notification', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/step-challenges/addlogs/addlogs.module#AddlogsModule', name: 'AddlogsPage', segment: 'addlogs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/step-challenges/log-overview/logoverview.module#LogOtherActivitiesPageModule', name: 'LogOverviewPage', segment: 'logoverview', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/step-challenges/log-steps/logsteps.module#LogStepsPageModule', name: 'LogStepsPage', segment: 'logsteps', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/step-challenges/step-dashboard.module#StepDashboardPageModule', name: 'StepDashboardPage', segment: 'step-dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/step-challenges/stepchallengehistory/stepchallengehistory.module#StepChallengeHistoryPageModule', name: 'StepChallengeHistoryPage', segment: 'stepchallengehistory', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/templates/template.module#TemplatePageModule', name: 'TemplatePage', segment: 'template', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
+                    ]
+                }),
+                __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_35__angular_fire__["a" /* AngularFireModule */].initializeApp(config),
+                __WEBPACK_IMPORTED_MODULE_36__angular_fire_firestore__["AngularFirestoreModule"]
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_9_ionic_angular__["IonicApp"]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* MyApp */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_12__providers__["a" /* Api */],
+                __WEBPACK_IMPORTED_MODULE_11__mocks_providers_items__["a" /* Items */],
+                __WEBPACK_IMPORTED_MODULE_12__providers__["b" /* HraService */],
+                __WEBPACK_IMPORTED_MODULE_12__providers__["c" /* NotificationService */],
+                __WEBPACK_IMPORTED_MODULE_12__providers__["f" /* UserService */],
+                __WEBPACK_IMPORTED_MODULE_43__providers_steps_stepschallenge__["a" /* StepChallengeService */],
+                __WEBPACK_IMPORTED_MODULE_30__ionic_native_camera__["a" /* Camera */],
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_5__ionic_native_wheel_selector__["a" /* WheelSelector */],
+                __WEBPACK_IMPORTED_MODULE_38__ionic_native_firebase__["a" /* Firebase */],
+                __WEBPACK_IMPORTED_MODULE_37__providers_settings_fcm_service__["a" /* FcmService */],
+                __WEBPACK_IMPORTED_MODULE_39__providers_settings_alertmessage_service__["a" /* AlertMessagesService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_12__providers__["d" /* Settings */], useFactory: provideSettings, deps: [__WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]] },
+                // Keep this to enable Ionic's runtime error handling during development
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["IonicErrorHandler"] },
+                __WEBPACK_IMPORTED_MODULE_14__ionic_native_unique_device_id__["a" /* UniqueDeviceID */],
+                __WEBPACK_IMPORTED_MODULE_10__angular_forms__["NgForm"]
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 531:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the DashboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DashboardPage = /** @class */ (function () {
+    function DashboardPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.account = {
+            FirstName: "",
+            LastName: ""
+        };
+        this.account.FirstName = localStorage.getItem("FirstName");
+        this.account.LastName = localStorage.getItem("LastName");
+    }
+    DashboardPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad DashboardPage");
+    };
+    DashboardPage.prototype.gotoUrl = function (navurl) {
+        this.navCtrl.setRoot(navurl);
+    };
+    DashboardPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-dashboard",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\dashboard\dashboard.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <button ion-button menuToggle icon-only>\n      <ion-icon name=\'menu\'></ion-icon>\n    </button>\n    <ion-title>Dashboard</ion-title>\n    <ion-buttons end>\n      <button id="notification-button" ion-button icon-only>\n         <ion-icon name="notifications">\n          <ion-badge id="notifications-badge" color="danger">7</ion-badge> \n        </ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n\n  <ion-card>\n    <ion-card-content>\n      <ion-item>\n       <a (click)="gotoUrl(\'MyWellnessPlanPage\')"> My Health Risk</a>\n      </ion-item>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n<ion-footer>\n\n</ion-footer>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\dashboard\dashboard.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"]])
+    ], DashboardPage);
+    return DashboardPage;
+}());
+
+//# sourceMappingURL=dashboard.js.map
+
+/***/ }),
+
+/***/ 533:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Item; });
+/**
+ * A generic model that our Master-Detail pages list, create, and delete.
+ *
+ * Change "Item" to the noun your app will use. For example, a "Contact," or a
+ * "Customer," or an "Animal," or something like that.
+ *
+ * The Items service manages creating instances of Item, so go ahead and rename
+ * that something that fits your app as well.
+ */
+var Item = /** @class */ (function () {
+    function Item(fields) {
+        // Quick and dirty extend/assign fields to this model
+        for (var f in fields) {
+            // @ts-ignore
+            this[f] = fields[f];
+        }
+    }
+    return Item;
+}());
+
+//# sourceMappingURL=item.js.map
+
+/***/ }),
+
+/***/ 534:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Settings; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(210);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * A simple settings/config class for storing key/value pairs with persistence.
+ */
+var Settings = /** @class */ (function () {
+    function Settings(storage, defaults) {
+        this.storage = storage;
+        this.SETTINGS_KEY = '_settings';
+        this._defaults = defaults;
+    }
+    Settings.prototype.load = function () {
+        var _this = this;
+        return this.storage.get(this.SETTINGS_KEY).then(function (value) {
+            if (value) {
+                _this.settings = value;
+                return _this._mergeDefaults(_this._defaults);
+            }
+            else {
+                return _this.setAll(_this._defaults).then(function (val) {
+                    _this.settings = val;
+                });
+            }
+        });
+    };
+    Settings.prototype._mergeDefaults = function (defaults) {
+        for (var k in defaults) {
+            if (!(k in this.settings)) {
+                this.settings[k] = defaults[k];
+            }
+        }
+        return this.setAll(this.settings);
+    };
+    Settings.prototype.merge = function (settings) {
+        for (var k in settings) {
+            this.settings[k] = settings[k];
+        }
+        return this.save();
+    };
+    Settings.prototype.setValue = function (key, value) {
+        this.settings[key] = value;
+        return this.storage.set(this.SETTINGS_KEY, this.settings);
+    };
+    Settings.prototype.setAll = function (value) {
+        return this.storage.set(this.SETTINGS_KEY, value);
+    };
+    Settings.prototype.getValue = function (key) {
+        return this.storage.get(this.SETTINGS_KEY)
+            .then(function (settings) {
+            return settings[key];
+        });
+    };
+    Settings.prototype.save = function () {
+        return this.setAll(this.settings);
+    };
+    Object.defineProperty(Settings.prototype, "allSettings", {
+        get: function () {
+            return this.settings;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Settings = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */], Object])
+    ], Settings);
+    return Settings;
+}());
+
+//# sourceMappingURL=settings.js.map
+
+/***/ }),
+
+/***/ 535:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HraService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_api__ = __webpack_require__(71);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/*
+  Generated class for the HraProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var HraService = /** @class */ (function () {
+    function HraService(http, api) {
+        this.http = http;
+        this.api = api;
+        console.log("HraProvider Provider");
+    }
+    HraService.prototype.GetHraSections = function (accountInfo) {
+        var _this = this;
+        //this.api.url = "../../assets/data";
+        var seq = this.api
+            .post("api/WellnessAPI/GetHRASections", accountInfo)
+            .share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            _this.hraSections = res;
+        }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    HraService.prototype.GetHRAQuestionDetails = function (accountInfo) {
+        var _this = this;
+        var seq = this.api
+            .post("api/WellnessAPI/GetHRAQuestionDetailsBySection", accountInfo)
+            .share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            _this.hraQuestionDetail = res;
+        }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    HraService.prototype.SaveHRAResponse = function (accountInfo) {
+        var _this = this;
+        var seq = this.api
+            .post("api/WellnessAPI/SaveHRAResponse", accountInfo)
+            .share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            _this.hraQuestionDetail = res;
+        }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    HraService.prototype.GetRiskReportNum = function (accountInfo) {
+        var _this = this;
+        var seq = this.api
+            .post("api/WellnessAPI/EvaluateRiskReportAPI", accountInfo)
+            .share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            _this.hraRiskReport = res;
+        }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    HraService.prototype.GetHraReport = function (accountInfo) {
+        var _this = this;
+        var seq = this.api
+            .post("api/WellnessAPI/GetIdentifiedConditionsAPI", accountInfo)
+            .share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            _this.hraResults = res;
+        }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    HraService.prototype.GetMajorHealthRisks = function (accountInfo) {
+        var _this = this;
+        var seq = this.api
+            .post("api/WellnessAPI/GetMajorHealthRisks", accountInfo)
+            .share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            _this.MajorHealthRisks = res;
+        }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    HraService.prototype.GetHealthRiskDetail = function (accountInfo) {
+        var _this = this;
+        var seq = this.api
+            .post("api/WellnessAPI/GetHealthRiskDetail", accountInfo)
+            .share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            _this.HealthRiskDetail = res;
+        }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    HraService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__api_api__["a" /* Api */]])
+    ], HraService);
+    return HraService;
+}());
+
+//# sourceMappingURL=hra.js.map
+
+/***/ }),
+
+/***/ 536:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotificationService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_api__ = __webpack_require__(71);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var NotificationService = /** @class */ (function () {
+    function NotificationService(api) {
+        this.api = api;
+    }
+    NotificationService.prototype.UpdateIsReadPushNotificationDetail = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/UpdateIsReadPushNotificationDetail", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    NotificationService.prototype.DeleteUserPushNotificationDetail = function (accountInfo) {
+        var seq = this.api
+            .post("api/WellnessAPI/DeleteUserPushNotificationDetail", accountInfo)
+            .share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error("ERROR", err);
+        });
+        return seq;
+    };
+    NotificationService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__api_api__["a" /* Api */]])
+    ], NotificationService);
+    return NotificationService;
+}());
+
+//# sourceMappingURL=notification.js.map
+
+/***/ }),
+
+/***/ 538:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_api__ = __webpack_require__(71);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UserService = /** @class */ (function () {
+    function UserService(api) {
+        this.api = api;
+    }
+    /**
+     * Send a POST request to our login endpoint with the data
+     * the user entered on the form.
+     */
+    UserService.prototype.login = function (accountInfo) {
+        var _this = this;
+        localStorage.setItem('Password', accountInfo.Password);
+        localStorage.setItem('UserName', accountInfo.UserName);
+        var seq = this.api.post('api/WellnessAPI/UserLogin', accountInfo).share();
+        seq.subscribe(function (res) {
+            //console.log("*********");
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+            if (res.SystemStatus == "Success") {
+                _this._loggedIn(res);
+            }
+        }, function (err) {
+            console.log('ERROR', err);
+            //   alert("call provider error " + err );
+            //   for(var key in err) {
+            //     alert('call provider error  : key: ' + key + '\n' + 'value: ' + err[key]);
+            // }
+        });
+        return seq;
+    };
+    // Get Bio age/ reward points and mhrscore
+    UserService.prototype.getUserData = function (accountInfo) {
+        var seq = this.api.post('api/WellnessAPI/GetUserData', accountInfo).share();
+        seq.subscribe(function (res) {
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    /**
+     * Send a POST request to our signup endpoint with the data
+     * the user entered on the form.
+     */
+    UserService.prototype.signup = function (accountInfo) {
+        var _this = this;
+        var seq = this.api.post('api/WellnessAPI/AppUserRegister', accountInfo).share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            _this._loggedIn(res);
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    UserService.prototype.forgetpassword = function (accountInfo) {
+        var seq = this.api.post('api/WellnessAPI/UserForgotPassword', accountInfo).share();
+        seq.subscribe(function (res) {
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    UserService.prototype.SaveUserAgreeTermsCondition = function (accountInfo) {
+        var seq = this.api.post('api/WellnessAPI/SaveUserAgreeTermsCondition', accountInfo).share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    UserService.prototype.SaveUserTokenIdData = function (accountInfo) {
+        var seq = this.api.post('api/WellnessAPI/SaveUserTokenIdData', accountInfo).share();
+        seq.subscribe(function (res) {
+            //alert('success in service')   
+        }, function (err) {
+            console.error('ERROR', err);
+            //alert('error is service');
+        });
+        return seq;
+    };
+    UserService.prototype.SaveUserPushNotificationOnOff = function (accountInfo) {
+        var seq = this.api.post('api/WellnessAPI/SaveUserPushNotificationOnOff', accountInfo).share();
+        seq.subscribe(function (res) { }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    UserService.prototype.GetUserPushNotificationDetail = function (accountInfo) {
+        var seq = this.api.post('api/WellnessAPI/GetUserPushNotificationDetail', accountInfo).share();
+        seq.subscribe(function (res) {
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    UserService.prototype.GetPushNotificationCount = function (accountInfo) {
+        var seq = this.api.post('api/WellnessAPI/GetPushNotificationCount', accountInfo).share();
+        seq.subscribe(function (res) {
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    /**
+     * Send a POST request to our signup endpoint with the data
+     * the user entered on the form.
+     */
+    UserService.prototype.checkEmailExist = function (accountInfo) {
+        var _this = this;
+        var seq = this.api.post('api/WellnessAPI/IsOnboardUserEmailExists', accountInfo).share();
+        seq.subscribe(function (res) {
+            // If the API returned a successful response, mark the user as logged in
+            _this._loggedIn(res);
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    /**
+     * Log the user out, which forgets the session
+     */
+    // logout() {
+    //   this._user = null;
+    //   localStorage.clear();
+    // }
+    /**
+     * Process a login/signup response to store user data
+     */
+    UserService.prototype._loggedIn = function (resp) {
+        localStorage.setItem('UserInfo', JSON.stringify(resp));
+        localStorage.setItem('FirstName', resp.FirstName);
+        localStorage.setItem('LastName', resp.LastName);
+        localStorage.setItem('SecretToken', resp.SecretToken);
+        localStorage.setItem('ProfileImage', resp.ProfileImage);
+        localStorage.setItem('RewardPoint', resp.RewardPoint);
+        localStorage.setItem('bio_age', resp.bio_age);
+        localStorage.setItem('mhrs_score', resp.mhrs_score);
+        //localStorage.setItem('SecretToken','77d344e9-dbcb-4975-a76a-ab8a8256c624');
+        localStorage.setItem('Gender', resp.Gender);
+        localStorage.setItem('Height', resp.Height);
+        localStorage.setItem('BirthDate', resp.BirthDate);
+        localStorage.setItem('IsAgreeTermsCondition', resp.IsAgreeTermsCondition);
+        localStorage.setItem('IsHRACompleted', resp.IsHRACompleted);
+        localStorage.setItem('UserAccessLevel', resp.UserAccessLevel);
+        localStorage.setItem('PushNotificationYesNo', resp.PushNotificationYesNo);
+        localStorage.setItem('PhoneNumber', resp.PhoneNumber);
+        localStorage.setItem('IsCompanySMSEnable', resp.IsCompanySMSEnable);
+        localStorage.setItem('IsUserSMSEnable', resp.IsUserSMSEnable);
+        //   this.uniqueDeviceID.get()
+        // .then((uuid: any) => localStorage.setItem('deviceid',uuid))
+        // .catch((error: any) => console.log(error));
+        this._user = resp;
+    };
+    UserService.prototype._LogoutUser = function () {
+        var remuser = localStorage.getItem("remuser");
+        var rempwd = localStorage.getItem("rempwd");
+        var remUUID = localStorage.getItem("remUUID");
+        var token = localStorage.getItem("FCMToken");
+        var deviceType = localStorage.getItem("DeviceType");
+        localStorage.clear();
+        localStorage.setItem("FCMToken", token);
+        localStorage.setItem("DeviceType", deviceType);
+        localStorage.setItem("remUUID", remUUID);
+        localStorage.setItem("remuser", remuser);
+        localStorage.setItem("rempwd", rempwd);
+        localStorage.setItem("deviceid", remUUID);
+    };
+    UserService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__api_api__["a" /* Api */]])
+    ], UserService);
+    return UserService;
+}());
+
+//# sourceMappingURL=user.js.map
+
+/***/ }),
+
+/***/ 539:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HraBodyPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_settings_wellnessconstant__ = __webpack_require__(44);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the HraBodyPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HraBodyPage = /** @class */ (function () {
+    function HraBodyPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.account = {
+            pounds: 150,
+            inches: 38,
+            deviceid: "",
+            SecretToken: ""
+        };
+        this.waistData = __WEBPACK_IMPORTED_MODULE_2__providers_settings_wellnessconstant__["a" /* WellnessConstants */].waistData;
+        this.weightData = __WEBPACK_IMPORTED_MODULE_2__providers_settings_wellnessconstant__["a" /* WellnessConstants */].weightData;
+    }
+    HraBodyPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad HraBodyPage');
+    };
+    HraBodyPage.prototype.submit = function () {
+    };
+    HraBodyPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-hra-body',template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\hra-body\hra-body.html"*/'\n\n\n<ion-content >\n    <div class="splashbg">\n        <ion-header >\n            <ion-navbar>\n              <ion-title>Health Risk Assessment <br>\n                  (HRA) </ion-title>\n            </ion-navbar>\n          </ion-header>\n          <div class="subtitle">\n          <p>You can pause and return to complete the HRA, however, you must complete the entire HRA before it can be processed </p>\n        </div>\n      </div>\n      <ion-card >\n\n          <ion-card-header>\n            Body Metrics \n          </ion-card-header>\n        \n          <ion-card-content>\n            <p>1. Please select your weight in pounds from the drop-down menu.</p>\n\n            <ion-select [(ngModel)]="account.pounds">\n              <ion-option *ngFor="let wdata of weightData" value="{{wdata.description}}">{{wdata.description}}</ion-option>\n            </ion-select>\n           \n            <p>2. Please select your waist circumference in inches from the drop-down menu. </p>\n            <ion-select [(ngModel)]="account.inches">\n              <ion-option *ngFor="let data of waistData" value="{{data.description}}">{{data.description}}</ion-option>\n            </ion-select>\n          </ion-card-content>\n        \n        </ion-card>\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button color="primary" class="big-btn" (click)="submit()" >Next</button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\hra-body\hra-body.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"]])
+    ], HraBodyPage);
+    return HraBodyPage;
+}());
+
+//# sourceMappingURL=hra-body.js.map
+
+/***/ }),
+
+/***/ 540:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntroPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intro_video_intro_video__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+/**
+ * Generated class for the IntroPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var IntroPage = /** @class */ (function () {
+    function IntroPage(user, navCtrl, navParams, alertCtl, loading) {
+        this.user = user;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtl = alertCtl;
+        this.loading = loading;
+        this.account = {
+            deviceid: "",
+            SecretToken: "",
+            FirstName: "",
+            LastName: ""
+        };
+        this.account.deviceid = localStorage.getItem("deviceid");
+        this.account.SecretToken = localStorage.getItem("SecretToken");
+        this.account.FirstName = localStorage.getItem("FirstName");
+        this.account.LastName = localStorage.getItem("LastName");
+    }
+    IntroPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad IntroPage");
+    };
+    IntroPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    IntroPage.prototype.goToVideo = function () {
+        var _this = this;
+        this.loader = this.loading.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            _this.user.SaveUserAgreeTermsCondition(_this.account).subscribe(function (resp) {
+                _this.loader.dismiss();
+                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__intro_video_intro_video__["a" /* IntroVideoPage */]);
+            }, function (err) {
+                _this.loader.dismiss();
+                //this.presentAlert("Server Message - Save User Agree Terms Condition: "+ err.error.SystemMessage);
+                _this.presentAlert("Server Message - Save User Agree Terms Condition" + JSON.stringify(err));
+            });
+        });
+    };
+    IntroPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-intro",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\intro\intro.html"*/'<!--\n  Generated template for the IntroPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="custom-intro-header content-bg">\n  <ion-navbar color="primary">\n    <ion-title>Welcome {{account.FirstName}} {{account.LastName}}</ion-title>\n    <div class="tag-line"> A few things before you stared</div>\n  </ion-navbar>\n</ion-header>\n<ion-content class="content-bg">\n\n  <ion-card class="signup-card custom-border intro-desc">\n    <ion-card-content>\n      <div>\n        <h2>\n          <b>Terms and Conditions</b>\n        </h2>\n        <br />\n        <p>Meschino Wellness Account Privacy Statement</p>\n        \n        <p>Meschino Health & Wellness (thereafter referred to as “Meschino Wellness”) is committed to protecting your\n          privacy. This privacy statement applies to the personal information (which includes personal health\n          information) collected by the Meschino Wellness Platform.\n        </p>\n        <br />\n        <h2>\n          <b>Introduction</b></h2>\n        <p>\n          <b>The Meschino Wellness Platform is intended for educational purposes only. It is a tool that can help users\n            develop their own personal wellness plan, but does not replace the requirement to seek medical evaluation,\n            lifestyle advice and treatment from a medical professional.</b>\n        </p>\n        <br />\n        <p>\n          The Meschino Wellness Platform provides targeted nutrition and lifestyle content by collecting and analyzing\n          personal health data, which you may wish to share with your medical doctor and other healthcare professionals\n          who help manage your health. It can collect, analyze and store many different types of information such as\n          medication use, immunization records, data originating from health and fitness devices (including pedometers,\n          blood glucose monitors, blood pressure monitors) and from other applications (such as chronic management\n          applications, fitness training applications, weight loss applications, blood pressure applications and more).\n        </p>\n        <br />\n        <p>\n          Importantly, The Meschino Wellness Platform cannot detect or help manage food or drug allergies, food\n          sensitivities or intolerances. In these cases, and other cases involving health conditions of the intestinal\n          tract (i.e. active ulcer, inflammatory bowel disease, gastric by-pass surgery etc.) you must seek nutritional\n          guidance from your medical practitioner or designated registered dietician.\n        </p>\n        <br />\n        <h2>\n          <b>Integration</b></h2>\n        <p>\n          You can utilize components of the Meschino Wellness Platform directly to view and manage your health\n          information, or you can use selected websites and devices that have been created by application providers and\n          device manufacturers to work with Meschino Wellness. Several mechanisms allow you to manage how your health\n          information can be accessed, used and shared.\n          Meschino Wellness provides you with the technology and services to assist you in collecting, storing and\n          analyzing your health related information online. It is a technology platform that allows access by multiple\n          applications and devices, in order to work with your health data to improve personal health literacy and\n          overall wellness.\n\n        </p>\n\n        <br />\n        <h2>\n          <b>Collection of Personal Information</b></h2>\n        <p>\n          Meschino Wellness asks you to enter an identifier and password to sign in. The first time you sign in to\n          Meschino Wellness, Meschino Wellness asks you to create an account. To create an account, you must provide\n          personal information such as name, date of birth, e-mail address, postal code and country/region. Meschino\n          Wellness may request other optional information, but Meschino Wellness will clearly indicate that such\n          information is optional.\n        </p>\n\n        <br />\n        <h2>\n          <b>How Meschino Wellness uses your personal information</b></h2>\n        <p>\n          Meschino Wellness commits to use or disclose personal information collected through Meschino Wellness,\n          including personal health information, exclusively to provide Meschino Wellness services (which includes the\n          billing, support, maintenance and incident resolution services) and as described in this privacy statement,\n          unless expressly otherwise agreed to by you. Usage of the personal information (including personal health\n          information) for the provision of Meschino Wellness solutions includes that Meschino Wellness may use your\n          personal information:\n        </p>\n        <ul>\n          <li>to provide you with information about Meschino Wellness, including updates, and notifications\n          </li>\n          <li>\n            to send you Meschino Wellness e-mail communication, if any.\n          </li>\n        </ul>\n        <br />\n        <p>\n          Meschino Wellness occasionally hires other companies to provide services on its behalf, such as answering\n          customer questions about products and services. Meschino Wellness gives those companies only the personal\n          information they need to deliver the service. Meschino Wellness requires the companies to maintain the\n          confidentiality of the personal information and prohibits them from using such information for any other\n          purpose.\n          <br />\n          In addition, Meschino Wellness may use and/or disclose your personal information if Meschino Wellness believes\n          such action is necessary to comply with applicable legislation or legal process served on Meschino Wellness.\n          <br />\n          Personal information collected on Meschino Wellness is stored and processed in on servers in Canada or the\n          United State.\n          <br />Meschino Wellness has processes and employees (i.e. Head of Privacy and other resources) whose\n          responsibility is to ensure the protection of your privacy and to notify you in the event that Meschino\n          Wellness becomes aware of a breach affecting your personal information.\n\n        </p>\n\n        <br />\n        <h2>\n          <b>How Meschino Wellness uses aggregate information and statistics</b></h2>\n        <p>\n          Meschino Wellness may use aggregated information from Meschino Wellness to identify and compare the status of\n          specific common health issues as compared to other bench marks established in the specified industry or\n          organization. This data is represented as a percent of the entire organization only. This aggregated\n          information is not associated with any individual account and would not identify you. Meschino Wellness will\n          not use or disclose your individual account and record information from Meschino Wellness.\n        </p>\n\n        <br />\n        <h2>\n          <b>Account access and controls</b></h2>\n        <p>\n          The decision to create an account with Meschino Wellness is yours. The required account information consists\n          of a small amount of information such as your name, e-mail address, region and Meschino Wellness credentials.\n          Meschino Wellness may request other optional information, but clearly indicates that such information is\n          optional. You can review and update your account information. You can modify, add or delete any optional\n          account information by signing into your Meschino Wellness account and editing your account profile.\n          <br />When you close your account (by signing into your Meschino Wellness account and editing your account\n          profile), Meschino Wellness deletes all Records for which you are the sole Custodian. Meschino Wellness waits\n          90 days before permanently deleting your account information in order to help avoid accidental or malicious\n          removal of your health information.\n          <br />When a user with "View and modify" or Custodian access deletes a piece of health information, Meschino\n          Wellness archives the information so that it is visible only to Record of Custodians. Solutions and other\n          users with whom you have shared your information, but who are not Custodians of the Record, are not able to\n          see archived health information.\n\n        </p>\n        <br />\n        <h2>\n          <b>E-mail controls</b></h2>\n        <p>\n          Meschino Wellness may send you e-mail communications. You will only receive these communications because you\n          have authorized Meschino Wellness do so. If you do not want to receive this information, you can unsubscribe\n          through a link at the bottom of the newsletter.\n        </p>\n\n        <br />\n        <h2>\n          <b>Security of your personal information</b></h2>\n        <p>\n          Meschino Wellness is committed to protecting the security of your personal information. Meschino Wellness is\n          hosted on a robust industry leading hosting partner. The hosting platform meets a broad set of international\n          and industry-specific compliance standards, such as ISO 27001, HIPAA, FedRAMP, SOC 1 and SOC 2, as well as\n          country-specific standards including Australia IRAP, UK G-Cloud, and Singapore MTCS. The hosting partner was\n          also the first to adopt the uniform international code of practice for cloud privacy, ISO/IEC 27018, which\n          governs the processing of personal information by cloud service providers.\n          <br />\n          Rigorous third-party audits, such as by the British Standards Institute, verify the hosting platforms\n          adherence to the strict security controls these standards mandate. As part of our commitment to transparency,\n          you can verify our implementation of many security controls by requesting audit results from the certifying\n          third parties or through our Host Platform account representative.\n        </p>\n\n        <br />\n        <h2>\n          <b>Use of cookies</b></h2>\n        <p>\n          Meschino Wellness use cookies with Meschino Wellness to enable you to sign in and to help personalize Meschino\n          Wellness. A cookie is a small text file that a web page server places on your hard disk. It is not possible to\n          use cookies to run programs or deliver viruses to your computer. A Web server assigns cookies uniquely to you\n          and only a Web server in the domain that issued the cookie to you can read the cookies.\n          One of the primary purposes of cookies is to provide a convenience feature to save you time. For example, if\n          you personalize a Web page, or navigate within a site, a cookie helps the site to recall your specific\n          information on subsequent visits. Using cookies simplifies the process of delivering relevant content, eases\n          site navigation, and so on. When you return to the Web site, you can retrieve the information you previously\n          provided, so you can easily use the site\'s features that you customized.\n          You have the ability to accept or decline cookies. Most Web browsers automatically accept cookies, but you can\n          usually modify your browser setting to decline some or all cookies if you prefer. If you choose to decline all\n          cookies, you may not be able to use interactive features of this or other Web sites that depend on cookies.\n        </p>\n        <br />\n        <h2>\n          <b>Use of Web beacons</b></h2>\n\n        <p>\n          Meschinowellness.com Web pages may contain electronic images known as Web beacons sometimes called\n          single-pixel gifs that may be used:\n        </p>\n        <ul>\n          <li> to assist in delivering cookies on Meschino Wellness sites</li>\n          <li> to enable Meschino Wellness to count users who have visited those pages</li>\n          <li> to deliver co-branded services</li>\n        </ul>\n        <p>\n          Meschino Wellness may include Web beacons in e-mail messages or in its newsletters in order to determine\n          whether you opened or acted upon those messages.\n          <br />\n          Meschino Wellness may also employ Web beacons from third parties to help it compile aggregated statistics and\n          determine the effectiveness of its promotional campaigns. Meschino Wellness prohibits third parties from using\n          Web beacons on Meschino Wellness sites to collect or access your personal information. Meschino Wellness may\n          collect information about your visit to meschiowellness.com, including the pages you view, the links you\n          click, and other actions taken in connection with the Service. Meschino Wellness also collects certain\n          standard, non-personally identifiable information that your browser sends to every Web site you visit, such as\n          your IP address, browser type and language, access times, and referring Web site addresses.\n\n        </p>\n        <br />\n        <h2>\n          <b>Changes to this privacy statement</b></h2>\n        <p>\n          Meschino Wellness may occasionally update this privacy statement. In such event, Meschino Wellness will notify\n          you either by placing a prominent notice on the home page of the Meschino Wellness Web site or by sending you\n          a notification directly. Meschino Wellness encourages you to review this privacy statement periodically to\n          stay informed about how Meschino Wellness helps you to protect the personal information collected. Your\n          continued use of Meschino Wellness constitutes your agreement to this privacy statement and any updates.\n          Please be aware that this privacy statement does not apply to personal information you may have provided to\n          Meschino Wellness in the context of other, separately operated, Meschino Wellness products or services.\n        </p>\n        <br />\n        <h2> <b>Contact information for privacy related questions and/or complaint</b></h2>\n\n        <p>\n          Meschino Wellness welcomes your comments regarding this privacy statement. If you have a complaint concerning\n          Meschino Wellness’ privacy standards, please submit it to the applicable Privacy Office, however, as\n          recommended by the Office of the Privacy Commissioner of Canada, you are strongly encouraged to try first to\n          settle the matter directly with us, please contact us at <span style="color: blue;">\n            privacy@meschinowellness.com.</span> All questions and/or\n          complaints will be treated as confidential.\n        </p>\n\n        <br />\n        <h2>\n          <b>DISCLOSURE</b></h2>\n        <p>\n          The assessment you’re about to complete will evaluate important aspects of your diet, lifestyle and other\n          health practices, as well as health conditions and risk factors that play a significant role in your health\n          and longevity profile. Based upon scientific evidence available from experimental and clinical studies, we\n          will assemble a number of nutrition, exercise and other lifestyle considerations specific to your individual\n          circumstances.\n          <br />\n          Your personalized wellness report is to be used for educational purposes only and does not take into account\n          any food, drug or supplement allergies or sensitivities. You must consult your health practitioner before\n          making any changes to your dietary, exercise or supplementation practices.\n\n        </p>\n\n\n      </div>\n      <br/>\n      <p><b>By clicking \'I Agree\' you have:</b></p>\n      <ul>\n        <li>Read and undersatnd the disclosure. </li>\n        <li>At least 15 years old.</li>\n        <li>Trust Meschino Health and Wellness with the personal and private health information you provide.</li>\n      </ul>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button color="primary" class="big-btn" (click)="goToVideo()">I AGREE</button>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\intro\intro.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__providers__["f" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"]])
+    ], IntroPage);
+    return IntroPage;
+}());
+
+//# sourceMappingURL=intro.js.map
+
+/***/ }),
+
+/***/ 541:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyTrackerPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the DashboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MyTrackerPage = /** @class */ (function () {
+    function MyTrackerPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.account = {
+            FirstName: '',
+            LastName: '',
+        };
+        this.account.FirstName = localStorage.getItem('FirstName');
+        this.account.LastName = localStorage.getItem('LastName');
+    }
+    MyTrackerPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad MyTrackerPage');
+    };
+    MyTrackerPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-mytracker',template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-trackers\mytracker.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Trackers</ion-title>\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="assets/img/avtar.jpg">\n      </ion-avatar>\n      <h2>{{account.FirstName}} {{account.LastName}}</h2>\n      <p>\n        <ion-icon name="medal"></ion-icon>296 Points\n      </p>\n    </ion-item>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n\n  <ion-card>\n    My health risk\n  </ion-card>\n</ion-content>\n<ion-footer>\n\n</ion-footer>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-trackers\mytracker.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"]])
+    ], MyTrackerPage);
+    return MyTrackerPage;
+}());
+
+//# sourceMappingURL=mytracker.js.map
+
+/***/ }),
+
+/***/ 542:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_settings_wellnessconstant__ = __webpack_require__(44);
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+/**
+ * Generated class for the DashboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ProfilePage = /** @class */ (function () {
+    function ProfilePage(navCtrl, formBuilder, navParams, camera, loadingCtrl, alertCtl, http, pickerCtl, events, userService) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.formBuilder = formBuilder;
+        this.navParams = navParams;
+        this.camera = camera;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtl = alertCtl;
+        this.http = http;
+        this.pickerCtl = pickerCtl;
+        this.events = events;
+        this.userService = userService;
+        this.IsShowDone = false;
+        this.IsCompanySMSEnable = false;
+        this.ischecked = false;
+        this.account = {
+            FirstName: localStorage.getItem("FirstName"),
+            LastName: localStorage.getItem("LastName"),
+            UserName: localStorage.getItem("UserName"),
+            PhoneNumber: localStorage.getItem("PhoneNumber"),
+            Height: "cm-50-null",
+            BirthDate: "2006-10-10",
+            Gender: localStorage.getItem("Gender"),
+            IsUserSMSEnable: localStorage.getItem("IsUserSMSEnable") == "true" ? true : false
+        };
+        this.rewardpoints = 0;
+        this.bio_age = "0";
+        this.mhrs_score = "0";
+        this.appForm = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormGroup"]({
+            Gender: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormControl"](),
+            BirthDate: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormControl"](),
+            Height: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormControl"]()
+        });
+        this.commandUrl = __WEBPACK_IMPORTED_MODULE_7__providers_settings_wellnessconstant__["a" /* WellnessConstants */].App_Url + "api/WellnessAPI/UpdateUserProfile";
+        this.DisplayHeight = false;
+        this.DisplayBirthDate = false;
+        this.DisplayGender = false;
+        this.DisplayFirstName = false;
+        this.DisplayLastName = false;
+        this.DisplayUserName = false;
+        this.DisplayPhoneNumber = false;
+        this.imageFileName =
+            localStorage.getItem("ProfileImage") !== null
+                ? localStorage.getItem("ProfileImage")
+                : "assets/img/loader.gif";
+        this.UIHeight =
+            "cm-" +
+                Math.round(parseInt(localStorage.getItem("Height")) * 2.54) +
+                "-null";
+        this.account.BirthDate = localStorage.getItem("BirthDate");
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            _this.LoadUserInfo();
+        });
+        this.IsCompanySMSEnable =
+            localStorage.getItem("IsCompanySMSEnable") == "true" ? true : false;
+        console.log(this.IsCompanySMSEnable, "IsCompanySMSEnable");
+        this.ischecked = this.account.IsUserSMSEnable;
+        // Using parentCol
+        this.parentColumns = __WEBPACK_IMPORTED_MODULE_7__providers_settings_wellnessconstant__["a" /* WellnessConstants */].parentColumns;
+    }
+    ProfilePage.prototype.createForm = function () {
+        this.appForm = this.formBuilder.group({
+            Gender: "",
+            BirthDate: "",
+            Height: ""
+        });
+    };
+    ProfilePage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad DashboardPage");
+    };
+    ProfilePage.prototype.LoadUserInfo = function () {
+        var _this = this;
+        this.rewardpoints = parseInt(localStorage.getItem("RewardPoint"));
+        this.imageFileName = localStorage.getItem("ProfileImage");
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken")
+        };
+        this.userService.getUserData(userAcc).subscribe(function (res) {
+            localStorage.setItem("RewardPoint", res.RewardPoint);
+            localStorage.setItem("bio_age", res.bio_age);
+            localStorage.setItem("mhrs_score", res.mhrs_score);
+            localStorage.setItem("IsUserSMSEnable", res.IsUserSMSEnable);
+            _this.rewardpoints = parseInt(localStorage.getItem("RewardPoint"));
+            _this.bio_age = localStorage.getItem("bio_age");
+            _this.mhrs_score = localStorage.getItem("mhrs_score");
+            _this.ischecked = res.IsUserSMSEnable;
+            var data = {};
+            // Read all the data;
+            data["FirstName"] = localStorage.getItem("FirstName");
+            data["LastName"] = localStorage.getItem("LastName");
+            data["PhoneNumber"] = localStorage.getItem("PhoneNumber");
+            data["ProfileImage"] = localStorage.getItem("ProfileImage");
+            data["Gender"] = localStorage.getItem("Gender");
+            data["Height"] = localStorage.getItem("Height");
+            data["BirthDate"] = localStorage.getItem("BirthDate");
+            data["RewardPoint"] = localStorage.getItem("RewardPoint");
+            data["bio_age"] = localStorage.getItem("bio_age");
+            data["mhrs_score"] = localStorage.getItem("mhrs_score");
+            data["IsUserSMSEnable"] = localStorage.getItem("IsUserSMSEnable");
+            console.log("Event published : " + data);
+            _this.events.publish("user:created", data);
+        });
+        this.loader.dismiss();
+    };
+    ProfilePage.prototype.ChangeDate = function () {
+        this.IsShowDone = true;
+    };
+    ProfilePage.prototype.onModelChange = function (event) {
+        this.IsShowDone = true;
+        console.log(event);
+    };
+    ProfilePage.prototype.showGenderPicker = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var opts, picker;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.IsShowDone = true;
+                        opts = {
+                            buttons: [
+                                {
+                                    text: "Cancel",
+                                    role: "cancel"
+                                },
+                                {
+                                    text: "Done"
+                                }
+                            ],
+                            columns: [
+                                {
+                                    name: "Gender",
+                                    options: [
+                                        { text: "Male", value: "Male" },
+                                        { text: "Female", value: "Female" }
+                                    ]
+                                }
+                            ]
+                        };
+                        return [4 /*yield*/, this.pickerCtl.create(opts)];
+                    case 1:
+                        picker = _a.sent();
+                        picker.present();
+                        picker.onDidDismiss(function (data) { return __awaiter(_this, void 0, void 0, function () {
+                            var col;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0: return [4 /*yield*/, picker.getColumn("Gender")];
+                                    case 1:
+                                        col = _a.sent();
+                                        this.account.Gender = col.options[col.selectedIndex].value;
+                                        return [2 /*return*/];
+                                }
+                            });
+                        }); });
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ProfilePage.prototype.editprofilepic = function () {
+        var _this = this;
+        console.log("show image upload");
+        this.IsShowDone = true;
+        var alert = this.alertCtl.create({
+            title: "Please select option",
+            cssClass: "action-sheets-basic-page",
+            buttons: [
+                {
+                    text: "Take photo",
+                    handler: function () {
+                        _this.captureImage(false);
+                    }
+                },
+                {
+                    text: "Choose photo from Gallery",
+                    handler: function () {
+                        _this.captureImage(true);
+                    }
+                }
+                // ,
+                // {
+                //   text: "Cancel",
+                //   handler: () => {
+                //     alert.dismiss();
+                //   }
+                // }
+            ]
+        });
+        alert.present();
+    };
+    ProfilePage.prototype.SetHeight_inInches = function () {
+        var inputVal = this.UIHeight;
+        var arrVal = inputVal.split("-");
+        if (arrVal[0].indexOf("cm") !== -1) {
+            var inch = Math.round((parseInt(arrVal[1]) * 1) / 2.54);
+            console.log(inch, "CM - INCH");
+            this.account.Height = inch + "";
+        }
+        else if (arrVal[0].indexOf("feet") !== -1) {
+            var inch = parseInt(arrVal[1]) * 12 + parseInt(arrVal[2]);
+            console.log(inch, "FEET - INCH");
+            this.account.Height = inch + "";
+        }
+    };
+    ProfilePage.prototype.captureImage = function (useAlbum) {
+        var _this = this;
+        var options = __assign({ quality: 25, targetWidth: 300, targetHeight: 300, destinationType: this.camera.DestinationType.DATA_URL, encodingType: this.camera.EncodingType.JPEG }, (useAlbum
+            ? { sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM }
+            : {
+                saveToPhotoAlbum: true
+            }));
+        this.camera.getPicture(options).then(function (imageData) {
+            _this.imageDATA = imageData;
+            _this.imageFileName = _this.imageDATA;
+            _this.imageFileName = "data:image/jpeg;base64," + imageData;
+            //this.imageFileName = (<any>window).Ionic.WebView.convertFileSrc(
+            // imageData
+            //);
+        }, function (err) {
+            //alert(err);
+            console.log(err);
+        });
+    };
+    ProfilePage.prototype.uploadFile = function () {
+        var _this = this;
+        //alert('API is not yet completed!');
+        //debugger;
+        if (this.IsFormValid()) {
+            var loader_1 = this.loadingCtrl.create({
+                content: "Updating..."
+            });
+            loader_1.present();
+            this.SetHeight_inInches();
+            var formData = new FormData();
+            var dataJson = {
+                DeviceId: localStorage.getItem("deviceid"),
+                SecretToken: localStorage.getItem("SecretToken"),
+                FirstName: this.account.FirstName,
+                LastName: this.account.LastName,
+                PhoneNumber: this.account.PhoneNumber,
+                BirthDate: this.account.BirthDate,
+                Height: this.account.Height,
+                Gender: this.account.Gender,
+                IsUserSMSEnable: this.account.IsUserSMSEnable
+            };
+            //alert("old path "+ localStorage.getItem("ProfileImage"));
+            var jsonString = JSON.stringify(dataJson);
+            formData.append("model", jsonString);
+            if (this.imageDATA !== undefined) {
+                // call method that creates a blob from dataUri
+                var imageBlob = this.dataURItoBlob(this.imageDATA);
+                //alert('found imagedata');
+                //const imageFile = new Blob([imageBlob],{ type: 'image/jpeg' })
+                formData.append("ProfileImage", imageBlob, "userimg.jpeg");
+                //alert(imageBlob);
+            }
+            else {
+                //alert(' no image modify ');
+            }
+            this.DisplayHeight = false;
+            this.DisplayBirthDate = false;
+            this.DisplayGender = false;
+            this.DisplayFirstName = false;
+            this.DisplayLastName = false;
+            this.DisplayUserName = false;
+            this.DisplayPhoneNumber = false;
+            this.IsShowDone = false;
+            this.PostFile(this.commandUrl, formData, function (res) {
+                if (res.SystemStatus == "Success") {
+                    _this.SetUserInfo(res);
+                }
+                //this.presentAlert(res.SystemMessage);
+                console.log(res.SystemMessage);
+                _this.presentAlert("Profile updated successfully.");
+                loader_1.dismiss();
+            }, function (err) {
+                loader_1.dismiss();
+                //this.presentAlert("Server Message - Update User Profile: " + err.error.SystemMessage);
+                _this.presentAlert("Server Message - Update User Profile: " + JSON.stringify(err));
+            });
+        }
+    };
+    ProfilePage.prototype.EventEnableSMS = function (event) {
+        this.IsShowDone = true;
+        console.log(event.checked);
+        this.ischecked = event.checked;
+        this.account.IsUserSMSEnable = this.ischecked;
+    };
+    ProfilePage.prototype.numberOnlyValidation = function (value) {
+        if (isNaN(value) || value.includes(".")) {
+            console.log(false);
+            // invalid character, prevent input
+            return false;
+        }
+        else {
+            console.log(true);
+            return true;
+        }
+    };
+    ProfilePage.prototype.isValidMobile = function (value) {
+        var msgInfo = { msg: "", isValid: true };
+        var firstLetter = value.charAt(0);
+        var remainingLetter = "";
+        if (firstLetter == "+") {
+            remainingLetter = value.replace(firstLetter, "");
+        }
+        else {
+            remainingLetter = value;
+        }
+        remainingLetter = remainingLetter.replace(/\s/g, "");
+        console.log(firstLetter);
+        console.log(remainingLetter);
+        var regExp = /^[0-9]{10,20}$/;
+        if (msgInfo.isValid && !regExp.test(remainingLetter)) {
+            msgInfo.isValid = false;
+            msgInfo.msg = "Phone number start with + country code and should be 10-20 length";
+            //console.log(msgInfo.isValid, 'if test isvalid');
+        }
+        else {
+            msgInfo.isValid = true;
+            //console.log(msgInfo.isValid, 'else isvalid');
+        }
+        return msgInfo;
+    };
+    ProfilePage.prototype.IsFormValid = function () {
+        debugger;
+        console.log(this.account.PhoneNumber, "-phone number-");
+        var msg;
+        if (this.account.FirstName == "" && this.account.LastName == "") {
+            msg = "Please enter First Name & Please enter Last Name.";
+        }
+        else if (this.account.FirstName == "") {
+            msg = "Please enter First Name.";
+        }
+        else if (this.account.LastName == "") {
+            msg = "Please enter Last Name.";
+        }
+        else if (this.account.PhoneNumber == "" || this.account.PhoneNumber === null) {
+            msg = "Please enter PhoneNumber.";
+        }
+        else if (this.account.PhoneNumber !== "") {
+            var info = this.isValidMobile(this.account.PhoneNumber);
+            if (!info.isValid) {
+                msg = info.msg;
+            }
+            else {
+                msg = "";
+            }
+        }
+        if (msg != "" && msg != undefined) {
+            this.presentAlert(msg);
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    ProfilePage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ProfilePage.prototype.SetUserInfo = function (data) {
+        //alert("new Path " + data.ProfileImage);
+        localStorage.setItem("FirstName", data.FirstName);
+        localStorage.setItem("LastName", data.LastName);
+        localStorage.setItem("ProfileImage", data.ProfileImage);
+        localStorage.setItem("Gender", data.Gender);
+        localStorage.setItem("Height", data.Height);
+        localStorage.setItem("BirthDate", data.BirthDate);
+        localStorage.setItem('PhoneNumber', data.PhoneNumber);
+        localStorage.setItem('IsCompanySMSEnable', data.IsCompanySMSEnable);
+        localStorage.setItem('IsUserSMSEnable', data.IsUserSMSEnable);
+        data["RewardPoint"] = localStorage.getItem("RewardPoint");
+        data["bio_age"] = localStorage.getItem("bio_age");
+        data["mhrs_score"] = localStorage.getItem("mhrs_score");
+        this.events.publish("user:created", data);
+    };
+    ProfilePage.prototype.EditSection = function (item) {
+        this.IsShowDone = true;
+        switch (item) {
+            case "FirstName":
+                this.DisplayFirstName = true;
+                break;
+            case "LastName":
+                this.DisplayLastName = true;
+                break;
+            case "PhoneNumber":
+                this.DisplayPhoneNumber = true;
+                break;
+            case "UserName":
+                this.DisplayUserName = true;
+                break;
+            case "Height":
+                this.DisplayHeight = true;
+                break;
+            case "BirthDate":
+                this.DisplayBirthDate = true;
+                break;
+            case "Gender":
+                this.DisplayGender = true;
+                break;
+        }
+    };
+    ProfilePage.prototype.dataURItoBlob = function (dataURI) {
+        var byteString = window.atob(dataURI);
+        var arrayBuffer = new ArrayBuffer(byteString.length);
+        var int8Array = new Uint8Array(arrayBuffer);
+        for (var i = 0; i < byteString.length; i++) {
+            int8Array[i] = byteString.charCodeAt(i);
+        }
+        var blob = new Blob([int8Array], { type: "image/jpeg" });
+        return blob;
+    };
+    ProfilePage.prototype.PostFile = function (postUrl, formData, fnSuccessCallBack, fnErrorCallBack) {
+        __WEBPACK_IMPORTED_MODULE_4_jquery__["ajax"]({
+            type: "POST",
+            url: postUrl,
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (msg) {
+                if (fnSuccessCallBack != undefined) {
+                    fnSuccessCallBack(msg);
+                }
+            },
+            error: function (xhr, errStatus, error) {
+                if (fnErrorCallBack == undefined) {
+                    console.log(error + " " + errStatus);
+                }
+                else {
+                    fnErrorCallBack(error, errStatus);
+                }
+            }
+        });
+    };
+    ProfilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-profile",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-profile\profile.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Profile</ion-title>\n    <!-- <ion-item>\n       <ion-avatar item-start>\n        <img src="{{imageFileName}}" id="imgprofile">\n        <ion-icon id="edit" (click)="editprofilepic();">\n          <img src="assets/img/edit_icn.png">\n        </ion-icon>\n      </ion-avatar> \n      <h2>{{account.FirstName}} {{account.LastName}} &nbsp;</h2>\n      <p>\n        <ion-icon name="medal"></ion-icon>{{rewardpoints}} Points\n      </p>\n    </ion-item> -->\n\n    <ion-buttons end>\n      <button *ngIf="IsShowDone" id="done-button" ion-button (click)="uploadFile();">\n        Done\n      </button>\n      <button *ngIf="!IsShowDone" id="done-button" ion-button menuToggle>\n        Back\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-item>\n    <div style="width: 100%;">\n      <ion-avatar item-start style="float: right;">\n        <img src="{{imageFileName}}" id="imgprofile">\n        <ion-icon id="edit" (click)="editprofilepic();">\n          <img src="assets/img/edit_icn.png">\n        </ion-icon>\n      </ion-avatar>\n    </div>\n  </ion-item>\n  <div class="div-title">BASIC INFO</div>\n  <ion-item>\n\n    <div class="div-lbl-edit div-border-n"> <span>Fast Name</span> <a (click)="EditSection(\'FirstName\');"\n        *ngIf="!DisplayFirstName"> {{account.FirstName}} <img src="assets/img/arrow.png">\n      </a>\n      <input type="text" [(ngModel)]="account.FirstName" *ngIf="DisplayFirstName" />\n    </div>\n\n\n    <div class="div-lbl-edit div-border-n"> <span>Last Name</span> <a (click)="EditSection(\'LastName\');"\n        *ngIf="!DisplayLastName"> {{account.LastName}} <img src="assets/img/arrow.png">\n      </a>\n      <input type="text" [(ngModel)]="account.LastName" *ngIf="DisplayLastName" />\n    </div>\n    \n    <div class="div-lbl-edit div-border-n"> <span>User Name</span> <a (click)="EditSection(\'UserNameNA\');"\n        *ngIf="!DisplayUserName"> {{account.UserName}} <img src="assets/img/arrow.png">\n      </a>\n      <input type="email" [(ngModel)]="account.UserName" *ngIf="DisplayUserName" />\n    </div>\n    <div class="div-lbl-edit div-border-n"> <span>Phone Number</span> <a (click)="EditSection(\'PhoneNumber\');"\n      *ngIf="!DisplayPhoneNumber"> {{account.PhoneNumber}} <img src="assets/img/arrow.png">\n    </a>\n    <input type="text" [(ngModel)]="account.PhoneNumber" *ngIf="DisplayPhoneNumber" placeholder="+1 604 555 8955" />\n  </div>\n\n  </ion-item>\n\n  <ion-item *ngIf="IsCompanySMSEnable">\n    <ion-label class="lbl-sms">SMS Notification</ion-label>\n    <ion-toggle slot="start" color="secondary" [checked]="ischecked" (ionChange)="EventEnableSMS($event)">\n      <div class="toggle-text">{{ischecked ? "YES" : "NO"}}</div>\n    </ion-toggle>\n  \n</ion-item>\n  <div class="div-title">GENDER</div>\n  <ion-item>\n\n    <div class="div-lbl-edit"> <span>I am</span>\n\n      <!-- <a (click)="EditSection(\'Gender\');"\n        *ngIf="!DisplayGender">{{ account.Gender}} <img src="assets/img/arrow.png"></a> -->\n\n\n\n      <a (click)="showGenderPicker()">{{ account.Gender}} <img src="assets/img/arrow.png"></a>\n\n      <!-- <ion-select [(ngModel)]="account.Gender" *ngIf="DisplayGender">\n        <ion-option value="male">Male</ion-option>\n        <ion-option value="female">Female</ion-option>\n      </ion-select> -->\n\n    </div>\n  </ion-item>\n  <div class="div-title">DATE OF BIRTH</div>\n\n  <ion-card class="ioncard" style="padding-top: 15px">\n    <div class="div-lbl-edit2"> <span>I\'m born on</span>\n      <a>\n        <ion-datetime [(ngModel)]="account.BirthDate" name="BirthDate" (ionChange)="ChangeDate()">\n\n        </ion-datetime>\n        &nbsp; <img src="assets/img/arrow.png">\n      </a>\n    </div>\n  </ion-card>\n  <div class="div-title">HEIGHT</div>\n\n\n\n  <ion-card class="ioncard" style="padding-top: 15px">\n    <div class="div-lbl-edit2"> <span>My height is</span>\n      <a>\n        <ion-multi-picker [(ngModel)]="UIHeight" item-content [multiPickerColumns]="parentColumns" [separator]="\'-\'"\n          name="Height" (ngModelChange)="onModelChange($event)">\n        </ion-multi-picker>\n        &nbsp; <img src="assets/img/arrow.png">\n      </a>\n    </div>\n  </ion-card>\n\n</ion-content>\n<ion-footer>\n\n</ion-footer>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-profile\profile.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["PickerController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_6__providers__["f" /* UserService */]])
+    ], ProfilePage);
+    return ProfilePage;
+}());
+
+//# sourceMappingURL=profile.js.map
+
+/***/ }),
+
+/***/ 546:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogOverviewPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_highcharts__ = __webpack_require__(547);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_highcharts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_highcharts__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__step_dashboard__ = __webpack_require__(150);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+/**
+ * Generated class for the IntroPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LogOverviewPage = /** @class */ (function () {
+    function LogOverviewPage(navCtrl, navParams, loadingCtrl, alertCtl, menu, stepChallengeService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtl = alertCtl;
+        this.menu = menu;
+        this.stepChallengeService = stepChallengeService;
+        this.model = {};
+        this.DialyClass = "current";
+        this.MonthlyClass = "";
+        this.WeeklyClass = "";
+        this.XAxisCategories = [];
+        this.SeriesData = [];
+        this.xpositionnum = 1;
+        this.xMinWidth = 700;
+        this.subtitle = "";
+        this.CurrentStartDate = "";
+        this.CurrentEndDate = "";
+        this.zone = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]({ enableLongStackTrace: false });
+    }
+    LogOverviewPage.prototype.LoadChartData = function () {
+        console.log("LoadChartData");
+        //let appChart = 
+        __WEBPACK_IMPORTED_MODULE_2_highcharts__["chart"]("container", {
+            chart: {
+                type: "column",
+                scrollablePlotArea: {
+                    minWidth: this.xMinWidth,
+                    scrollPositionX: this.xpositionnum,
+                },
+            },
+            credits: {
+                enabled: false,
+            },
+            title: {
+                text: "Steps Info",
+            },
+            subtitle: {
+                text: this.subtitle,
+            },
+            xAxis: {
+                categories: this.XAxisCategories,
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: "(Steps)",
+                },
+            },
+            tooltip: {
+                valueSuffix: " step counts",
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0,
+                },
+            },
+            series: [
+                {
+                    type: undefined,
+                    name: "",
+                    data: this.SeriesData,
+                },
+            ],
+        });
+        //appChart.redraw();
+    };
+    LogOverviewPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad TemplatePage - logooveriew");
+        //this.zone.run(() => {
+        this.loadInitialData("Daily", null, true);
+        //});
+    };
+    LogOverviewPage.prototype.ngAfterViewInit = function () {
+    };
+    LogOverviewPage.prototype.loadInitialData = function (ProgressType, DateType, isFirstTime) {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+            ProgressType: ProgressType,
+            CurrentStartDate: null,
+            CurrentEndDate: null,
+            DateType: null,
+        };
+        if (!isFirstTime) {
+            userAcc.CurrentStartDate = this.CurrentStartDate;
+            userAcc.CurrentEndDate = this.CurrentEndDate;
+            userAcc.DateType = DateType;
+        }
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait...",
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService
+                .GetOverviewAndGraphicViewData(userAcc)
+                .subscribe(function (resp) {
+                _this.loader.dismiss();
+                _this.XAxisCategories = [];
+                _this.SeriesData = [];
+                if (resp.SystemStatus == "Success") {
+                    _this.model = resp;
+                    console.log(_this.model);
+                    _this.model.resultGraphicView.forEach(function (item) {
+                        _this.XAxisCategories.push(item.date);
+                        _this.SeriesData.push(item.steps);
+                        _this.subtitle = _this.model.StartDate + " - " + _this.model.EndDate;
+                        _this.CurrentStartDate = _this.model.StartDate;
+                        _this.CurrentEndDate = _this.model.EndDate;
+                    });
+                    _this.LoadChartData();
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Get User Overall Progress Of StepChallenge : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    LogOverviewPage.prototype.LoadGraph = function (title, action) {
+        this.DialyClass = "";
+        this.WeeklyClass = "";
+        this.MonthlyClass = "";
+        switch (title) {
+            case "Daily":
+                this.DialyClass = "current";
+                this.xpositionnum = 1;
+                this.xMinWidth = 700;
+                break;
+            case "Weekly":
+                this.WeeklyClass = "current";
+                this.xpositionnum = 0;
+                this.xMinWidth = 0;
+                break;
+            case "Monthly":
+                this.MonthlyClass = "current";
+                this.xpositionnum = 1;
+                this.xMinWidth = 700;
+                break;
+        }
+        //this.LoadChartData();
+        console.log(action);
+        if (action.length == 0) {
+            this.loadInitialData(title, null, true);
+        }
+        else {
+            this.loadInitialData(title, action, false);
+        }
+    };
+    LogOverviewPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { },
+                                },
+                            ],
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    LogOverviewPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        this.navBar.backButtonClick = function () {
+            console.log("Back button click StepDashboardPage");
+            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__step_dashboard__["a" /* StepDashboardPage */]);
+        };
+    };
+    LogOverviewPage.prototype.NextScreen = function (name) {
+        localStorage.setItem("backstepspage", "LogOverviewPage");
+        this.navCtrl.push(name);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("navbar"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Navbar"])
+    ], LogOverviewPage.prototype, "navBar", void 0);
+    LogOverviewPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-logoverview",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\log-overview\logoverview.html"*/'<ion-header>\n\n    <ion-navbar #navbar color="primary">\n\n        <ion-title>Overview</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n\n\n    <ul class="tabs-wrap-main">\n\n        <li class="tab-link {{DialyClass}} main-li" data-tab="custom-tab-1">\n\n            <button (click)="LoadGraph(\'Daily\', \'Previous\')" class="btn-pre">&#8249;</button>\n\n            <a (click)="LoadGraph(\'Daily\', \'\')" class="btn-link"> Daily </a>\n\n            <button (click)="LoadGraph(\'Daily\', \'Next\')" class="btn-next">&#8250;</button>\n\n        </li>\n\n        <li class="tab-link {{WeeklyClass}} main-li" data-tab="custom-tab-2">\n\n            <button (click)="LoadGraph(\'Weekly\', \'Previous\')" class="btn-pre">&#8249;</button>\n\n            <a (click)="LoadGraph(\'Weekly\', \'\')" class="btn-link"> Weekly </a>\n\n            <button (click)="LoadGraph(\'Weekly\', \'Next\')" class="btn-next">&#8250;</button>\n\n        </li>\n\n        <li class="tab-link {{MonthlyClass}} main-li" data-tab="custom-tab-3">\n\n            <button (click)="LoadGraph(\'Monthly\', \'Previous\')" class="btn-pre">&#8249;</button>\n\n            <a (click)="LoadGraph(\'Monthly\', \'\')" class="btn-link"> Monthly </a>\n\n            <button (click)="LoadGraph(\'Monthly\', \'Next\')" class="btn-next">&#8250;</button>\n\n        </li>\n\n    </ul>\n\n    <div id="custom-tab-1" class="tab-content-main current">\n\n        <div class="custom-div custom-row px-2 text-center ">\n\n            <div class="custom-col">\n\n                <div class="div-pad-10">{{model.TotalSteps}}\n\n                    <br />\n\n                    Total Steps</div>\n\n            </div>\n\n            <div class="custom-col">\n\n                <div class="div-pad-10 border-lr"> {{model.Highest}}\n\n                    <br />\n\n                    Highest</div>\n\n            </div>\n\n            <div class="custom-col">\n\n                <div class="div-pad-10 ">{{model.Lowest}}\n\n                    <br />\n\n                    Lowest</div>\n\n            </div>\n\n            \n\n        </div>\n\n\n\n        <!-- <div class="custom-row align-items-center mt-3 mb-3">\n\n            <div class="custom-col pl-3">\n\n                <small class="text-blue"> <b>210</b> Today steps</small>\n\n            </div>\n\n            <div class="custom-col-auto mr-3">\n\n                <div class="custom-btn-primary rounded-circle d-flex align-items-center justify-content-center"\n\n                    style="width: 30px; height: 30px;">\n\n                    <img class="pb-2 pt-2 pl-2 pr-2" src="assets/img/calendar.png" alt="calendar" style="width:34px;">\n\n                </div>\n\n            </div>\n\n        </div> -->\n\n        <div id="container" name="container" style="display: block;"></div>\n\n        <div class="mb-3">\n\n            <button type="button" (click)="NextScreen(\'StepChallengeHistoryPage\')"\n\n                class="custom-btn text-uppercase custom-btn-primary w-100 font-weight-bold font-size-17 py-2 px-2">\n\n                My Challenges</button>\n\n        </div>\n\n    </div>\n\n    <div id="custom-tab-2" class="tab-content-main">\n\n        2\n\n    </div>\n\n    <div id="custom-tab-3" class="tab-content-main">\n\n        3\n\n    </div>\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\log-overview\logoverview.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["e" /* StepChallengeService */]])
+    ], LogOverviewPage);
+    return LogOverviewPage;
+}());
+
+//# sourceMappingURL=logoverview.js.map
+
+/***/ }),
+
+/***/ 549:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StepChallengeHistoryPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+/**
+ * Generated class for the IntroPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var StepChallengeHistoryPage = /** @class */ (function () {
+    function StepChallengeHistoryPage(navCtrl, navParams, loadingCtrl, alertCtl, menu, stepChallengeService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtl = alertCtl;
+        this.menu = menu;
+        this.stepChallengeService = stepChallengeService;
+        this.model = {};
+        this.dataActivities = [];
+        this.loadInitialData();
+    }
+    StepChallengeHistoryPage.prototype.loadInitialData = function () {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+        };
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait...",
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService.GetUserStepChallengeHistory(userAcc).subscribe(function (resp) {
+                _this.loader.dismiss();
+                if (resp.SystemStatus == "Success") {
+                    _this.dataActivities = resp.result;
+                    console.log(resp);
+                    var max_user_step_challenge_num = resp.result.map(function (q) { return q.user_step_challenge_num; });
+                    console.log('max id user_step_challenge_num', max_user_step_challenge_num);
+                    var max_id_1 = Math.max.apply(Math, max_user_step_challenge_num);
+                    console.log('max id user_step_challenge_num', max_id_1);
+                    _this.dataActivities.forEach(function (item) {
+                        if (item.status == "Failed") {
+                            item["classname"] = "bg-danger";
+                            item["buttonTitle"] = "Delete";
+                        }
+                        else if (item.status == "Achieved" &&
+                            item.user_step_challenge_num == max_id_1) {
+                            item["classname"] = "bg-success";
+                            item["buttonTitle"] = "Start New Challenge";
+                        }
+                        else if (item.status == "Achieved" &&
+                            (new Date(item.end_date) <= new Date() || new Date(item.end_date) >= new Date())) {
+                            item["classname"] = "bg-success";
+                            item["buttonTitle"] = "Delete";
+                        }
+                        else if (item.status == "In Progress") {
+                            item["classname"] = "bg-warning";
+                            item["buttonTitle"] = "Reset";
+                        }
+                        else {
+                            item["classname"] = "bg-danger";
+                            item["buttonTitle"] = "Delete";
+                        }
+                    });
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Get User Overall Progress Of StepChallenge : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    StepChallengeHistoryPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad TemplatePage");
+    };
+    StepChallengeHistoryPage.prototype.StepChallengeHistoryAction = function (id, buttonTitle) {
+        console.log(id, buttonTitle);
+        switch (buttonTitle) {
+            case "Delete":
+                this.DeletePreviousChallengeHistory(id);
+                break;
+            case "Start New Challenge":
+                this.StartUserNewStepChallenge();
+                break;
+            case "Reset":
+                this.ResetUserStepChallenge();
+                break;
+        }
+    };
+    StepChallengeHistoryPage.prototype.DeletePreviousChallengeHistory = function (id) {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+            user_step_challenge_num: id,
+        };
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait...",
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService
+                .DeletePreviousChallengeHistory(userAcc)
+                .subscribe(function (resp) {
+                _this.loader.dismiss();
+                if (resp.SystemStatus == "Success") {
+                    _this.presentAlert(resp.SystemMessage);
+                    _this.loadInitialData();
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Delete Previous Challenge History : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    StepChallengeHistoryPage.prototype.ResetUserStepChallenge = function () {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+        };
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait...",
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService.ResetUserStepChallenge(userAcc).subscribe(function (resp) {
+                _this.loader.dismiss();
+                if (resp.SystemStatus == "Success") {
+                    _this.presentAlert(resp.SystemMessage);
+                    _this.loadInitialData();
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Reset User Step Challenge : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    StepChallengeHistoryPage.prototype.StartUserNewStepChallenge = function () {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+        };
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait...",
+        });
+        this.loader.present().then(function () {
+            _this.stepChallengeService.StartUserNewStepChallenge(userAcc).subscribe(function (resp) {
+                _this.loader.dismiss();
+                if (resp.SystemStatus == "Success") {
+                    _this.presentConfirm("Congratulations! You have achieved your step challenge before the end date. You have decided to start a new challenge which will delete steps and activities logged for today. Do you want to continue?"); //resp.SystemMessage);
+                }
+                else {
+                    _this.presentAlert(resp.SystemMessage);
+                }
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Start User New Step Challenge : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    StepChallengeHistoryPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { },
+                                },
+                            ],
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    StepChallengeHistoryPage.prototype.presentConfirm = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alertP;
+            var _this = this;
+            return __generator(this, function (_a) {
+                alertP = this.alertCtl.create({
+                    message: msg,
+                    cssClass: "action-sheets-basic-page",
+                    buttons: [
+                        {
+                            text: "Ok",
+                            handler: function () {
+                                _this.loadInitialData();
+                            }
+                        },
+                        {
+                            text: "Cancel",
+                            handler: function () {
+                                //alertP.dismiss();
+                            }
+                        }
+                    ]
+                });
+                alertP.present();
+                return [2 /*return*/];
+            });
+        });
+    };
+    StepChallengeHistoryPage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        this.navBar.backButtonClick = function () {
+            var name = localStorage.getItem("backstepspage");
+            if (name !== "LogOverviewPage") {
+                console.log("Back button click stepchallenge");
+                localStorage.removeItem("backstepspage");
+                _this.navCtrl.push(name);
+            }
+            else {
+                _this.navCtrl.setPages([{ page: name }]);
+            }
+        };
+    };
+    StepChallengeHistoryPage.prototype.NextScreen = function (name) {
+        this.navCtrl.push(name);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("navbar"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Navbar"])
+    ], StepChallengeHistoryPage.prototype, "navBar", void 0);
+    StepChallengeHistoryPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-stepchallengehistory",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\stepchallengehistory\stepchallengehistory.html"*/'<ion-header>\n\n    <ion-navbar #navbar color="primary">\n\n        <ion-title>Step Challenge History</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content lass="app-back">\n\n    <div class="app-cart ml-3 mt-3 mr-3 px-0" *ngFor="let item of dataActivities">\n\n        <div class="custom-row py-2 px-2 text-center text-light">\n\n            <div class="custom-col">\n\n                <div class="font-family-Conv_gotham-book-webfont font-size-13 main-head">\n\n                    <div class="fl-left">Duration {{item.duration}}</div>\n\n                    <div class="fl-right text-blue"\n\n                        (click)="StepChallengeHistoryAction(item.user_step_challenge_num,item.buttonTitle)"><img\n\n                            style="width: 17px;padding-right: 2px; vertical-align: middle;" class="img-fluid"\n\n                            src="assets/img/new_{{item.buttonTitle}}.png" alt="{{item.buttonTitle}}">{{item.buttonTitle}}</div>\n\n                </div>\n\n                <br />\n\n                <div class="text-left text-light clr"><small> {{item.start_date}} - {{item.end_date}}</small></div>\n\n            </div>\n\n        </div>\n\n        <div style="border-bottom: 1px !important;" class="border-bottom"></div>\n\n        <div class="custom-row px-2 text-center text-light">\n\n            <div class="custom-col">\n\n                <div class="font-family-Conv_gotham-book-webfont font-size-13">Goal Steps</div>\n\n            </div>\n\n            <div class="custom-col">\n\n                <div class="font-family-Conv_gotham-book-webfont font-size-13">Total Steps</div>\n\n            </div>\n\n            <div class="custom-col">\n\n                <div class="font-family-Conv_gotham-book-webfont font-size-13">Status</div>\n\n            </div>\n\n        </div>\n\n\n\n        <div class="custom-row px-2 text-center">\n\n            <div class="custom-col custom-mr-10">\n\n                <div class="font-family-Conv_gotham-book-webfont font-size-13">{{item.number_of_steps}}</div>\n\n            </div>\n\n            <div class="custom-col custom-mr-10">\n\n                <div class="font-family-Conv_gotham-book-webfont font-size-13">{{item.total_steps}}</div>\n\n            </div>\n\n            <div class="custom-col custom-mr-10">\n\n                <div class="{{item.classname}} border-radius-4 font-family-Conv_gotham-book-webfont  font-size-13 px-3 text-white">{{item.status}}</div>\n\n            </div>\n\n        </div>\n\n    </div>\n\n</ion-content>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\step-challenges\stepchallengehistory\stepchallengehistory.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["e" /* StepChallengeService */]])
+    ], StepChallengeHistoryPage);
+    return StepChallengeHistoryPage;
+}());
+
+//# sourceMappingURL=stepchallengehistory.js.map
+
+/***/ }),
+
+/***/ 567:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_unique_device_id__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_welcome_welcome__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_settings_fcm_service__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_settings_wellnessconstant__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_templates_template__ = __webpack_require__(93);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+//import { NotificationPage } from "../pages/notification/notification";
+var MyApp = /** @class */ (function () {
+    function MyApp(translate, platform, config, statusBar, splashScreen, events, fcmSrv, uniqueDeviceID, userSrv, toastController, menu, alertCtl) {
+        var _this = this;
+        this.translate = translate;
+        this.platform = platform;
+        this.config = config;
+        this.statusBar = statusBar;
+        this.splashScreen = splashScreen;
+        this.events = events;
+        this.fcmSrv = fcmSrv;
+        this.uniqueDeviceID = uniqueDeviceID;
+        this.userSrv = userSrv;
+        this.toastController = toastController;
+        this.menu = menu;
+        this.alertCtl = alertCtl;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_7__pages_welcome_welcome__["a" /* WelcomePage */];
+        //rootPage = MyHraPage;
+        this.IshiddenLink = false;
+        this.pages = [
+            {
+                title: "My Profile",
+                component: "ProfilePage",
+                manuIcon: "user"
+            },
+            {
+                title: "My Wellness Wallet",
+                component: "MyWellnessWalletPage",
+                manuIcon: "wallet"
+            },
+            {
+                title: "Step Challenge",
+                component: "StepDashboardPage",
+                manuIcon: "log-steps"
+            },
+        ];
+        //
+        this.user_name = "";
+        this.rewardpoints = 0;
+        this.profilepic = "assets/img/loader.gif";
+        this.MainSiteUrl = __WEBPACK_IMPORTED_MODULE_10__providers_settings_wellnessconstant__["a" /* WellnessConstants */].App_Url;
+        this.PortalURL = "";
+        platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            platform.registerBackButtonAction(function () {
+                console.log('Exit');
+                //this.platform.exitApp();
+                _this.ShowExitAppAlert();
+            });
+            //this.statusBar.styleDefault();
+            //this.splashScreen.hide();
+            _this.statusBar.styleLightContent();
+            _this.uniqueDeviceID
+                .get()
+                .then(function (uuid) {
+                //alert('deviceid : '+uuid);
+                localStorage.setItem("remUUID", uuid);
+                _this.notificationSetup(uuid);
+            })
+                .catch(function (error) { return alert(error); });
+            _this.menu.enable(false);
+        });
+        this.initTranslate();
+        events.subscribe("user:created", function (user) {
+            if (localStorage.getItem("UserInfo") !== undefined &&
+                localStorage.getItem("UserInfo") !== null &&
+                localStorage.getItem("UserName") !== undefined &&
+                localStorage.getItem("UserName") !== null) {
+                _this.user_name = user.FirstName + " " + user.LastName;
+                _this.rewardpoints = user.RewardPoint;
+                _this.profilepic = user.ProfileImage;
+                //this.events.publish('user:created', user);
+                //let userId = localStorage.getItem("UserName");
+                if (localStorage.getItem("UserAccessLevel") !== null &&
+                    localStorage.getItem("UserAccessLevel") !== "Full") {
+                    _this.IshiddenLink = true;
+                }
+                else {
+                    _this.IshiddenLink = false;
+                }
+            }
+        });
+        // code for load push message
+        // this.LoadNotifications();
+        // this.presentToast("Hello I am alert");
+    }
+    MyApp.prototype.ShowExitAppAlert = function () {
+        var _this = this;
+        this.alertCtl.create({
+            title: 'Meschino Wellness',
+            message: 'Are you sure you want to exit app?',
+            enableBackdropDismiss: false,
+            cssClass: "action-sheets-basic-page",
+            buttons: [
+                {
+                    text: 'Yes',
+                    handler: function () {
+                        //this.isExitAlertOpen = false;
+                        _this.userSrv._LogoutUser();
+                        _this.platform.exitApp();
+                    }
+                }, {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: function () {
+                        //this.isExitAlertOpen = false;
+                    }
+                }
+            ]
+        }).present();
+    };
+    MyApp.prototype.initTranslate = function () {
+        var _this = this;
+        // Set the default language for translation strings, and the current language.
+        this.translate.setDefaultLang("en");
+        var browserLang = this.translate.getBrowserLang();
+        if (browserLang) {
+            if (browserLang === "zh") {
+                var browserCultureLang = this.translate.getBrowserCultureLang();
+                if (browserCultureLang.match(/-CN|CHS|Hans/i)) {
+                    this.translate.use("zh-cmn-Hans");
+                }
+                else if (browserCultureLang.match(/-TW|CHT|Hant/i)) {
+                    this.translate.use("zh-cmn-Hant");
+                }
+            }
+            else {
+                this.translate.use(this.translate.getBrowserLang());
+            }
+        }
+        else {
+            this.translate.use("en"); // Set your language here
+        }
+        this.translate.get(["BACK_BUTTON_TEXT"]).subscribe(function (values) {
+            _this.config.set("ios", "backButtonText", "");
+        });
+    };
+    MyApp.prototype.openPage = function (page) {
+        // Reset the content nav to have just this page
+        // we wouldn't want the back button to show in this scenario
+        this.nav.setRoot(page.component);
+    };
+    MyApp.prototype.logOut = function () {
+        this.userSrv._LogoutUser();
+        // when user logout
+        this.menu.enable(false);
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */]);
+    };
+    MyApp.prototype.downloadPDF = function () {
+        var url = "https://meschinowellness.blob.core.windows.net/downloads/Optimal_Living_Program.pdf";
+        window.open(url, "_system", "location=yes");
+    };
+    MyApp.prototype.openPortal = function () {
+        this.PortalURL =
+            this.MainSiteUrl +
+                "account/MobileAppLogin?SecretToken=" +
+                localStorage.getItem("SecretToken") +
+                "&DeviceId=" +
+                localStorage.getItem("deviceid") +
+                "&tokenP=" +
+                localStorage.getItem("Password");
+        var url = this.PortalURL;
+        console.log(url);
+        window.open(url, "_system", "location=yes");
+    };
+    MyApp.prototype.LoadNotifications = function () {
+        var _this = this;
+        if (localStorage.getItem("UserInfo") !== undefined &&
+            localStorage.getItem("UserInfo") !== null &&
+            localStorage.getItem("UserName") !== undefined &&
+            localStorage.getItem("UserName") !== null) {
+            /*
+            let res = {Count : 0};
+            let oldCount = localStorage.getItem("notificationCount");
+            if(oldCount !=="" && oldCount !== undefined )
+            {
+              res.Count = parseInt(oldCount) + 1;
+              this.events.publish("PushNotification", res);
+            }
+      */
+            var userAcc = {
+                DeviceId: localStorage.getItem("deviceid"),
+                SecretToken: localStorage.getItem("SecretToken")
+            };
+            this.userSrv.GetPushNotificationCount(userAcc).subscribe(function (res) {
+                if (res.SystemStatus == "Success") {
+                    _this.events.publish("PushNotification", res);
+                }
+            }, function (err) {
+                //alert(JSON.stringify(err));
+                console.log(JSON.stringify(err));
+            });
+        }
+    };
+    MyApp.prototype.notificationSetup = function (uuid) {
+        var _this = this;
+        this.fcmSrv.getToken(uuid);
+        this.fcmSrv.onNotifications().subscribe(function (msg) {
+            //     alert(msg);
+            // if (msg.wasTapped) {
+            //   alert('Received in background');
+            // } else {
+            //   alert('Received in foreground');
+            // }
+            if (_this.platform.is("ios")) {
+                _this.presentToast(msg.body, msg);
+            }
+            else {
+                _this.presentToast(msg.body, msg);
+            }
+        });
+    };
+    MyApp.prototype.presentToast = function (message, msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var toast;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.LoadNotifications()];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, this.toastController.create({
+                                message: message,
+                                duration: 4000,
+                                position: "top"
+                            })];
+                    case 2:
+                        toast = _a.sent();
+                        toast.present();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MyApp.prototype.ViewTemplate = function (Name) {
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_11__pages_templates_template__["a" /* TemplatePage */], {
+            Content: Name
+        });
+    };
+    MyApp.prototype.gotostep = function (name) {
+        this.nav.setRoot(name);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["Nav"]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["Nav"])
+    ], MyApp.prototype, "nav", void 0);
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-app-main",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\app\app.component.html"*/'<ion-menu class="main-menu" [content]="content">\n\n    <ion-header color="primary">\n\n        <ion-item>\n\n            <ion-avatar item-start>\n\n                <img src="{{ profilepic }}" />\n\n            </ion-avatar>\n\n            <h2>{{ user_name }}</h2>\n\n            <p>\n\n                <ion-icon name="medal"></ion-icon>{{ rewardpoints }} Points\n\n            </p>\n\n        </ion-item>\n\n    </ion-header>\n\n    <ion-content>\n\n        <ion-list>\n\n            <ion-item *ngFor="let p of pages">\n\n                <ion-icon><img src="assets/icon/{{ p.manuIcon }}.png" height="16px" width="16px"  class="img-menu"/></ion-icon>\n\n                <button menuClose class="menu-item" (click)="openPage(p)">\n\n                    {{ p.title }}\n\n                </button>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-icon><img src="assets/img/policy.png" height="16px" width="16px" class="img-menu"/></ion-icon>\n\n                <button menuClose class="menu-item" (click)="ViewTemplate(\'TermsAndConditions\')">\n\n                    Privacy Policy and Terms\n\n                </button>\n\n            </ion-item>\n\n            <ion-item>\n\n                <ion-icon><img src="assets/img/precautions-disclaimers.png" height="16px" width="16px" class="img-menu"/></ion-icon>\n\n                <button menuClose class="menu-item" (click)="ViewTemplate(\'PrecautionsandDisclaimer\')">\n\n                    Precautions and Disclaimer\n\n                </button>\n\n            </ion-item>\n\n            <!-- <ion-item>\n\n                <ion-icon><img src="assets/img/log-steps.png" height="16px" width="16px" class="img-menu"/></ion-icon>\n\n                <button menuClose class="menu-item" (click)="gotostep(\'StepDashboardPage\')">\n\n                    Step Challenge\n\n                </button>\n\n            </ion-item> -->\n\n            <ion-item *ngIf="!IshiddenLink">\n\n                <ion-icon><img src="assets/img/website.png" height="16px" width="16px" class="img-menu"/></ion-icon>\n\n                <button class="menu-item" (click)="openPortal()">\n\n                    Visit Website\n\n                </button>\n\n            </ion-item>\n\n            <ion-item>\n\n                <img src="assets/img/banner.png" (click)="downloadPDF()" />\n\n            </ion-item>\n\n        </ion-list>\n\n    </ion-content>\n\n    <ion-footer padding color="primary">\n\n        <button menuClose (click)="logOut()" ion-button color="primary" class="big-btn">\n\n            <ion-icon padding name="shuffle"></ion-icon>\n\n            Logout\n\n        </button>\n\n    </ion-footer>\n\n</ion-menu>\n\n<ion-nav #content [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\app\app.component.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["Platform"],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["Config"],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_1__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_9__providers_settings_fcm_service__["a" /* FcmService */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_unique_device_id__["a" /* UniqueDeviceID */],
+            __WEBPACK_IMPORTED_MODULE_6__providers__["f" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["ToastController"],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["MenuController"],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["AlertController"]])
+    ], MyApp);
+    return MyApp;
+}());
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 71:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Api is a generic REST Api handler. Set your API url first.
+ */
+var Api = /** @class */ (function () {
+    function Api(http) {
+        this.http = http;
+        this.url = "https://www.meschinowellness.com/"; //WellnessConstants.App_Url;
+    }
+    Api.prototype.get = function (endpoint, params, reqOpts) {
+        if (!reqOpts) {
+            reqOpts = {
+                params: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpParams */]()
+            };
+        }
+        // Support easy query params for GET requests
+        if (params) {
+            reqOpts.params = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpParams */]();
+            for (var k in params) {
+                reqOpts.params = reqOpts.params.set(k, params[k]);
+            }
+        }
+        return this.http.get(this.url + endpoint, reqOpts);
+    };
+    Api.prototype.post = function (endpoint, body, reqOpts) {
+        //const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/x-www-form-urlencoded',
+            "Access-Control-Allow-Origin": this.url,
+            "Access-Control-Allow-Methods": "POST",
+            "Access-Control-Allow-Headers": "Content-Type"
+        });
+        reqOpts = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* RequestOptions */]({ headers: headers });
+        if (this.url !== null && this.url !== undefined && endpoint != null && endpoint !== undefined) {
+            var _endUrl = this.url + endpoint;
+            console.log(_endUrl, "end point url");
+            return this.http.post(_endUrl, body, reqOpts);
+        }
+        else {
+            alert("URL is undefined");
+            return;
+        }
+    };
+    Api.prototype.put = function (endpoint, body, reqOpts) {
+        return this.http.put(this.url + endpoint, body, reqOpts);
+    };
+    Api.prototype.delete = function (endpoint, reqOpts) {
+        return this.http.delete(this.url + endpoint, reqOpts);
+    };
+    Api.prototype.patch = function (endpoint, body, reqOpts) {
+        return this.http.patch(this.url + endpoint, body, reqOpts);
+    };
+    Api = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], Api);
+    return Api;
+}());
+
+//# sourceMappingURL=api.js.map
+
+/***/ }),
+
+/***/ 72:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotificationPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__my_wellness_wallet_my_wellness_wallet__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__notificationmsg_notimsg__ = __webpack_require__(266);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the DashboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var NotificationPage = /** @class */ (function () {
+    function NotificationPage(navCtrl, formBuilder, navParams, loadingCtrl, alertCtl, http, userService, notificationService, events, menu) {
+        this.navCtrl = navCtrl;
+        this.formBuilder = formBuilder;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtl = alertCtl;
+        this.http = http;
+        this.userService = userService;
+        this.notificationService = notificationService;
+        this.events = events;
+        this.menu = menu;
+        this.customText = true;
+        this.Notifications = [];
+        this.account = {
+            deviceid: "",
+            SecretToken: "",
+            PushNotificationYesNo: "",
+            DeviceToken: localStorage.getItem("FCMToken"),
+            PageSize: 10,
+            PageIndex: 1
+        };
+        this.currentIndex = 1;
+        this.ischecked = true;
+        //this.menu.enable(true);
+        this.zone = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]({ enableLongStackTrace: false });
+        this.account.deviceid = localStorage.getItem("deviceid");
+        this.account.SecretToken = localStorage.getItem("SecretToken");
+        if (localStorage.getItem("PushNotificationYesNo") !== null &&
+            localStorage.getItem("PushNotificationYesNo") == "Yes") {
+            this.ischecked = true;
+        }
+        else {
+            this.ischecked = false;
+        }
+    }
+    NotificationPage.prototype.ionViewDidLoad = function () {
+        if (localStorage.getItem("NotificationsList") !== undefined && localStorage.getItem("NotificationsList") !== null) {
+            this.Notifications = JSON.parse(localStorage.getItem("NotificationsList"));
+        }
+        else {
+            this.currentIndex = 1;
+            this.LoadMessage();
+        }
+        //localStorage.removeItem("currentIndex");
+        //this.AddFromEvents();
+        console.log("ionViewDidLoad DashboardPage");
+    };
+    NotificationPage.prototype.notify = function (event) {
+        var _this = this;
+        console.log(event.checked);
+        this.ischecked = event.checked;
+        if (event.checked) {
+            this.account.PushNotificationYesNo = "Yes";
+        }
+        else {
+            this.account.PushNotificationYesNo = "No";
+        }
+        this.loader = this.loadingCtrl.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            _this.userService.SaveUserPushNotificationOnOff(_this.account).subscribe(function (resp) {
+                _this.loader.dismiss();
+                _this.presentAlert("Successfully saved your request!");
+                localStorage.setItem("PushNotificationYesNo", _this.account.PushNotificationYesNo);
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Save User Push Notification On Off : " +
+                    JSON.stringify(err)
+                //err.error.SystemMessage
+                );
+            });
+        });
+    };
+    NotificationPage.prototype.doRefresh = function (refresher) {
+        refresher.complete();
+        this.LoadMessage();
+    };
+    NotificationPage.prototype.LoadMessage = function () {
+        var _this = this;
+        //let _CurrentNotifications = this.Notifications.length > 0 ? this.Notifications : [];
+        this.zone.run(function () {
+            _this.loader = _this.loadingCtrl.create({
+                content: "Please wait..."
+            });
+            _this.loader.present().then(function () {
+                _this.account.PageIndex = _this.currentIndex;
+                _this.userService.GetUserPushNotificationDetail(_this.account).subscribe(function (resp) {
+                    if (resp.lstPushNotificationDetail != null) {
+                        resp.lstPushNotificationDetail.sort(function (a, b) {
+                            return new Date(b.CreateDate).getTime() -
+                                new Date(a.CreateDate).getTime();
+                        });
+                        var _curNotifications = resp.lstPushNotificationDetail;
+                        for (var i = 0; i < _curNotifications.length; i++) {
+                            _curNotifications[i].showfull = false;
+                            if (_curNotifications[i].Message.length <= 55) {
+                                _curNotifications[i].HideButton = true;
+                            }
+                            if (_this.currentIndex > 1 && _curNotifications.length > 0) {
+                                // add to exiting loaded items
+                                _this.Notifications.push(_curNotifications[i]);
+                            }
+                        }
+                        if (_this.currentIndex == 1 && _curNotifications.length >= 0) {
+                            _this.Notifications = [];
+                            _this.Notifications = _curNotifications;
+                        }
+                    }
+                    // if (refresher !== undefined && refresher !== null) {
+                    //   refresher.complete();
+                    // }
+                    _this.loader.dismiss();
+                    console.log(_this.Notifications);
+                }, function (err) {
+                    _this.loader.dismiss();
+                    // if (refresher !== undefined && refresher !== null) {
+                    //   refresher.complete();
+                    // }
+                    _this.presentAlert("Server Message - Get User Push Notification Detail : " +
+                        JSON.stringify(err)
+                    //err.error.SystemMessage
+                    );
+                });
+            });
+        });
+    };
+    /*
+    scrollTo(elementId: string) {
+      let y = document.getElementById(elementId).offsetTop;
+      this.content.scrollTo(0, y);
+    }*/
+    NotificationPage.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        this.content.ionScrollEnd.subscribe(function (data) {
+            var scrollTop = _this.content.scrollTop;
+            var dimensions = _this.content.getContentDimensions();
+            var totalScrolled = (scrollTop + dimensions.contentHeight + 20);
+            if (totalScrolled > dimensions.scrollHeight && data.directionY == "down" && _this.Notifications.length % 10 == 0) {
+                _this.currentIndex = _this.currentIndex + 1;
+                _this.LoadMessage();
+            }
+        });
+    };
+    /*
+    AddFromEvents() {
+      this.events.subscribe("NotificationDetail", lstPushNotificationDetail => {
+        let _Notifications = lstPushNotificationDetail.filter(
+          q => q.IsRead == false
+        );
+        for (var i = 0; i < _Notifications.length; i++) {
+          _Notifications[i].showfull = false;
+          if (_Notifications[i].Message.length <= 55) {
+            _Notifications[i].HideButton = true;
+          }
+  
+          if (
+            this.Notifications.filter(q => q.Id !== _Notifications[i].Id)
+              .length == 0
+          ) {
+            console.log(
+              _Notifications[i].Id,
+              "current Id not found - add in list"
+            );
+            this.Notifications.push(_Notifications[i]);
+          } else {
+            console.log(
+              _Notifications[i].Id,
+              "current Id found - not add in list"
+            );
+          }
+        }
+        // if (_Notifications.length > 0) {
+        //   this.MarkMessageRead();
+        // }
+      });
+    }
+    */
+    // MarkMessageRead(item: any) {
+    //   if (!item.IsRead) {
+    //     const userAcc = {
+    //       DeviceId: localStorage.getItem("deviceid"),
+    //       SecretToken: localStorage.getItem("SecretToken"),
+    //       Id: item.Id
+    //     };
+    //     this.notificationService
+    //       .UpdateIsReadPushNotificationDetail(userAcc)
+    //       .subscribe(
+    //         (resp: any) => {
+    //           console.log("Marked user read data");
+    //           item.IsRead = true;
+    //         },
+    //         err => {
+    //           this.loader.dismiss();
+    //           this.presentAlert(
+    //             "Server Message - Update Is Read Push Notification Detail : " +
+    //               err.error.SystemMessage
+    //           );
+    //         }
+    //       );
+    //   }
+    // }
+    NotificationPage.prototype.OpenArticle = function (article, showfull) {
+        // if (showfull) {
+        //   article.showfull = false;
+        // } else {
+        //   article.showfull = true;
+        // }
+        localStorage.setItem("noti-item", JSON.stringify(article));
+        article.IsRead = true;
+        localStorage.setItem("NotificationsList", JSON.stringify(this.Notifications));
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__notificationmsg_notimsg__["a" /* NotificationMsgPage */]);
+    };
+    NotificationPage.prototype.removeItem = function (item) {
+        this.currentIndex = 1;
+        var ids = [];
+        ids.push(item.Id);
+        this.deleteMessage(ids);
+    };
+    NotificationPage.prototype.clearall = function () {
+        this.currentIndex = 1;
+        var ids = [];
+        for (var i = 0; i < this.Notifications.length; i++) {
+            ids.push(this.Notifications[i].Id);
+        }
+        if (ids.length > 0)
+            this.deleteMessage(ids);
+    };
+    NotificationPage.prototype.deleteMessage = function (lstIds) {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken"),
+            Ids: lstIds
+        };
+        console.log(userAcc);
+        this.loader = this.loadingCtrl.create({
+            content: "Removing message..."
+        });
+        this.loader.present().then(function () {
+            _this.notificationService
+                .DeleteUserPushNotificationDetail(userAcc)
+                .subscribe(function (resp) {
+                _this.loader.dismiss();
+                _this.LoadMessage();
+                console.log(_this.Notifications);
+            }, function (err) {
+                _this.loader.dismiss();
+                _this.presentAlert("Server Message - Delete User Push Notification Detail : " +
+                    JSON.stringify(err));
+            });
+        });
+    };
+    NotificationPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    NotificationPage.prototype.goBack = function () {
+        localStorage.removeItem("NotificationsList");
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__my_wellness_wallet_my_wellness_wallet__["a" /* MyWellnessWalletPage */]);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('navbar'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Navbar"])
+    ], NotificationPage.prototype, "navBar", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"])
+    ], NotificationPage.prototype, "content", void 0);
+    NotificationPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-notification",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\notification\notification.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-buttons start>\n      <button ion-button id="custom-back-btn" (click)="goBack();">\n        <ion-icon name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>Notifications</ion-title>\n    <ion-buttons end>\n      <button id="clear-btn" ion-button (click)="clearall();">\n        Clear All\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n  <ion-toolbar>\n    <ion-item>\n      <ion-label>Want to receive Notification?</ion-label>\n      <ion-toggle slot="start" color="secondary" [checked]="ischecked" (ionChange)="notify($event)">\n        <div class="toggle-text">{{ischecked ? "YES" : "NO"}}</div>\n      </ion-toggle>\n    </ion-item>\n  </ion-toolbar>\n</ion-header>\n<ion-content>\n  <!-- <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingSpinner="circles"> -->\n      <ion-list>\n        <ion-item-sliding class="content-msg-list" *ngFor="let item of Notifications">\n          <ion-item [class.msg-unread]="!item.IsRead">\n            <img src="assets/img/appicon.png" item-left>\n            <span text-wrap *ngIf="!item.showfull" id="less-{{item.Id}}"\n              class="msg-col">{{item.Message.length > 55 ? item.Message.substring(0, 55) + \'...\' : item.Message }}</span>\n            <span text-wrap *ngIf="item.showfull" class="msg-col" id="full-{{item.Id}}">{{item.Message}}</span>\n            <!-- <button ion-button color="primary" class="big-btn" \n        *ngIf="!item.HideButton"\n          (click)="OpenArticle(item, item.showfull)"> -->\n            <button ion-button color="primary" class="big-btn" (click)="OpenArticle(item, item.showfull)">\n              Read\n              <!-- {{ item.showfull ? \'less\': \'more\'}} -->\n            </button>\n            <br />\n            <span class="msg-col2"> {{ item.CreateDate | date: \'longDate\'}} </span>\n\n          </ion-item>\n          <ion-item-options>\n            <button ion-button (click)="removeItem(item)" class="warning">Delete</button>\n          </ion-item-options>\n        </ion-item-sliding>\n\n      </ion-list>\n    <!-- </ion-refresher-content>\n  </ion-refresher> -->\n</ion-content>\n<ion-footer>\n\n</ion-footer>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\notification\notification.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormBuilder"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["f" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["c" /* NotificationService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"]])
+    ], NotificationPage);
+    return NotificationPage;
+}());
+
+//# sourceMappingURL=notification.js.map
+
+/***/ }),
+
+/***/ 92:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__my_wellness_wallet_my_wellness_wallet__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__forgetpassword_forgetpassword__ = __webpack_require__(258);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+var LoginPage = /** @class */ (function () {
+    function LoginPage(navCtrl, user, translateService, events, alertCtl, loading, menu) {
+        this.navCtrl = navCtrl;
+        this.user = user;
+        this.translateService = translateService;
+        this.events = events;
+        this.alertCtl = alertCtl;
+        this.loading = loading;
+        this.menu = menu;
+        // The account fields for the login form.
+        // If you're using the username field with or without email, make
+        // sure to add it to the type
+        this.account = {
+            UserName: "",
+            Password: "",
+            apiKey: "",
+            deviceid: ""
+        };
+        this.menu.enable(false);
+        this.Rememberme = true;
+        // set remember me
+        if (window.localStorage.getItem("remuser") == null || window.localStorage.getItem("remuser") == 'null' || window.localStorage.getItem("remuser") == "") {
+            this.account.UserName = "";
+        }
+        else {
+            this.account.UserName = window.localStorage.getItem("remuser");
+        }
+        if (window.localStorage.getItem("rempwd") == null || window.localStorage.getItem("rempwd") == 'null' || window.localStorage.getItem("rempwd") == "") {
+            this.account.Password = "";
+        }
+        else {
+            this.account.Password = window.localStorage.getItem("rempwd");
+        }
+    }
+    LoginPage.prototype.signup = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__signup_signup__["a" /* SignupPage */]);
+    };
+    LoginPage.prototype.validateForm = function () {
+        if (this.account.UserName == "" || this.account.Password == "") {
+            this.presentAlert("Please enter Username and Password");
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    LoginPage.prototype.doForget = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__forgetpassword_forgetpassword__["a" /* ForgetPasswordPage */]);
+    };
+    LoginPage.prototype.SaveUserTokenInDB = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var accountinfo;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(localStorage.getItem("deviceid") !== null &&
+                            localStorage.getItem("deviceid") !== undefined &&
+                            localStorage.getItem("FCMToken") !== null &&
+                            localStorage.getItem("FCMToken") !== undefined &&
+                            localStorage.getItem("DeviceType") !== null &&
+                            localStorage.getItem("DeviceType") !== undefined)) return [3 /*break*/, 2];
+                        accountinfo = {
+                            deviceid: localStorage.getItem("deviceid"),
+                            SecretToken: localStorage.getItem("SecretToken"),
+                            DeviceType: localStorage.getItem("DeviceType"),
+                            UserTokenId: localStorage.getItem("FCMToken")
+                        };
+                        return [4 /*yield*/, this.user.SaveUserTokenIdData(accountinfo).subscribe(function (resp) {
+                                console.log("save token success");
+                            }, function (err) {
+                                _this.presentAlert("Server Message - Save User TokenId Data : " + JSON.stringify(err));
+                            })];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 2:
+                        console.log("Please allow your phone to access the device types");
+                        _a.label = 3;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    LoginPage.prototype.presentAlert = function (msg) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.alertCtl.create({
+                            message: msg,
+                            cssClass: "action-sheets-basic-page",
+                            buttons: [
+                                {
+                                    text: "OK",
+                                    handler: function () { }
+                                }
+                            ]
+                        })];
+                    case 1:
+                        alert = _a.sent();
+                        return [4 /*yield*/, alert.present()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    // Attempt to login in through our User service
+    LoginPage.prototype.doLogin = function () {
+        // if (this.account.UserName !== localStorage.getItem("remuser")) {
+        //   this.fcm.deleteToken();
+        // }
+        var _this = this;
+        if (this.validateForm()) {
+            this.loader = this.loading.create({
+                content: "Please wait..."
+            });
+            if (this.Rememberme) {
+                window.localStorage.setItem("remuser", this.account.UserName);
+                window.localStorage.setItem("rempwd", this.account.Password);
+            }
+            else {
+                window.localStorage.removeItem("remuser");
+                window.localStorage.removeItem("rempwd");
+            }
+            this.account.apiKey = "71e73c14-2723-4d6e-a489-c9675738fdf4";
+            this.account.deviceid = localStorage.getItem("remUUID");
+            //debugger;
+            //alert('deviceid : '+this.account.deviceid);
+            if (localStorage.getItem("remUUID") == null || localStorage.getItem("remUUID") == "null")
+                this.account.deviceid = "c9675738fdf4";
+            localStorage.setItem("deviceid", this.account.deviceid);
+            this.loader.present().then(function () {
+                _this.user.login(_this.account).subscribe(function (resp) {
+                    console.log("user", { resp: resp });
+                    _this.menu.enable(true);
+                    if ((resp.SystemStatus = "Success")) {
+                        _this.events.publish("user:created", resp);
+                        _this.SaveUserTokenInDB();
+                        setTimeout(function () {
+                            _this.loader.dismiss();
+                            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__my_wellness_wallet_my_wellness_wallet__["a" /* MyWellnessWalletPage */]);
+                        }, 3000);
+                    }
+                    else {
+                        _this.presentAlert(resp.SystemMessage);
+                    }
+                }, function (err) {
+                    _this.loader.dismiss();
+                    //this.presentAlert("Server Message - User Login : "+ JSON.stringify(err));
+                    _this.presentAlert(err.error.SystemMessage);
+                    _this.user._LogoutUser();
+                });
+            });
+        }
+    };
+    LoginPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-login",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\login\login.html"*/'<ion-content scroll="false">\n  <div class="splash-bg">\n    <h1>Login to your account</h1>\n  </div>\n \n <ion-card class="login-card">\n  <ion-card-content>\n      <ion-list>\n          <ion-item class="custom-border">\n              <ion-label stacked>{{ \'USERNAME\' | translate }}</ion-label>\n            <ion-input type="text" [(ngModel)]="account.UserName" name="UserName"></ion-input>\n          </ion-item>\n          <ion-item class="custom-border">\n              <ion-label stacked>{{ \'PASSWORD\' | translate }}</ion-label>\n              <ion-input type="password" [(ngModel)]="account.Password" name="Password" (keyup.enter)="doLogin();"></ion-input>\n          </ion-item>\n          <ion-item >\n              <ion-label>Remember Me</ion-label>\n              <ion-checkbox [(ngModel)]="Rememberme" name="Rememberme" ></ion-checkbox>\n            </ion-item>\n        </ion-list>\n  </ion-card-content>\n</ion-card>\n  <div padding class="button-position">\n      <button ion-button clear full class="forgot-btn" (click)="doForget()">Forgot Password </button>\n      <button  (click)="doLogin()" ion-button color="primary"  class="big-btn" >{{ \'Login\' | translate }}</button>\n	<div class="signup-text">Don’t have an account? <a href="#" (click)="signup();">SIGN UP</a> </div>\n</div>\n</ion-content>\n '/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\login\login.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["f" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["AlertController"],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["MenuController"]])
+    ], LoginPage);
+    return LoginPage;
+}());
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 93:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TemplatePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the IntroPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var TemplatePage = /** @class */ (function () {
+    function TemplatePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.TempaletName = this.navParams.get("Content");
+        if (this.TempaletName == "MHRScore") {
+            this.Title = "MHR Score";
+        }
+        else if (this.TempaletName == "BioAge") {
+            this.Title = "Bio Age";
+        }
+        else if (this.TempaletName == "TermsAndConditions") {
+            this.Title = "Terms And Conditions";
+        }
+        else if (this.TempaletName == "PrecautionsandDisclaimer") {
+            this.Title = "Precautions and Disclaimer";
+        }
+    }
+    TemplatePage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad TemplatePage");
+    };
+    TemplatePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-template",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\templates\template.html"*/'<!--\n\n  Generated template for the IntroPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <ion-navbar color="primary">\n\n        <ion-title>{{Title}}</ion-title>\n\n\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <ion-card class="signup-card custom-border intro-desc" *ngIf="TempaletName == \'MHRScore\'">\n\n        <ion-card-content>\n\n            <div>\n\n                <!-- <h2>\n\n                    <b>MHR Score</b>\n\n                </h2>\n\n                <br /> -->\n\n                <p>\n\n                    The Modifiable Health Risk Score is a total score out of 100. The higher your score the better you\n\n                    are managing lifestyle factors that impact risk for developing, and in some instances managing, many\n\n                    common degenerative diseases. The Modifiable Health Risk Score takes into account things in your\n\n                    life that you have absolute, or significant, control over, such as nutrition, weight, waist\n\n                    circumference, exercise habits, medication adherence, blood pressure, cholesterol levels, smoking,\n\n                    alcohol consumption, amount of sleep, as well as stress/anxiety/ relationship and emotional\n\n                    wellness.\n\n                </p>\n\n                <br />\n\n                <p>\n\n                    Once you know your score your goal is to work on the modifiable health risk factors that will help\n\n                    you achieve a higher score. Your feedback report contains the details as to how you can best\n\n                    accomplish this goal.</p>\n\n                <br />\n\n                <p>\n\n                    As you work towards improving you score we suggest that you re-take the Assessment every three\n\n                    months to see how much your Modifiable Health Risk Score has improved from your previous\n\n                    assessments. No matter what your score is today, there is usually some action you can take to\n\n                    improve your score over the next three months. Set the goal today and let’s keep your wellness\n\n                    journey moving in the right direction.\n\n                </p>\n\n            </div>\n\n        </ion-card-content>\n\n    </ion-card>\n\n    <ion-card class="signup-card custom-border intro-desc" *ngIf="TempaletName == \'BioAge\'">\n\n        <ion-card-content>\n\n            <div>\n\n                <!-- <h2>\n\n                    <b>Bio Age</b>\n\n                </h2>\n\n                <br /> -->\n\n                <p>Your Bio Age (biological age) indicates how old your body is compared to your actual chronological\n\n                    age. As you improve your Modifiable Health Risk Score you also improve your Bio Age Score. Science\n\n                    has shown us that you can slow and reverse the aging process by implementing proactive nutrition and\n\n                    lifestyle wellness practices. You can literally “turn back the clock” using a personalized wellness\n\n                    strategy.\n\n                </p>\n\n            </div>\n\n        </ion-card-content>\n\n    </ion-card>\n\n    <ion-card class="signup-card custom-border intro-desc" *ngIf=" TempaletName== \'PrecautionsandDisclaimer\'">\n\n        <ion-card-content>\n\n            <div>\n\n                <!-- <h2>\n\n                    <b>Precautions and Disclaimer</b>\n\n                </h2>\n\n                <br /> -->\n\n                <p>\n\n                    Be aware that The Meschino Wellness Platform cannot detect or provide advice about the management of\n\n                    the following health challenges:\n\n                </p>\n\n                <ul>\n\n                    <li>Food Allergies\n\n                    </li>\n\n                    <li>\n\n                        Drug Allergies\n\n                    </li>\n\n                    <li>\n\n                        Food Sensitivities or Intolerances\n\n                    </li>\n\n                </ul>\n\n                <br />\n\n                <p>\n\n                    In these cases, and other cases involving health conditions of the Intestinal Tract (i.e. active\n\n                    ulcer, inflammatory bowel diseases such as Crohn’s disease and Ulcerative Colitis, Gastric by-pass\n\n                    Surgery, or any previous Bowel Surgery etc.) you must seek nutritional guidance from your medical\n\n                    practitioner or designated registered dietician.\n\n                    <br />\n\n                    The Meschino Wellness Platform is intended for educational purposes only. It is a tool that can help\n\n                    users develop their own personal wellness plan in the majority of cases, but does not replace the\n\n                    requirement to seek medical evaluation, lifestyle advice and treatment from a medical professional.\n\n                    The Meschino Wellness Platform provides targeted nutrition and lifestyle content by collecting and\n\n                    analyzing personal health data. You may wish to share the contents of your Feedback Report (My\n\n                    Wellness Report), along with your tracking tool values (i.e. blood pressure tracker) with your\n\n                    medical doctor and other healthcare professionals, who help manage your health, as a means of\n\n                    keeping them informed about your self-care and enlisting their recommendations to help fine-tune\n\n                    your lifestyle management.\n\n                </p>\n\n\n\n            </div>\n\n        </ion-card-content>\n\n    </ion-card>\n\n\n\n    <ion-card class="signup-card custom-border intro-desc" *ngIf="TempaletName== \'TermsAndConditions\'">\n\n        <ion-card-content>\n\n            <div>\n\n                <!-- <h2>\n\n                    <b>Terms and Conditions</b>\n\n                </h2>\n\n                <br /> -->\n\n                <p>Meschino Wellness Account Privacy Statement</p>\n\n\n\n                <p>Meschino Health & Wellness (thereafter referred to as “Meschino Wellness”) is committed to protecting\n\n                    your\n\n                    privacy. This privacy statement applies to the personal information (which includes personal health\n\n                    information) collected by the Meschino Wellness Platform.\n\n                </p>\n\n                <br />\n\n                <h2>\n\n                    <b>Introduction</b></h2>\n\n                <p>\n\n                    <b>The Meschino Wellness Platform is intended for educational purposes only. It is a tool that can\n\n                        help users\n\n                        develop their own personal wellness plan, but does not replace the requirement to seek medical\n\n                        evaluation,\n\n                        lifestyle advice and treatment from a medical professional.</b>\n\n                </p>\n\n                <br />\n\n                <p>\n\n                    The Meschino Wellness Platform provides targeted nutrition and lifestyle content by collecting and\n\n                    analyzing personal health data, which you may wish to share with your medical doctor and other\n\n                    healthcare professionals who help manage your health. It can collect, analyze and store many\n\n                    different types of information such as medication use, immunization records, data originating from\n\n                    health and fitness\n\n                    devices (including pedometers, blood glucose monitors, blood pressure monitors) and from other\n\n                    applications\n\n                    (such as chronic management applications, fitness training applications, weight loss applications,\n\n                    blood\n\n                    pressure applications and more).\n\n                </p>\n\n                <br />\n\n                <p>\n\n                    Importantly, The Meschino Wellness Platform cannot detect or help manage food or drug allergies,\n\n                    food\n\n                    sensitivities or intolerances. In these cases, and other cases involving health conditions of the\n\n                    intestinal\n\n                    tract (i.e. active ulcer, inflammatory bowel disease, gastric by-pass surgery etc.) you must seek\n\n                    nutritional\n\n                    guidance from your medical practitioner or designated registered dietician.\n\n                </p>\n\n                <br />\n\n                <h2>\n\n                    <b>Integration</b></h2>\n\n                <p>\n\n                    You can utilize components of the Meschino Wellness Platform directly to view and manage your health\n\n                    information, or you can use selected websites and devices that have been created by application\n\n                    providers and\n\n                    device manufacturers to work with Meschino Wellness. Several mechanisms allow you to manage how your\n\n                    health\n\n                    information can be accessed, used and shared.\n\n                    Meschino Wellness provides you with the technology and services to assist you in collecting, storing\n\n                    and\n\n                    analyzing your health related information online. It is a technology platform that allows access by\n\n                    multiple\n\n                    applications and devices, in order to work with your health data to improve personal health literacy\n\n                    and\n\n                    overall wellness.\n\n\n\n                </p>\n\n\n\n                <br />\n\n                <h2>\n\n                    <b>Collection of Personal Information</b></h2>\n\n                <p>\n\n                    Meschino Wellness asks you to enter an identifier and password to sign in. The first time you sign\n\n                    in to\n\n                    Meschino Wellness, Meschino Wellness asks you to create an account. To create an account, you must\n\n                    provide\n\n                    personal information such as name, date of birth, e-mail address, postal code and country/region.\n\n                    Meschino\n\n                    Wellness may request other optional information, but Meschino Wellness will clearly indicate that\n\n                    such\n\n                    information is optional.\n\n                </p>\n\n\n\n                <br />\n\n                <h2>\n\n                    <b>How Meschino Wellness uses your personal information</b></h2>\n\n                <p>\n\n                    Meschino Wellness commits to use or disclose personal information collected through Meschino\n\n                    Wellness,\n\n                    including personal health information, exclusively to provide Meschino Wellness services (which\n\n                    includes the\n\n                    billing, support, maintenance and incident resolution services) and as described in this privacy\n\n                    statement,\n\n                    unless expressly otherwise agreed to by you. Usage of the personal information (including personal\n\n                    health\n\n                    information) for the provision of Meschino Wellness solutions includes that Meschino Wellness may\n\n                    use your\n\n                    personal information:\n\n                </p>\n\n                <ul>\n\n                    <li>to provide you with information about Meschino Wellness, including updates, and notifications\n\n                    </li>\n\n                    <li>\n\n                        to send you Meschino Wellness e-mail communication, if any.\n\n                    </li>\n\n                </ul>\n\n                <br />\n\n                <p>\n\n                    Meschino Wellness occasionally hires other companies to provide services on its behalf, such as\n\n                    answering\n\n                    customer questions about products and services. Meschino Wellness gives those companies only the\n\n                    personal\n\n                    information they need to deliver the service. Meschino Wellness requires the companies to maintain\n\n                    the\n\n                    confidentiality of the personal information and prohibits them from using such information for any\n\n                    other\n\n                    purpose.\n\n                    <br />\n\n                    In addition, Meschino Wellness may use and/or disclose your personal information if Meschino\n\n                    Wellness believes\n\n                    such action is necessary to comply with applicable legislation or legal process served on Meschino\n\n                    Wellness.\n\n                    <br />\n\n                    Personal information collected on Meschino Wellness is stored and processed in on servers in Canada\n\n                    or the\n\n                    United State.\n\n                    <br />Meschino Wellness has processes and employees (i.e. Head of Privacy and other resources) whose\n\n                    responsibility is to ensure the protection of your privacy and to notify you in the event that\n\n                    Meschino\n\n                    Wellness becomes aware of a breach affecting your personal information.\n\n\n\n                </p>\n\n\n\n                <br />\n\n                <h2>\n\n                    <b>How Meschino Wellness uses aggregate information and statistics</b></h2>\n\n                <p>\n\n                    Meschino Wellness may use aggregated information from Meschino Wellness to identify and compare the\n\n                    status of\n\n                    specific common health issues as compared to other bench marks established in the specified industry\n\n                    or\n\n                    organization. This data is represented as a percent of the entire organization only. This aggregated\n\n                    information is not associated with any individual account and would not identify you. Meschino\n\n                    Wellness will\n\n                    not use or disclose your individual account and record information from Meschino Wellness.\n\n                </p>\n\n\n\n                <br />\n\n                <h2>\n\n                    <b>Account access and controls</b></h2>\n\n                <p>\n\n                    The decision to create an account with Meschino Wellness is yours. The required account information\n\n                    consists\n\n                    of a small amount of information such as your name, e-mail address, region and Meschino Wellness\n\n                    credentials.\n\n                    Meschino Wellness may request other optional information, but clearly indicates that such\n\n                    information is\n\n                    optional. You can review and update your account information. You can modify, add or delete any\n\n                    optional\n\n                    account information by signing into your Meschino Wellness account and editing your account profile.\n\n                    <br />When you close your account (by signing into your Meschino Wellness account and editing your\n\n                    account\n\n                    profile), Meschino Wellness deletes all Records for which you are the sole Custodian. Meschino\n\n                    Wellness waits\n\n                    90 days before permanently deleting your account information in order to help avoid accidental or\n\n                    malicious\n\n                    removal of your health information.\n\n                    <br />When a user with "View and modify" or Custodian access deletes a piece of health information,\n\n                    Meschino\n\n                    Wellness archives the information so that it is visible only to Record of Custodians. Solutions and\n\n                    other\n\n                    users with whom you have shared your information, but who are not Custodians of the Record, are not\n\n                    able to\n\n                    see archived health information.\n\n\n\n                </p>\n\n                <br />\n\n                <h2>\n\n                    <b>E-mail controls</b></h2>\n\n                <p>\n\n                    Meschino Wellness may send you e-mail communications. You will only receive these communications\n\n                    because you\n\n                    have authorized Meschino Wellness do so. If you do not want to receive this information, you can\n\n                    unsubscribe\n\n                    through a link at the bottom of the newsletter.\n\n                </p>\n\n\n\n                <br />\n\n                <h2>\n\n                    <b>Security of your personal information</b></h2>\n\n                <p>\n\n                    Meschino Wellness is committed to protecting the security of your personal information. Meschino\n\n                    Wellness is\n\n                    hosted on a robust industry leading hosting partner. The hosting platform meets a broad set of\n\n                    international\n\n                    and industry-specific compliance standards, such as ISO 27001, HIPAA, FedRAMP, SOC 1 and SOC 2, as\n\n                    well as\n\n                    country-specific standards including Australia IRAP, UK G-Cloud, and Singapore MTCS. The hosting\n\n                    partner was\n\n                    also the first to adopt the uniform international code of practice for cloud privacy, ISO/IEC 27018,\n\n                    which\n\n                    governs the processing of personal information by cloud service providers.\n\n                    <br />\n\n                    Rigorous third-party audits, such as by the British Standards Institute, verify the hosting\n\n                    platforms\n\n                    adherence to the strict security controls these standards mandate. As part of our commitment to\n\n                    transparency,\n\n                    you can verify our implementation of many security controls by requesting audit results from the\n\n                    certifying\n\n                    third parties or through our Host Platform account representative.\n\n                </p>\n\n\n\n                <br />\n\n                <h2>\n\n                    <b>Use of cookies</b></h2>\n\n                <p>\n\n                    Meschino Wellness use cookies with Meschino Wellness to enable you to sign in and to help\n\n                    personalize Meschino\n\n                    Wellness. A cookie is a small text file that a web page server places on your hard disk. It is not\n\n                    possible to\n\n                    use cookies to run programs or deliver viruses to your computer. A Web server assigns cookies\n\n                    uniquely to you\n\n                    and only a Web server in the domain that issued the cookie to you can read the cookies.\n\n                    One of the primary purposes of cookies is to provide a convenience feature to save you time. For\n\n                    example, if\n\n                    you personalize a Web page, or navigate within a site, a cookie helps the site to recall your\n\n                    specific\n\n                    information on subsequent visits. Using cookies simplifies the process of delivering relevant\n\n                    content, eases\n\n                    site navigation, and so on. When you return to the Web site, you can retrieve the information you\n\n                    previously\n\n                    provided, so you can easily use the site\'s features that you customized.\n\n                    You have the ability to accept or decline cookies. Most Web browsers automatically accept cookies,\n\n                    but you can\n\n                    usually modify your browser setting to decline some or all cookies if you prefer. If you choose to\n\n                    decline all\n\n                    cookies, you may not be able to use interactive features of this or other Web sites that depend on\n\n                    cookies.\n\n                </p>\n\n                <br />\n\n                <h2>\n\n                    <b>Use of Web beacons</b></h2>\n\n\n\n                <p>\n\n                    Meschinowellness.com Web pages may contain electronic images known as Web beacons sometimes called\n\n                    single-pixel gifs that may be used:\n\n                </p>\n\n                <ul>\n\n                    <li> to assist in delivering cookies on Meschino Wellness sites</li>\n\n                    <li> to enable Meschino Wellness to count users who have visited those pages</li>\n\n                    <li> to deliver co-branded services</li>\n\n                </ul>\n\n                <p>\n\n                    Meschino Wellness may include Web beacons in e-mail messages or in its newsletters in order to\n\n                    determine\n\n                    whether you opened or acted upon those messages.\n\n                    <br />\n\n                    Meschino Wellness may also employ Web beacons from third parties to help it compile aggregated\n\n                    statistics and\n\n                    determine the effectiveness of its promotional campaigns. Meschino Wellness prohibits third parties\n\n                    from using\n\n                    Web beacons on Meschino Wellness sites to collect or access your personal information. Meschino\n\n                    Wellness may\n\n                    collect information about your visit to meschiowellness.com, including the pages you view, the links\n\n                    you\n\n                    click, and other actions taken in connection with the Service. Meschino Wellness also collects\n\n                    certain\n\n                    standard, non-personally identifiable information that your browser sends to every Web site you\n\n                    visit, such as\n\n                    your IP address, browser type and language, access times, and referring Web site addresses.\n\n\n\n                </p>\n\n                <br />\n\n                <h2>\n\n                    <b>Changes to this privacy statement</b></h2>\n\n                <p>\n\n                    Meschino Wellness may occasionally update this privacy statement. In such event, Meschino Wellness\n\n                    will notify\n\n                    you either by placing a prominent notice on the home page of the Meschino Wellness Web site or by\n\n                    sending you\n\n                    a notification directly. Meschino Wellness encourages you to review this privacy statement\n\n                    periodically to\n\n                    stay informed about how Meschino Wellness helps you to protect the personal information collected.\n\n                    Your\n\n                    continued use of Meschino Wellness constitutes your agreement to this privacy statement and any\n\n                    updates.\n\n                    Please be aware that this privacy statement does not apply to personal information you may have\n\n                    provided to\n\n                    Meschino Wellness in the context of other, separately operated, Meschino Wellness products or\n\n                    services.\n\n                </p>\n\n                <br />\n\n                <h2> <b>Contact information for privacy related questions and/or complaint</b></h2>\n\n\n\n                <p>\n\n                    Meschino Wellness welcomes your comments regarding this privacy statement. If you have a complaint\n\n                    concerning\n\n                    Meschino Wellness’ privacy standards, please submit it to the applicable Privacy Office, however, as\n\n                    recommended by the Office of the Privacy Commissioner of Canada, you are strongly encouraged to try\n\n                    first to\n\n                    settle the matter directly with us, please contact us at <span style="color: blue;">\n\n                        privacy@meschinowellness.com.</span> All questions and/or\n\n                    complaints will be treated as confidential.\n\n                </p>\n\n\n\n                <br />\n\n                <h2>\n\n                    <b>DISCLOSURE</b></h2>\n\n                <p>\n\n                    The assessment you’re about to complete will evaluate important aspects of your diet, lifestyle and\n\n                    other\n\n                    health practices, as well as health conditions and risk factors that play a significant role in your\n\n                    health\n\n                    and longevity profile. Based upon scientific evidence available from experimental and clinical\n\n                    studies, we\n\n                    will assemble a number of nutrition, exercise and other lifestyle considerations specific to your\n\n                    individual\n\n                    circumstances.\n\n                    <br />\n\n                    Your personalized wellness report is to be used for educational purposes only and does not take into\n\n                    account\n\n                    any food, drug or supplement allergies or sensitivities. You must consult your health practitioner\n\n                    before\n\n                    making any changes to your dietary, exercise or supplementation practices.\n\n\n\n                </p>\n\n            </div>\n\n            <br />\n\n            <p>By Signing up you have:</p>\n\n            <ul>\n\n                <li>Read and undersatnd the disclosure. </li>\n\n                <li>At least 15 years old.</li>\n\n                <li>Trust Meschino Health and Wellness with the personal and private health information you provide.\n\n                </li>\n\n            </ul>\n\n        </ion-card-content>\n\n    </ion-card>\n\n\n\n</ion-content>\n\n<ion-footer>\n\n</ion-footer>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\templates\template.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"]])
+    ], TemplatePage);
+    return TemplatePage;
+}());
+
+//# sourceMappingURL=template.js.map
+
+/***/ }),
+
+/***/ 94:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyWellnessWalletPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__notification_notification__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates_template__ = __webpack_require__(93);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the DashboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MyWellnessWalletPage = /** @class */ (function () {
+    function MyWellnessWalletPage(navCtrl, navParams, loading, userService, notificationService, events, menu) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loading = loading;
+        this.userService = userService;
+        this.notificationService = notificationService;
+        this.events = events;
+        this.menu = menu;
+        this.account = {
+            deviceid: "",
+            SecretToken: "",
+            FirstName: "",
+            LastName: ""
+        };
+        this.rewardpoints = 0;
+        this.bio_age = "0";
+        this.mhrs_score = "0";
+        this.profilepic = "assets/img/loader.gif";
+        this.IsHRACompleted = false;
+        this.notificationCount = ""; //localStorage.getItem("NotificationCount");
+        this.FCMToken = localStorage.getItem("FCMToken");
+        this.menu.enable(true);
+        this.IsHRACompleted =
+            localStorage.getItem("IsHRACompleted") == "true" ? true : false;
+        console.log(this.IsHRACompleted, "IsHRACompleted");
+        this.loader = this.loading.create({
+            content: "Please wait..."
+        });
+        this.loader.present().then(function () {
+            _this.loadNotificationCount();
+            _this.EmitterNotificationCount();
+            _this.loadUserInfo();
+        });
+    }
+    MyWellnessWalletPage.prototype.loadUserInfo = function () {
+        var _this = this;
+        this.account.FirstName = localStorage.getItem("FirstName");
+        this.account.LastName = localStorage.getItem("LastName");
+        this.rewardpoints = parseInt(localStorage.getItem("RewardPoint"));
+        this.profilepic = localStorage.getItem("ProfileImage");
+        this.bio_age = localStorage.getItem("bio_age");
+        this.mhrs_score = localStorage.getItem("mhrs_score");
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken")
+        };
+        this.userService.getUserData(userAcc).subscribe(function (res) {
+            localStorage.setItem("RewardPoint", res.RewardPoint);
+            localStorage.setItem("bio_age", res.bio_age);
+            localStorage.setItem("mhrs_score", res.mhrs_score);
+            _this.rewardpoints = parseInt(localStorage.getItem("RewardPoint"));
+            _this.bio_age = localStorage.getItem("bio_age");
+            _this.mhrs_score = localStorage.getItem("mhrs_score");
+        });
+        this.loader.dismiss();
+    };
+    MyWellnessWalletPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad MyWellnessWalletPage");
+    };
+    MyWellnessWalletPage.prototype.gotoUrl = function (navurl) {
+        this.navCtrl.setRoot(navurl);
+    };
+    MyWellnessWalletPage.prototype.loadNotificationCount = function () {
+        var _this = this;
+        var userAcc = {
+            DeviceId: localStorage.getItem("deviceid"),
+            SecretToken: localStorage.getItem("SecretToken")
+        };
+        this.userService.GetPushNotificationCount(userAcc).subscribe(function (res) {
+            var msgcount = res.Count;
+            _this.notificationCount = msgcount > 0 ? msgcount : "";
+            localStorage.setItem("notificationCount", _this.notificationCount);
+        });
+    };
+    MyWellnessWalletPage.prototype.EmitterNotificationCount = function () {
+        var _this = this;
+        this.events.subscribe("PushNotification", function (PushNotification) {
+            var msgcount = PushNotification.Count;
+            _this.notificationCount = msgcount > 0 ? msgcount : "";
+            localStorage.setItem("notificationCount", _this.notificationCount);
+        });
+    };
+    MyWellnessWalletPage.prototype.goNotification = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__notification_notification__["a" /* NotificationPage */]);
+    };
+    MyWellnessWalletPage.prototype.ViewTemplate = function (Name) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__templates_template__["a" /* TemplatePage */], {
+            Content: Name
+        });
+    };
+    MyWellnessWalletPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-my-wellness-wallet",template:/*ion-inline-start:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\my-wellness-wallet.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle icon-only>\n\n      <ion-icon name=\'menu\'></ion-icon>\n\n    </button>\n\n    <ion-title>My Wellness Wallet</ion-title>\n\n    <ion-buttons end class="left-nav-buttons">\n\n      <button id="notification-button" ion-button icon-only (click)="goNotification()">\n\n        <ion-icon name="notifications">\n\n          <ion-badge id="notifications-badge" color="danger">{{notificationCount}}</ion-badge>\n\n        </ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n  <div class="div-center">\n\n    <table style="width: 100%">\n\n      <tr>\n\n        <td>\n\n          <div class="div-bio-bg fr">\n\n            <ion-title>{{bio_age}}</ion-title>\n\n            <ion-title class="no-pd-title" (click)="ViewTemplate(\'BioAge\')">Bio Age</ion-title>\n\n          </div>\n\n        </td>\n\n        <td>\n\n          &nbsp;&nbsp;\n\n        </td>\n\n        <td>\n\n          <div class="div-bio-bg fl">\n\n            <ion-title>{{mhrs_score}}</ion-title>\n\n            <ion-title class="no-pd-title" (click)="ViewTemplate(\'MHRScore\')">MHR Score</ion-title>\n\n          </div>\n\n        </td>\n\n      </tr>\n\n    </table>\n\n    <table style="width: 100% ;" class="tbl-hra">\n\n      <tr (click)="gotoUrl(\'MyHraPage\')">\n\n        <td>\n\n          <img src="assets/img/MyHRA_icn.png">\n\n        </td>\n\n        <td>\n\n          My HRA\n\n        </td>\n\n        <td>\n\n          <img src="assets/img/arrow.png" style="padding: 10px">\n\n        </td>\n\n      </tr>\n\n      <!-- <tr (click)="gotoUrl(\'MyWellnessPlanPage\')">\n\n        <td>\n\n          <img src="assets/img/MyWellness_icn.png">\n\n        </td>\n\n        <td>\n\n          My Wellness Report\n\n        </td>\n\n        <td>\n\n          <img src="assets/img/arrow.png" style="padding: 10px">\n\n        </td>\n\n      </tr> -->\n\n      <tr (click)="gotoUrl(\'MyWellnessPlanPage\')" *ngIf="IsHRACompleted">\n\n        <td>\n\n          <img src="assets/img/create_wellness_icn.png">\n\n        </td>\n\n        <td>\n\n          Create My Wellness Plan\n\n        </td>\n\n        <td>\n\n          <img src="assets/img/arrow.png" style="padding: 10px">\n\n        </td>\n\n      </tr>\n\n    </table>\n\n    <!--<br/> <input type="text" value="{{FCMToken}}"> -->\n\n\n\n  </div>\n\n</ion-header>\n\n<ion-content>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Lenevo\downloads\meschino-master\PushDemo\MeschinoWellness\src\pages\my-wellness-wallet\my-wellness-wallet.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["LoadingController"],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["f" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["c" /* NotificationService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["MenuController"]])
+    ], MyWellnessWalletPage);
+    return MyWellnessWalletPage;
+}());
+
+//# sourceMappingURL=my-wellness-wallet.js.map
+
+/***/ })
+
+},[344]);
+//# sourceMappingURL=main.js.map

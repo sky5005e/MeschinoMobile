@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".Search.Search_product"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        >
+
+    <RelativeLayout
+        android:layout_weight=".88"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:background="@drawable/black_border"
+        android:layout_margin="@dimen/margin_10"
+        >
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_toLeftOf="@+id/iv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_regular"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:paddingLeft="@dimen/margin_10"
+            android:background="@color/transparent"
+            android:layout_centerVertical="true"
+            android:maxLines="1"
+            android:imeOptions="actionSearch"
+            android:inputType="textShortMessage"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:hint="Search for items"/>
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_search_black_24dp"
+                android:tint="@color/colorPrimary"
+                android:paddingRight="@dimen/margin_10"
+                android:layout_centerVertical="true"/>
+
+
+
+
+    </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_weight=".12"
+            android:id="@+id/rl_cart"
+            android:layout_alignParentRight="true"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            >
+
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/shopping_cart"
+                android:tint="@color/colorPrimary"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_item_counter"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="5dp"
+                android:padding="6dp"
+                android:text="0"
+                android:background="@drawable/circle_bg"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:backgroundTint="@color/Orange"
+                android:textAlignment="center"
+                />
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_search_item"
+        tools:listitem="@layout/items_layout"/>
+
+
+
+</LinearLayout>

@@ -175,6 +175,12 @@ export class UserService {
     localStorage.setItem('IsHRACompleted',resp.IsHRACompleted);
     localStorage.setItem('UserAccessLevel',resp.UserAccessLevel);
     localStorage.setItem('PushNotificationYesNo',resp.PushNotificationYesNo);
+
+
+    localStorage.setItem('PhoneNumber',resp.PhoneNumber);
+    localStorage.setItem('IsCompanySMSEnable',resp.IsCompanySMSEnable);
+    localStorage.setItem('IsUserSMSEnable',resp.IsUserSMSEnable);
+
     
   //   this.uniqueDeviceID.get()
   // .then((uuid: any) => localStorage.setItem('deviceid',uuid))

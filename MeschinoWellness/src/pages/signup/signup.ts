@@ -34,6 +34,7 @@ export class SignupPage {
     FirstName: string;
     LastName: string;
     UserName: string;
+    PhoneNumber: string;
     Gender: string;
     BirthDate: string;
     Height: string;
@@ -47,6 +48,7 @@ export class SignupPage {
     FirstName: "",
     LastName: "",
     UserName: "",
+    PhoneNumber:"",
     Gender: "",
     BirthDate: "",
     Height: "",
@@ -63,6 +65,7 @@ export class SignupPage {
   signupForm = new FormGroup({
     Firstname: new FormControl(),
     LastName: new FormControl(),
+    PhoneNumber: new FormControl(),
     UserName: new FormControl(),
     Gender: new FormControl(),
     BirthDate: new FormControl(),
@@ -79,6 +82,7 @@ export class SignupPage {
       FirstName: "",
       LastName: "",
       UserName: "",
+      PhoneNumber:"",
       Gender: "",
       BirthDate: "",
       Height: "",
@@ -171,9 +175,25 @@ export class SignupPage {
         msg = "Please enter First Name.";
       } else if (this.account.LastName == "") {
         msg = "Please enter Last Name.";
-      } else if (this.account.UserName == "") {
+      } 
+      else if (this.account.PhoneNumber == "") {
+        msg = "Please enter PhoneNumber.";
+      }
+      else if (this.account.UserName == "") {
         msg = "Please enter Username.";
       }
+      else if(this.account.PhoneNumber !== "") {
+        var info = this.isValidMobile(this.account.PhoneNumber)
+        if(!info.isValid)
+        { 
+          msg = info.msg
+        }
+        else 
+        { 
+          msg = "";
+        }
+     }
+      
     } else if (this.currentSlide == 1) {
       if (this.account.Gender == "") {
         msg = "Please select your Gender.";
@@ -230,6 +250,48 @@ export class SignupPage {
     );
   }
 
+  numberOnlyValidation(value) {
+    if (isNaN(value) || value.includes(".")) {
+      console.log(false);
+      // invalid character, prevent input
+      return false;
+    } else {
+      console.log(true);
+      return true;
+    }
+  }
+  isValidMobile(value) {
+    
+    let msgInfo =  { msg : "", isValid : true }
+    
+    let firstLetter = value.charAt(0);
+    let remainingLetter =  "";
+    if(firstLetter == "+")
+    {
+       remainingLetter =  value.replace(firstLetter, "");
+    }
+    else{
+       remainingLetter =  value;
+    }
+    // remove space
+    remainingLetter = remainingLetter.replace(/\s/g, "");
+    console.log(firstLetter);
+    console.log(remainingLetter);    
+    let regExp = /^[0-9]{10,20}$/;
+
+    if (msgInfo.isValid && !regExp.test(remainingLetter)) {
+      msgInfo.isValid = false;
+      msgInfo.msg = "Phone number start with + country code and should be 10-20 length";
+      //console.log(msgInfo.isValid, 'if test isvalid');
+    }
+    else
+    {
+      msgInfo.isValid = true;
+      //console.log(msgInfo.isValid, 'else isvalid');
+    }
+    return msgInfo;
+}
+
   doSignup() {
     this.loader = this.alertMessageSrv.PleaseWait();
     this.account.Password != this.account.confirmpassword;
@@ -250,6 +312,7 @@ export class SignupPage {
           localStorage.setItem("Password", this.account.Password);
           localStorage.setItem("FirstName", this.account.FirstName);
           localStorage.setItem("LastName", this.account.LastName);
+          localStorage.setItem("PhoneNumber", this.account.PhoneNumber);
           this.SetUserInfo(resp);
           if (
             localStorage.getItem("deviceid") !== "" &&

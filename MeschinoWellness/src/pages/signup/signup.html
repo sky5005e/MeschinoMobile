@@ -34,10 +34,13 @@
             <ion-label stacked>First Name</ion-label>
             <ion-input type="text" [(ngModel)]="account.FirstName" formControlName="FirstName"></ion-input>
           </ion-item>
-
           <ion-item class="custom-border">
             <ion-label stacked>Last Name</ion-label>
             <ion-input type="text" [(ngModel)]="account.LastName" formControlName="LastName"></ion-input>
+          </ion-item>
+          <ion-item class="custom-border">
+            <ion-label stacked>Phone Number</ion-label>
+            <ion-input type="text" [(ngModel)]="account.PhoneNumber" formControlName="PhoneNumber" placeholder="+1 604 555 8955"></ion-input>
           </ion-item>
 
           <ion-item class="custom-border">

@@ -50,14 +50,23 @@ export class LoginPage {
     this.menu.enable(false);
     this.Rememberme = true;
     // set remember me
-    this.account.UserName =
-      window.localStorage.getItem("remuser") == null
-        ? ""
-        : window.localStorage.getItem("remuser");
-    this.account.Password =
-      window.localStorage.getItem("rempwd") == null
-        ? ""
-        : window.localStorage.getItem("rempwd");
+    if(window.localStorage.getItem("remuser") == null || window.localStorage.getItem("remuser") == 'null' || window.localStorage.getItem("remuser") == "")
+    {
+      this.account.UserName = "";
+    }
+    else
+    {
+      this.account.UserName = window.localStorage.getItem("remuser");
+    }
+    if(window.localStorage.getItem("rempwd") == null || window.localStorage.getItem("rempwd") == 'null' || window.localStorage.getItem("rempwd") == "")
+    {
+      this.account.Password = "";
+    }
+    else
+    {
+      this.account.Password = window.localStorage.getItem("rempwd");
+    }
+      
   }
 
 
@@ -138,10 +147,12 @@ export class LoginPage {
       }
       this.account.apiKey = "71e73c14-2723-4d6e-a489-c9675738fdf4";
       this.account.deviceid = localStorage.getItem("remUUID");
-      localStorage.setItem("deviceid", this.account.deviceid);
+      //debugger;
       //alert('deviceid : '+this.account.deviceid);
-      if (localStorage.getItem("remUUID") == null)
+      if (localStorage.getItem("remUUID") == null ||  localStorage.getItem("remUUID") == "null")
         this.account.deviceid = "c9675738fdf4";
+
+      localStorage.setItem("deviceid", this.account.deviceid);  
 
       this.loader.present().then(() => {
         this.user.login(this.account).subscribe(
